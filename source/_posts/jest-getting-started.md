@@ -1,5 +1,5 @@
 ---
-title: jest-getting-started
+title: [Jest] Getting Started
 date: 2018-11-09 10:51:02
 categories:
     - jest
@@ -39,10 +39,10 @@ tags:
     test('adds 1 + 2 to equal 3', () => {
         expect(sum(1, 2)).toBe(3);
     });
-```    
+```
 
 다음으로 `package.json`에 다음 코드를 추가합니다.
-``` json
+``` javascript
     {
         "scripts": {
             "test": "jest"

@@ -1,5 +1,5 @@
 ---
-title: [Jest] Getting Started
+title: Jest - Getting Started
 date: 2018-11-09 10:51:02
 categories:
     - jest

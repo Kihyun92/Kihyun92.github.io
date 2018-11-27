@@ -1,7 +1,7 @@
 ---
 title: Javascript Testing Introduction Tutorial
 date: 2018-10-16 11:50:33
-tags: 
+tags:
     - javascript
     - test
 ---
@@ -30,7 +30,7 @@ tags:
 - Break up complex ependencies
 - imporove your code
 
-  
+
 ## Different Kinds of Tests
 
 - Fully Isolated(순수 함수) -> Unit Tests

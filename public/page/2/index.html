@@ -71,6 +71,186 @@
   
     <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
+    <a href="/2018/10/29/TIL/" class="article-date">
+  <time datetime="2018-10-29T02:50:35.000Z" itemprop="datePublished">2018-10-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/til/">til</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/29/TIL/">TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="TODAY-I-LEARN"><a href="#TODAY-I-LEARN" class="headerlink" title="TODAY I LEARN!"></a>TODAY I LEARN!</h1><h2 id="mac-command-not-found-에러"><a href="#mac-command-not-found-에러" class="headerlink" title="mac command not found 에러!"></a>mac command not found 에러!</h2><p>요거때매 한동안 hexo 명령어가 동작하지 않아서 블로깅을 못했다 ㅠㅠ</p>
+<p>드디어 해결법을 알아서 블로깅을 한다..</p>
+<p>문제는 echo $PATH로 확인해 봤을때, 큰 문제가 없는데 이상하게 hexo가 먹히지 않는것이었다.</p>
+<p>몇번을 다시 설치해보고, 확인해도 동일하여 원인을 파악 못했는데,</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>다시 설치하는 과정에서, 설치 결과를 자세히 봐보았다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/user/.npm-global/bin/hexo -&gt; /Users/user/.npm-global/lib/node_modules/hexo-cli/bin/hexo</span><br></pre></td></tr></table></figure>
+<p>뭔가 결과로 나온 설치 경로를 보니, NPM 글로벌로 설치했을때, 설치 경로가 PATH에 등록되어있지 않을 것 같아서 검색해보았고,</p>
+<p><a href="https://stackoverflow.com/questions/15054388/global-node-modules-not-installing-correctly-command-not-found" target="_blank" rel="noopener">이 글</a>을 참고하여 해결하였다,,</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>밀린 포스트를 써보자</p>
+<h2 id="Postman"><a href="#Postman" class="headerlink" title="Postman"></a>Postman</h2><p>파트장님이 꿀팁을 알려주셨다.</p>
+<h3 id="postman-gt-API-값-바꾸면서-확인하고-싶을-경우"><a href="#postman-gt-API-값-바꾸면서-확인하고-싶을-경우" class="headerlink" title="postman -&gt; API 값 바꾸면서 확인하고 싶을 경우"></a>postman -&gt; API 값 바꾸면서 확인하고 싶을 경우</h3><p>먼저, 개발자 도구 -&gt; 네트워크에서 원하는 api 우클릭 -&gt; copy -&gt; cURL copy!</p>
+<p><img src="/images/postman_example1.png" alt=""></p>
+<p>그 후, postman에서 Import -&gt; Past Raw Text -&gt; copy 후, Import를 한뒤, 원하는 파라미터를 입력하여 send하고 결과를 받아보며 작업하면 된다!</p>
+<p><img src="/images/postman_example2.png" alt=""></p>
+<hr>
+<h2 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h2><p>어떻게 자바스크립트를 공부해야 하는지, 뭘해야하는지 잘 정리되어있음<br><a href="http://jstherightway.org/ko-kr/#patterns" target="_blank" rel="noopener">참고</a></p>
+<hr>
+<h2 id="Javascript-Core"><a href="#Javascript-Core" class="headerlink" title="Javascript Core"></a>Javascript Core</h2><p>Dmitry Soshnikov의 <a href="http://dmitrysoshnikov.com/ecmascript/javascript-the-core/" target="_blank" rel="noopener">JavaScript. The Core.</a></p>
+<hr>
+<h2 id="Learning-Javascript-Design-Patterns"><a href="#Learning-Javascript-Design-Patterns" class="headerlink" title="Learning Javascript Design Patterns"></a>Learning Javascript Design Patterns</h2><p><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank" rel="noopener">참고</a></p>
+<hr>
+<h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h2><p>웹팩 관련해서 D2에서 작성한 좋은 글이 있다. 한번 봐보자!<br><a href="https://d2.naver.com/helloworld/0239818" target="_blank" rel="noopener">참고</a></p>
+<h2 id="V8-engine에서-Javascript가-어떻게-동작하는지"><a href="#V8-engine에서-Javascript가-어떻게-동작하는지" class="headerlink" title="V8 engine에서 Javascript가 어떻게 동작하는지"></a>V8 engine에서 Javascript가 어떻게 동작하는지</h2><p><a href="https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e" target="_blank" rel="noopener">참고</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2018/10/29/TIL/" data-id="cjrx7uyj8000hnhuwe5bkoy21" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/">til</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/23/TIL/" class="article-date">
+  <time datetime="2018-10-23T01:44:54.000Z" itemprop="datePublished">2018-10-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/til/">til</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/TIL/">TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="TODAY-I-LEARN"><a href="#TODAY-I-LEARN" class="headerlink" title="TODAY I LEARN!"></a>TODAY I LEARN!</h1><h2 id="BVT-Build-Verification-Testing"><a href="#BVT-Build-Verification-Testing" class="headerlink" title="BVT (Build Verification Testing)"></a>BVT (Build Verification Testing)</h2><p><a href="https://www.sten.or.kr/bbs/board.php?bo_table=column&amp;wr_id=122" target="_blank" rel="noopener">BVT란?</a></p>
+<p>하는 이유를 알고 하자</p>
+<hr>
+<h2 id="Currying"><a href="#Currying" class="headerlink" title="Currying"></a>Currying</h2><p><a href="https://blog.bitsrc.io/understanding-currying-in-javascript-ceb2188c339" target="_blank" rel="noopener">참조</a></p>
+<hr>
+<h2 id="gitignore-적용-안될때"><a href="#gitignore-적용-안될때" class="headerlink" title=".gitignore 적용 안될때!"></a>.gitignore 적용 안될때!</h2><p><a href="http://theeye.pe.kr/archives/2091" target="_blank" rel="noopener">참조</a></p>
+<hr>
+<h2 id="일에-관한-영상"><a href="#일에-관한-영상" class="headerlink" title="일에 관한 영상"></a>일에 관한 영상</h2><p><a href="https://www.youtube.com/watch?v=iaNl6zKTBfg&amp;feature=youtu.be" target="_blank" rel="noopener">영상</a></p>
+<ul>
+<li>rank-driven vs role-driven<ul>
+<li>너무 다름.</li>
+<li>어떤 차이가 있는지를 알고 일하자</li>
+</ul>
+</li>
+<li><p>미션을 정확히 이해</p>
+</li>
+<li><p>실리콘밸리 - role-driven</p>
+<ul>
+<li>책임감</li>
+<li>전문가</li>
+<li>회사의 소유권, 결정권 -&gt; 책임감, 전문성</li>
+<li>미션을 일치 시킴</li>
+</ul>
+</li>
+<li>회사의 소유권 결정권 부터 나눠야함!</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2018/10/23/TIL/" data-id="cjrx7uyj7000fnhuwrzktnbkp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/">til</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/22/TIL/" class="article-date">
+  <time datetime="2018-10-22T00:53:54.000Z" itemprop="datePublished">2018-10-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/22/TIL/">TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="TODAY-I-LEARN"><a href="#TODAY-I-LEARN" class="headerlink" title="TODAY I LEARN!"></a>TODAY I LEARN!</h1><h2 id="E2E-test"><a href="#E2E-test" class="headerlink" title="E2E test"></a>E2E test</h2><h3 id="puppeteer"><a href="#puppeteer" class="headerlink" title="puppeteer"></a>puppeteer</h3><ul>
+<li><h2 id="slack-api-연동"><a href="#slack-api-연동" class="headerlink" title="slack api 연동"></a>slack api 연동</h2></li>
+</ul>
+<p><a href="https://m.blog.naver.com/PostView.nhn?blogId=pjt3591oo&amp;logNo=221090833195&amp;proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F" target="_blank" rel="noopener">python으로 작업</a></p>
+<h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><ul>
+<li>NoSQL DB</li>
+</ul>
+<p><a href="https://velopert.com/436" target="_blank" rel="noopener">참조</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2018/10/22/TIL/" data-id="cjrx7uyj6000cnhuwh91i0pv3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
     <a href="/2018/10/17/TIL/" class="article-date">
   <time datetime="2018-10-17T05:26:34.000Z" itemprop="datePublished">2018-10-17</time>
 </a>
@@ -113,7 +293,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/10/17/TIL/" data-id="cjrn833y00005w5uw7rodfcjj" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/10/17/TIL/" data-id="cjrx7uyj4000bnhuwjnjrtxnk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -183,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/10/16/TIL/" data-id="cjrn833zj0019w5uwtclqc7gm" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/10/16/TIL/" data-id="cjrx7uyj2000anhuws9eg08p5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/">til</a></li></ul>
@@ -280,7 +460,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/10/16/Javascript-Testing-Introduction-Tutorial/" data-id="cjrn833xt0001w5uw4qjgfozm" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/10/16/Javascript-Testing-Introduction-Tutorial/" data-id="cjrx7uyiv0007nhuwj1fz6g7q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
@@ -358,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/10/13/TIL/" data-id="cjrn833xx0003w5uwvpsc8ro0" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/10/13/TIL/" data-id="cjrx7uyiy0008nhuwpkmm1dgi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/">til</a></li></ul>
@@ -427,23 +607,23 @@
       <ul>
         
           <li>
+            <a href="/2018/11/26/TIL/">TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/22/TIL/">TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/TIL/">TIL</a>
+          </li>
+        
+          <li>
             <a href="/2018/11/13/TIL/">TIL</a>
           </li>
         
           <li>
             <a href="/2018/11/10/jest-using-matchers/">jest-using-matchers</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/09/jest-getting-started/">Jest - Getting Started</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/09/TIL/">TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/05/TIL/">TIL</a>
           </li>
         
       </ul>

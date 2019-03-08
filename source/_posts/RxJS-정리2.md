@@ -1,11 +1,9 @@
 ---
-title: RxJS Quick Start, 책 정리
+title: RxJS Quick Start, 책 정리 (35~69p)
 date: 2019-03-08 01:52:47
 tags:
     - rxjs
 ---
-
-# RxJS Quick Start, 책 정리 (35~69p)
 
 ## Chap1. RxJS가 해결하려 했던 문제 1 : 입력 데이터의 오류
 

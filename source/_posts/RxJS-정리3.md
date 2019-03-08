@@ -2,7 +2,9 @@
 title: RxJS Quick Start, 책 정리 (71~109p)
 date: 2019-03-08 01:52:47
 tags:
-    - rxjs
+    - RxJS
+categories:
+    - RxJS
 ---
 
 ## Chap3. RxJS가 해결하려고 했던 문제 3 : ***로직 오류***

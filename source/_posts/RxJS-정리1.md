@@ -2,7 +2,9 @@
 title: RxJS Quick Start, 책 정리
 date: 2019-03-08 01:52:47
 tags:
-    - rxjs
+    - RxJS
+categories:
+    - RxJS
 ---
 
 # RxJS Quick Start, 책 정리

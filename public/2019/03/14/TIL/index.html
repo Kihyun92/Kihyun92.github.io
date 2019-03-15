@@ -7,18 +7,18 @@
   
   <title>TIL | 견스</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git flow오늘 릴리즈 브랜치를 처음 피니쉬 해보았다. 우선 git flow init 을 해줘야함 1$ git flow init 하면, 여러 질문이 나오는데 기본 설정으로 세팅하려면 엔터만 누르면 된다  git flow finish릴리즈 브랜치를 피니쉬하기 전에,  반드시 master 브랜치와 develop 브랜치들을 각각 pull 받아서 최신화해둬야한">
+  <meta name="description" content="git flow오늘 릴리즈 브랜치를 처음 피니쉬 해보았다. 우선 git flow init 을 해줘야함 1$ git flow init 하면, 여러 질문이 나오는데 기본 설정으로 세팅하려면 엔터만 누르면 된다  git flow finish릴리즈 브랜치를 피니쉬하기 전에, _ 반드시 master 브랜치와 develop 브랜치들을 각각 pull 받아서 최신화해둬야">
 <meta name="keywords" content="git,git-flow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIL">
 <meta property="og:url" content="https://kihyun92.github.io/2019/03/14/TIL/index.html">
 <meta property="og:site_name" content="견스">
-<meta property="og:description" content="git flow오늘 릴리즈 브랜치를 처음 피니쉬 해보았다. 우선 git flow init 을 해줘야함 1$ git flow init 하면, 여러 질문이 나오는데 기본 설정으로 세팅하려면 엔터만 누르면 된다  git flow finish릴리즈 브랜치를 피니쉬하기 전에,  반드시 master 브랜치와 develop 브랜치들을 각각 pull 받아서 최신화해둬야한">
+<meta property="og:description" content="git flow오늘 릴리즈 브랜치를 처음 피니쉬 해보았다. 우선 git flow init 을 해줘야함 1$ git flow init 하면, 여러 질문이 나오는데 기본 설정으로 세팅하려면 엔터만 누르면 된다  git flow finish릴리즈 브랜치를 피니쉬하기 전에, _ 반드시 master 브랜치와 develop 브랜치들을 각각 pull 받아서 최신화해둬야">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-14T03:07:18.736Z">
+<meta property="og:updated_time" content="2019-03-15T00:48:31.644Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL">
-<meta name="twitter:description" content="git flow오늘 릴리즈 브랜치를 처음 피니쉬 해보았다. 우선 git flow init 을 해줘야함 1$ git flow init 하면, 여러 질문이 나오는데 기본 설정으로 세팅하려면 엔터만 누르면 된다  git flow finish릴리즈 브랜치를 피니쉬하기 전에,  반드시 master 브랜치와 develop 브랜치들을 각각 pull 받아서 최신화해둬야한">
+<meta name="twitter:description" content="git flow오늘 릴리즈 브랜치를 처음 피니쉬 해보았다. 우선 git flow init 을 해줘야함 1$ git flow init 하면, 여러 질문이 나오는데 기본 설정으로 세팅하려면 엔터만 누르면 된다  git flow finish릴리즈 브랜치를 피니쉬하기 전에, _ 반드시 master 브랜치와 develop 브랜치들을 각각 pull 받아서 최신화해둬야">
   
     <link rel="alternate" href="/atom.xml" title="견스" type="application/atom+xml">
   
@@ -100,17 +100,17 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow init</span><br></pre></td></tr></table></figure>
 <p>하면, 여러 질문이 나오는데 기본 설정으로 세팅하려면 엔터만 누르면 된다</p>
 <hr>
-<h2 id="git-flow-finish"><a href="#git-flow-finish" class="headerlink" title="git flow finish"></a>git flow finish</h2><p>릴리즈 브랜치를 피니쉬하기 전에, <strong><em> 반드시 master 브랜치와 develop 브랜치들을 각각 pull 받아서 최신화해둬야한다!! </em></strong></p>
+<h2 id="git-flow-finish"><a href="#git-flow-finish" class="headerlink" title="git flow finish"></a>git flow finish</h2><p>릴리즈 브랜치를 피니쉬하기 전에, <strong>_ 반드시 master 브랜치와 develop 브랜치들을 각각 pull 받아서 최신화해둬야한다!! _</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow release finish 20190313</span><br></pre></td></tr></table></figure>
 <p>위와 같이 하면 해당 릴리즈 브랜치가 피니쉬 되면서 master, develop 브랜치에 각각 머지된다.</p>
-<p>Conflict만 수정해주면 머지 완료!<br>간단하다!</p>
+<p>Conflict만 수정해주면 머지 완료!<br>만약 conflict를 수정하였다면, 혹시모르니 한번더 git flow finish 해주기!<br>간단하다!</p>
 <hr>
 <h2 id="git-branch-제거"><a href="#git-branch-제거" class="headerlink" title="git branch 제거"></a>git branch 제거</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d &lt;branchname&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/03/14/TIL/" data-id="cjt822jkt0017uydtw5onmsk2" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/03/14/TIL/" data-id="cjt9cgd7i00123ndt8qge4b9a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-flow/">git-flow</a></li></ul>
@@ -190,11 +190,11 @@
           </li>
         
           <li>
-            <a href="/2019/03/08/RxJS-정리2/">RxJS Quick Start, 책 정리 (35~69p)</a>
+            <a href="/2019/03/08/RxJS-정리1/">RxJS Quick Start, 책 정리</a>
           </li>
         
           <li>
-            <a href="/2019/03/08/RxJS-정리1/">RxJS Quick Start, 책 정리</a>
+            <a href="/2019/03/08/RxJS-정리2/">RxJS Quick Start, 책 정리 (35~69p)</a>
           </li>
         
           <li>

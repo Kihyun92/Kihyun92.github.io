@@ -5,12 +5,12 @@
   
 
   
-  <title>Tag: test | 견스</title>
+  <title>견스</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Work &amp; Life Harmony">
 <meta property="og:type" content="website">
 <meta property="og:title" content="견스">
-<meta property="og:url" content="https://kihyun92.github.io/tags/test/index.html">
+<meta property="og:url" content="https://kihyun92.github.io/page/4/index.html">
 <meta property="og:site_name" content="견스">
 <meta property="og:description" content="Work &amp; Life Harmony">
 <meta property="og:locale" content="default">
@@ -69,38 +69,90 @@
       <div class="outer">
         <section id="main">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/16/Javascript-Testing-Introduction-Tutorial/" class="archive-article-date">
-  <time datetime="2018-10-16T02:50:33.000Z" itemprop="datePublished">Oct 16</time>
+    <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/13/TIL/" class="article-date">
+  <time datetime="2018-10-12T16:52:47.000Z" itemprop="datePublished">2018-10-13</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/16/Javascript-Testing-Introduction-Tutorial/">Javascript Testing Introduction Tutorial</a>
+      <a class="article-title" href="/2018/10/13/TIL/">TIL 2018-10-12</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Today-I-Learn"><a href="#Today-I-Learn" class="headerlink" title="Today I Learn!"></a>Today I Learn!</h1><h2 id="1-Hexo"><a href="#1-Hexo" class="headerlink" title="1. Hexo!"></a>1. Hexo!</h2><ul>
+<li>기존에 Jekyll로 작업하던 깃헙 블로그를 Hexo로 바꿨다!</li>
+<li>따라서 새로 배운 Hexo의 명령어들을 정리해보자</li>
+<li>이 분의 블로그 글을 참고함 (잘 정리됨! 자주 참조하자!) : <a href="https://hyunseob.github.io/2016/02/23/start-hexo/" target="_blank" rel="noopener">https://hyunseob.github.io/2016/02/23/start-hexo/</a></li>
+</ul>
+<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><p>기본적인 노드 설치 후, Hexo를 설치하자</p>
+<pre><code>$ npm install -g hexo-cli
+</code></pre><p>그 다음 Hexo 디렉토리 스캐폴딩 작업을 하자 (나는 my-blog라는 디렉토리를 생성했다.<br>(꼭 깃헙 repo와 이름이 같을 필요 없음)</p>
+<pre><code>$ hexo init &lt;my-blog&gt;
+</code></pre><p>잘 생성 되었는지 로컬에서 확인해보자</p>
+<pre><code>$ hexo serve
+</code></pre><h2 id="포스팅"><a href="#포스팅" class="headerlink" title="포스팅"></a>포스팅</h2><p>매우 간단하다. (임의로 my-posting이라고 포스트명을 지었다)</p>
+<pre><code>$ hexo new &lt;my-posting&gt;
+</code></pre><p>draft 문서를 작성하고 싶으면</p>
+<pre><code>$ hexo new draft &lt;my-draft&gt;
+</code></pre><p>이렇게 하면 각각 /source/_posts/ 와 /source/_drafts/ 에 my-posting.md 와 같은 파일이 생성된다.</p>
+<blockquote>
+<p>태그 플러그인 참조 : <a href="https://hexo.io/docs/tag-plugins.html" target="_blank" rel="noopener">https://hexo.io/docs/tag-plugins.html</a></p>
+</blockquote>
+<ul>
+<li>draft 문서를 포스팅 하려면, publish 명령어를 사용<ul>
+<li>_drafts 디렉토리에 있던게 _posts 디렉토리로 이동함. 날짜/시간도 넣어진다고한다</li>
+</ul>
+</li>
+</ul>
+<pre><code>$ hexo publish &lt;my-draft&gt;
+</code></pre><h2 id="디플로이"><a href="#디플로이" class="headerlink" title="디플로이"></a>디플로이</h2><p>우선 _config.yml에 내 github 정보를 입력!</p>
+<pre><code>deploy:
+    type: git
+    repo: https://github.com/Kihyun92/Kihyun92.github.io.git
+    branch: master
+</code></pre><p>그 다음, 정적 파일들을 생성해준다.</p>
+<pre><code>$ hexo generate
+</code></pre><p>디플로이를 위한 플러그인 설치!</p>
+<pre><code>$ npm install --save hexo-deployer-git
+</code></pre><p>디플로이!</p>
+<pre><code>$ hexo deploy
+</code></pre><p>매우 간단하다!</p>
+<p>다만, 코드 관리를 다른 repo에서 해야하는게 단점이라고 하신거에 공감.</p>
+<p>이제 차근차근 블로그를 꾸며보자!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2018/10/13/TIL/" data-id="cju3el6fz00039odt41200zmo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/">til</a></li></ul>
+
+    </footer>
   </div>
+  
 </article>
-  
-  
-    </div></section>
+
+
   
 
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
 
 </section>
         

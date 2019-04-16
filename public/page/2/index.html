@@ -71,6 +71,51 @@
   
     <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
+    <a href="/2019/03/15/TIL/" class="article-date">
+  <time datetime="2019-03-15T01:50:55.000Z" itemprop="datePublished">2019-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TIL/">TIL</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/15/TIL/">TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="git-flow"><a href="#git-flow" class="headerlink" title="git-flow"></a>git-flow</h2><p>git flow feature start</p>
+<p>git push upstream feature/~~</p>
+<p>git push -u origin/~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2019/03/15/TIL/" data-id="cjuihsxs0001cr1uwjcca7210" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-flow/">git-flow</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
     <a href="/2019/03/14/TIL/" class="article-date">
   <time datetime="2019-03-14T03:00:19.000Z" itemprop="datePublished">2019-03-14</time>
 </a>
@@ -110,263 +155,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/03/14/TIL/" data-id="cjue0u00k0017btdtyt59nksc" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/03/14/TIL/" data-id="cjuihsxry0018r1uwjof4vzde" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-flow/">git-flow</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-RxJS-정리2" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/08/RxJS-정리2/" class="article-date">
-  <time datetime="2019-03-07T16:52:47.000Z" itemprop="datePublished">2019-03-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/RxJS/">RxJS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/08/RxJS-정리2/">RxJS Quick Start, 책 정리 (35~69p)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Chap1-RxJS가-해결하려-했던-문제-1-입력-데이터의-오류"><a href="#Chap1-RxJS가-해결하려-했던-문제-1-입력-데이터의-오류" class="headerlink" title="Chap1. RxJS가 해결하려 했던 문제 1 : 입력 데이터의 오류"></a>Chap1. RxJS가 해결하려 했던 문제 1 : 입력 데이터의 오류</h2><h3 id="1-1-웹-애플리케이션의-입력-데이터"><a href="#1-1-웹-애플리케이션의-입력-데이터" class="headerlink" title="1.1 웹 애플리케이션의 입력 데이터"></a>1.1 웹 애플리케이션의 입력 데이터</h3><ul>
-<li>데이터 흐름의 관점<ul>
-<li>서버 / 브라우저 / 브라우저 UI 객체 간에 데이터 이동</li>
-</ul>
-</li>
-<li>State machine 관점<ul>
-<li>동기 / 비동기 처리</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-2-입력-데이터의-전달-시점이-다양하다"><a href="#1-2-입력-데이터의-전달-시점이-다양하다" class="headerlink" title="1.2 입력 데이터의 전달 시점이 다양하다"></a>1.2 입력 데이터의 전달 시점이 다양하다</h3><h3 id="1-2-1-동기"><a href="#1-2-1-동기" class="headerlink" title="1.2.1 동기"></a>1.2.1 동기</h3><ul>
-<li>장점: 순차적으로 진행되므로 개발이 쉽다</li>
-<li>단점: 웹브라우저와 같이 단일 UI 스레드를 사용할 경우, 해당 작업이 끝날때까지 브라우저는 대기해야함</li>
-</ul>
-<h3 id="1-2-2-비동기"><a href="#1-2-2-비동기" class="headerlink" title="1.2.2 비동기"></a>1.2.2 비동기</h3><ul>
-<li>호출하는 함수가 호출되는 함수의 작업 완료를 기다리지 않고 그 다음을 진행함<ul>
-<li>호출되는 함수의 작업이 완료되면 별도의 <strong>이벤트나 콜백 함수</strong>를 통해 결과를 전달함</li>
-</ul>
-</li>
-<li>장점: 효율적인 작업 진행이 가능</li>
-<li>단점: 개발은 더욱 복잡해지고, 오류 확률이 높아짐</li>
-</ul>
-<h3 id="1-3-동기와-비동기를-함께-사용할-수-밖에-없나"><a href="#1-3-동기와-비동기를-함께-사용할-수-밖에-없나" class="headerlink" title="1.3 동기와 비동기를 함께 사용할 수 밖에 없나?"></a>1.3 동기와 비동기를 함께 사용할 수 밖에 없나?</h3><ul>
-<li>단일 스레드 기반의 브라우저 환경에서는 비동기 방식을 사용하지 않으면 특정 작업이 프로세스를 독점하기 때문에 성능상 문제가 발생함</li>
-<li>어쩔수없음</li>
-</ul>
-<h3 id="1-4-RxJS는-어떻게-개선했나"><a href="#1-4-RxJS는-어떻게-개선했나" class="headerlink" title="1.4 RxJS는 어떻게 개선했나?"></a>1.4 RxJS는 어떻게 개선했나?</h3><ul>
-<li>입력 데이터에 대한 구조적인 문제를 개선하고자 했음<ul>
-<li>구조의 일원화 -&gt; 개발을 단순화</li>
-</ul>
-</li>
-<li>RxJS는 동기와 비동기의 차이점을 <strong>시간</strong>이라는 개념을 도입함으로써 해결하려함<ul>
-<li>동기와 비동기는 시간의 축으로 봤을때, 같은 형태이다! =&gt; <strong>스트림</strong> 이라 표현함</li>
-</ul>
-</li>
-<li>RxJS에서는 이런 스트림을 표현하는 Obsevable 클래스를 제공함</li>
-</ul>
-<h3 id="1-4-1-Observable"><a href="#1-4-1-Observable" class="headerlink" title="1.4.1 Observable"></a>1.4.1 Observable</h3><blockquote>
-<p> 시간을 인덱스로 둔 컬렉션을 추상화한 클래스</p>
-</blockquote>
-<ul>
-<li>동기나 비동기의 동작 방식으로 전달된 데이터를 하나의 컬렉션으로 바라볼 수 있게 해줌<ul>
-<li>개발자는 데이터가 어떤 형태로 전달되는지에 대해 고민할 필요 없음</li>
-<li>단지 Observable을 통해 데이터를 전달 받으면 됨</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-4-2-모든-데이터는-Observable-인스턴스로-만들-수-있다"><a href="#1-4-2-모든-데이터는-Observable-인스턴스로-만들-수-있다" class="headerlink" title="1.4.2 모든 데이터는 Observable 인스턴스로 만들 수 있다."></a>1.4.2 모든 데이터는 Observable 인스턴스로 만들 수 있다.</h3><ul>
-<li><p>Observable은 모든 데이터를 다룬다</p>
-<ul>
-<li>동기든 비동기든 모든 데이터 타입을 동일한 형태로 사용</li>
-</ul>
-</li>
-<li><p><code>event</code>를 Observable로 만들 때는 <code>fromEvent</code> 를 이용</p>
-<ul>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fromEvent(HTMLElement, <span class="string">"이벤트 타입"</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Example</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; fromEvent &#125; = rxjs;</span><br><span class="line"><span class="keyword">const</span> key$ = fromEvent(<span class="built_in">document</span>, <span class="string">"keydown"</span>);</span><br><span class="line"><span class="keyword">const</span> click$ = fromEvent(<span class="built_in">document</span>, <span class="string">"click"</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>배열 같은 <code>iterable</code>이나 <code>array-like</code>,<code>Promise 데이터</code> 를 Observable로 만들 때는 <code>from</code>을 이용</p>
-<ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from(Iterable | Array-like | Promise);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Example</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; <span class="keyword">from</span> &#125; = rxjs;</span><br><span class="line"><span class="keyword">const</span> arrayFrom$ = <span class="keyword">from</span>([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]);</span><br><span class="line"><span class="keyword">const</span> iterableFrom$ = <span class="keyword">from</span>(<span class="keyword">new</span> <span class="built_in">Map</span>([<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">4</span>], [<span class="number">4</span>, <span class="number">8</span>]));</span><br><span class="line"><span class="keyword">const</span> ajaxPromiseFrom$ = <span class="keyword">from</span>(fetch(<span class="string">"./api/some.json"</span>));</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>단일 데이터를 연속으로 전달할 경우엔 <code>of</code> 를 이용</p>
-<ul>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">of</span>(...items);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Example</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; <span class="keyword">of</span> &#125; = rxjs;</span><br><span class="line"><span class="keyword">const</span> numberOf$ = <span class="keyword">of</span>(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>);</span><br><span class="line"><span class="keyword">const</span> stringOf$ = <span class="keyword">of</span>(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>Observable 객체의 변수명은 관용적으로 접미사로 $(Stream의 S와 유사해서라고함) 를 붙인다.</p>
-</blockquote>
-<hr>
-<h2 id="Chap2-RxJS가-해결하려고-했던-문제-2-상태-전파-State-Propagation-문제"><a href="#Chap2-RxJS가-해결하려고-했던-문제-2-상태-전파-State-Propagation-문제" class="headerlink" title="Chap2. RxJS가 해결하려고 했던 문제 2 : 상태 전파(State Propagation) 문제"></a>Chap2. RxJS가 해결하려고 했던 문제 2 : 상태 전파(State Propagation) 문제</h2><h3 id="1-1-웹-애플리케이션의-상태"><a href="#1-1-웹-애플리케이션의-상태" class="headerlink" title="1.1 웹 애플리케이션의 상태"></a>1.1 웹 애플리케이션의 상태</h3><ul>
-<li>웹 애플리케이션은 하나의 큰 상태머신<ul>
-<li>이를 구성하고 있는 크고 작은 단위들 또한 하나의 상태머신임<ul>
-<li>각각의 상태머신들은 각자의 상태를 가지고있음</li>
-<li>상태 머신들은 각자의 역할에 따라 서로 유기적으로 연결됨</li>
-<li>각 모듈간에 의존성이 있음</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-2-웹-애플리케이션의-상태-변화로-인한-문제점"><a href="#1-2-웹-애플리케이션의-상태-변화로-인한-문제점" class="headerlink" title="1.2 웹 애플리케이션의 상태 변화로 인한 문제점"></a>1.2 웹 애플리케이션의 상태 변화로 인한 문제점</h3><ul>
-<li>System과 User의 관계에 따른 상태 변화 예제</li>
-</ul>
-<h3 id="1-2-1-첫째-User의-인터페이스가-변겨오디면-System도-함께-변경되어야함"><a href="#1-2-1-첫째-User의-인터페이스가-변겨오디면-System도-함께-변경되어야함" class="headerlink" title="1.2.1 첫째, User의 인터페이스가 변겨오디면 System도 함께 변경되어야함"></a>1.2.1 첫째, User의 인터페이스가 변겨오디면 System도 함께 변경되어야함</h3><h3 id="1-2-2-둘쨰-User의-상태를-확인하기-위한-인터페이스에-대한-의사소통-비용이-발생함"><a href="#1-2-2-둘쨰-User의-상태를-확인하기-위한-인터페이스에-대한-의사소통-비용이-발생함" class="headerlink" title="1.2.2 둘쨰, User의 상태를 확인하기 위한 인터페이스에 대한 의사소통 비용이 발생함"></a>1.2.2 둘쨰, User의 상태를 확인하기 위한 인터페이스에 대한 의사소통 비용이 발생함</h3><ul>
-<li>User의 인터페이스가 늘어난다면, 다른 User와의 의존 관계에 있는 클래스 간에 의사소통 비용이 발생</li>
-</ul>
-<h3 id="1-2-3-셋째-다수의-클래스가-User에-의존관계가-있는-경우라면-User의-변경-여부를-반영하기-위해-다수의-클래스들이-직접-User의-상태를-모두-반영해야함"><a href="#1-2-3-셋째-다수의-클래스가-User에-의존관계가-있는-경우라면-User의-변경-여부를-반영하기-위해-다수의-클래스들이-직접-User의-상태를-모두-반영해야함" class="headerlink" title="1.2.3 셋째, 다수의 클래스가 User에 의존관계가 있는 경우라면 User의 변경 여부를 반영하기 위해 다수의 클래스들이 직접 User의 상태를 모두 반영해야함"></a>1.2.3 셋째, 다수의 클래스가 User에 의존관계가 있는 경우라면 User의 변경 여부를 반영하기 위해 다수의 클래스들이 직접 User의 상태를 모두 반영해야함</h3><hr>
-<h3 id="1-3-우리가-이미-알고-있는-솔루션-옵저버-패턴"><a href="#1-3-우리가-이미-알고-있는-솔루션-옵저버-패턴" class="headerlink" title="1.3 우리가 이미 알고 있는 솔루션 - 옵저버 패턴"></a>1.3 우리가 이미 알고 있는 솔루션 - 옵저버 패턴</h3><h3 id="1-3-1-Loosely-Coupling"><a href="#1-3-1-Loosely-Coupling" class="headerlink" title="1.3.1 Loosely Coupling"></a>1.3.1 Loosely Coupling</h3><ul>
-<li>옵저버 패턴에서는 상태가 변경될 대상을 <code>Subject</code> 라고 함</li>
-<li>그 상태 변화를 관찰하는 대상을 <code>Observer</code> 라고 함</li>
-<li>옵저버 패턴에서는 Subject와 Observer가 서로 느슨하게 연결(Loosely coupling)되어있음<ul>
-<li>서로 상호작용을 하지만, 서로 잘 모른다는 뜻</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-3-2-자동-상태-전파"><a href="#1-3-2-자동-상태-전파" class="headerlink" title="1.3.2 자동 상태 전파"></a>1.3.2 자동 상태 전파</h3><ul>
-<li>Subject로 부터 데이터를 제공 받음 -&gt; push 방식<ul>
-<li>Subject와 Observer가 1:n의 상황에서 더욱 효과적</li>
-<li>데이터 변경 시점을 매번 확인할 필요 없이, 변경되었다는 신호가오면 처리</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-3-3-인터페이스의-단일화"><a href="#1-3-3-인터페이스의-단일화" class="headerlink" title="1.3.3 인터페이스의 단일화"></a>1.3.3 인터페이스의 단일화</h3><ul>
-<li>인터페이스가있다는 것은 많은 비용을 수반함<ul>
-<li>인터페이스가 있어도 없게 만들면 됨<ul>
-<li>인터페이스를 특정 몇개로 통일</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Observer pattern은 <code>Observer.update</code> 만 존재하기 때문에, Subject에서는 Observer인터페이스에 대한 별도의 비용이 존재하지 않음</li>
-</ul>
-<hr>
-<h3 id="1-4-옵저버-패턴의-흔한-예"><a href="#1-4-옵저버-패턴의-흔한-예" class="headerlink" title="1.4 옵저버 패턴의 흔한 예"></a>1.4 옵저버 패턴의 흔한 예</h3><ul>
-<li><p>뉴스를 발행하는 신문사(subject)와 이를 구독하는 고객(observer)의 경우</p>
-<ul>
-<li>신문사는 고객을 등록하고, 신문이 발행될 때 각각의 고객에게 신문이 발행되었다고 알려줌(notify)</li>
-<li><p>신문이 발행되면 어떤 고객은 뉴스를 읽거나 스크랩함</p>
-</li>
-<li><p>subject =&gt; add, remove, notify</p>
-</li>
-<li>observer =&gt; update</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="1-5-옵저버-패턴적용하기"><a href="#1-5-옵저버-패턴적용하기" class="headerlink" title="1.5 옵저버 패턴적용하기"></a>1.5 옵저버 패턴적용하기</h3><ul>
-<li>기존 예제에 적용, user와 system의 의존성을 느슨하게함</li>
-</ul>
-<hr>
-<h3 id="1-6-RxJS는-무엇을-해결하려-했나"><a href="#1-6-RxJS는-무엇을-해결하려-했나" class="headerlink" title="1.6 RxJS는 무엇을 해결하려 했나?"></a>1.6 RxJS는 무엇을 해결하려 했나?</h3><ul>
-<li>상태 변화에 대한 문제를 옵저버 패턴을 기반으로 해결하려함</li>
-</ul>
-<h3 id="1-6-1-상태-변화는-언제-종료되는가"><a href="#1-6-1-상태-변화는-언제-종료되는가" class="headerlink" title="1.6.1 상태 변화는 언제 종료되는가?"></a>1.6.1 상태 변화는 언제 종료되는가?</h3><ul>
-<li>observer와 subject간에 별도의 규칙을 정해서 observer측에서 별도의 예외처리를 해줘야함<ul>
-<li>아쉬운 부분</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-6-2-상태변화에서-에러가-발생하면"><a href="#1-6-2-상태변화에서-에러가-발생하면" class="headerlink" title="1.6.2 상태변화에서 에러가 발생하면?"></a>1.6.2 상태변화에서 에러가 발생하면?</h3><ul>
-<li>subject 자체적으로 에러 처리<ul>
-<li>try-catch문을 통해</li>
-</ul>
-</li>
-<li>observer 쪽에서 에러 발생 여부를 인지하고, 이에대한 별도의 처리</li>
-<li>옵저버 패턴은 에러 발생 여부를 Observer들에게 전달할 방법이 딱히 없음</li>
-</ul>
-<h3 id="1-6-3-Observer에-의해-Subject의-상태가-변경되는-경우"><a href="#1-6-3-Observer에-의해-Subject의-상태가-변경되는-경우" class="headerlink" title="1.6.3 Observer에 의해 Subject의 상태가 변경되는 경우"></a>1.6.3 Observer에 의해 Subject의 상태가 변경되는 경우</h3><ul>
-<li>예) 신문 기자이면서 동시에 구독자인 사람이 있는 경우<ul>
-<li>구독받은 기사의 내용을 조금 변경하여 가짜 뉴스를 만들어냄</li>
-</ul>
-</li>
-<li>데이터를 양방향으로 흐르게하면 편할수 있으나, 코드의 복잡도를 증가시킴</li>
-</ul>
-<hr>
-<h3 id="1-7-RxJS는-어떻게-개선했나"><a href="#1-7-RxJS는-어떻게-개선했나" class="headerlink" title="1.7 RxJS는 어떻게 개선했나?"></a>1.7 RxJS는 어떻게 개선했나?</h3><ul>
-<li><p>RxJS에서 전달되는 데이터는 모두 Observable 형태로 반환됨.</p>
-<ul>
-<li><p>Observable은 구독(subscribe) 과정 후부터 데이터를 전달받음</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;fromEvent &#125; = rxjs;</span><br><span class="line"><span class="keyword">const</span> click$ = fromEvent(<span class="built_in">document</span>, <span class="string">"click"</span>);</span><br><span class="line">click$.subscribe(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(v);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 또는</span></span><br><span class="line">click$.subscribe(&#123;</span><br><span class="line">    next: <span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>반면 옵저버 패턴은 add 과정 후부터 데이터를 전달받음</p>
-</li>
-</ul>
-<blockquote>
-<p>RxJS의 Observer는 함수와 객체 둘 다 가능하며  subscribe라는 메소드를 통해 Subject에게 전달됨</p>
-<p>RxJS의 Observable은 단지 하나의 Observer에게 독립적인 데이터를 전달함</p>
-</blockquote>
-<h3 id="1-7-1-인터페이스의-확장"><a href="#1-7-1-인터페이스의-확장" class="headerlink" title="1.7.1 인터페이스의 확장"></a>1.7.1 인터페이스의 확장</h3><ul>
-<li>RxJS는 시간의 축으로 데이터를 보기 때문에 데이터의 연속적인 변화를 Observer에서 표현할 수 있도록 기존 update 메소드를 next로 바꿈</li>
-<li>또한 종료를 나타내는 complete, 에러 시점을 나타내는 error 메소드가 추가됨<ul>
-<li>옵저버 패턴에서의 Observer는 update하나의 메소드를 가짐</li>
-<li>반면 Rxjs의 Observer는 next, complete, error 세개의 메소드</li>
-</ul>
-</li>
-<li><strong>객체는 상태를 가질 수 있기때문에, RxJS의 subscribe는 가급적 상태가 존재하지 않는 함수 형태를 사용함</strong></li>
-</ul>
-<h3 id="1-7-2-Observable은-Read-only"><a href="#1-7-2-Observable은-Read-only" class="headerlink" title="1.7.2 Observable은 Read-only"></a>1.7.2 Observable은 Read-only</h3><ul>
-<li>단방향 데이터 흐름을 위함<ul>
-<li>Observer에게 데이터를 전달만함, 받지 않음</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="1-8-Observable은-리액티브함"><a href="#1-8-Observable은-리액티브함" class="headerlink" title="1.8 Observable은 리액티브함"></a>1.8 Observable은 리액티브함</h3><ul>
-<li>데이터가 발생하면 Observer에게 자동으로 그리고 빠르게 변경된 데이터를 전달하기 떄문에 리액티브하다고 함<ul>
-<li><a href="https://en.wikipedia.org/wiki/Reactive_programming" target="_blank" rel="noopener">리액티브 프로그래밍</a></li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/03/08/RxJS-정리2/" data-id="cjue0u01f004obtdty9iu54an" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxJS/">RxJS</a></li></ul>
 
     </footer>
   </div>
@@ -675,7 +467,260 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/03/08/RxJS-정리3/" data-id="cjue0u01g004pbtdtw5n3412d" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/03/08/RxJS-정리3/" data-id="cjuihsxtj004pr1uwaup32tn7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxJS/">RxJS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-RxJS-정리2" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/08/RxJS-정리2/" class="article-date">
+  <time datetime="2019-03-07T16:52:47.000Z" itemprop="datePublished">2019-03-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/RxJS/">RxJS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/08/RxJS-정리2/">RxJS Quick Start, 책 정리 (35~69p)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Chap1-RxJS가-해결하려-했던-문제-1-입력-데이터의-오류"><a href="#Chap1-RxJS가-해결하려-했던-문제-1-입력-데이터의-오류" class="headerlink" title="Chap1. RxJS가 해결하려 했던 문제 1 : 입력 데이터의 오류"></a>Chap1. RxJS가 해결하려 했던 문제 1 : 입력 데이터의 오류</h2><h3 id="1-1-웹-애플리케이션의-입력-데이터"><a href="#1-1-웹-애플리케이션의-입력-데이터" class="headerlink" title="1.1 웹 애플리케이션의 입력 데이터"></a>1.1 웹 애플리케이션의 입력 데이터</h3><ul>
+<li>데이터 흐름의 관점<ul>
+<li>서버 / 브라우저 / 브라우저 UI 객체 간에 데이터 이동</li>
+</ul>
+</li>
+<li>State machine 관점<ul>
+<li>동기 / 비동기 처리</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-입력-데이터의-전달-시점이-다양하다"><a href="#1-2-입력-데이터의-전달-시점이-다양하다" class="headerlink" title="1.2 입력 데이터의 전달 시점이 다양하다"></a>1.2 입력 데이터의 전달 시점이 다양하다</h3><h3 id="1-2-1-동기"><a href="#1-2-1-동기" class="headerlink" title="1.2.1 동기"></a>1.2.1 동기</h3><ul>
+<li>장점: 순차적으로 진행되므로 개발이 쉽다</li>
+<li>단점: 웹브라우저와 같이 단일 UI 스레드를 사용할 경우, 해당 작업이 끝날때까지 브라우저는 대기해야함</li>
+</ul>
+<h3 id="1-2-2-비동기"><a href="#1-2-2-비동기" class="headerlink" title="1.2.2 비동기"></a>1.2.2 비동기</h3><ul>
+<li>호출하는 함수가 호출되는 함수의 작업 완료를 기다리지 않고 그 다음을 진행함<ul>
+<li>호출되는 함수의 작업이 완료되면 별도의 <strong>이벤트나 콜백 함수</strong>를 통해 결과를 전달함</li>
+</ul>
+</li>
+<li>장점: 효율적인 작업 진행이 가능</li>
+<li>단점: 개발은 더욱 복잡해지고, 오류 확률이 높아짐</li>
+</ul>
+<h3 id="1-3-동기와-비동기를-함께-사용할-수-밖에-없나"><a href="#1-3-동기와-비동기를-함께-사용할-수-밖에-없나" class="headerlink" title="1.3 동기와 비동기를 함께 사용할 수 밖에 없나?"></a>1.3 동기와 비동기를 함께 사용할 수 밖에 없나?</h3><ul>
+<li>단일 스레드 기반의 브라우저 환경에서는 비동기 방식을 사용하지 않으면 특정 작업이 프로세스를 독점하기 때문에 성능상 문제가 발생함</li>
+<li>어쩔수없음</li>
+</ul>
+<h3 id="1-4-RxJS는-어떻게-개선했나"><a href="#1-4-RxJS는-어떻게-개선했나" class="headerlink" title="1.4 RxJS는 어떻게 개선했나?"></a>1.4 RxJS는 어떻게 개선했나?</h3><ul>
+<li>입력 데이터에 대한 구조적인 문제를 개선하고자 했음<ul>
+<li>구조의 일원화 -&gt; 개발을 단순화</li>
+</ul>
+</li>
+<li>RxJS는 동기와 비동기의 차이점을 <strong>시간</strong>이라는 개념을 도입함으로써 해결하려함<ul>
+<li>동기와 비동기는 시간의 축으로 봤을때, 같은 형태이다! =&gt; <strong>스트림</strong> 이라 표현함</li>
+</ul>
+</li>
+<li>RxJS에서는 이런 스트림을 표현하는 Obsevable 클래스를 제공함</li>
+</ul>
+<h3 id="1-4-1-Observable"><a href="#1-4-1-Observable" class="headerlink" title="1.4.1 Observable"></a>1.4.1 Observable</h3><blockquote>
+<p> 시간을 인덱스로 둔 컬렉션을 추상화한 클래스</p>
+</blockquote>
+<ul>
+<li>동기나 비동기의 동작 방식으로 전달된 데이터를 하나의 컬렉션으로 바라볼 수 있게 해줌<ul>
+<li>개발자는 데이터가 어떤 형태로 전달되는지에 대해 고민할 필요 없음</li>
+<li>단지 Observable을 통해 데이터를 전달 받으면 됨</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-4-2-모든-데이터는-Observable-인스턴스로-만들-수-있다"><a href="#1-4-2-모든-데이터는-Observable-인스턴스로-만들-수-있다" class="headerlink" title="1.4.2 모든 데이터는 Observable 인스턴스로 만들 수 있다."></a>1.4.2 모든 데이터는 Observable 인스턴스로 만들 수 있다.</h3><ul>
+<li><p>Observable은 모든 데이터를 다룬다</p>
+<ul>
+<li>동기든 비동기든 모든 데이터 타입을 동일한 형태로 사용</li>
+</ul>
+</li>
+<li><p><code>event</code>를 Observable로 만들 때는 <code>fromEvent</code> 를 이용</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fromEvent(HTMLElement, <span class="string">"이벤트 타입"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Example</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; fromEvent &#125; = rxjs;</span><br><span class="line"><span class="keyword">const</span> key$ = fromEvent(<span class="built_in">document</span>, <span class="string">"keydown"</span>);</span><br><span class="line"><span class="keyword">const</span> click$ = fromEvent(<span class="built_in">document</span>, <span class="string">"click"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>배열 같은 <code>iterable</code>이나 <code>array-like</code>,<code>Promise 데이터</code> 를 Observable로 만들 때는 <code>from</code>을 이용</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from(Iterable | Array-like | Promise);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Example</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; <span class="keyword">from</span> &#125; = rxjs;</span><br><span class="line"><span class="keyword">const</span> arrayFrom$ = <span class="keyword">from</span>([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]);</span><br><span class="line"><span class="keyword">const</span> iterableFrom$ = <span class="keyword">from</span>(<span class="keyword">new</span> <span class="built_in">Map</span>([<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">4</span>], [<span class="number">4</span>, <span class="number">8</span>]));</span><br><span class="line"><span class="keyword">const</span> ajaxPromiseFrom$ = <span class="keyword">from</span>(fetch(<span class="string">"./api/some.json"</span>));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>단일 데이터를 연속으로 전달할 경우엔 <code>of</code> 를 이용</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">of</span>(...items);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Example</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; <span class="keyword">of</span> &#125; = rxjs;</span><br><span class="line"><span class="keyword">const</span> numberOf$ = <span class="keyword">of</span>(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>);</span><br><span class="line"><span class="keyword">const</span> stringOf$ = <span class="keyword">of</span>(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Observable 객체의 변수명은 관용적으로 접미사로 $(Stream의 S와 유사해서라고함) 를 붙인다.</p>
+</blockquote>
+<hr>
+<h2 id="Chap2-RxJS가-해결하려고-했던-문제-2-상태-전파-State-Propagation-문제"><a href="#Chap2-RxJS가-해결하려고-했던-문제-2-상태-전파-State-Propagation-문제" class="headerlink" title="Chap2. RxJS가 해결하려고 했던 문제 2 : 상태 전파(State Propagation) 문제"></a>Chap2. RxJS가 해결하려고 했던 문제 2 : 상태 전파(State Propagation) 문제</h2><h3 id="1-1-웹-애플리케이션의-상태"><a href="#1-1-웹-애플리케이션의-상태" class="headerlink" title="1.1 웹 애플리케이션의 상태"></a>1.1 웹 애플리케이션의 상태</h3><ul>
+<li>웹 애플리케이션은 하나의 큰 상태머신<ul>
+<li>이를 구성하고 있는 크고 작은 단위들 또한 하나의 상태머신임<ul>
+<li>각각의 상태머신들은 각자의 상태를 가지고있음</li>
+<li>상태 머신들은 각자의 역할에 따라 서로 유기적으로 연결됨</li>
+<li>각 모듈간에 의존성이 있음</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-웹-애플리케이션의-상태-변화로-인한-문제점"><a href="#1-2-웹-애플리케이션의-상태-변화로-인한-문제점" class="headerlink" title="1.2 웹 애플리케이션의 상태 변화로 인한 문제점"></a>1.2 웹 애플리케이션의 상태 변화로 인한 문제점</h3><ul>
+<li>System과 User의 관계에 따른 상태 변화 예제</li>
+</ul>
+<h3 id="1-2-1-첫째-User의-인터페이스가-변겨오디면-System도-함께-변경되어야함"><a href="#1-2-1-첫째-User의-인터페이스가-변겨오디면-System도-함께-변경되어야함" class="headerlink" title="1.2.1 첫째, User의 인터페이스가 변겨오디면 System도 함께 변경되어야함"></a>1.2.1 첫째, User의 인터페이스가 변겨오디면 System도 함께 변경되어야함</h3><h3 id="1-2-2-둘쨰-User의-상태를-확인하기-위한-인터페이스에-대한-의사소통-비용이-발생함"><a href="#1-2-2-둘쨰-User의-상태를-확인하기-위한-인터페이스에-대한-의사소통-비용이-발생함" class="headerlink" title="1.2.2 둘쨰, User의 상태를 확인하기 위한 인터페이스에 대한 의사소통 비용이 발생함"></a>1.2.2 둘쨰, User의 상태를 확인하기 위한 인터페이스에 대한 의사소통 비용이 발생함</h3><ul>
+<li>User의 인터페이스가 늘어난다면, 다른 User와의 의존 관계에 있는 클래스 간에 의사소통 비용이 발생</li>
+</ul>
+<h3 id="1-2-3-셋째-다수의-클래스가-User에-의존관계가-있는-경우라면-User의-변경-여부를-반영하기-위해-다수의-클래스들이-직접-User의-상태를-모두-반영해야함"><a href="#1-2-3-셋째-다수의-클래스가-User에-의존관계가-있는-경우라면-User의-변경-여부를-반영하기-위해-다수의-클래스들이-직접-User의-상태를-모두-반영해야함" class="headerlink" title="1.2.3 셋째, 다수의 클래스가 User에 의존관계가 있는 경우라면 User의 변경 여부를 반영하기 위해 다수의 클래스들이 직접 User의 상태를 모두 반영해야함"></a>1.2.3 셋째, 다수의 클래스가 User에 의존관계가 있는 경우라면 User의 변경 여부를 반영하기 위해 다수의 클래스들이 직접 User의 상태를 모두 반영해야함</h3><hr>
+<h3 id="1-3-우리가-이미-알고-있는-솔루션-옵저버-패턴"><a href="#1-3-우리가-이미-알고-있는-솔루션-옵저버-패턴" class="headerlink" title="1.3 우리가 이미 알고 있는 솔루션 - 옵저버 패턴"></a>1.3 우리가 이미 알고 있는 솔루션 - 옵저버 패턴</h3><h3 id="1-3-1-Loosely-Coupling"><a href="#1-3-1-Loosely-Coupling" class="headerlink" title="1.3.1 Loosely Coupling"></a>1.3.1 Loosely Coupling</h3><ul>
+<li>옵저버 패턴에서는 상태가 변경될 대상을 <code>Subject</code> 라고 함</li>
+<li>그 상태 변화를 관찰하는 대상을 <code>Observer</code> 라고 함</li>
+<li>옵저버 패턴에서는 Subject와 Observer가 서로 느슨하게 연결(Loosely coupling)되어있음<ul>
+<li>서로 상호작용을 하지만, 서로 잘 모른다는 뜻</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-2-자동-상태-전파"><a href="#1-3-2-자동-상태-전파" class="headerlink" title="1.3.2 자동 상태 전파"></a>1.3.2 자동 상태 전파</h3><ul>
+<li>Subject로 부터 데이터를 제공 받음 -&gt; push 방식<ul>
+<li>Subject와 Observer가 1:n의 상황에서 더욱 효과적</li>
+<li>데이터 변경 시점을 매번 확인할 필요 없이, 변경되었다는 신호가오면 처리</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-3-인터페이스의-단일화"><a href="#1-3-3-인터페이스의-단일화" class="headerlink" title="1.3.3 인터페이스의 단일화"></a>1.3.3 인터페이스의 단일화</h3><ul>
+<li>인터페이스가있다는 것은 많은 비용을 수반함<ul>
+<li>인터페이스가 있어도 없게 만들면 됨<ul>
+<li>인터페이스를 특정 몇개로 통일</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Observer pattern은 <code>Observer.update</code> 만 존재하기 때문에, Subject에서는 Observer인터페이스에 대한 별도의 비용이 존재하지 않음</li>
+</ul>
+<hr>
+<h3 id="1-4-옵저버-패턴의-흔한-예"><a href="#1-4-옵저버-패턴의-흔한-예" class="headerlink" title="1.4 옵저버 패턴의 흔한 예"></a>1.4 옵저버 패턴의 흔한 예</h3><ul>
+<li><p>뉴스를 발행하는 신문사(subject)와 이를 구독하는 고객(observer)의 경우</p>
+<ul>
+<li>신문사는 고객을 등록하고, 신문이 발행될 때 각각의 고객에게 신문이 발행되었다고 알려줌(notify)</li>
+<li><p>신문이 발행되면 어떤 고객은 뉴스를 읽거나 스크랩함</p>
+</li>
+<li><p>subject =&gt; add, remove, notify</p>
+</li>
+<li>observer =&gt; update</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="1-5-옵저버-패턴적용하기"><a href="#1-5-옵저버-패턴적용하기" class="headerlink" title="1.5 옵저버 패턴적용하기"></a>1.5 옵저버 패턴적용하기</h3><ul>
+<li>기존 예제에 적용, user와 system의 의존성을 느슨하게함</li>
+</ul>
+<hr>
+<h3 id="1-6-RxJS는-무엇을-해결하려-했나"><a href="#1-6-RxJS는-무엇을-해결하려-했나" class="headerlink" title="1.6 RxJS는 무엇을 해결하려 했나?"></a>1.6 RxJS는 무엇을 해결하려 했나?</h3><ul>
+<li>상태 변화에 대한 문제를 옵저버 패턴을 기반으로 해결하려함</li>
+</ul>
+<h3 id="1-6-1-상태-변화는-언제-종료되는가"><a href="#1-6-1-상태-변화는-언제-종료되는가" class="headerlink" title="1.6.1 상태 변화는 언제 종료되는가?"></a>1.6.1 상태 변화는 언제 종료되는가?</h3><ul>
+<li>observer와 subject간에 별도의 규칙을 정해서 observer측에서 별도의 예외처리를 해줘야함<ul>
+<li>아쉬운 부분</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-6-2-상태변화에서-에러가-발생하면"><a href="#1-6-2-상태변화에서-에러가-발생하면" class="headerlink" title="1.6.2 상태변화에서 에러가 발생하면?"></a>1.6.2 상태변화에서 에러가 발생하면?</h3><ul>
+<li>subject 자체적으로 에러 처리<ul>
+<li>try-catch문을 통해</li>
+</ul>
+</li>
+<li>observer 쪽에서 에러 발생 여부를 인지하고, 이에대한 별도의 처리</li>
+<li>옵저버 패턴은 에러 발생 여부를 Observer들에게 전달할 방법이 딱히 없음</li>
+</ul>
+<h3 id="1-6-3-Observer에-의해-Subject의-상태가-변경되는-경우"><a href="#1-6-3-Observer에-의해-Subject의-상태가-변경되는-경우" class="headerlink" title="1.6.3 Observer에 의해 Subject의 상태가 변경되는 경우"></a>1.6.3 Observer에 의해 Subject의 상태가 변경되는 경우</h3><ul>
+<li>예) 신문 기자이면서 동시에 구독자인 사람이 있는 경우<ul>
+<li>구독받은 기사의 내용을 조금 변경하여 가짜 뉴스를 만들어냄</li>
+</ul>
+</li>
+<li>데이터를 양방향으로 흐르게하면 편할수 있으나, 코드의 복잡도를 증가시킴</li>
+</ul>
+<hr>
+<h3 id="1-7-RxJS는-어떻게-개선했나"><a href="#1-7-RxJS는-어떻게-개선했나" class="headerlink" title="1.7 RxJS는 어떻게 개선했나?"></a>1.7 RxJS는 어떻게 개선했나?</h3><ul>
+<li><p>RxJS에서 전달되는 데이터는 모두 Observable 형태로 반환됨.</p>
+<ul>
+<li><p>Observable은 구독(subscribe) 과정 후부터 데이터를 전달받음</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;fromEvent &#125; = rxjs;</span><br><span class="line"><span class="keyword">const</span> click$ = fromEvent(<span class="built_in">document</span>, <span class="string">"click"</span>);</span><br><span class="line">click$.subscribe(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(v);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 또는</span></span><br><span class="line">click$.subscribe(&#123;</span><br><span class="line">    next: <span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>반면 옵저버 패턴은 add 과정 후부터 데이터를 전달받음</p>
+</li>
+</ul>
+<blockquote>
+<p>RxJS의 Observer는 함수와 객체 둘 다 가능하며  subscribe라는 메소드를 통해 Subject에게 전달됨</p>
+<p>RxJS의 Observable은 단지 하나의 Observer에게 독립적인 데이터를 전달함</p>
+</blockquote>
+<h3 id="1-7-1-인터페이스의-확장"><a href="#1-7-1-인터페이스의-확장" class="headerlink" title="1.7.1 인터페이스의 확장"></a>1.7.1 인터페이스의 확장</h3><ul>
+<li>RxJS는 시간의 축으로 데이터를 보기 때문에 데이터의 연속적인 변화를 Observer에서 표현할 수 있도록 기존 update 메소드를 next로 바꿈</li>
+<li>또한 종료를 나타내는 complete, 에러 시점을 나타내는 error 메소드가 추가됨<ul>
+<li>옵저버 패턴에서의 Observer는 update하나의 메소드를 가짐</li>
+<li>반면 Rxjs의 Observer는 next, complete, error 세개의 메소드</li>
+</ul>
+</li>
+<li><strong>객체는 상태를 가질 수 있기때문에, RxJS의 subscribe는 가급적 상태가 존재하지 않는 함수 형태를 사용함</strong></li>
+</ul>
+<h3 id="1-7-2-Observable은-Read-only"><a href="#1-7-2-Observable은-Read-only" class="headerlink" title="1.7.2 Observable은 Read-only"></a>1.7.2 Observable은 Read-only</h3><ul>
+<li>단방향 데이터 흐름을 위함<ul>
+<li>Observer에게 데이터를 전달만함, 받지 않음</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="1-8-Observable은-리액티브함"><a href="#1-8-Observable은-리액티브함" class="headerlink" title="1.8 Observable은 리액티브함"></a>1.8 Observable은 리액티브함</h3><ul>
+<li>데이터가 발생하면 Observer에게 자동으로 그리고 빠르게 변경된 데이터를 전달하기 떄문에 리액티브하다고 함<ul>
+<li><a href="https://en.wikipedia.org/wiki/Reactive_programming" target="_blank" rel="noopener">리액티브 프로그래밍</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2019/03/08/RxJS-정리2/" data-id="cjuihsxti004or1uwlo7gmy18" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxJS/">RxJS</a></li></ul>
@@ -784,7 +829,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/03/08/RxJS-정리1/" data-id="cjue0u0030003btdt5xpgz8om" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/03/08/RxJS-정리1/" data-id="cjuihsxr40001r1uwdwgr6ipx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxJ/">RxJ</a></li></ul>
@@ -827,7 +872,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/02/22/TIL/" data-id="cjue0u00k0013btdtt7fx86b7" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/02/22/TIL/" data-id="cjuihsxrv0015r1uwwx7dspew" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/">til</a></li></ul>
@@ -881,7 +926,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/11/26/TIL/" data-id="cjue0u00j0011btdt2etjncm8" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/11/26/TIL/" data-id="cjuihsxrt0011r1uwkappr9ue" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/">til</a></li></ul>
@@ -926,7 +971,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/11/22/TIL/" data-id="cjue0u00i000xbtdt1c9emcd9" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/11/22/TIL/" data-id="cjuihsxrs000yr1uwhcxlelin" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/">til</a></li></ul>
@@ -969,7 +1014,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/11/21/TIL/" data-id="cjue0u00h000ubtdtmee9laff" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/11/21/TIL/" data-id="cjuihsxrr000ur1uwldaaj6mb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/">til</a></li></ul>
@@ -1043,57 +1088,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/11/13/TIL/" data-id="cjue0u00g000qbtdtrptgmjle" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/11/13/TIL/" data-id="cjuihsxrp000qr1uwyuwbsey7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/">til</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jest-using-matchers" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/10/jest-using-matchers/" class="article-date">
-  <time datetime="2018-11-10T05:07:41.000Z" itemprop="datePublished">2018-11-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Jest/">Jest</a>►<a class="article-category-link" href="/categories/Jest/Unit-Test/">Unit Test</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/10/jest-using-matchers/">jest-using-matchers</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>이 문서는 <a href="https://jestjs.io/docs/en/using-matchers" target="_blank" rel="noopener">Jest Docs - Using Matchers</a>를 번역한 내용입니다.</p>
-<p>Jest에서 <code>matcher</code>를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher를 소개합니다. 전체 목록은 <a href="https://jestjs.io/docs/en/expect" target="_blank" rel="noopener"><code>expect</code> API doc</a>을 참조하세요. </p>
-<h2 id="일반적인-Matcher"><a href="#일반적인-Matcher" class="headerlink" title="일반적인 Matcher"></a>일반적인 Matcher</h2><p>값을 테스트하는 가장 심플한 방법은 완전히 같은지 확인하는 겁니다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span>(<span class="string">'two plus two is four'</span>, () =&gt; &#123;</span><br><span class="line">    expect(2 + 2).toBe(4);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>위의 코드에서 <code>expect(2 + 2)</code>는 기대되는 값을 리턴합니다.<br>일반적으로 호출 대상을 제외하고는 이런 기대 개체(expectation objects)를 잘 사용하지 않습니다.<br>이 코드에선 <code>.toBe(4)</code>가 matcher 입니다.<br>Jest가 실행되면, 모든 실패하는 matchers들을 거치게 되고, 아주 나이스한 메세지를 보여줄 보여줄 것입니다.</p>
-<p><code>toBe</code>는 <code>Object.is</code>를 사용하여 완전히 같은지 테스트합니다. 만약 객체의 값을 체크하고 싶다면 <code>toEqual</code>을 사용하면 됩니다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="string">'object assignment'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> data = &#123;<span class="attr">one</span>: <span class="number">1</span>&#125;;</span><br><span class="line">    data[<span class="string">'two'</span>] = <span class="number">2</span>;</span><br><span class="line">    expect(data).toEqual(&#123;<span class="attr">one</span>: <span class="number">1</span>, <span class="attr">two</span>: <span class="number">2</span>&#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/11/10/jest-using-matchers/" data-id="cjue0u00x0026btdtzhjh5wr5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jest/">Jest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Using-Matchers/">Using Matchers</a></li></ul>
 
     </footer>
   </div>
@@ -1117,7 +1115,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Jest/">Jest</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Jest/Unit-Test/">Unit Test</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/RxJS/">RxJS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/til/">til</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Jest/">Jest</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Jest/Unit-Test/">Unit Test</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/RxJS/">RxJS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/til/">til</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/책-정리/">책 정리</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/책-정리/Typescript/">Typescript</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -1137,7 +1135,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/CRLF/" style="font-size: 10px;">CRLF</a> <a href="/tags/FE-2019/" style="font-size: 10px;">FE 2019</a> <a href="/tags/GatsbyJS/" style="font-size: 10px;">GatsbyJS</a> <a href="/tags/Getting-Started/" style="font-size: 10px;">Getting Started</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/HTTP-2/" style="font-size: 10px;">HTTP/2</a> <a href="/tags/Jest/" style="font-size: 13.33px;">Jest</a> <a href="/tags/LF/" style="font-size: 10px;">LF</a> <a href="/tags/RxJ/" style="font-size: 10px;">RxJ</a> <a href="/tags/RxJS/" style="font-size: 13.33px;">RxJS</a> <a href="/tags/TDD/" style="font-size: 10px;">TDD</a> <a href="/tags/Typescript/" style="font-size: 10px;">Typescript</a> <a href="/tags/Using-Matchers/" style="font-size: 10px;">Using Matchers</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/frontend/" style="font-size: 10px;">frontend</a> <a href="/tags/git/" style="font-size: 16.67px;">git</a> <a href="/tags/git-stash/" style="font-size: 10px;">git stash</a> <a href="/tags/git-flow/" style="font-size: 13.33px;">git-flow</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/reset/" style="font-size: 10px;">reset</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/til/" style="font-size: 20px;">til</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vue-style-binding/" style="font-size: 10px;">vue style binding</a> <a href="/tags/네이버-테크-콘서트/" style="font-size: 10px;">네이버 테크 콘서트</a> <a href="/tags/브라우저/" style="font-size: 10px;">브라우저</a>
+      <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/CRLF/" style="font-size: 10px;">CRLF</a> <a href="/tags/FE-2019/" style="font-size: 10px;">FE 2019</a> <a href="/tags/GatsbyJS/" style="font-size: 10px;">GatsbyJS</a> <a href="/tags/Getting-Started/" style="font-size: 10px;">Getting Started</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/HTTP-2/" style="font-size: 10px;">HTTP/2</a> <a href="/tags/Jest/" style="font-size: 13.33px;">Jest</a> <a href="/tags/LF/" style="font-size: 10px;">LF</a> <a href="/tags/RxJ/" style="font-size: 10px;">RxJ</a> <a href="/tags/RxJS/" style="font-size: 13.33px;">RxJS</a> <a href="/tags/TDD/" style="font-size: 10px;">TDD</a> <a href="/tags/Typescript/" style="font-size: 13.33px;">Typescript</a> <a href="/tags/Using-Matchers/" style="font-size: 10px;">Using Matchers</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/frontend/" style="font-size: 10px;">frontend</a> <a href="/tags/git/" style="font-size: 16.67px;">git</a> <a href="/tags/git-stash/" style="font-size: 10px;">git stash</a> <a href="/tags/git-flow/" style="font-size: 13.33px;">git-flow</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/reset/" style="font-size: 10px;">reset</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/til/" style="font-size: 20px;">til</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vue-style-binding/" style="font-size: 10px;">vue style binding</a> <a href="/tags/네이버-테크-콘서트/" style="font-size: 10px;">네이버 테크 콘서트</a> <a href="/tags/브라우저/" style="font-size: 10px;">브라우저</a>
     </div>
   </div>
 
@@ -1159,6 +1157,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/15/Typescript-Quick-Start/">Typescript-Quick-Start</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/12/naver-tech-concert/">네이버 테크 콘서트</a>
           </li>
         
@@ -1172,10 +1174,6 @@
         
           <li>
             <a href="/2019/04/02/TIL/">2019.04.02 Today I Learn!!</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/01/TIL/">2019.04.01 Today I Learn!!</a>
           </li>
         
       </ul>

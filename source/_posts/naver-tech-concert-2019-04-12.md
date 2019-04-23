@@ -191,6 +191,7 @@ tags:
 [2019 Front-end Developer's Roadmap](https://github.com/kamranahmedse/developer-roadmap)을 기반으로한 발표였다.
 
 ### 웹개발 트랜드
+
 서버 중심 -> 클라이언트 중심
 
 ---
@@ -200,7 +201,9 @@ tags:
 [다섯번째 강의](https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019-140432157)로 네이버 PWE의 최현철님이 발표하셨습니다.
 
 ## FE에서 상태관리란 무엇일까?
+
 ## SPA에서 상태관리란 무엇일까?
+
 > 상태라는 눈에 보이지 않는 부분이 실시간 비동기적으로 변하기때문에 제어하기 힘들다.
 
 ---
@@ -211,12 +214,14 @@ tags:
 개인적으로는 이번 컨퍼런스에서 가장 유익한 강의였습니다.
 
 ## 성능 분석가의 관심사(Goal)은 무엇일까?
+
 > 유저 입력시에 얼마나 빠르게 반응할 수 있나?
 
 ### LAI (Loading and Interation)
 
 ## 어떻게 성능을 올릴까? (Plan)
-1. 대상을 선정. *숲을 보기!*
+
+1. 대상을 선정. _숲을 보기!_
     - 어떤게 중요한 포인트인지 파악하기
 2. 개선 프로세스
     - 측정
@@ -228,15 +233,20 @@ tags:
     - 구글의 경우 [RAIL](https://developers.google.com/web/fundamentals/performance/rail?hl=ko), [FMP](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint)
 
 ## 초기 로딩 속도 개선하기
-- Waterfall 차트
-    - 높이 줄이기
-    - 폭 줄이기
-    - 간격 땡기기
+
+-   Waterfall 차트
+    -   높이 줄이기
+    -   폭 줄이기
+    -   간격 땡기기
+
 ### 1. 높이 줄이기
+
     - Data URI -> HTML에 Default 이미지 같은 이미지를 포함
     - Lazy
     - 이미지 (캐러셀의 경우 보여지는 곳만 먼저 로딩)
+
 ### 2. 폭 줄이기
+
     - Initial connection
         - HTTP 2.0으로 바꾸면 좋다(멀티 커넥션이 가능해짐)
     - TTFB (Time To First Byte)
@@ -245,7 +255,9 @@ tags:
     - [GZIP](https://ko.wikipedia.org/wiki/Gzip), [Minify](https://www.minifier.org/)(이걸 말한건지 정확하진 않음..), [Obfuscation](https://en.wikipedia.org/wiki/Obfuscation_(software))
     - 이미지 줄이기
     - Decode 비용 줄이기 (이미지 화면에 렌더링하는 비용)
+
 ### 3. 간격 땡기기 -> 잘하기 위해선 [브라우져 렌더링 과정](https://d2.naver.com/helloworld/59361)을 잘 알아야함
+
     <img width="649" alt="브라우저 렌더링 과정 (출처:네이버D2)" src="https://user-images.githubusercontent.com/35797540/56470210-a6497680-647e-11e9-9db6-229eddd3083b.png">
 
 1. 서버로부터 HTML 문자열을 Stream으로 받음
@@ -253,27 +265,33 @@ tags:
 3. 2번에서 받은 자원을 모두 실행
 4. `<body>` 태그부터 화면을 그리기 시작
 
-- head 태그엔 css와 필수 JS만 넣기
-- JS는 body 태그 마지막에 넣기
-    - async, defer를 사용해서 원하는 위치에 넣어도 됨(but 지원하지 않는 브라우저가 존재함)
-    - async -> 의존성이 없는 경우(GA)
-    - defer -> DOM 제어와 관련이 있을때
-- preload
-    - css 내에 폰트, 이미지를 미리 css와 함께 부름
-- HTTP2 Server Push
-    - HTML, Javascript, CSS, Img 같이 받음
+-   head 태그엔 css와 필수 JS만 넣기
+-   JS는 body 태그 마지막에 넣기
+    -   async, defer를 사용해서 원하는 위치에 넣어도 됨(but 지원하지 않는 브라우저가 존재함)
+    -   async -> 의존성이 없는 경우(GA)
+    -   defer -> DOM 제어와 관련이 있을때
+-   preload
+    -   css 내에 폰트, 이미지를 미리 css와 함께 부름
+-   HTTP2 Server Push
+    -   HTML, Javascript, CSS, Img 같이 받음
 
 ### 4. 총체적으로 점검하기
-- FP(Fisrt Paint) -> head 태그 종료 후 이루어짐
-- FMP(First Meaningful Paint) -> ***hero element!*** -> 이걸 어떤걸로 정할지가 중요함! (Lazy하게 처리하면 안되는 요소들)
-- TTI([Time To Interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive))
-- 결국, 전체적으로 균형감 있게 줄여주는게 중요하다
+
+-   FP(Fisrt Paint) -> head 태그 종료 후 이루어짐
+-   FMP(First Meaningful Paint) -> **_hero element!_** -> 이걸 어떤걸로 정할지가 중요함! (Lazy하게 처리하면 안되는 요소들)
+-   TTI([Time To Interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive))
+-   결국, 전체적으로 균형감 있게 줄여주는게 중요하다
 
 ## Part 2.
+
 ### Case by Case
-- 브라우져 메인 스레드를 괴롭히지 않아야함!
+
+-   브라우져 메인 스레드를 괴롭히지 않아야함!
+
 ### Javascript가 DOM을 만지면 메인 스레드가 Rendering Pipeline 과정을 거친다
-- Rendering Pipeline 과정
+
+-   Rendering Pipeline 과정
+
 1. Javascript가 건들면
 2. Style recalculation
 3. Layout

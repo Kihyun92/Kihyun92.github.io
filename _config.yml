@@ -83,4 +83,4 @@ deploy:
     branch: master
 
 # for Disqus
-disqus_shortname: okkihyun
+disqus_shortname: kihyuns-blog

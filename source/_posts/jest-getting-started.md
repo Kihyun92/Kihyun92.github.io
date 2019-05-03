@@ -7,6 +7,7 @@ categories:
 tags:
     - Jest
     - Getting Started
+    - Jest 번역
 ---
 
 이 문서는 [Jest Docs - Getting Started](https://jestjs.io/docs/en/getting-started)를 번역한 내용입니다.
@@ -57,16 +58,16 @@ tags:
     ✓ adds 1 + 2 to equal 3 (5ms)
 ```
 
-*이것으로 당신의 Jest를 사용한 첫 테스트를 성공적으로 작성했습니다!*
+**이것으로 당신은 Jest를 사용한 첫 테스트를 성공적으로 작성했습니다!**
 
 
-이번 테스트에선 `expect`와 `toBe`를 사용하여 두 value들이 완전히 똑같다는 것을 테스트해 보았습니다. Jest로 테스트할 수 있는 다른 것들을 배우고 싶으시면, [Using Matchers](https://jestjs.io/docs/en/using-matchers)를 보세요.
+이번 테스트에선 `expect`와 `toBe`를 사용하여 두 값이 완전히 똑같다는 것을 테스트 했습니다. Jest로 테스트할 수 있는 다른 것들을 배우고 싶으시면, [Using Matchers](https://jestjs.io/docs/en/using-matchers)를 보세요.
 
 
 
 ## 커맨드라인으로 실행하기
 
-CLI를 통해 다양하고, 유용한 옵션들을 사용하여 Jest를 실행할 수 있습니다. 
+CLI를 통해 다양하고, 유용한 옵션들을 사용하여 Jest를 실행할 수 있습니다.
 
 my-test와 일치하는 파일에서 Jest를 실행하고, config.json을 구성 파일로 사용하고 실행 후 native OS 알림을 표시하는 방법은 다음과 같습니다.
 ``` bash
@@ -91,7 +92,7 @@ my-test와 일치하는 파일에서 Jest를 실행하고, config.json을 구성
 ```
 
 > 참고: Babel 버전 7을 사용하고 있다면 다음 명령으로 `babel-jest`, `babel-core@^7.0.0-bridge.0` 및 `@ babel/core`를 설치해야합니다.
-    
+
 ``` bash
     yarn add --dev babel-jest babel-core@^7.0.0-bridge.0 @babel/core regenerator-runtime
 ```

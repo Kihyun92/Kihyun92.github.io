@@ -7,18 +7,18 @@
   
   <title>jest-testing-asynchronous-code | 견스</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Work &amp; Life Harmony">
+  <meta name="description" content="비동기 코드 테스트 하기JavaScript에서 비동기 적으로 실행되는 코드는 일반적입니다. 비동기로 실행되는 코드가있는 경우, Jest는 테스트 중인 코드가 완료된 시점을 알아야 다른 테스트로 넘어갈 수 있습니다. Jest는 이를 처리할 몇가지 방법이 있습니다. Callbacks가장 일반적인 비동기 패턴은 콜백입니다. 예를 들어 일부 데이터를 가져와 cal">
 <meta name="keywords" content="Jest,Jest 번역,Unit Test,비동기 테스트">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jest-testing-asynchronous-code">
 <meta property="og:url" content="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/index.html">
 <meta property="og:site_name" content="견스">
-<meta property="og:description" content="Work &amp; Life Harmony">
+<meta property="og:description" content="비동기 코드 테스트 하기JavaScript에서 비동기 적으로 실행되는 코드는 일반적입니다. 비동기로 실행되는 코드가있는 경우, Jest는 테스트 중인 코드가 완료된 시점을 알아야 다른 테스트로 넘어갈 수 있습니다. Jest는 이를 처리할 몇가지 방법이 있습니다. Callbacks가장 일반적인 비동기 패턴은 콜백입니다. 예를 들어 일부 데이터를 가져와 cal">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-03T05:35:14.684Z">
+<meta property="og:updated_time" content="2019-05-07T03:16:35.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jest-testing-asynchronous-code">
-<meta name="twitter:description" content="Work &amp; Life Harmony">
+<meta name="twitter:description" content="비동기 코드 테스트 하기JavaScript에서 비동기 적으로 실행되는 코드는 일반적입니다. 비동기로 실행되는 코드가있는 경우, Jest는 테스트 중인 코드가 완료된 시점을 알아야 다른 테스트로 넘어갈 수 있습니다. Jest는 이를 처리할 몇가지 방법이 있습니다. Callbacks가장 일반적인 비동기 패턴은 콜백입니다. 예를 들어 일부 데이터를 가져와 cal">
   
     <link rel="alternate" href="/atom.xml" title="견스" type="application/atom+xml">
   
@@ -95,11 +95,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="비동기-코드-테스트-하기"><a href="#비동기-코드-테스트-하기" class="headerlink" title="비동기 코드 테스트 하기"></a>비동기 코드 테스트 하기</h1><p>JavaScript에서 비동기 적으로 실행되는 코드는 일반적입니다. 비동기로 실행되는 코드가있는 경우, Jest는 테스트 중인 코드가 완료된 시점을 알아야 다른 테스트로 넘어갈 수 있습니다. Jest는 이를 처리할 몇가지 방법이 있습니다.</p>
+<h2 id="Callbacks"><a href="#Callbacks" class="headerlink" title="Callbacks"></a>Callbacks</h2><p>가장 일반적인 비동기 패턴은 콜백입니다.</p>
+<p>예를 들어 일부 데이터를 가져와 <code>callback(data)</code>이 완료되면 호출하는 <code>fetchData(callback)</code> 함수가 있다고 가정해보겠습니다. 이때 반환 된 데이터가 <code>&#39;peanut butter&#39;</code> 문자열 인지 테스트 하려고 합니다.</p>
+<p>기본적으로 Jest 테스트는 실행이 끝나면 완료됩니다. 즉, 이 테스트는 의도 한대로 동작하지 않습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Don't do this!</span></span><br><span class="line">test(<span class="string">'the data is peanut butter'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        expect(data).toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fetchData(callback);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>문제는 <code>fetchData</code>가 완료되면, 즉시 콜백을 호출하기 전에 테스트가 완료된다는 것입니다.</p>
+<p>이 문제를 해결하는 다른 형태의 <code>테스트</code>가 있습니다. 빈 인자가 있는 함수에 테스트를 두는 대신에, <code>done</code>이라는 단일 인자를 사용하십시오. Jest는 테스트가 끝나기 전에 done 콜백이 호출 될 때까지 기다릴 것 입니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="string">'the data is peanut butter'</span>, done =&gt; &#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        expect(data).toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">        done();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fetchData(callback);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>우리가 원하는대로, <code>done()</code>이 호출되지 않으면 테스트가 실패할 것 입니다.</p>
+<h2 id="Promises"><a href="#Promises" class="headerlink" title="Promises"></a>Promises</h2><p>코드가 <code>Promise</code>를 사용할 때, 비동기 테스트를 처리하는 간단한 방법이 있습니다. 테스트에서 <code>Promise</code>를 리턴하면, Jest는 그 <code>Promise</code>가 <code>resolve</code> 될 때까지 기다릴 것입니다. <code>Promise</code>가 <code>reject</code>되면 테스트는 자동으로 실패합니다.</p>
+<p>예를 들어, 콜백을 사용하는 대신 <code>fetchData</code>가 <code>&#39;peanut butter&#39;</code> 문자열로 <code>resolve</code> 되어야하는 <code>promise</code>를 반환한다고 가정 해 봅시다. 우리는 다음과 같이 테스트 할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="string">'the data is peanut butter'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> fetchData().then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">        expect(data).toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/" data-id="cjvd7az60002yd1dtm8zk9300" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/" data-id="cjvdas3h7003wbadtdbxjly7n" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/#disqus_thread" class="article-comment-link">Comments</a>
       

@@ -96,11 +96,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Babel의-동작-원리-및-흐름에-대해-알아보기"><a href="#Babel의-동작-원리-및-흐름에-대해-알아보기" class="headerlink" title="Babel의 동작 원리 및 흐름에 대해 알아보기"></a>Babel의 동작 원리 및 흐름에 대해 알아보기</h2><p>공유 받은 <a href="https://moonformeli.tistory.com/28" target="_blank" rel="noopener">좋은 글</a>이 있어서 정리해두겠습니다.</p>
+<h2 id="Promise-한번-더-되짚어보기"><a href="#Promise-한번-더-되짚어보기" class="headerlink" title="Promise 한번 더 되짚어보기"></a>Promise 한번 더 되짚어보기</h2><p>캡틴 판교님의 <a href="https://joshua1988.github.io/web-development/javascript/promise-for-beginners/" target="_blank" rel="noopener">Promise에 대한 글</a>을 다시 한번 읽고 머리에 정리해보자</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/07/TIL/" data-id="cjvdbomzw002mjzdtyrmc6yhw" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/07/TIL/" data-id="cjvdcy3p6002mitdtnuyzj6fh" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/07/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -150,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/03/TIL/" data-id="cjvdbomzv002jjzdtezac4vu7" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/03/TIL/" data-id="cjvdcy3p5002jitdtx3bggfo3" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/03/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -200,13 +201,27 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="string">'the data is peanut butter'</span>, done =&gt; &#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        expect(data).toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">        done();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fetchData(callback);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>우리가 원하는대로, <code>done()</code>이 호출되지 않으면 테스트가 실패할 것 입니다.</p>
 <h2 id="Promises"><a href="#Promises" class="headerlink" title="Promises"></a>Promises</h2><p>코드가 <code>Promise</code>를 사용할 때, 비동기 테스트를 처리하는 간단한 방법이 있습니다. 테스트에서 <code>Promise</code>를 리턴하면, Jest는 그 <code>Promise</code>가 <code>resolve</code> 될 때까지 기다릴 것입니다. <code>Promise</code>가 <code>reject</code>되면 테스트는 자동으로 실패합니다.</p>
-<p>예를 들어, 콜백을 사용하는 대신 <code>fetchData</code>가 <code>&#39;peanut butter&#39;</code> 문자열로 <code>resolve</code> 되어야하는 <code>promise</code>를 반환한다고 가정 해 봅시다. 우리는 다음과 같이 테스트 할 수 있습니다.</p>
+<p>예를 들어, 콜백을 사용하는 대신 <code>fetchData</code>가 <code>resolve</code>일때 <code>&#39;peanut butter&#39;</code> 문자열을 반환하는 <code>promise</code>라고 가정 해 봅시다. 우리는 다음과 같이 테스트 할 수 있습니다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="string">'the data is peanut butter'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> fetchData().then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">        expect(data).toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>프로미스의 return을 확실하게 하세요. 만약 <code>return</code> 문을 생략하면, <code>fetchData</code>가 <code>resolve</code> 되고 <code>then()</code>이 콜백을 실행할 기회가 오기 전에 테스트가 완료됩니다.</p>
+<p>프로미스가 <code>reject</code> 될 것으로 예상되면 <code>.catch</code> 메소드를 사용하십시오. <code>expect.assertions</code>를 추가하여 특정 수의 어설션이 호출되는지 확인하십시오. 그렇지 않으면 <code>fulfilled</code>인 프로미스가 테스트를 통과하지 못할 것 입니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="string">'the fetch fails with an error'</span>, () =&gt; &#123;</span><br><span class="line">    expect.assertions(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> fetchData().catch(<span class="function"><span class="params">e</span> =&gt;</span> expect(e).toMatch(<span class="string">'error'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="resolves-rejects"><a href="#resolves-rejects" class="headerlink" title=".resolves / .rejects"></a>.resolves / .rejects</h2><p>expect 문에서 <code>.resolves</code> matcher를 사용할 수도 있습니다. Jest는 프로미스가 resolve 될때까지 기다릴 것입니다. 프로미스가 <code>rejected</code>되면 테스트는 자동으로 실패합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="string">'the data is peanut butter'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> expect(fetchData()).resolves.toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>어설션의 return을 확실하게 하세요. 만약 <code>return</code> 문을 생략하면, <code>fetchData</code>가 <code>resolve</code> 되고 <code>then()</code>이 콜백을 실행할 기회가 오기 전에 테스트가 완료됩니다.</p>
+<p>프로미스가 <code>reject</code> 될 것으로 예상되면 <code>.rejects</code> matcher를 사용하세요. <code>.resolves</code> matcher와 유사하게 작동합니다. 프로미스가 <code>fulfilled</code>되면 테스트는 자동으로 실패합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="string">'the fetch fails with an error'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> expect(fetchData()).rejects.toMatch(<span class="string">'error'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Async-Await"><a href="#Async-Await" class="headerlink" title="Async/Await"></a>Async/Await</h2><p>또는 <code>async</code>와 <code>await</code>를 사용하여 테스트를 기다릴 수도 있습니다. 비동기 테스트를 작성하려면 <code>test</code>에 전달 된 함수 앞에 <code>async</code> 키워드를 사용하면 됩니다. 예를 들어 동일한 <code>fetchData</code> 시나리오를 다음과 같이 테스트 할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="string">'the data is peanut butter'</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    expect.assertions(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> fetchData();</span><br><span class="line">    expect(data).toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'the fetch fails with an error'</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    expect.assertions(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">await</span> fetchData();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">        expect(e).toMatch(<span class="string">'error'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>물론 <code>async</code>와 <code>await</code>를 <code>.resolves</code>나 <code>.rejects</code>와 함께 쓸 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="string">'the data is peanut butter'</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="keyword">await</span> expect(fetchData()).resolves.toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'the fetch fails with an error'</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="keyword">await</span> expect(fetchData()).rejects.toThrow(<span class="string">'error'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>이 경우, <code>async</code>와 <code>await</code>은 실제로 promise 예제에서 사용하는 것과 동일한 로직에 대한 문법적 첨가일 뿐입니다.</p>
+<p>이 형식 중 다른 형식보다 특히 뛰어난 형식은 없으며, 코드베이스 전체 또는 단일 파일에서 혼합하여 사용할 수 있습니다. 테스트 스타일을 단순하게 만드는 것에 달려 있습니다.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/" data-id="cjvdbomzz002wjzdtk9tcyfmg" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/" data-id="cjvdcy3p9002witdttvxi6259" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -274,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/24/TIL/" data-id="cjvdbomzu002gjzdtei9q257y" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/24/TIL/" data-id="cjvdcy3p4002gitdt5igzovq8" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/24/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -320,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/23/TIL/" data-id="cjvdbomzs002ajzdtldblmu68" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/23/TIL/" data-id="cjvdcy3p3002ditdt0tgp8i9k" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/23/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -364,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/22/TIL/" data-id="cjvdbomzr0026jzdtvj3yaidn" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/22/TIL/" data-id="cjvdcy3p1002aitdtrqogl6ru" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/22/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -412,7 +427,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/18/TIL/" data-id="cjvdbomzq0023jzdt25freu42" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/18/TIL/" data-id="cjvdcy3p00026itdtfcv9ravk" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/18/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -457,7 +472,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/16/TIL/" data-id="cjvdbomzp001zjzdtkxziqsxy" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/16/TIL/" data-id="cjvdcy3oz0023itdtejd69ojq" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/16/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -506,7 +521,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/15/Typescript-Quick-Start/" data-id="cjvdbomzx002pjzdtq0yp6ck9" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/15/Typescript-Quick-Start/" data-id="cjvdcy3p7002pitdtm55xwe6i" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/15/Typescript-Quick-Start/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -778,7 +793,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/12/naver-tech-concert/" data-id="cjvdbon0m005tjzdtsg1ipej3" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/12/naver-tech-concert/" data-id="cjvdcy3ps005titdtezdtobqd" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/12/naver-tech-concert/#disqus_thread" class="article-comment-link">Comments</a>
       

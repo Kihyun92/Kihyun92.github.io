@@ -60,7 +60,7 @@ test('the data is peanut butter', done => {
 
 코드가 `Promise`를 사용할 때, 비동기 테스트를 처리하는 간단한 방법이 있습니다. 테스트에서 `Promise`를 리턴하면, Jest는 그 `Promise`가 `resolve` 될 때까지 기다릴 것입니다. `Promise`가 `reject`되면 테스트는 자동으로 실패합니다.
 
-예를 들어, 콜백을 사용하는 대신 `fetchData`가 `'peanut butter'` 문자열로 `resolve` 되어야하는 `promise`를 반환한다고 가정 해 봅시다. 우리는 다음과 같이 테스트 할 수 있습니다.
+예를 들어, 콜백을 사용하는 대신 `fetchData`가 `resolve`일때 `'peanut butter'` 문자열을 반환하는 `promise`라고 가정 해 봅시다. 우리는 다음과 같이 테스트 할 수 있습니다.
 
 ```javascript
 test('the data is peanut butter', () => {
@@ -69,3 +69,71 @@ test('the data is peanut butter', () => {
     });
 });
 ```
+
+프로미스의 return을 확실하게 하세요. 만약 `return` 문을 생략하면, `fetchData`가 `resolve` 되고 `then()`이 콜백을 실행할 기회가 오기 전에 테스트가 완료됩니다.
+
+프로미스가 `reject` 될 것으로 예상되면 `.catch` 메소드를 사용하십시오. `expect.assertions`를 추가하여 특정 수의 어설션이 호출되는지 확인하십시오. 그렇지 않으면 `fulfilled`인 프로미스가 테스트를 통과하지 못할 것 입니다.
+
+```javascript
+test('the fetch fails with an error', () => {
+    expect.assertions(1);
+    return fetchData().catch(e => expect(e).toMatch('error'));
+});
+```
+
+## .resolves / .rejects
+
+expect 문에서 `.resolves` matcher를 사용할 수도 있습니다. Jest는 프로미스가 resolve 될때까지 기다릴 것입니다. 프로미스가 `rejected`되면 테스트는 자동으로 실패합니다.
+
+```javascript
+test('the data is peanut butter', () => {
+    return expect(fetchData()).resolves.toBe('peanut butter');
+});
+```
+
+어설션의 return을 확실하게 하세요. 만약 `return` 문을 생략하면, `fetchData`가 `resolve` 되고 `then()`이 콜백을 실행할 기회가 오기 전에 테스트가 완료됩니다.
+
+프로미스가 `reject` 될 것으로 예상되면 `.rejects` matcher를 사용하세요. `.resolves` matcher와 유사하게 작동합니다. 프로미스가 `fulfilled`되면 테스트는 자동으로 실패합니다.
+
+```javascript
+test('the fetch fails with an error', () => {
+    return expect(fetchData()).rejects.toMatch('error');
+});
+```
+
+## Async/Await
+
+또는 `async`와 `await`를 사용하여 테스트를 기다릴 수도 있습니다. 비동기 테스트를 작성하려면 `test`에 전달 된 함수 앞에 `async` 키워드를 사용하면 됩니다. 예를 들어 동일한 `fetchData` 시나리오를 다음과 같이 테스트 할 수 있습니다.
+
+```javascript
+test('the data is peanut butter', async () => {
+    expect.assertions(1);
+    const data = await fetchData();
+    expect(data).toBe('peanut butter');
+});
+
+test('the fetch fails with an error', async () => {
+    expect.assertions(1);
+    try {
+        await fetchData();
+    } catch (e) {
+        expect(e).toMatch('error');
+    }
+});
+```
+
+물론 `async`와 `await`를 `.resolves`나 `.rejects`와 함께 쓸 수 있습니다.
+
+```javascript
+test('the data is peanut butter', async () => {
+    await expect(fetchData()).resolves.toBe('peanut butter');
+});
+
+test('the fetch fails with an error', async () => {
+    await expect(fetchData()).rejects.toThrow('error');
+});
+```
+
+이 경우, `async`와 `await`은 실제로 promise 예제에서 사용하는 것과 동일한 로직에 대한 문법적 첨가일 뿐입니다.
+
+이 형식 중 다른 형식보다 특히 뛰어난 형식은 없으며, 코드베이스 전체 또는 단일 파일에서 혼합하여 사용할 수 있습니다. 테스트 스타일을 단순하게 만드는 것에 달려 있습니다.

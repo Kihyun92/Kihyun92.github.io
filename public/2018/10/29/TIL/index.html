@@ -7,20 +7,20 @@
   
   <title>TIL | 견스</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="TODAY I LEARN!mac command not found 에러!요거때매 한동안 hexo 명령어가 동작하지 않아서 블로깅을 못했다 ㅠㅠ 드디어 해결법을 알아서 블로깅을 한다.. 문제는 echo $PATH로 확인해 봤을때, 큰 문제가 없는데 이상하게 hexo가 먹히지 않는것이었다. 몇번을 다시 설치해보고, 확인해도 동일하여 원인을 파악 못했는데, 1su">
+  <meta name="description" content="TODAY I LEARN!mac command not found 에러!요거때매 한동안 hexo 명령어가 동작하지 않아서 블로깅을 못했다 ㅠㅠ 드디어 해결법을 알아서 블로깅을 한다.. 문제는 echo $PATH로 확인해 봤을때, 큰 문제가 없는데 이상하게 hexo가 먹히지 않는것이었다. 몇번을 다시 설치해보고, 확인해도 동일하여 원인을 파악 못했는데, sud">
 <meta name="keywords" content="til">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIL">
 <meta property="og:url" content="https://kihyun92.github.io/2018/10/29/TIL/index.html">
 <meta property="og:site_name" content="견스">
-<meta property="og:description" content="TODAY I LEARN!mac command not found 에러!요거때매 한동안 hexo 명령어가 동작하지 않아서 블로깅을 못했다 ㅠㅠ 드디어 해결법을 알아서 블로깅을 한다.. 문제는 echo $PATH로 확인해 봤을때, 큰 문제가 없는데 이상하게 hexo가 먹히지 않는것이었다. 몇번을 다시 설치해보고, 확인해도 동일하여 원인을 파악 못했는데, 1su">
+<meta property="og:description" content="TODAY I LEARN!mac command not found 에러!요거때매 한동안 hexo 명령어가 동작하지 않아서 블로깅을 못했다 ㅠㅠ 드디어 해결법을 알아서 블로깅을 한다.. 문제는 echo $PATH로 확인해 봤을때, 큰 문제가 없는데 이상하게 hexo가 먹히지 않는것이었다. 몇번을 다시 설치해보고, 확인해도 동일하여 원인을 파악 못했는데, sud">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://kihyun92.github.io/images/postman_example1.png">
 <meta property="og:image" content="https://kihyun92.github.io/images/postman_example2.png">
 <meta property="og:updated_time" content="2019-03-08T06:39:24.890Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL">
-<meta name="twitter:description" content="TODAY I LEARN!mac command not found 에러!요거때매 한동안 hexo 명령어가 동작하지 않아서 블로깅을 못했다 ㅠㅠ 드디어 해결법을 알아서 블로깅을 한다.. 문제는 echo $PATH로 확인해 봤을때, 큰 문제가 없는데 이상하게 hexo가 먹히지 않는것이었다. 몇번을 다시 설치해보고, 확인해도 동일하여 원인을 파악 못했는데, 1su">
+<meta name="twitter:description" content="TODAY I LEARN!mac command not found 에러!요거때매 한동안 hexo 명령어가 동작하지 않아서 블로깅을 못했다 ㅠㅠ 드디어 해결법을 알아서 블로깅을 한다.. 문제는 echo $PATH로 확인해 봤을때, 큰 문제가 없는데 이상하게 hexo가 먹히지 않는것이었다. 몇번을 다시 설치해보고, 확인해도 동일하여 원인을 파악 못했는데, sud">
 <meta name="twitter:image" content="https://kihyun92.github.io/images/postman_example1.png">
   
     <link rel="alternate" href="/atom.xml" title="견스" type="application/atom+xml">
@@ -102,12 +102,12 @@
 <p>드디어 해결법을 알아서 블로깅을 한다..</p>
 <p>문제는 echo $PATH로 확인해 봤을때, 큰 문제가 없는데 이상하게 hexo가 먹히지 않는것이었다.</p>
 <p>몇번을 다시 설치해보고, 확인해도 동일하여 원인을 파악 못했는데,</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <p>다시 설치하는 과정에서, 설치 결과를 자세히 봐보았다.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/user/.npm-global/bin/hexo -&gt; /Users/user/.npm-global/lib/node_modules/hexo-cli/bin/hexo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/Users/user/.npm-global/bin/hexo -&gt; /Users/user/.npm-global/lib/node_modules/hexo-cli/bin/hexo</span><br></pre></td></tr></table></figure>
 <p>뭔가 결과로 나온 설치 경로를 보니, NPM 글로벌로 설치했을때, 설치 경로가 PATH에 등록되어있지 않을 것 같아서 검색해보았고,</p>
 <p><a href="https://stackoverflow.com/questions/15054388/global-node-modules-not-installing-correctly-command-not-found" target="_blank" rel="noopener">이 글</a>을 참고하여 해결하였다,,</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure>
 <hr>
 <p>밀린 포스트를 써보자</p>
 <h2 id="Postman"><a href="#Postman" class="headerlink" title="Postman"></a>Postman</h2><p>파트장님이 꿀팁을 알려주셨다.</p>
@@ -128,7 +128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/10/29/TIL/" data-id="cjvddmqyy000capdtglr3oi1e" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/10/29/TIL/" data-id="cjvdgov3q000cuddtxwm78xjb" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/10/29/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       

@@ -7,18 +7,18 @@
   
   <title>TIL | 견스</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="TODAY I LEARN!hexo deploy error 해결!새로운 개발 환경에서 블로깅을 하기 위해 기존에 만들었던 깃헙 블로그 repo를 pull 받으며 발생했던 문제들과 해결 방법에 대해 적어보자. 1ERROR Deployer not found: git pull 받고, deploy를 하는 과정에서 위와 같은 에러가 발생했다. 이 글을 참조해서 해결했">
+  <meta name="description" content="TODAY I LEARN!hexo deploy error 해결!새로운 개발 환경에서 블로깅을 하기 위해 기존에 만들었던 깃헙 블로그 repo를 pull 받으며 발생했던 문제들과 해결 방법에 대해 적어보자. ERROR Deployer not found: git pull 받고, deploy를 하는 과정에서 위와 같은 에러가 발생했다. 이 글을 참조해서 해결했다">
 <meta name="keywords" content="til">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIL">
 <meta property="og:url" content="https://kihyun92.github.io/2018/11/26/TIL/index.html">
 <meta property="og:site_name" content="견스">
-<meta property="og:description" content="TODAY I LEARN!hexo deploy error 해결!새로운 개발 환경에서 블로깅을 하기 위해 기존에 만들었던 깃헙 블로그 repo를 pull 받으며 발생했던 문제들과 해결 방법에 대해 적어보자. 1ERROR Deployer not found: git pull 받고, deploy를 하는 과정에서 위와 같은 에러가 발생했다. 이 글을 참조해서 해결했">
+<meta property="og:description" content="TODAY I LEARN!hexo deploy error 해결!새로운 개발 환경에서 블로깅을 하기 위해 기존에 만들었던 깃헙 블로그 repo를 pull 받으며 발생했던 문제들과 해결 방법에 대해 적어보자. ERROR Deployer not found: git pull 받고, deploy를 하는 과정에서 위와 같은 에러가 발생했다. 이 글을 참조해서 해결했다">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-03-08T06:39:24.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TIL">
-<meta name="twitter:description" content="TODAY I LEARN!hexo deploy error 해결!새로운 개발 환경에서 블로깅을 하기 위해 기존에 만들었던 깃헙 블로그 repo를 pull 받으며 발생했던 문제들과 해결 방법에 대해 적어보자. 1ERROR Deployer not found: git pull 받고, deploy를 하는 과정에서 위와 같은 에러가 발생했다. 이 글을 참조해서 해결했">
+<meta name="twitter:description" content="TODAY I LEARN!hexo deploy error 해결!새로운 개발 환경에서 블로깅을 하기 위해 기존에 만들었던 깃헙 블로그 repo를 pull 받으며 발생했던 문제들과 해결 방법에 대해 적어보자. ERROR Deployer not found: git pull 받고, deploy를 하는 과정에서 위와 같은 에러가 발생했다. 이 글을 참조해서 해결했다">
   
     <link rel="alternate" href="/atom.xml" title="견스" type="application/atom+xml">
   
@@ -96,22 +96,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="TODAY-I-LEARN"><a href="#TODAY-I-LEARN" class="headerlink" title="TODAY I LEARN!"></a>TODAY I LEARN!</h1><h3 id="hexo-deploy-error-해결"><a href="#hexo-deploy-error-해결" class="headerlink" title="hexo deploy error 해결!"></a>hexo deploy error 해결!</h3><p>새로운 개발 환경에서 블로깅을 하기 위해 기존에 만들었던 깃헙 블로그 repo를 pull 받으며 발생했던 문제들과 해결 방법에 대해 적어보자.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
 <p>pull 받고, deploy를 하는 과정에서 위와 같은 에러가 발생했다.</p>
 <p><a href="https://simhyejin.github.io/2016/06/20/hexo-github-pages/" target="_blank" rel="noopener">이 글</a>을 참조해서 해결했다!</p>
 <blockquote>
 <p>hexo-deployer-git을 설치 하지 않으면 deploy시 위와 같은 ERROR가 발생합니다.</p>
 </blockquote>
-<p>이게 핵심!<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>이게 핵심!<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h3 id="git-checkout-t"><a href="#git-checkout-t" class="headerlink" title="git checkout -t"></a>git checkout -t</h3><p><a href="https://cjh5414.github.io/get-git-remote-branch/" target="_blank" rel="noopener">git remote branch 가져오기</a></p>
-<p>remote에 존재하는 다른 branch를 가져오고 싶을 경우<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -t origin/feature/something</span><br></pre></td></tr></table></figure></p>
+<p>remote에 존재하는 다른 branch를 가져오고 싶을 경우<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote -t origin/feature/something</span><br></pre></td></tr></table></figure></p>
 <p>feature/something이라는 브랜치를 가져온다고 가정했다.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/11/26/TIL/" data-id="cjvddmqz80011apdtf8qws8lp" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/11/26/TIL/" data-id="cjvdgov400011uddt2oe97wi4" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/11/26/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       

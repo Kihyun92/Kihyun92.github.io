@@ -1,5 +1,5 @@
 ---
-title: jest-testing-asynchronous-code
+title: Jest - Testing Asynchronous Code
 date: 2019-05-03 14:34:02
 categories:
     - Jest
@@ -9,6 +9,11 @@ tags:
     - Unit Test
     - Jest 번역
     - 비동기 테스트
+    - Test Asynchronous Code
+---
+
+해당 포스트의 내용은 Jest 공식 문서의 [Testing Asynchronous Code](https://jestjs.io/docs/en/asynchronous)를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.
+
 ---
 
 # 비동기 코드 테스트 하기

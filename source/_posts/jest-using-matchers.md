@@ -1,5 +1,5 @@
 ---
-title: jest-using-matchers
+title: Jest - Using Matchers
 date: 2018-11-10 14:07:41
 categories:
     - Jest
@@ -10,9 +10,11 @@ tags:
     - Jest 번역
 ---
 
-# Matcher들 사용하기
+해당 포스트의 내용은 Jest 공식 문서의 [Using Matchers](https://jestjs.io/docs/en/using-matchers)를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.
 
-이 문서는 [Jest Docs - Using Matchers](https://jestjs.io/docs/en/using-matchers)를 번역한 내용입니다.
+---
+
+# Matcher들 사용하
 
 Jest에서 `matcher`를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다. 전체 목록은 [`expect` API doc](https://jestjs.io/docs/en/expect)을 참조하세요.
 

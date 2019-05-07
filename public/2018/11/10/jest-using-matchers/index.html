@@ -5,20 +5,20 @@
   
 
   
-  <title>jest-using-matchers | 견스</title>
+  <title>Jest - Using Matchers | 견스</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Matcher들 사용하기이 문서는 Jest Docs - Using Matchers를 번역한 내용입니다. Jest에서 matcher를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다. 전체 목록은 expect API doc을 참조하세요. 일반적인 Matcher값을 테스트하는 가장 심플한 방">
+  <meta name="description" content="해당 포스트의 내용은 Jest 공식 문서의 Using Matchers를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.  Matcher들 사용하Jest에서 matcher를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다.">
 <meta name="keywords" content="Jest,Jest 번역,Using Matchers">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jest-using-matchers">
+<meta property="og:title" content="Jest - Using Matchers">
 <meta property="og:url" content="https://kihyun92.github.io/2018/11/10/jest-using-matchers/index.html">
 <meta property="og:site_name" content="견스">
-<meta property="og:description" content="Matcher들 사용하기이 문서는 Jest Docs - Using Matchers를 번역한 내용입니다. Jest에서 matcher를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다. 전체 목록은 expect API doc을 참조하세요. 일반적인 Matcher값을 테스트하는 가장 심플한 방">
+<meta property="og:description" content="해당 포스트의 내용은 Jest 공식 문서의 Using Matchers를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.  Matcher들 사용하Jest에서 matcher를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-03T05:31:35.678Z">
+<meta property="og:updated_time" content="2019-05-07T04:52:38.596Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jest-using-matchers">
-<meta name="twitter:description" content="Matcher들 사용하기이 문서는 Jest Docs - Using Matchers를 번역한 내용입니다. Jest에서 matcher를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다. 전체 목록은 expect API doc을 참조하세요. 일반적인 Matcher값을 테스트하는 가장 심플한 방">
+<meta name="twitter:title" content="Jest - Using Matchers">
+<meta name="twitter:description" content="해당 포스트의 내용은 Jest 공식 문서의 Using Matchers를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.  Matcher들 사용하Jest에서 matcher를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다.">
   
     <link rel="alternate" href="/atom.xml" title="견스" type="application/atom+xml">
   
@@ -87,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jest-using-matchers
+      Jest - Using Matchers
     </h1>
   
 
@@ -95,8 +95,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Matcher들-사용하기"><a href="#Matcher들-사용하기" class="headerlink" title="Matcher들 사용하기"></a>Matcher들 사용하기</h1><p>이 문서는 <a href="https://jestjs.io/docs/en/using-matchers" target="_blank" rel="noopener">Jest Docs - Using Matchers</a>를 번역한 내용입니다.</p>
-<p>Jest에서 <code>matcher</code>를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다. 전체 목록은 <a href="https://jestjs.io/docs/en/expect" target="_blank" rel="noopener"><code>expect</code> API doc</a>을 참조하세요.</p>
+        <p>해당 포스트의 내용은 Jest 공식 문서의 <a href="https://jestjs.io/docs/en/using-matchers" target="_blank" rel="noopener">Using Matchers</a>를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.</p>
+<hr>
+<h1 id="Matcher들-사용하"><a href="#Matcher들-사용하" class="headerlink" title="Matcher들 사용하"></a>Matcher들 사용하</h1><p>Jest에서 <code>matcher</code>를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다. 전체 목록은 <a href="https://jestjs.io/docs/en/expect" target="_blank" rel="noopener"><code>expect</code> API doc</a>을 참조하세요.</p>
 <h2 id="일반적인-Matcher"><a href="#일반적인-Matcher" class="headerlink" title="일반적인 Matcher"></a>일반적인 Matcher</h2><p>값을 테스트하는 가장 심플한 방법은 완전히 같은지 확인하는 겁니다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="string">'two plus two is four'</span>, () =&gt; &#123;</span><br><span class="line">    expect(<span class="number">2</span> + <span class="number">2</span>).toBe(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>위의 코드에서 <code>expect(2 + 2)</code>는 “예상되는” 객체를 리턴합니다. 일반적으로 호출 대상을 제외하고는 이런 예상 객체(expectation objects)를 잘 사용하지 않습니다. 이 코드에선 <code>.toBe(4)</code>가 matcher 입니다. Jest가 실행되면, 모든 실패하는 matchers들을 거치게 되고, 아주 좋은 에러 메세지를 출력할 겁니다.</p>
@@ -132,7 +133,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/11/10/jest-using-matchers/" data-id="cjvdas3h6003sbadt06blh8ij" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/11/10/jest-using-matchers/" data-id="cjvdbj7v2003daddtom201v12" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/11/10/jest-using-matchers/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -189,7 +190,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CR/">CR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRLF/">CRLF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FE-2019/">FE 2019</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GatsbyJS/">GatsbyJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Getting-Started/">Getting Started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-2/">HTTP/2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest/">Jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest-번역/">Jest 번역</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LF/">LF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJ/">RxJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJS/">RxJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/">TDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typescript/">Typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unit-Test/">Unit Test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Using-Matchers/">Using Matchers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/">cache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frontend/">frontend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-stash/">git stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-flow/">git-flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reset/">reset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stash/">stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/til/">til</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-style-binding/">vue style binding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/네이버-테크-콘서트/">네이버 테크 콘서트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/브라우저/">브라우저</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/비동기-테스트/">비동기 테스트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/정규표현식/">정규표현식</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/회고/">회고</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CR/">CR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRLF/">CRLF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FE-2019/">FE 2019</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GatsbyJS/">GatsbyJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Getting-Started/">Getting Started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-2/">HTTP/2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest/">Jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest-번역/">Jest 번역</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LF/">LF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJ/">RxJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJS/">RxJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/">TDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test-Asynchronous-Code/">Test Asynchronous Code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typescript/">Typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unit-Test/">Unit Test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Using-Matchers/">Using Matchers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/">cache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frontend/">frontend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-stash/">git stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-flow/">git-flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reset/">reset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stash/">stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/til/">til</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-style-binding/">vue style binding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/네이버-테크-콘서트/">네이버 테크 콘서트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/브라우저/">브라우저</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/비동기-테스트/">비동기 테스트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/정규표현식/">정규표현식</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/회고/">회고</a></li></ul>
     </div>
   </div>
 
@@ -199,7 +200,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/CRLF/" style="font-size: 10px;">CRLF</a> <a href="/tags/FE-2019/" style="font-size: 10px;">FE 2019</a> <a href="/tags/GatsbyJS/" style="font-size: 10px;">GatsbyJS</a> <a href="/tags/Getting-Started/" style="font-size: 10px;">Getting Started</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/HTTP-2/" style="font-size: 10px;">HTTP/2</a> <a href="/tags/Jest/" style="font-size: 15px;">Jest</a> <a href="/tags/Jest-번역/" style="font-size: 15px;">Jest 번역</a> <a href="/tags/LF/" style="font-size: 10px;">LF</a> <a href="/tags/RxJ/" style="font-size: 10px;">RxJ</a> <a href="/tags/RxJS/" style="font-size: 12.5px;">RxJS</a> <a href="/tags/TDD/" style="font-size: 10px;">TDD</a> <a href="/tags/Typescript/" style="font-size: 12.5px;">Typescript</a> <a href="/tags/Unit-Test/" style="font-size: 10px;">Unit Test</a> <a href="/tags/Using-Matchers/" style="font-size: 10px;">Using Matchers</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/frontend/" style="font-size: 10px;">frontend</a> <a href="/tags/git/" style="font-size: 17.5px;">git</a> <a href="/tags/git-stash/" style="font-size: 10px;">git stash</a> <a href="/tags/git-flow/" style="font-size: 12.5px;">git-flow</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/reset/" style="font-size: 10px;">reset</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/til/" style="font-size: 20px;">til</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vue-style-binding/" style="font-size: 10px;">vue style binding</a> <a href="/tags/네이버-테크-콘서트/" style="font-size: 10px;">네이버 테크 콘서트</a> <a href="/tags/브라우저/" style="font-size: 10px;">브라우저</a> <a href="/tags/비동기-테스트/" style="font-size: 10px;">비동기 테스트</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
+      <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/CRLF/" style="font-size: 10px;">CRLF</a> <a href="/tags/FE-2019/" style="font-size: 10px;">FE 2019</a> <a href="/tags/GatsbyJS/" style="font-size: 10px;">GatsbyJS</a> <a href="/tags/Getting-Started/" style="font-size: 10px;">Getting Started</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/HTTP-2/" style="font-size: 10px;">HTTP/2</a> <a href="/tags/Jest/" style="font-size: 15px;">Jest</a> <a href="/tags/Jest-번역/" style="font-size: 15px;">Jest 번역</a> <a href="/tags/LF/" style="font-size: 10px;">LF</a> <a href="/tags/RxJ/" style="font-size: 10px;">RxJ</a> <a href="/tags/RxJS/" style="font-size: 12.5px;">RxJS</a> <a href="/tags/TDD/" style="font-size: 10px;">TDD</a> <a href="/tags/Test-Asynchronous-Code/" style="font-size: 10px;">Test Asynchronous Code</a> <a href="/tags/Typescript/" style="font-size: 12.5px;">Typescript</a> <a href="/tags/Unit-Test/" style="font-size: 10px;">Unit Test</a> <a href="/tags/Using-Matchers/" style="font-size: 10px;">Using Matchers</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/frontend/" style="font-size: 10px;">frontend</a> <a href="/tags/git/" style="font-size: 17.5px;">git</a> <a href="/tags/git-stash/" style="font-size: 10px;">git stash</a> <a href="/tags/git-flow/" style="font-size: 12.5px;">git-flow</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/reset/" style="font-size: 10px;">reset</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/til/" style="font-size: 20px;">til</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vue-style-binding/" style="font-size: 10px;">vue style binding</a> <a href="/tags/네이버-테크-콘서트/" style="font-size: 10px;">네이버 테크 콘서트</a> <a href="/tags/브라우저/" style="font-size: 10px;">브라우저</a> <a href="/tags/비동기-테스트/" style="font-size: 10px;">비동기 테스트</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
     </div>
   </div>
 
@@ -229,7 +230,7 @@
           </li>
         
           <li>
-            <a href="/2019/05/03/jest-testing-asynchronous-code/">jest-testing-asynchronous-code</a>
+            <a href="/2019/05/03/jest-testing-asynchronous-code/">Jest - Testing Asynchronous Code</a>
           </li>
         
           <li>

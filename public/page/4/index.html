@@ -69,6 +69,84 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jest-using-matchers" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/10/jest-using-matchers/" class="article-date">
+  <time datetime="2018-11-10T05:07:41.000Z" itemprop="datePublished">2018-11-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Jest/">Jest</a>►<a class="article-category-link" href="/categories/Jest/Unit-Test/">Unit Test</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/10/jest-using-matchers/">Jest - Using Matchers</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>해당 포스트의 내용은 Jest 공식 문서의 <a href="https://jestjs.io/docs/en/using-matchers" target="_blank" rel="noopener">Using Matchers</a>를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.</p>
+<hr>
+<h1 id="Matcher들-사용하"><a href="#Matcher들-사용하" class="headerlink" title="Matcher들 사용하"></a>Matcher들 사용하</h1><p>Jest에서 <code>matcher</code>를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다. 전체 목록은 <a href="https://jestjs.io/docs/en/expect" target="_blank" rel="noopener"><code>expect</code> API doc</a>을 참조하세요.</p>
+<h2 id="일반적인-Matcher"><a href="#일반적인-Matcher" class="headerlink" title="일반적인 Matcher"></a>일반적인 Matcher</h2><p>값을 테스트하는 가장 심플한 방법은 완전히 같은지 확인하는 겁니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'two plus two is four'</span>, () =&gt; &#123;</span><br><span class="line">    expect(<span class="number">2</span> + <span class="number">2</span>).toBe(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>위의 코드에서 <code>expect(2 + 2)</code>는 “예상되는” 객체를 리턴합니다. 일반적으로 호출 대상을 제외하고는 이런 예상 객체(expectation objects)를 잘 사용하지 않습니다. 이 코드에선 <code>.toBe(4)</code>가 matcher 입니다. Jest가 실행되면, 모든 실패하는 matchers들을 거치게 되고, 아주 좋은 에러 메세지를 출력할 겁니다.</p>
+<p><code>toBe</code>는 <code>Object.is</code>를 사용하여 완전히 같은지 테스트합니다. 만약 객체의 값을 체크하고 싶다면 <code>toEqual</code>을 사용하면 됩니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'object assignment'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> data = &#123;<span class="attr">one</span>: <span class="number">1</span>&#125;;</span><br><span class="line">    data[<span class="string">'two'</span>] = <span class="number">2</span>;</span><br><span class="line">    expect(data).toEqual(&#123;<span class="attr">one</span>: <span class="number">1</span>, <span class="attr">two</span>: <span class="number">2</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>toEqual</code>은 객체나 배열의 모든 필드를 재귀적으로 체크합니다.</p>
+<p>또한 matcher의 반대값도 테스트할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'adding positive numbers is not zero'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> a = <span class="number">1</span>; a &lt; <span class="number">10</span>; a++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> b = <span class="number">1</span>; b &lt; <span class="number">10</span>; b++) &#123;</span><br><span class="line">            expect(a + b).not.toBe(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Truthiness-진실성-부여-해석이-어렵네요…"><a href="#Truthiness-진실성-부여-해석이-어렵네요…" class="headerlink" title="Truthiness (진실성 부여? 해석이 어렵네요…)"></a>Truthiness (진실성 부여? 해석이 어렵네요…)</h2><p>테스트에서 때때로 <code>undefined</code>, <code>null</code>, <code>false</code>를 구분해야할 필요가 있지만, 때때로 이것들을 다르게 처리하고 싶지 않을 때가 있을 것입니다. Jest에는 당신이 원하는 것을 명시할 수 있게 해주는 헬퍼가 포함되어있습니다.</p>
+<ul>
+<li><code>toBeNull</code>은 오직 <code>null</code>에만 매치됩니다.</li>
+<li><code>toBeUndefined</code>는 오직 <code>undefined</code>에만 매치됩니다.</li>
+<li><code>toBeDefined</code>는 <code>toBeUndefined</code>의 반대가 됩니다.</li>
+<li><code>toBeTruthy</code>는 <code>if</code>문이 true로 처리하는 모든 것과 일치합니다.</li>
+<li><code>toBeFalsy</code>는 <code>if</code>문이 false로 처리하는 모든 것과 일치합니다.</li>
+</ul>
+<p>예제:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'null'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> n = <span class="literal">null</span>;</span><br><span class="line">    expect(n).toBeNull();</span><br><span class="line">    expect(n).toBeDefined();</span><br><span class="line">    expect(n).not.toBeUndefined();</span><br><span class="line">    expect(n).not.toBeTruthy();</span><br><span class="line">    expect(n).toBeFalsy();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'zero'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> z = <span class="number">0</span>;</span><br><span class="line">    expect(z).not.toBeNull();</span><br><span class="line">    expect(z).toBeDefined();</span><br><span class="line">    expect(z).not.toBeUndefined();</span><br><span class="line">    expect(z).not.toBeTruthy();</span><br><span class="line">    expect(z).toBeFalsy();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>당신의 코드에서 수행하고자 하는 작업과 가장 일치하는 matcher를 사용해야 합니다.</p>
+<h2 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h2><p>숫자를 비교하는 대부분의 방법에는 마찬가지로 matcher를 쓸 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'two plus two'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> value = <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">    expect(value).toBeGreaterThan(<span class="number">3</span>);</span><br><span class="line">    expect(value).toBeGreaterThanOrEqual(<span class="number">3.5</span>);</span><br><span class="line">    expect(value).toBeLessThan(<span class="number">5</span>);</span><br><span class="line">    expect(value).toBeLessThanOrEqual(<span class="number">4.5</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// toBe and toEqual are equivalent for numbers</span></span><br><span class="line">    expect(value).toBe(<span class="number">4</span>);</span><br><span class="line">    expect(value).toEqual(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>매우 작은 반올림 에러가 발생하는걸 원하지 않는다면, 부동 소수점의 동일성을 체크할 경우에는 <code>toEqual</code>대신 <code>toBeClose</code>를 사용하세요.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'adding floating point numbers'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> value = <span class="number">0.1</span> + <span class="number">0.2</span>;</span><br><span class="line">    <span class="comment">//expect(value).toBe(0.3);           This won't work because of rounding error</span></span><br><span class="line">    expect(value).toBeCloseTo(<span class="number">0.3</span>); <span class="comment">// This works.</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p><code>toMatch</code>를 사용하여 정규표현식에 대해서 문자열 검사를 할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'there is no I in team'</span>, () =&gt; &#123;</span><br><span class="line">    expect(<span class="string">'team'</span>).not.toMatch(<span class="regexp">/I/</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'but there is a "stop" in Christoph'</span>, () =&gt; &#123;</span><br><span class="line">    expect(<span class="string">'Christoph'</span>).toMatch(<span class="regexp">/stop/</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="배열과-반복문"><a href="#배열과-반복문" class="headerlink" title="배열과 반복문"></a>배열과 반복문</h2><p><code>toContain</code>을 사용하여 배열이나 반복문에 특정 항목이 포함되어 있는지 확인할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> shoppingList = [<span class="string">'diapers'</span>, <span class="string">'kleenex'</span>, <span class="string">'trash bags'</span>, <span class="string">'paper towels'</span>, <span class="string">'beer'</span>];</span><br><span class="line"></span><br><span class="line">test(<span class="string">'the shopping list has beer on it'</span>, () =&gt; &#123;</span><br><span class="line">    expect(shoppingList).toContain(<span class="string">'beer'</span>);</span><br><span class="line">    expect(<span class="keyword">new</span> <span class="built_in">Set</span>(shoppingList)).toContain(<span class="string">'beer'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Exceptions"><a href="#Exceptions" class="headerlink" title="Exceptions"></a>Exceptions</h2><p><code>toThrow</code>를 사용하여 특정 함수가 호출 되었을 때 에러를 던지도록 테스트 할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compileAndroidCode</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> ConfigError(<span class="string">'you are using the wrong JDK'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test(<span class="string">'compiling android goes as expected'</span>, () =&gt; &#123;</span><br><span class="line">    expect(compileAndroidCode).toThrow();</span><br><span class="line">    expect(compileAndroidCode).toThrow(ConfigError);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// You can also use the exact error message or a regexp</span></span><br><span class="line">    expect(compileAndroidCode).toThrow(<span class="string">'you are using the wrong JDK'</span>);</span><br><span class="line">    expect(compileAndroidCode).toThrow(<span class="regexp">/JDK/</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="그리고…"><a href="#그리고…" class="headerlink" title="그리고…"></a>그리고…</h2><p>이것은 그저 맛보기 정도입니다. 완전한 matcher들의 리스트를 확인하려면 <a href="https://jestjs.io/docs/en/expect" target="_blank" rel="noopener">레퍼런스 문서</a>를 확인하세요.</p>
+<p>사용 가능한 matcher들에 대해 알게 되었으니, 그 다음으로 <a href="https://jestjs.io/docs/en/asynchronous" target="_blank" rel="noopener">Jest로 비동기 코드 테스트</a>를 하는 방법을 보는게 좋습니다!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2018/11/10/jest-using-matchers/" data-id="cjvexqfez003bnadte3dkd81g" class="article-share-link">Share</a>
+      
+        <a href="https://kihyun92.github.io/2018/11/10/jest-using-matchers/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jest/">Jest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jest-번역/">Jest 번역</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Using-Matchers/">Using Matchers</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jest-getting-started" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/09/jest-getting-started/" class="article-date">
@@ -140,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/11/09/jest-getting-started/" data-id="cjvdgov4m002suddtdcek14y7" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/11/09/jest-getting-started/" data-id="cjvexqfew0032nadt14qzp7yp" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/11/09/jest-getting-started/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -186,7 +264,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/11/09/TIL/" data-id="cjvdgov3w000ouddtz0tw8ms5" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/11/09/TIL/" data-id="cjvexqfe6000onadtbpsdn5e4" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/11/09/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -250,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/11/05/TIL/" data-id="cjvdgov3v000luddtb3n2ttjf" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/11/05/TIL/" data-id="cjvexqfe4000inadtobc2gyjm" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/11/05/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -296,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/11/02/TIL/" data-id="cjvdgov3t000iuddtjda8pjvk" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/11/02/TIL/" data-id="cjvexqfe2000fnadt5yj2xhts" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/11/02/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -346,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/10/30/TIL/" data-id="cjvdgov3s000guddtsmhzt2c2" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/10/30/TIL/" data-id="cjvexqfe7000rnadtf7uc42y3" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/10/30/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -416,7 +494,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/10/29/TIL/" data-id="cjvdgov3q000cuddtxwm78xjb" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/10/29/TIL/" data-id="cjvexqfdz0008nadtkbp3mrcg" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/10/29/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -486,7 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/10/23/TIL/" data-id="cjvdgov3p000buddthtfavvif" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/10/23/TIL/" data-id="cjvexqfe1000cnadttp5hs8rn" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/10/23/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -534,7 +612,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/10/22/TIL/" data-id="cjvdgov3o0009uddt0hgucul2" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/10/22/TIL/" data-id="cjvexqfdy0006nadt9g96piy6" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/10/22/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -590,85 +668,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/10/17/TIL/" data-id="cjvdgov3n0008uddt4jjxyt29" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/10/17/TIL/" data-id="cjvexqfe00009nadtplib9fju" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/10/17/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/16/TIL/" class="article-date">
-  <time datetime="2018-10-16T03:07:12.000Z" itemprop="datePublished">2018-10-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/16/TIL/">TIL 2018-10-16</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Today-I-Learn"><a href="#Today-I-Learn" class="headerlink" title="Today I Learn!"></a>Today I Learn!</h1><h2 id="링크"><a href="#링크" class="headerlink" title="링크"></a>링크</h2><p><a href="https://gist.github.com/ninanung/2b81a5db946c26c98c573e3662a92b62" target="_blank" rel="noopener">참고한 글</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[링크에 사용할 이름](URL)</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Markdown-문서에-이미지-업로드하기"><a href="#Markdown-문서에-이미지-업로드하기" class="headerlink" title="Markdown 문서에 이미지 업로드하기"></a>Markdown 문서에 이미지 업로드하기</h2><ul>
-<li><p>이미지 url을 입력하여 업로드</p>
-<ul>
-<li><p>이미지의 url을 따서 그냥 입력하면 됨 (이미지 url을 따는 방법은 구글에 많이 있음)</p>
-<p><a href="https://twosb.github.io/2018/07/01/Hexo%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EC%B4%88%EA%B0%84%EB%8B%A8%20Markdown%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%97%85%EB%A1%9C%EB%93%9C%20%EB%B0%A9%EB%B2%95/" target="_blank" rel="noopener">참고</a></p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>상대 경로를 통한 업로드</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![텍스트](이미지파일경로.png)</span><br><span class="line">![텍스트](이미지파일URL)</span><br><span class="line"></span><br><span class="line">![텍스트](이미지파일경로.jpg <span class="string">"이미지이름"</span>)</span><br><span class="line">![텍스트](이미지파일URL <span class="string">"이미지이름"</span>)</span><br></pre></td></tr></table></figure>
-<p>  텍스트는 이미지 파일에 마우스를 올렸을 때 커서 옆에 나오는 텍스트이다. 없어도 무방함</p>
-<p>  <a href="https://futurecreator.github.io/2016/06/21/hexo-basic-usage/" target="_blank" rel="noopener">참고</a></p>
-</li>
-</ul>
-<ul>
-<li><p>hexo tag plugin</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% img [class names] /path/to/image [width] [height] [title text [alt text]] %&#125;</span><br></pre></td></tr></table></figure>
-<p>  아직 안써봄</p>
-</li>
-</ul>
-<hr>
-<h2 id="링크-이미지"><a href="#링크-이미지" class="headerlink" title="링크 + 이미지"></a>링크 + 이미지</h2><p>이미지를 누르면 링크로 가게 하고 싶을 때</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[![텍스트](이미지URL이나 경로)](링크URL)</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="경로-설정하기"><a href="#경로-설정하기" class="headerlink" title="경로 설정하기"></a>경로 설정하기</h2><p><a href="https://blog.jaeyoon.io/2017/12/jekyll-image.html" target="_blank" rel="noopener">참고</a></p>
-<hr>
-<h2 id="공부할-것"><a href="#공부할-것" class="headerlink" title="공부할 것"></a>공부할 것</h2><p><a href="https://futurecreator.github.io/2016/06/19/hexo-tag-plugins/" target="_blank" rel="noopener">태그플러그인</a></p>
-<hr>
-<h2 id="puppeteer"><a href="#puppeteer" class="headerlink" title="puppeteer"></a>puppeteer</h2><p><a href="https://github.com/GoogleChrome/puppeteer" target="_blank" rel="noopener">참고</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/10/16/TIL/" data-id="cjvdgov3m0006uddtvszzldur" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/2018/10/16/TIL/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/">til</a></li></ul>
-
     </footer>
   </div>
   
@@ -733,6 +737,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/08/TIL/">TIL</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/07/jest-setup-and-teardown/">Jest - Setup and Teardown</a>
           </li>
         
@@ -746,10 +754,6 @@
         
           <li>
             <a href="/2019/05/03/jest-testing-asynchronous-code/">Jest - Testing Asynchronous Code</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/24/TIL/">TIL</a>
           </li>
         
       </ul>

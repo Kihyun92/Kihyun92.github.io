@@ -5,18 +5,19 @@
   
 
   
-  <title>Archives: 2018/10 | 견스</title>
+  <title>TIL | 견스</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Kihyun&apos;s Dev blog!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="견스">
-<meta property="og:url" content="https://kihyun92.github.io/archives/2018/10/index.html">
+  <meta name="description" content="vue, event.stopPropagation()여러 레이어가 떠있을때, 특정 영역을 클릭하였을때, 레이어가 바깥쪽이 클릭됐다고 인식하여 레이어 팝업이 닫히는 이슈가 있었음. click.prevent 같이, vue에도 stop 이벤트가 존재한다. 참고 event.stopPropagation(); 원인 : 하위 엘리먼트에서 이벤트를 처리하기 전에 click">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIL">
+<meta property="og:url" content="https://kihyun92.github.io/2019/05/08/TIL/index.html">
 <meta property="og:site_name" content="견스">
-<meta property="og:description" content="Kihyun&apos;s Dev blog!">
+<meta property="og:description" content="vue, event.stopPropagation()여러 레이어가 떠있을때, 특정 영역을 클릭하였을때, 레이어가 바깥쪽이 클릭됐다고 인식하여 레이어 팝업이 닫히는 이슈가 있었음. click.prevent 같이, vue에도 stop 이벤트가 존재한다. 참고 event.stopPropagation(); 원인 : 하위 엘리먼트에서 이벤트를 처리하기 전에 click">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-08T08:02:28.138Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="견스">
-<meta name="twitter:description" content="Kihyun&apos;s Dev blog!">
+<meta name="twitter:title" content="TIL">
+<meta name="twitter:description" content="vue, event.stopPropagation()여러 레이어가 떠있을때, 특정 영역을 클릭하였을때, 레이어가 바깥쪽이 클릭됐다고 인식하여 레이어 팝업이 닫히는 이슈가 있었음. click.prevent 같이, vue에도 stop 이벤트가 존재한다. 참고 event.stopPropagation(); 원인 : 하위 엘리먼트에서 이벤트를 처리하기 전에 click">
   
     <link rel="alternate" href="/atom.xml" title="견스" type="application/atom+xml">
   
@@ -67,122 +68,69 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/30/TIL/" class="archive-article-date">
-  <time datetime="2018-10-30T02:01:45.000Z" itemprop="datePublished">Oct 30</time>
+        <section id="main"><article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/08/TIL/" class="article-date">
+  <time datetime="2019-05-08T01:16:03.000Z" itemprop="datePublished">2019-05-08</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TIL/">TIL</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/30/TIL/">TIL</a>
+    <h1 class="article-title" itemprop="name">
+      TIL
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/29/TIL/" class="archive-article-date">
-  <time datetime="2018-10-29T02:50:35.000Z" itemprop="datePublished">Oct 29</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/29/TIL/">TIL</a>
-    </h1>
-  
+        <h2 id="vue-event-stopPropagation"><a href="#vue-event-stopPropagation" class="headerlink" title="vue, event.stopPropagation()"></a>vue, event.stopPropagation()</h2><p>여러 레이어가 떠있을때, 특정 영역을 클릭하였을때, 레이어가 바깥쪽이 클릭됐다고 인식하여 레이어 팝업이 닫히는 이슈가 있었음.</p>
+<p>click.prevent 같이, vue에도 stop 이벤트가 존재한다. <a href="https://kr.vuejs.org/v2/guide/events.html" target="_blank" rel="noopener">참고</a></p>
+<p>event.stopPropagation();</p>
+<p>원인 : 하위 엘리먼트에서 이벤트를 처리하기 전에 click.capture 이벤트로 인해, 딤드 영역 클릭시 팝업을 닫는 로직(상위 엘리먼트)을 먼저체크해서 발생했음</p>
+<p>해결: vue store를 통해 해당 체크 여부 관리함</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/23/TIL/" class="archive-article-date">
-  <time datetime="2018-10-23T01:44:54.000Z" itemprop="datePublished">Oct 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/23/TIL/">TIL</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/22/TIL/" class="archive-article-date">
-  <time datetime="2018-10-22T00:53:54.000Z" itemprop="datePublished">Oct 22</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2019/05/08/TIL/" data-id="cjvexqfes002tnadtbdi67634" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/22/TIL/">TIL</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/17/TIL/" class="archive-article-date">
-  <time datetime="2018-10-17T05:26:34.000Z" itemprop="datePublished">Oct 17</time>
-</a>
+        <a href="https://kihyun92.github.io/2019/05/08/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/17/TIL/">TIL</a>
-    </h1>
-  
-
-    </header>
+      
+    </footer>
   </div>
-</article>
   
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/10/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/10/page/2/">Next &raquo;</a>
-  </nav>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/07/jest-setup-and-teardown/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Jest - Setup and Teardown</div>
+    </a>
+  
+</nav>
 
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -281,11 +229,13 @@
 <script>
   var disqus_shortname = 'kihyuns-blog';
   
+  var disqus_url = 'https://kihyun92.github.io/2019/05/08/TIL/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

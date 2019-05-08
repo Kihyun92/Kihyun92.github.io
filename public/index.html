@@ -69,6 +69,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/08/TIL/" class="article-date">
+  <time datetime="2019-05-08T01:16:03.000Z" itemprop="datePublished">2019-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TIL/">TIL</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/08/TIL/">TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue-event-stopPropagation"><a href="#vue-event-stopPropagation" class="headerlink" title="vue, event.stopPropagation()"></a>vue, event.stopPropagation()</h2><p>여러 레이어가 떠있을때, 특정 영역을 클릭하였을때, 레이어가 바깥쪽이 클릭됐다고 인식하여 레이어 팝업이 닫히는 이슈가 있었음.</p>
+<p>click.prevent 같이, vue에도 stop 이벤트가 존재한다. <a href="https://kr.vuejs.org/v2/guide/events.html" target="_blank" rel="noopener">참고</a></p>
+<p>event.stopPropagation();</p>
+<p>원인 : 하위 엘리먼트에서 이벤트를 처리하기 전에 click.capture 이벤트로 인해, 딤드 영역 클릭시 팝업을 닫는 로직(상위 엘리먼트)을 먼저체크해서 발생했음</p>
+<p>해결: vue store를 통해 해당 체크 여부 관리함</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2019/05/08/TIL/" data-id="cjvexqfes002tnadtbdi67634" class="article-share-link">Share</a>
+      
+        <a href="https://kihyun92.github.io/2019/05/08/TIL/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jest-setup-and-teardown" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/07/jest-setup-and-teardown/" class="article-date">
@@ -102,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/07/jest-setup-and-teardown/" data-id="cjvdgov4n002wuddtctc2ebkf" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/07/jest-setup-and-teardown/" data-id="cjvexqfex0036nadti6g6vpbs" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/07/jest-setup-and-teardown/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -148,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/07/TIL/" data-id="cjvdgov4k002muddtdj79092m" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/07/TIL/" data-id="cjvexqfet002wnadtlabigtxo" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/07/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -198,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/03/TIL/" data-id="cjvdgov4j002juddtoh1pjqfm" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/03/TIL/" data-id="cjvexqfeq002mnadt8vq6vxsb" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/03/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -268,7 +315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/" data-id="cjvdgov4o002zuddtq3mi2rgt" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/" data-id="cjvexqfev002znadti3vv22l8" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -336,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/24/TIL/" data-id="cjvdgov4i002guddt2qryqmac" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/24/TIL/" data-id="cjvexqfep002jnadtgmqgt7fi" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/24/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -382,7 +429,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/23/TIL/" data-id="cjvdgov4h002duddt3w0h4xyf" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/23/TIL/" data-id="cjvexqfep002hnadttomy3wpy" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/23/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -426,7 +473,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/22/TIL/" data-id="cjvdgov4g002auddtzjcpmmg0" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/22/TIL/" data-id="cjvexqfeo002dnadtnl3zydzq" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/22/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -474,7 +521,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/18/TIL/" data-id="cjvdgov4f0026uddtb85jb8js" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/18/TIL/" data-id="cjvexqfen002anadtektfwmbd" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/18/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -519,62 +566,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/16/TIL/" data-id="cjvdgov4e0023uddtbm77st5n" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/16/TIL/" data-id="cjvexqfel0024nadt7y4kk3nj" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/16/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Typescript-Quick-Start" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/15/Typescript-Quick-Start/" class="article-date">
-  <time datetime="2019-04-15T14:47:30.000Z" itemprop="datePublished">2019-04-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/책-정리/">책 정리</a>►<a class="article-category-link" href="/categories/책-정리/Typescript/">Typescript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/15/Typescript-Quick-Start/">Typescript-Quick-Start</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="TypeScript-Quick-Start-책-정리"><a href="#TypeScript-Quick-Start-책-정리" class="headerlink" title="TypeScript Quick Start 책 정리"></a>TypeScript Quick Start 책 정리</h1><p>오늘부터 Typescript Quick Start 책을 읽고 정리해보겠습니다!</p>
-<h1 id="구성-및-안내"><a href="#구성-및-안내" class="headerlink" title="구성 및 안내"></a>구성 및 안내</h1><ol>
-<li>Node.js 설치!</li>
-<li>Typescript 설치! (책의 버전은 2.7.2인데, 현재는 3.4 버전까지 나왔습니다.)<br>타입스크립트를 설치했다면 타입스크립트 컴파일러인 tsc를 이용해 컴파일을 할 수 있습니다.<br>hello.ts 파일을 명령 프롬프트에서 컴파일하고 실행하기<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tsc hello.ts    &lt;-컴파일</span><br><span class="line">node hello.js   &lt;-실행</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>이것 말고도 다양한 명령어들이 존재합니다.</p>
-<h1 id="1-타입스크립트-소개"><a href="#1-타입스크립트-소개" class="headerlink" title="1. 타입스크립트 소개"></a>1. 타입스크립트 소개</h1><h2 id="1-1-ECMA-스크립트와-타입스크립트"><a href="#1-1-ECMA-스크립트와-타입스크립트" class="headerlink" title="1.1 ECMA 스크립트와 타입스크립트"></a>1.1 ECMA 스크립트와 타입스크립트</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/15/Typescript-Quick-Start/" data-id="cjvdgov4l002puddtzlpoqu4n" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/2019/04/15/Typescript-Quick-Start/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Typescript/">Typescript</a></li></ul>
-
     </footer>
   </div>
   
@@ -639,6 +635,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/08/TIL/">TIL</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/07/jest-setup-and-teardown/">Jest - Setup and Teardown</a>
           </li>
         
@@ -652,10 +652,6 @@
         
           <li>
             <a href="/2019/05/03/jest-testing-asynchronous-code/">Jest - Testing Asynchronous Code</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/24/TIL/">TIL</a>
           </li>
         
       </ul>

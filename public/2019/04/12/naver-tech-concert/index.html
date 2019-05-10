@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>네이버 테크 콘서트 | 견스</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="플랫폼 UI 개발 전략의 모든 것첫번째 세션으로 네이버에서 스마트에디터의 UI를 개발하신 이주용님께서 발표하셨습니다. 스마트 에디터 3.0 -&amp;gt; 스마트 에디터 원으로 변경하면서 느꼈던점에 대한 발표1. 기존 설계의 문제점 커스텀 및 확장을 고려하지 않아, 서비스의 요구사항을ㄹ 수용하기 어려움 플랫폼의 CSS와 서비스의 CSS 간섭이 발생하고 스타일의">
+<meta name="keywords" content="FE 2019,frontend,네이버 테크 콘서트">
+<meta property="og:type" content="article">
+<meta property="og:title" content="네이버 테크 콘서트">
+<meta property="og:url" content="https://kihyun92.github.io/2019/04/12/naver-tech-concert/index.html">
+<meta property="og:site_name" content="견스">
+<meta property="og:description" content="플랫폼 UI 개발 전략의 모든 것첫번째 세션으로 네이버에서 스마트에디터의 UI를 개발하신 이주용님께서 발표하셨습니다. 스마트 에디터 3.0 -&amp;gt; 스마트 에디터 원으로 변경하면서 느꼈던점에 대한 발표1. 기존 설계의 문제점 커스텀 및 확장을 고려하지 않아, 서비스의 요구사항을ㄹ 수용하기 어려움 플랫폼의 CSS와 서비스의 CSS 간섭이 발생하고 스타일의">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://user-images.githubusercontent.com/35797540/56034194-9f758200-5d61-11e9-995c-fe440c281d12.jpg">
+<meta property="og:updated_time" content="2019-04-22T00:51:38.187Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="네이버 테크 콘서트">
+<meta name="twitter:description" content="플랫폼 UI 개발 전략의 모든 것첫번째 세션으로 네이버에서 스마트에디터의 UI를 개발하신 이주용님께서 발표하셨습니다. 스마트 에디터 3.0 -&amp;gt; 스마트 에디터 원으로 변경하면서 느꼈던점에 대한 발표1. 기존 설계의 문제점 커스텀 및 확장을 고려하지 않아, 서비스의 요구사항을ㄹ 수용하기 어려움 플랫폼의 CSS와 서비스의 CSS 간섭이 발생하고 스타일의">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/35797540/56034194-9f758200-5d61-11e9-995c-fe440c281d12.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="견스" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">견스</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Work &amp; Life Harmony</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kihyun92.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-naver-tech-concert" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/12/naver-tech-concert/" class="article-date">
+  <time datetime="2019-04-12T01:55:37.000Z" itemprop="datePublished">2019-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      네이버 테크 콘서트
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="플랫폼-UI-개발-전략의-모든-것"><a href="#플랫폼-UI-개발-전략의-모든-것" class="headerlink" title="플랫폼 UI 개발 전략의 모든 것"></a>플랫폼 UI 개발 전략의 모든 것</h1><p><a href="https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019-ui" target="_blank" rel="noopener">첫번째 세션</a>으로 네이버에서 스마트에디터의 UI를 개발하신 이주용님께서 발표하셨습니다.</p>
+<h2 id="스마트-에디터-3-0-gt-스마트-에디터-원으로-변경하면서-느꼈던점에-대한-발표"><a href="#스마트-에디터-3-0-gt-스마트-에디터-원으로-변경하면서-느꼈던점에-대한-발표" class="headerlink" title="스마트 에디터 3.0 -&gt; 스마트 에디터 원으로 변경하면서 느꼈던점에 대한 발표"></a>스마트 에디터 3.0 -&gt; 스마트 에디터 원으로 변경하면서 느꼈던점에 대한 발표</h2><h3 id="1-기존-설계의-문제점"><a href="#1-기존-설계의-문제점" class="headerlink" title="1. 기존 설계의 문제점"></a>1. 기존 설계의 문제점</h3><ul>
+<li>커스텀 및 확장을 고려하지 않아, 서비스의 요구사항을ㄹ 수용하기 어려움</li>
+<li>플랫폼의 CSS와 서비스의 CSS 간섭이 발생하고 스타일의 우선순위 관리가 어려움</li>
+<li>에디터 UI의 요소간 관계를 파악하기 어려워 버그 및 사이드 이펙트 발생</li>
+</ul>
+<h3 id="2-새로운-설계-방향"><a href="#2-새로운-설계-방향" class="headerlink" title="2. 새로운 설계 방향"></a>2. 새로운 설계 방향</h3><ul>
+<li>UI 공통화는 디자인 중심이 아닌, 기능 중심으로!<ul>
+<li>구조를 먼저 파악해야함</li>
+</ul>
+</li>
+<li>조건 및 상태에 따라 다른 스타일 적용<ul>
+<li>CSS 설계는 동적으로</li>
+</ul>
+</li>
+<li>각기 다른 요구사항을 빠르고 쉽게 적용해야함<ul>
+<li>설정으로 분리하여 하나의 파일에서 모두 변경가능하도록</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-구현과-문제-해결"><a href="#3-구현과-문제-해결" class="headerlink" title="3. 구현과 문제 해결"></a>3. 구현과 문제 해결</h3><h4 id="CSS-Methodology"><a href="#CSS-Methodology" class="headerlink" title="CSS Methodology"></a>CSS Methodology</h4><ul>
+<li>Block, Element, Modifier (BEM)</li>
+<li>Scalable and Modular Architecture for CSS</li>
+<li>Object-Oriented CSS</li>
+</ul>
+<h4 id="CSS-Preprocessor"><a href="#CSS-Preprocessor" class="headerlink" title="CSS Preprocessor"></a>CSS Preprocessor</h4><ul>
+<li>CSS의 기능을 확장하여 선택자 상속, 변수, 조건문, 반복문, 함수 등 사용 가능</li>
+<li>sass</li>
+</ul>
+<h3 id="4-공통-요소의-분리"><a href="#4-공통-요소의-분리" class="headerlink" title="4. 공통 요소의 분리"></a>4. 공통 요소의 분리</h3><h4 id="플랫폼의-스펙-분석-전략"><a href="#플랫폼의-스펙-분석-전략" class="headerlink" title="플랫폼의 스펙 분석 전략"></a>플랫폼의 스펙 분석 전략</h4><ul>
+<li>디자인 보다는 기능(구조) 중심의 분석</li>
+<li>동일한 기능을 하는 요소는 동일한 HTML 구조를 가질 수 있을지 검토</li>
+<li>공통화 요소 중 일부 UI가 다른 경우는 전체 스펙으로 구현 검토</li>
+</ul>
+<h3 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h3><ol>
+<li>모듈화</li>
+</ol>
+<ul>
+<li>디자인보다 각 요소가 하는 기능에 집중하여 모듈화</li>
+<li>현재의 요구사항에 맞게 최소한의 기능으로 모듈화 (확장성은 배제)</li>
+<li>같은 기능의 요소는 동일한 HTML 구조를 사용</li>
+</ul>
+<ol start="2">
+<li>설정과 공통 코드</li>
+</ol>
+<ul>
+<li>간격, 색상, 서체, 폰트 사이즈 등 서비스 별로 변경이 필요한 것들은 설정으로 관리</li>
+<li>css pre-processor를 활용하여 반복적인 코드 줄이기</li>
+<li>연관된 UI나 수치는 공통적으로 묶어 관계를 명확히하기</li>
+</ul>
+<ol start="3">
+<li>플랫폼은 만능이 아니다</li>
+</ol>
+<ul>
+<li>모든 요구사항을 플랫폼의 공통 코드로 소화할 수 없음</li>
+<li>따라서 때론 스펙 협의나 커뮤니케이션이 설계보다 중요할 수 있음</li>
+<li>플랫폼의 공통코드는 <strong>불변</strong>이 아니며 지속적인 리펙토링이 필수</li>
+</ul>
+<hr>
+<h1 id="주니어-개발자의-성장에-대한-뻔하지만-뻔하지-않은-이야기"><a href="#주니어-개발자의-성장에-대한-뻔하지만-뻔하지-않은-이야기" class="headerlink" title="주니어 개발자의 성장에 대한 뻔하지만 뻔하지 않은 이야기"></a>주니어 개발자의 성장에 대한 뻔하지만 뻔하지 않은 이야기</h1><p><a href="https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019-140435675" target="_blank" rel="noopener">두번째 세션</a>으로 LINE Financial Plus의 한재엽님 께서 발표하셨습니다.</p>
+<h2 id="성장의-종류"><a href="#성장의-종류" class="headerlink" title="성장의 종류"></a>성장의 종류</h2><p><img src="https://user-images.githubusercontent.com/35797540/56034194-9f758200-5d61-11e9-995c-fe440c281d12.jpg" alt=""></p>
+<p>개발자의 성장 방향에는 크게 이 정도가 있을것 같음.</p>
+<h3 id="성장을-왜-해야하는지-생각해보기-Why"><a href="#성장을-왜-해야하는지-생각해보기-Why" class="headerlink" title="성장을 왜 해야하는지 생각해보기 (Why?)"></a>성장을 왜 해야하는지 생각해보기 (Why?)</h3><blockquote>
+<p>나의 선택과 집중이 어느 방향에 집중되어야 할지</p>
+</blockquote>
+<ol>
+<li>성장해야하는 이유부터 정리</li>
+<li>어느쪽으로 성장하고 싶은지 조금 더 구체화하기</li>
+</ol>
+<h3 id="성장을-어떻게-해야할까-How"><a href="#성장을-어떻게-해야할까-How" class="headerlink" title="성장을 어떻게 해야할까? (How?)"></a>성장을 어떻게 해야할까? (How?)</h3><p>해야할 것과 하고 싶은 것은 매우 많지만 우리의 하루는 24시간이다. 너무 짧다..</p>
+<p>따라서 하루에 8시간 이상을 보내는 회사에서 성장해보자</p>
+<h2 id="회사에서-성장하기"><a href="#회사에서-성장하기" class="headerlink" title="회사에서 성장하기"></a>회사에서 성장하기</h2><h3 id="업무를-소비하지-말자"><a href="#업무를-소비하지-말자" class="headerlink" title="업무를 소비하지 말자"></a>업무를 <strong>소비</strong>하지 말자</h3><ul>
+<li>이때 업무란?<ul>
+<li>Production 레벨에서 코드를 작성하는 일</li>
+<li>그리고 구현한 코드에 책임을 지는 일</li>
+</ul>
+</li>
+<li>삽질에 대해서 다시 생각해보기<ul>
+<li>버그를 눈 앞에서 치워버려야하는 것 이라고 생각하지 말기</li>
+<li>디버깅 (다양한 툴들, ex.크롬 개발자 도구, Charles, Fiddler, …)</li>
+<li>문제 원인 파악 -&gt; 학습 -&gt; 문제 해결 시도 -&gt; 문제 원인 파악 -&gt; (반복…)<ul>
+<li>최종적으로는 이 모든 경험들이 <strong>노하우</strong>가 된다. 이 노하우들이 쌓이면 전문성이 갖춰진다.</li>
+</ul>
+</li>
+<li>삽질을 통해 배우고, <em>정리</em>하자!</li>
+</ul>
+</li>
+</ul>
+<h3 id="질문을-‘잘’-하자"><a href="#질문을-‘잘’-하자" class="headerlink" title="질문을 ‘잘’ 하자"></a>질문을 ‘잘’ 하자</h3><blockquote>
+<p>바보같은 질문은 없어도 성의없는 질문은 있다.</p>
+</blockquote>
+<ul>
+<li>배울점이 많은 동료들에게 많이 배워보자</li>
+<li>하지만 동료의 시간을 낭비하면 안된다! -&gt; 질문을 잘! 해야한다.</li>
+</ul>
+<p>잘 질문 하려면?</p>
+<ol>
+<li>충분한 구글링을 선행</li>
+<li>질문을 정리하자<br>2-1. 현재 발생한 <strong>상황</strong> 정리<br>2-2. 내가 해본 <strong>시도</strong>들을 정리<br>2-3. 최종적으로 Yes/No로 답이 오도록 정리<br>2-4. 혹은 내 결론에 대한 의견을 답할 수 있도록 정리</li>
+</ol>
+<h3 id="문서화를-‘잘’-하자"><a href="#문서화를-‘잘’-하자" class="headerlink" title="문서화를 ‘잘’ 하자"></a>문서화를 ‘잘’ 하자</h3><p>트러블 슈팅 목록으로 나눠서 정리 (<a href="https://github.com/angular/angular/issues/new/choose" target="_blank" rel="noopener">오픈소스들의 이슈 템플릿</a>을 참조해보자!)</p>
+<ul>
+<li><strong>어쩌다</strong>가 버그가 발생했나?</li>
+<li><strong>원인</strong>은 무엇인가?</li>
+<li>어떤 <strong>시도</strong>들을 해보았나?</li>
+<li>그래서 최종적으로 어떻게 해결했나?</li>
+</ul>
+<h3 id="문서-쓸-시간이-없다면"><a href="#문서-쓸-시간이-없다면" class="headerlink" title="문서 쓸 시간이 없다면?"></a>문서 쓸 시간이 없다면?</h3><p>문서화를 개발 프로세스의 일부분으로 생각하고 개발 기간을 잡자!<br>그리고 잘 정리한 문서를 <strong>공유</strong> 하자!!</p>
+<h2 id="팀의-생산성을-높이기"><a href="#팀의-생산성을-높이기" class="headerlink" title="팀의 생산성을 높이기"></a>팀의 생산성을 높이기</h2><h3 id="개발-환경의-중요성"><a href="#개발-환경의-중요성" class="headerlink" title="개발 환경의 중요성"></a>개발 환경의 중요성</h3><ul>
+<li>개선하기</li>
+<li>환경을 알기</li>
+<li>자동화의 중요성</li>
+<li>관성에 젖지 않는 비판적인 사고하기</li>
+</ul>
+<h3 id="변화-무쌍한-스펙-변경에-맞서기"><a href="#변화-무쌍한-스펙-변경에-맞서기" class="headerlink" title="변화 무쌍한 스펙 변경에 맞서기"></a>변화 무쌍한 스펙 변경에 맞서기</h3><ul>
+<li>초기에 결정된 스펙은 무조건 변경된다고 생각하기</li>
+<li>어떻게 대응할지 생각하기</li>
+<li>변경될 수 있는 요소들을 어떻게 제어해야할지</li>
+</ul>
+<hr>
+<h1 id="일-만드는-개발자-VS-일-부풀리는-개발자"><a href="#일-만드는-개발자-VS-일-부풀리는-개발자" class="headerlink" title="일 만드는 개발자 VS 일 부풀리는 개발자"></a>일 만드는 개발자 VS 일 부풀리는 개발자</h1><p><a href="https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019-vs" target="_blank" rel="noopener">세번째 세션</a>으로 우아한 형제들의 김민태 프로그래머님의 발표입니다.</p>
+<h2 id="‘일’-에-대해-정의해보기"><a href="#‘일’-에-대해-정의해보기" class="headerlink" title="‘일’ 에 대해 정의해보기"></a>‘일’ 에 대해 정의해보기</h2><p>사람과 태도, 전문성, 에너지, 등등</p>
+<h2 id="출발점은-Requirement"><a href="#출발점은-Requirement" class="headerlink" title="출발점은 Requirement!"></a>출발점은 Requirement!</h2><h3 id="요구사항은-어디까지-수용해야하나"><a href="#요구사항은-어디까지-수용해야하나" class="headerlink" title="요구사항은 어디까지 수용해야하나?"></a>요구사항은 어디까지 수용해야하나?</h3><ul>
+<li>먼저 직업인과 직장인에 대해 생각해보자<blockquote>
+<p>“나는 주니어니까…” 라는 생각은 하지말자.</p>
+</blockquote>
+</li>
+<li>상사와 제품에 대해 생각해보자<blockquote>
+<p>제품이 모든것의 중심이 되어야 하지 않을까?</p>
+</blockquote>
+</li>
+<li>습관은 관성이 된다.</li>
+</ul>
+<p>요구사항을 분석하고, 계획하고, 실행하고, 측정하고, 보정하고, 다시 분석하고 이런 반복적인 과정에서 예외사항이 발생할때는 바로 사람 때문이 대부분이다.</p>
+<h3 id="커뮤니케이션이-중요하다"><a href="#커뮤니케이션이-중요하다" class="headerlink" title="커뮤니케이션이 중요하다."></a>커뮤니케이션이 중요하다.</h3><h3 id="동료를-위한-개발"><a href="#동료를-위한-개발" class="headerlink" title="동료를 위한 개발"></a>동료를 위한 개발</h3><h3 id="고객을-위한-개발"><a href="#고객을-위한-개발" class="headerlink" title="고객을 위한 개발"></a>고객을 위한 개발</h3><hr>
+<h1 id="빠르게-훑어보는-웹-개발-트렌드"><a href="#빠르게-훑어보는-웹-개발-트렌드" class="headerlink" title="빠르게 훑어보는 웹 개발 트렌드"></a>빠르게 훑어보는 웹 개발 트렌드</h1><p><a href="https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019" target="_blank" rel="noopener">네번째 강의</a>로 카카오뱅크의 한장현님이 발표하셨습니다.</p>
+<p>약간 좀 뻔한 내용,,<br><a href="https://github.com/kamranahmedse/developer-roadmap" target="_blank" rel="noopener">2019 Front-end Developer’s Roadmap</a>을 기반으로한 발표였다.</p>
+<h3 id="웹개발-트랜드"><a href="#웹개발-트랜드" class="headerlink" title="웹개발 트랜드"></a>웹개발 트랜드</h3><p>서버 중심 -&gt; 클라이언트 중심</p>
+<hr>
+<h1 id="데이터-상태-관리-그것을-알려주마"><a href="#데이터-상태-관리-그것을-알려주마" class="headerlink" title="데이터 상태 관리. 그것을 알려주마!"></a>데이터 상태 관리. 그것을 알려주마!</h1><p><a href="https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019-140432157" target="_blank" rel="noopener">다섯번째 강의</a>로 네이버 PWE의 최현철님이 발표하셨습니다.</p>
+<h2 id="FE에서-상태관리란-무엇일까"><a href="#FE에서-상태관리란-무엇일까" class="headerlink" title="FE에서 상태관리란 무엇일까?"></a>FE에서 상태관리란 무엇일까?</h2><h2 id="SPA에서-상태관리란-무엇일까"><a href="#SPA에서-상태관리란-무엇일까" class="headerlink" title="SPA에서 상태관리란 무엇일까?"></a>SPA에서 상태관리란 무엇일까?</h2><blockquote>
+<p>상태라는 눈에 보이지 않는 부분이 실시간 비동기적으로 변하기때문에 제어하기 힘들다.</p>
+</blockquote>
+<hr>
+<h1 id="오늘부터-나도-FE-성능-분석가"><a href="#오늘부터-나도-FE-성능-분석가" class="headerlink" title="오늘부터 나도 FE 성능 분석가"></a>오늘부터 나도 FE 성능 분석가</h1><p><a href="https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019-fe" target="_blank" rel="noopener">마지막 강의</a>로 네이버 아폴로 FE의 손찬욱님이 발표하셨습니다.<br>개인적으로는 이번 컨퍼런스에서 가장 유익한 강의였습니다.</p>
+<h2 id="성능-분석가의-관심사-Goal-은-무엇일까"><a href="#성능-분석가의-관심사-Goal-은-무엇일까" class="headerlink" title="성능 분석가의 관심사(Goal)은 무엇일까?"></a>성능 분석가의 관심사(Goal)은 무엇일까?</h2><blockquote>
+<p>유저 입력시에 얼마나 빠르게 반응할 수 있나?</p>
+</blockquote>
+<h3 id="LAI-Loading-and-Interation"><a href="#LAI-Loading-and-Interation" class="headerlink" title="LAI (Loading and Interation)"></a>LAI (Loading and Interation)</h3><h2 id="어떻게-성능을-올릴까-Plan"><a href="#어떻게-성능을-올릴까-Plan" class="headerlink" title="어떻게 성능을 올릴까? (Plan)"></a>어떻게 성능을 올릴까? (Plan)</h2><ol>
+<li>대상을 선정. <em>숲을 보기!</em><ul>
+<li>어떤게 중요한 포인트인지 파악하기</li>
+</ul>
+</li>
+<li>개선 프로세스<ul>
+<li>측정</li>
+<li>분석</li>
+<li>최적화</li>
+<li>측정 …(반복)</li>
+</ul>
+</li>
+<li>언제까지?<ul>
+<li>목표하는 초기 로딩 시간에 맞게</li>
+<li>구글의 경우 <a href="https://developers.google.com/web/fundamentals/performance/rail?hl=ko" target="_blank" rel="noopener">RAIL</a>, <a href="https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint" target="_blank" rel="noopener">FMP</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="초기-로딩-속도-개선하기"><a href="#초기-로딩-속도-개선하기" class="headerlink" title="초기 로딩 속도 개선하기"></a>초기 로딩 속도 개선하기</h2><ul>
+<li>Waterfall 차트<ul>
+<li>높이 줄이기</li>
+<li>폭 줄이기</li>
+<li>간격 땡기기</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-높이-줄이기"><a href="#1-높이-줄이기" class="headerlink" title="1. 높이 줄이기"></a>1. 높이 줄이기</h3><pre><code>- Data URI -&gt; HTML에 Default 이미지 같은 이미지를 포함
+- Lazy
+- 이미지 (캐러셀의 경우 보여지는 곳만 먼저 로딩)
+</code></pre><h3 id="2-폭-줄이기"><a href="#2-폭-줄이기" class="headerlink" title="2. 폭 줄이기"></a>2. 폭 줄이기</h3><pre><code>- Initial connection
+    - HTTP 2.0으로 바꾸면 좋다(멀티 커넥션이 가능해짐)
+- TTFB (Time To First Byte)
+    - 서버나 비즈니스 로직이 느린걸 체크할 수 있음
+- Content download (네트워크 속도 등 여러 요인이 있지만)
+- [GZIP](https://ko.wikipedia.org/wiki/Gzip), [Minify](https://www.minifier.org/)(이걸 말한건지 정확하진 않음..), [Obfuscation](https://en.wikipedia.org/wiki/Obfuscation_(software))
+- 이미지 줄이기
+- Decode 비용 줄이기 (이미지 화면에 렌더링하는 비용)
+</code></pre><h3 id="3-간격-땡기기-gt-잘하기-위해선-브라우져-렌더링-과정을-잘-알아야함"><a href="#3-간격-땡기기-gt-잘하기-위해선-브라우져-렌더링-과정을-잘-알아야함" class="headerlink" title="3. 간격 땡기기 -&gt; 잘하기 위해선 브라우져 렌더링 과정을 잘 알아야함"></a>3. 간격 땡기기 -&gt; 잘하기 위해선 <a href="https://d2.naver.com/helloworld/59361" target="_blank" rel="noopener">브라우져 렌더링 과정</a>을 잘 알아야함</h3><pre><code>&lt;img width=&quot;649&quot; alt=&quot;브라우저 렌더링 과정 (출처:네이버D2)&quot; src=&quot;https://user-images.githubusercontent.com/35797540/56470210-a6497680-647e-11e9-9db6-229eddd3083b.png&quot;&gt;
+</code></pre><ol>
+<li>서버로부터 HTML 문자열을 Stream으로 받음</li>
+<li><code>&lt;head&gt;</code> 태그의 자원을 병렬로 받음</li>
+<li>2번에서 받은 자원을 모두 실행</li>
+<li><code>&lt;body&gt;</code> 태그부터 화면을 그리기 시작</li>
+</ol>
+<ul>
+<li>head 태그엔 css와 필수 JS만 넣기</li>
+<li>JS는 body 태그 마지막에 넣기<ul>
+<li>async, defer를 사용해서 원하는 위치에 넣어도 됨(but 지원하지 않는 브라우저가 존재함)</li>
+<li>async -&gt; 의존성이 없는 경우(GA)</li>
+<li>defer -&gt; DOM 제어와 관련이 있을때</li>
+</ul>
+</li>
+<li>preload<ul>
+<li>css 내에 폰트, 이미지를 미리 css와 함께 부름</li>
+</ul>
+</li>
+<li>HTTP2 Server Push<ul>
+<li>HTML, Javascript, CSS, Img 같이 받음</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-총체적으로-점검하기"><a href="#4-총체적으로-점검하기" class="headerlink" title="4. 총체적으로 점검하기"></a>4. 총체적으로 점검하기</h3><ul>
+<li>FP(Fisrt Paint) -&gt; head 태그 종료 후 이루어짐</li>
+<li>FMP(First Meaningful Paint) -&gt; <strong><em>hero element!</em></strong> -&gt; 이걸 어떤걸로 정할지가 중요함! (Lazy하게 처리하면 안되는 요소들)</li>
+<li>TTI(<a href="https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive" target="_blank" rel="noopener">Time To Interactive</a>)</li>
+<li>결국, 전체적으로 균형감 있게 줄여주는게 중요하다</li>
+</ul>
+<h2 id="Part-2"><a href="#Part-2" class="headerlink" title="Part 2."></a>Part 2.</h2><h3 id="Case-by-Case"><a href="#Case-by-Case" class="headerlink" title="Case by Case"></a>Case by Case</h3><ul>
+<li>브라우져 메인 스레드를 괴롭히지 않아야함!</li>
+</ul>
+<h3 id="Javascript가-DOM을-만지면-메인-스레드가-Rendering-Pipeline-과정을-거친다"><a href="#Javascript가-DOM을-만지면-메인-스레드가-Rendering-Pipeline-과정을-거친다" class="headerlink" title="Javascript가 DOM을 만지면 메인 스레드가 Rendering Pipeline 과정을 거친다"></a>Javascript가 DOM을 만지면 메인 스레드가 Rendering Pipeline 과정을 거친다</h3><ul>
+<li>Rendering Pipeline 과정</li>
+</ul>
+<ol>
+<li>Javascript가 건들면</li>
+<li>Style recalculation</li>
+<li>Layout</li>
+<li>Paint</li>
+<li>Composite (cpu가 아닌 gpu의 도움을 받음)<ul>
+<li>레이어를 겹쳐서 그리는 작업 (따라서 레이어를 어떻게 만드느냐가 중요함. 꼭 필요한 부분만 만들어야한다.)</li>
+</ul>
+</li>
+</ol>
+<p><a href="https://csstriggers.com/" target="_blank" rel="noopener">csstriggers.com 참조</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2019/04/12/naver-tech-concert/" data-id="cjvhlreed006pxidtt4eo30zx" class="article-share-link">Share</a>
+      
+        <a href="https://kihyun92.github.io/2019/04/12/naver-tech-concert/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FE-2019/">FE 2019</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frontend/">frontend</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/네이버-테크-콘서트/">네이버 테크 콘서트</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/15/Typescript-Quick-Start/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Typescript-Quick-Start
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/05/TIL/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TIL</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Jest/">Jest</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Jest/Unit-Test/">Unit Test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jest/Unit-test/">Unit test</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/RxJS/">RxJS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jest/">jest</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jest/unit-test/">unit test</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/til/">til</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/강의-정리/">강의 정리</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/강의-정리/Smart-Work/">Smart Work</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/책-정리/">책 정리</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/책-정리/Typescript/">Typescript</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CR/">CR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRLF/">CRLF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FE-2019/">FE 2019</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GatsbyJS/">GatsbyJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Getting-Started/">Getting Started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-2/">HTTP/2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest/">Jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest-번역/">Jest 번역</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LF/">LF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJ/">RxJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJS/">RxJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Setup-and-Teardown/">Setup and Teardown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smart-Work/">Smart Work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/">TDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test-Asynchronous-Code/">Test Asynchronous Code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typescript/">Typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unit-Test/">Unit Test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Using-Matchers/">Using Matchers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/">cache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frontend/">frontend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-stash/">git stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-flow/">git-flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reset/">reset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stash/">stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/til/">til</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-style-binding/">vue style binding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/네이버-테크-콘서트/">네이버 테크 콘서트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/브라우저/">브라우저</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/비동기-테스트/">비동기 테스트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/설정-및-해제/">설정 및 해제</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/스마트워크/">스마트워크</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/일하는-방식을-혁신한-기업들의-비밀/">일하는 방식을 혁신한 기업들의 비밀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/정규표현식/">정규표현식</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/회고/">회고</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/CRLF/" style="font-size: 10px;">CRLF</a> <a href="/tags/FE-2019/" style="font-size: 10px;">FE 2019</a> <a href="/tags/GatsbyJS/" style="font-size: 10px;">GatsbyJS</a> <a href="/tags/Getting-Started/" style="font-size: 10px;">Getting Started</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/HTTP-2/" style="font-size: 10px;">HTTP/2</a> <a href="/tags/Jest/" style="font-size: 15px;">Jest</a> <a href="/tags/Jest-번역/" style="font-size: 15px;">Jest 번역</a> <a href="/tags/LF/" style="font-size: 10px;">LF</a> <a href="/tags/RxJ/" style="font-size: 10px;">RxJ</a> <a href="/tags/RxJS/" style="font-size: 12.5px;">RxJS</a> <a href="/tags/Setup-and-Teardown/" style="font-size: 10px;">Setup and Teardown</a> <a href="/tags/Smart-Work/" style="font-size: 10px;">Smart Work</a> <a href="/tags/TDD/" style="font-size: 10px;">TDD</a> <a href="/tags/Test-Asynchronous-Code/" style="font-size: 10px;">Test Asynchronous Code</a> <a href="/tags/Typescript/" style="font-size: 12.5px;">Typescript</a> <a href="/tags/Unit-Test/" style="font-size: 12.5px;">Unit Test</a> <a href="/tags/Using-Matchers/" style="font-size: 10px;">Using Matchers</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/frontend/" style="font-size: 10px;">frontend</a> <a href="/tags/git/" style="font-size: 17.5px;">git</a> <a href="/tags/git-stash/" style="font-size: 10px;">git stash</a> <a href="/tags/git-flow/" style="font-size: 12.5px;">git-flow</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/reset/" style="font-size: 10px;">reset</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/til/" style="font-size: 20px;">til</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vue-style-binding/" style="font-size: 10px;">vue style binding</a> <a href="/tags/네이버-테크-콘서트/" style="font-size: 10px;">네이버 테크 콘서트</a> <a href="/tags/브라우저/" style="font-size: 10px;">브라우저</a> <a href="/tags/비동기-테스트/" style="font-size: 10px;">비동기 테스트</a> <a href="/tags/설정-및-해제/" style="font-size: 10px;">설정 및 해제</a> <a href="/tags/스마트워크/" style="font-size: 10px;">스마트워크</a> <a href="/tags/일하는-방식을-혁신한-기업들의-비밀/" style="font-size: 10px;">일하는 방식을 혁신한 기업들의 비밀</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/10/TIL/">TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/09/TIL/">TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/08/Smart-Work/">일하는 방식을 혁신한 기업들의 비밀 (스마트 워크)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/08/TIL/">TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/07/jest-setup-and-teardown/">Jest - Setup and Teardown</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Kihyun Kim<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'kihyuns-blog';
+  
+  var disqus_url = 'https://kihyun92.github.io/2019/04/12/naver-tech-concert/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

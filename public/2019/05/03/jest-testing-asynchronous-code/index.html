@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Jest - Testing Asynchronous Code | 견스</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="해당 포스트의 내용은 Jest 공식 문서의 Testing Asynchronous Code를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.  비동기 코드 테스트 하기JavaScript에서 비동기 적으로 실행되는 코드는 일반적입니다. 비동기로 실행되는 코드가있는 경우, Jest는 테스트 중인">
+<meta name="keywords" content="Jest,Unit Test,Jest 번역,비동기 테스트,Test Asynchronous Code">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jest - Testing Asynchronous Code">
+<meta property="og:url" content="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/index.html">
+<meta property="og:site_name" content="견스">
+<meta property="og:description" content="해당 포스트의 내용은 Jest 공식 문서의 Testing Asynchronous Code를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.  비동기 코드 테스트 하기JavaScript에서 비동기 적으로 실행되는 코드는 일반적입니다. 비동기로 실행되는 코드가있는 경우, Jest는 테스트 중인">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-07T05:32:49.583Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jest - Testing Asynchronous Code">
+<meta name="twitter:description" content="해당 포스트의 내용은 Jest 공식 문서의 Testing Asynchronous Code를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.  비동기 코드 테스트 하기JavaScript에서 비동기 적으로 실행되는 코드는 일반적입니다. 비동기로 실행되는 코드가있는 경우, Jest는 테스트 중인">
+  
+    <link rel="alternate" href="/atom.xml" title="견스" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">견스</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Work &amp; Life Harmony</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kihyun92.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jest-testing-asynchronous-code" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/03/jest-testing-asynchronous-code/" class="article-date">
+  <time datetime="2019-05-03T05:34:02.000Z" itemprop="datePublished">2019-05-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Jest/">Jest</a>►<a class="article-category-link" href="/categories/Jest/Unit-test/">Unit test</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Jest - Testing Asynchronous Code
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>해당 포스트의 내용은 Jest 공식 문서의 <a href="https://jestjs.io/docs/en/asynchronous" target="_blank" rel="noopener">Testing Asynchronous Code</a>를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.</p>
+<hr>
+<h1 id="비동기-코드-테스트-하기"><a href="#비동기-코드-테스트-하기" class="headerlink" title="비동기 코드 테스트 하기"></a>비동기 코드 테스트 하기</h1><p>JavaScript에서 비동기 적으로 실행되는 코드는 일반적입니다. 비동기로 실행되는 코드가있는 경우, Jest는 테스트 중인 코드가 완료된 시점을 알아야 다른 테스트로 넘어갈 수 있습니다. Jest는 이를 처리할 몇가지 방법이 있습니다.</p>
+<h2 id="Callbacks"><a href="#Callbacks" class="headerlink" title="Callbacks"></a>Callbacks</h2><p>가장 일반적인 비동기 패턴은 콜백입니다.</p>
+<p>예를 들어 일부 데이터를 가져와 <code>callback(data)</code>이 완료되면 호출하는 <code>fetchData(callback)</code> 함수가 있다고 가정해보겠습니다. 이때 반환 된 데이터가 <code>&#39;peanut butter&#39;</code> 문자열 인지 테스트 하려고 합니다.</p>
+<p>기본적으로 Jest 테스트는 실행이 끝나면 완료됩니다. 즉, 이 테스트는 의도 한대로 동작하지 않습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Don't do this!</span></span><br><span class="line">test(<span class="string">'the data is peanut butter'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        expect(data).toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fetchData(callback);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>문제는 <code>fetchData</code>가 완료되면, 즉시 콜백을 호출하기 전에 테스트가 완료된다는 것입니다.</p>
+<p>이 문제를 해결하는 다른 형태의 <code>테스트</code>가 있습니다. 빈 인자가 있는 함수에 테스트를 두는 대신에, <code>done</code>이라는 단일 인자를 사용하십시오. Jest는 테스트가 끝나기 전에 done 콜백이 호출 될 때까지 기다릴 것 입니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'the data is peanut butter'</span>, done =&gt; &#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        expect(data).toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">        done();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fetchData(callback);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>우리가 원하는대로, <code>done()</code>이 호출되지 않으면 테스트가 실패할 것 입니다.</p>
+<h2 id="Promises"><a href="#Promises" class="headerlink" title="Promises"></a>Promises</h2><p>코드가 <code>Promise</code>를 사용할 때, 비동기 테스트를 처리하는 간단한 방법이 있습니다. 테스트에서 <code>Promise</code>를 리턴하면, Jest는 그 <code>Promise</code>가 <code>resolve</code> 될 때까지 기다릴 것입니다. <code>Promise</code>가 <code>reject</code>되면 테스트는 자동으로 실패합니다.</p>
+<p>예를 들어, 콜백을 사용하는 대신 <code>fetchData</code>가 <code>resolve</code>일때 <code>&#39;peanut butter&#39;</code> 문자열을 반환하는 <code>promise</code>라고 가정 해 봅시다. 우리는 다음과 같이 테스트 할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'the data is peanut butter'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> fetchData().then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">        expect(data).toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>프로미스의 return을 확실하게 하세요. 만약 <code>return</code> 문을 생략하면, <code>fetchData</code>가 <code>resolve</code> 되고 <code>then()</code>이 콜백을 실행할 기회가 오기 전에 테스트가 완료됩니다.</p>
+<p>프로미스가 <code>reject</code> 될 것으로 예상되면 <code>.catch</code> 메소드를 사용하십시오. <code>expect.assertions</code>를 추가하여 특정 수의 어설션이 호출되는지 확인하십시오. 그렇지 않으면 <code>fulfilled</code>인 프로미스가 테스트를 통과하지 못할 것 입니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'the fetch fails with an error'</span>, () =&gt; &#123;</span><br><span class="line">    expect.assertions(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> fetchData().catch(<span class="function"><span class="params">e</span> =&gt;</span> expect(e).toMatch(<span class="string">'error'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="resolves-rejects"><a href="#resolves-rejects" class="headerlink" title=".resolves / .rejects"></a>.resolves / .rejects</h2><p>expect 문에서 <code>.resolves</code> matcher를 사용할 수도 있습니다. Jest는 프로미스가 resolve 될때까지 기다릴 것입니다. 프로미스가 <code>rejected</code>되면 테스트는 자동으로 실패합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'the data is peanut butter'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> expect(fetchData()).resolves.toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>어설션의 return을 확실하게 하세요. 만약 <code>return</code> 문을 생략하면, <code>fetchData</code>가 <code>resolve</code> 되고 <code>then()</code>이 콜백을 실행할 기회가 오기 전에 테스트가 완료됩니다.</p>
+<p>프로미스가 <code>reject</code> 될 것으로 예상되면 <code>.rejects</code> matcher를 사용하세요. <code>.resolves</code> matcher와 유사하게 작동합니다. 프로미스가 <code>fulfilled</code>되면 테스트는 자동으로 실패합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'the fetch fails with an error'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> expect(fetchData()).rejects.toMatch(<span class="string">'error'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Async-Await"><a href="#Async-Await" class="headerlink" title="Async/Await"></a>Async/Await</h2><p>또는 <code>async</code>와 <code>await</code>를 사용하여 테스트를 기다릴 수도 있습니다. 비동기 테스트를 작성하려면 <code>test</code>에 전달 된 함수 앞에 <code>async</code> 키워드를 사용하면 됩니다. 예를 들어 동일한 <code>fetchData</code> 시나리오를 다음과 같이 테스트 할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'the data is peanut butter'</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    expect.assertions(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> fetchData();</span><br><span class="line">    expect(data).toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'the fetch fails with an error'</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    expect.assertions(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">await</span> fetchData();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">        expect(e).toMatch(<span class="string">'error'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>물론 <code>async</code>와 <code>await</code>를 <code>.resolves</code>나 <code>.rejects</code>와 함께 쓸 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">'the data is peanut butter'</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="keyword">await</span> expect(fetchData()).resolves.toBe(<span class="string">'peanut butter'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'the fetch fails with an error'</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="keyword">await</span> expect(fetchData()).rejects.toThrow(<span class="string">'error'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>이 경우, <code>async</code>와 <code>await</code>은 실제로 promise 예제에서 사용하는 것과 동일한 로직에 대한 문법적 첨가일 뿐입니다.</p>
+<p>이 형식 중 다른 형식보다 특히 뛰어난 형식은 없으며, 코드베이스 전체 또는 단일 파일에서 혼합하여 사용할 수 있습니다. 테스트 스타일을 단순하게 만드는 것에 달려 있습니다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/" data-id="cjvhlredy004hxidtr5wofjie" class="article-share-link">Share</a>
+      
+        <a href="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jest/">Jest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jest-번역/">Jest 번역</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Test-Asynchronous-Code/">Test Asynchronous Code</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unit-Test/">Unit Test</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/비동기-테스트/">비동기 테스트</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/03/TIL/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TIL
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/24/TIL/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TIL</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Jest/">Jest</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Jest/Unit-Test/">Unit Test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jest/Unit-test/">Unit test</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/RxJS/">RxJS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jest/">jest</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/jest/unit-test/">unit test</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/til/">til</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/강의-정리/">강의 정리</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/강의-정리/Smart-Work/">Smart Work</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/책-정리/">책 정리</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/책-정리/Typescript/">Typescript</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CR/">CR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRLF/">CRLF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FE-2019/">FE 2019</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GatsbyJS/">GatsbyJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Getting-Started/">Getting Started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-2/">HTTP/2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest/">Jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest-번역/">Jest 번역</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LF/">LF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJ/">RxJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJS/">RxJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Setup-and-Teardown/">Setup and Teardown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smart-Work/">Smart Work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/">TDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test-Asynchronous-Code/">Test Asynchronous Code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typescript/">Typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unit-Test/">Unit Test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Using-Matchers/">Using Matchers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/">cache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frontend/">frontend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-stash/">git stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-flow/">git-flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reset/">reset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stash/">stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/til/">til</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-style-binding/">vue style binding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/네이버-테크-콘서트/">네이버 테크 콘서트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/브라우저/">브라우저</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/비동기-테스트/">비동기 테스트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/설정-및-해제/">설정 및 해제</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/스마트워크/">스마트워크</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/일하는-방식을-혁신한-기업들의-비밀/">일하는 방식을 혁신한 기업들의 비밀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/정규표현식/">정규표현식</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/회고/">회고</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/CRLF/" style="font-size: 10px;">CRLF</a> <a href="/tags/FE-2019/" style="font-size: 10px;">FE 2019</a> <a href="/tags/GatsbyJS/" style="font-size: 10px;">GatsbyJS</a> <a href="/tags/Getting-Started/" style="font-size: 10px;">Getting Started</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/HTTP-2/" style="font-size: 10px;">HTTP/2</a> <a href="/tags/Jest/" style="font-size: 15px;">Jest</a> <a href="/tags/Jest-번역/" style="font-size: 15px;">Jest 번역</a> <a href="/tags/LF/" style="font-size: 10px;">LF</a> <a href="/tags/RxJ/" style="font-size: 10px;">RxJ</a> <a href="/tags/RxJS/" style="font-size: 12.5px;">RxJS</a> <a href="/tags/Setup-and-Teardown/" style="font-size: 10px;">Setup and Teardown</a> <a href="/tags/Smart-Work/" style="font-size: 10px;">Smart Work</a> <a href="/tags/TDD/" style="font-size: 10px;">TDD</a> <a href="/tags/Test-Asynchronous-Code/" style="font-size: 10px;">Test Asynchronous Code</a> <a href="/tags/Typescript/" style="font-size: 12.5px;">Typescript</a> <a href="/tags/Unit-Test/" style="font-size: 12.5px;">Unit Test</a> <a href="/tags/Using-Matchers/" style="font-size: 10px;">Using Matchers</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/frontend/" style="font-size: 10px;">frontend</a> <a href="/tags/git/" style="font-size: 17.5px;">git</a> <a href="/tags/git-stash/" style="font-size: 10px;">git stash</a> <a href="/tags/git-flow/" style="font-size: 12.5px;">git-flow</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/reset/" style="font-size: 10px;">reset</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/til/" style="font-size: 20px;">til</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vue-style-binding/" style="font-size: 10px;">vue style binding</a> <a href="/tags/네이버-테크-콘서트/" style="font-size: 10px;">네이버 테크 콘서트</a> <a href="/tags/브라우저/" style="font-size: 10px;">브라우저</a> <a href="/tags/비동기-테스트/" style="font-size: 10px;">비동기 테스트</a> <a href="/tags/설정-및-해제/" style="font-size: 10px;">설정 및 해제</a> <a href="/tags/스마트워크/" style="font-size: 10px;">스마트워크</a> <a href="/tags/일하는-방식을-혁신한-기업들의-비밀/" style="font-size: 10px;">일하는 방식을 혁신한 기업들의 비밀</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/10/TIL/">TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/09/TIL/">TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/08/Smart-Work/">일하는 방식을 혁신한 기업들의 비밀 (스마트 워크)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/08/TIL/">TIL</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/07/jest-setup-and-teardown/">Jest - Setup and Teardown</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Kihyun Kim<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'kihyuns-blog';
+  
+  var disqus_url = 'https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

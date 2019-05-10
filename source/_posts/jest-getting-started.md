@@ -3,7 +3,7 @@ title: Jest - Getting Started
 date: 2018-11-09 10:51:02
 categories:
     - Jest
-    - Unit Test
+    - 공식 문서
 tags:
     - Jest
     - Getting Started

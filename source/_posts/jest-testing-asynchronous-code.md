@@ -3,7 +3,7 @@ title: Jest - Testing Asynchronous Code
 date: 2019-05-03 14:34:02
 categories:
     - Jest
-    - Unit test
+    - 공식 문서
 tags:
     - Jest
     - Unit Test

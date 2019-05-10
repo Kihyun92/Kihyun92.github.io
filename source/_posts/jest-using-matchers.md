@@ -3,7 +3,7 @@ title: Jest - Using Matchers
 date: 2018-11-10 14:07:41
 categories:
     - Jest
-    - Unit Test
+    - 공식 문서
 tags:
     - Jest
     - Using Matchers

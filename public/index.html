@@ -75,6 +75,10 @@
   <time datetime="2019-05-22T00:55:16.000Z" itemprop="datePublished">2019-05-22</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TIL/">TIL</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -91,15 +95,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="자바스크립트-성능-비교"><a href="#자바스크립트-성능-비교" class="headerlink" title="자바스크립트 성능 비교"></a>자바스크립트 성능 비교</h2><p>성능 비교 관련한 <a href="https://12bme.tistory.com/134?category=682905" target="_blank" rel="noopener">좋은 글</a>을 공유받았다.</p>
+<p>이걸 보고 <code>for-of</code>는 성능이 어떨지 궁금해졌다. 순환하려는 대상이 undefined일때 에러를 뱉기 때문에, 실제로 사용하려면 앞에 예외 처리도 추가해야한다고 하셔서 잘 안쓴다고 하시는데, 이렇게 만든 이유가 있지 않을까라는 생각이 들었다. 시간이 되면 성능 체크를 해보자!</p>
+<h2 id="ie9-예외처리"><a href="#ie9-예외처리" class="headerlink" title="ie9 예외처리"></a>ie9 예외처리</h2><p>javascript에서 ie9 예외처리를 할 일이 생겼다.</p>
+<p>navigator.userAgent에 뭔가 브라우저 정보가 담겨있음. <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/User_agent%EB%A5%BC_%EC%9D%B4%EC%9A%A9%ED%95%9C_%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80_%EA%B0%90%EC%A7%80" target="_blank" rel="noopener">MDN 참고</a></p>
+<ul>
+<li>IE 8.0 부터는 <code>Trident</code>라는 값이 유저정보에 붙음</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// Example</span><br><span class="line">IE6.0 = null</span><br><span class="line">IE7.0 = null</span><br><span class="line">IE8.0 = Trident/4.0</span><br><span class="line">IE9.0 = Trident/5.0</span><br><span class="line">IE10.0 = Trident/6.0</span><br></pre></td></tr></table></figure>
+<p><a href="https://ko.wikipedia.org/wiki/%EC%A1%B0%EA%B1%B4%EB%B6%80_%EC%A3%BC%EC%84%9D" target="_blank" rel="noopener">조건부 주석</a> 이란 것도 있는 듯하다.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/22/TIL/" data-id="cjvyiuskx003bbudtgprhz6up" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/22/TIL/" data-id="cjvz3wn7v003583dtn4tfh9wl" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/22/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TIL/">TIL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/for-in/">for-in</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/for-of/">for-of</a></li></ul>
+
     </footer>
   </div>
   
@@ -147,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/20/TIL/" data-id="cjvyiuskx0038budt1ooztcjv" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/20/TIL/" data-id="cjvz3wn7x003c83dt56nqwrt5" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/20/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -192,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/17/TIL/" data-id="cjvyiuskw0035budtiilh3agq" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/17/TIL/" data-id="cjvz3wn7x003983dt8yly1vws" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/17/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -235,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/14/TIL/" data-id="cjvyiuskv0032budtsgq28tji" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/14/TIL/" data-id="cjvz3wn7z003f83dtvc7jnj0z" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/14/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -279,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/10/jest-mock-function/" data-id="cjvyiusl1003lbudtjm9pneyc" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/10/jest-mock-function/" data-id="cjvz3wn83003p83dtfvnoeoou" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/10/jest-mock-function/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -330,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/10/TIL/" data-id="cjvyiuskt002zbudtntjpekq0" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/10/TIL/" data-id="cjvz3wn7t002z83dtbh27kejz" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/10/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -378,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/09/TIL/" data-id="cjvyiusks002wbudtgrqq0heo" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/09/TIL/" data-id="cjvz3wn7s002w83dt206xov6o" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/09/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -431,7 +446,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/08/Smart-Work/" data-id="cjvyiusjq0004budtrq0wci4q" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/08/Smart-Work/" data-id="cjvz3wn6x000883dtx6s7w89o" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/08/Smart-Work/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -480,7 +495,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/08/TIL/" data-id="cjvyiuskr002sbudtqo7ch8ku" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/08/TIL/" data-id="cjvz3wn7r002s83dtro0easf4" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/08/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -544,7 +559,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/07/jest-setup-and-teardown/" data-id="cjvyiusl2003obudt48p8ydhc" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/07/jest-setup-and-teardown/" data-id="cjvz3wn84003t83dtujurm1j1" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/07/jest-setup-and-teardown/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -583,7 +598,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CR/">CR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRLF/">CRLF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FE-2019/">FE 2019</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GatsbyJS/">GatsbyJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Getting-Started/">Getting Started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-2/">HTTP/2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest/">Jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest-번역/">Jest 번역</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LF/">LF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mock-Function/">Mock Function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJ/">RxJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJS/">RxJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Setup-and-Teardown/">Setup and Teardown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smart-Work/">Smart Work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/">TDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test-Asynchronous-Code/">Test Asynchronous Code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typescript/">Typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unit-Test/">Unit Test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Using-Matchers/">Using Matchers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/">cache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frontend/">frontend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-stash/">git stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-flow/">git-flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reset/">reset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stash/">stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/til/">til</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-style-binding/">vue style binding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/네이버-테크-콘서트/">네이버 테크 콘서트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/브라우저/">브라우저</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/비동기-테스트/">비동기 테스트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/설정-및-해제/">설정 및 해제</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/스마트워크/">스마트워크</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/일하는-방식을-혁신한-기업들의-비밀/">일하는 방식을 혁신한 기업들의 비밀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/정규표현식/">정규표현식</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/회고/">회고</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CR/">CR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRLF/">CRLF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FE-2019/">FE 2019</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GatsbyJS/">GatsbyJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Getting-Started/">Getting Started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-2/">HTTP/2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest/">Jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest-번역/">Jest 번역</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LF/">LF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mock-Function/">Mock Function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJ/">RxJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJS/">RxJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Setup-and-Teardown/">Setup and Teardown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smart-Work/">Smart Work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/">TDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/">TIL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test-Asynchronous-Code/">Test Asynchronous Code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typescript/">Typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unit-Test/">Unit Test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Using-Matchers/">Using Matchers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/">cache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/for-in/">for-in</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/for-of/">for-of</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frontend/">frontend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-stash/">git stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-flow/">git-flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reset/">reset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stash/">stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/til/">til</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-style-binding/">vue style binding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/네이버-테크-콘서트/">네이버 테크 콘서트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/브라우저/">브라우저</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/비동기-테스트/">비동기 테스트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/설정-및-해제/">설정 및 해제</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/스마트워크/">스마트워크</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/일하는-방식을-혁신한-기업들의-비밀/">일하는 방식을 혁신한 기업들의 비밀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/정규표현식/">정규표현식</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/회고/">회고</a></li></ul>
     </div>
   </div>
 
@@ -593,7 +608,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/CRLF/" style="font-size: 10px;">CRLF</a> <a href="/tags/FE-2019/" style="font-size: 10px;">FE 2019</a> <a href="/tags/GatsbyJS/" style="font-size: 10px;">GatsbyJS</a> <a href="/tags/Getting-Started/" style="font-size: 10px;">Getting Started</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/HTTP-2/" style="font-size: 10px;">HTTP/2</a> <a href="/tags/Jest/" style="font-size: 16.67px;">Jest</a> <a href="/tags/Jest-번역/" style="font-size: 16.67px;">Jest 번역</a> <a href="/tags/LF/" style="font-size: 10px;">LF</a> <a href="/tags/Mock-Function/" style="font-size: 10px;">Mock Function</a> <a href="/tags/RxJ/" style="font-size: 10px;">RxJ</a> <a href="/tags/RxJS/" style="font-size: 13.33px;">RxJS</a> <a href="/tags/Setup-and-Teardown/" style="font-size: 10px;">Setup and Teardown</a> <a href="/tags/Smart-Work/" style="font-size: 10px;">Smart Work</a> <a href="/tags/TDD/" style="font-size: 10px;">TDD</a> <a href="/tags/Test-Asynchronous-Code/" style="font-size: 10px;">Test Asynchronous Code</a> <a href="/tags/Typescript/" style="font-size: 13.33px;">Typescript</a> <a href="/tags/Unit-Test/" style="font-size: 13.33px;">Unit Test</a> <a href="/tags/Using-Matchers/" style="font-size: 10px;">Using Matchers</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/frontend/" style="font-size: 10px;">frontend</a> <a href="/tags/git/" style="font-size: 16.67px;">git</a> <a href="/tags/git-stash/" style="font-size: 10px;">git stash</a> <a href="/tags/git-flow/" style="font-size: 13.33px;">git-flow</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/reset/" style="font-size: 10px;">reset</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/til/" style="font-size: 20px;">til</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vue-style-binding/" style="font-size: 10px;">vue style binding</a> <a href="/tags/네이버-테크-콘서트/" style="font-size: 10px;">네이버 테크 콘서트</a> <a href="/tags/브라우저/" style="font-size: 10px;">브라우저</a> <a href="/tags/비동기-테스트/" style="font-size: 10px;">비동기 테스트</a> <a href="/tags/설정-및-해제/" style="font-size: 10px;">설정 및 해제</a> <a href="/tags/스마트워크/" style="font-size: 10px;">스마트워크</a> <a href="/tags/일하는-방식을-혁신한-기업들의-비밀/" style="font-size: 10px;">일하는 방식을 혁신한 기업들의 비밀</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
+      <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/CRLF/" style="font-size: 10px;">CRLF</a> <a href="/tags/FE-2019/" style="font-size: 10px;">FE 2019</a> <a href="/tags/GatsbyJS/" style="font-size: 10px;">GatsbyJS</a> <a href="/tags/Getting-Started/" style="font-size: 10px;">Getting Started</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/HTTP-2/" style="font-size: 10px;">HTTP/2</a> <a href="/tags/Jest/" style="font-size: 16.67px;">Jest</a> <a href="/tags/Jest-번역/" style="font-size: 16.67px;">Jest 번역</a> <a href="/tags/LF/" style="font-size: 10px;">LF</a> <a href="/tags/Mock-Function/" style="font-size: 10px;">Mock Function</a> <a href="/tags/RxJ/" style="font-size: 10px;">RxJ</a> <a href="/tags/RxJS/" style="font-size: 13.33px;">RxJS</a> <a href="/tags/Setup-and-Teardown/" style="font-size: 10px;">Setup and Teardown</a> <a href="/tags/Smart-Work/" style="font-size: 10px;">Smart Work</a> <a href="/tags/TDD/" style="font-size: 10px;">TDD</a> <a href="/tags/TIL/" style="font-size: 10px;">TIL</a> <a href="/tags/Test-Asynchronous-Code/" style="font-size: 10px;">Test Asynchronous Code</a> <a href="/tags/Typescript/" style="font-size: 13.33px;">Typescript</a> <a href="/tags/Unit-Test/" style="font-size: 13.33px;">Unit Test</a> <a href="/tags/Using-Matchers/" style="font-size: 10px;">Using Matchers</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/for-in/" style="font-size: 10px;">for-in</a> <a href="/tags/for-of/" style="font-size: 10px;">for-of</a> <a href="/tags/frontend/" style="font-size: 10px;">frontend</a> <a href="/tags/git/" style="font-size: 16.67px;">git</a> <a href="/tags/git-stash/" style="font-size: 10px;">git stash</a> <a href="/tags/git-flow/" style="font-size: 13.33px;">git-flow</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/reset/" style="font-size: 10px;">reset</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/til/" style="font-size: 20px;">til</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vue-style-binding/" style="font-size: 10px;">vue style binding</a> <a href="/tags/네이버-테크-콘서트/" style="font-size: 10px;">네이버 테크 콘서트</a> <a href="/tags/브라우저/" style="font-size: 10px;">브라우저</a> <a href="/tags/비동기-테스트/" style="font-size: 10px;">비동기 테스트</a> <a href="/tags/설정-및-해제/" style="font-size: 10px;">설정 및 해제</a> <a href="/tags/스마트워크/" style="font-size: 10px;">스마트워크</a> <a href="/tags/일하는-방식을-혁신한-기업들의-비밀/" style="font-size: 10px;">일하는 방식을 혁신한 기업들의 비밀</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/회고/" style="font-size: 10px;">회고</a>
     </div>
   </div>
 

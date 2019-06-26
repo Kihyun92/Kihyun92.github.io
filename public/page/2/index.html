@@ -71,6 +71,59 @@
   
     <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
+    <a href="/2019/05/22/TIL/" class="article-date">
+  <time datetime="2019-05-22T00:55:16.000Z" itemprop="datePublished">2019-05-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TIL/">TIL</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/22/TIL/">TIL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="자바스크립트-성능-비교"><a href="#자바스크립트-성능-비교" class="headerlink" title="자바스크립트 성능 비교"></a>자바스크립트 성능 비교</h2><p>성능 비교 관련한 <a href="https://12bme.tistory.com/134?category=682905" target="_blank" rel="noopener">좋은 글</a>을 공유받았다.</p>
+<p>이걸 보고 <code>for-of</code>는 성능이 어떨지 궁금해졌다. 순환하려는 대상이 undefined일때 에러를 뱉기 때문에, 실제로 사용하려면 앞에 예외 처리도 추가해야한다고 하셔서 잘 안쓴다고 하시는데, 이렇게 만든 이유가 있지 않을까라는 생각이 들었다. 시간이 되면 성능 체크를 해보자!</p>
+<h2 id="ie9-예외처리"><a href="#ie9-예외처리" class="headerlink" title="ie9 예외처리"></a>ie9 예외처리</h2><p>javascript에서 ie9 예외처리를 할 일이 생겼다.</p>
+<p>navigator.userAgent에 뭔가 브라우저 정보가 담겨있음. <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/User_agent%EB%A5%BC_%EC%9D%B4%EC%9A%A9%ED%95%9C_%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80_%EA%B0%90%EC%A7%80" target="_blank" rel="noopener">MDN 참고</a></p>
+<ul>
+<li>IE 8.0 부터는 <code>Trident</code>라는 값이 유저정보에 붙음</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// Example</span><br><span class="line">IE6.0 = null</span><br><span class="line">IE7.0 = null</span><br><span class="line">IE8.0 = Trident/4.0</span><br><span class="line">IE9.0 = Trident/5.0</span><br><span class="line">IE10.0 = Trident/6.0</span><br></pre></td></tr></table></figure>
+<p><a href="https://ko.wikipedia.org/wiki/%EC%A1%B0%EA%B1%B4%EB%B6%80_%EC%A3%BC%EC%84%9D" target="_blank" rel="noopener">조건부 주석</a> 이란 것도 있는 듯하다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2019/05/22/TIL/" data-id="cjxcmpwt8003ejcdt8e09pi94" class="article-share-link">Share</a>
+      
+        <a href="https://kihyun92.github.io/2019/05/22/TIL/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TIL/">TIL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/for-in/">for-in</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/for-of/">for-of</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
     <a href="/2019/05/20/TIL/" class="article-date">
   <time datetime="2019-05-20T05:24:07.000Z" itemprop="datePublished">2019-05-20</time>
 </a>
@@ -109,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/20/TIL/" data-id="cjxb5nvyt0044nydtpzfi37hl" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/20/TIL/" data-id="cjxcmpwt50038jcdtawmjnh9w" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/20/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -154,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/17/TIL/" data-id="cjxb5nvyu0046nydt0hgt108r" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/17/TIL/" data-id="cjxcmpwt40035jcdtz8uvmjjr" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/17/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -197,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/14/TIL/" data-id="cjxb5nvyv0049nydthrslxy1c" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/14/TIL/" data-id="cjxcmpwt30032jcdtzrgc96ev" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/14/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -241,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/10/jest-mock-function/" data-id="cjxb5nvz40056nydtx2bhba33" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/10/jest-mock-function/" data-id="cjxcmpwti004ejcdti3w9n55q" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/10/jest-mock-function/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -292,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/10/TIL/" data-id="cjxb5nvyp003snydt7a7dumwc" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/10/TIL/" data-id="cjxcmpwt2002wjcdtbwte752e" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/10/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -340,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/09/TIL/" data-id="cjxb5nvyq003unydt7mfiuge5" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/09/TIL/" data-id="cjxcmpwt1002tjcdtznh50zrd" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/09/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -393,7 +446,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/08/Smart-Work/" data-id="cjxb5nvx70008nydtn6gkq0zg" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/08/Smart-Work/" data-id="cjxcmpws10004jcdtzmb5b4m3" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/08/Smart-Work/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -442,7 +495,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/08/TIL/" data-id="cjxb5nvys0041nydtwf006f6a" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/08/TIL/" data-id="cjxcmpwt0002qjcdttar22pmk" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/08/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -506,7 +559,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/07/jest-setup-and-teardown/" data-id="cjxb5nvz6005dnydtjplnjifo" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/07/jest-setup-and-teardown/" data-id="cjxcmpwtj004hjcdt4u6sxu4d" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/07/jest-setup-and-teardown/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -520,55 +573,11 @@
 
 
   
-    <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/07/TIL/" class="article-date">
-  <time datetime="2019-05-07T01:03:57.000Z" itemprop="datePublished">2019-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/TIL/">TIL</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/07/TIL/">TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Babel의-동작-원리-및-흐름에-대해-알아보기"><a href="#Babel의-동작-원리-및-흐름에-대해-알아보기" class="headerlink" title="Babel의 동작 원리 및 흐름에 대해 알아보기"></a>Babel의 동작 원리 및 흐름에 대해 알아보기</h2><p>공유 받은 <a href="https://moonformeli.tistory.com/28" target="_blank" rel="noopener">좋은 글</a>이 있어서 정리해두겠습니다.</p>
-<h2 id="Promise-한번-더-되짚어보기"><a href="#Promise-한번-더-되짚어보기" class="headerlink" title="Promise 한번 더 되짚어보기"></a>Promise 한번 더 되짚어보기</h2><p>캡틴 판교님의 <a href="https://joshua1988.github.io/web-development/javascript/promise-for-beginners/" target="_blank" rel="noopener">Promise에 대한 글</a>을 다시 한번 읽고 머리에 정리해보자</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/07/TIL/" data-id="cjxb5nvym003mnydtiin45k2a" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/2019/05/07/TIL/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -621,6 +630,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/26/TIL/">TIL</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/25/TIL/">TIL</a>
           </li>
         
@@ -634,10 +647,6 @@
         
           <li>
             <a href="/2019/06/12/TIL/">TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2019/06/11/TIL/">TIL</a>
           </li>
         
       </ul>

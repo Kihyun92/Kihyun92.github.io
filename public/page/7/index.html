@@ -69,6 +69,105 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Javascript-Testing-Introduction-Tutorial" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/16/Javascript-Testing-Introduction-Tutorial/" class="article-date">
+  <time datetime="2018-10-16T02:50:33.000Z" itemprop="datePublished">2018-10-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/16/Javascript-Testing-Introduction-Tutorial/">Javascript Testing Introduction Tutorial</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.youtube.com/watch?v=r9HdJ8P6GQI&amp;feature=push-sd&amp;attr_tag=KRUQImvHMMCLBFNo%3A6" target="_blank" rel="noopener">Javascript test tutorial 영상</a>을 정리해보자.</p>
+<hr>
+<h2 id="What-is-“Testing”"><a href="#What-is-“Testing”" class="headerlink" title="What is “Testing”?"></a>What is “Testing”?</h2><p><img src="/images/javascript_test_capture1.png" alt=""></p>
+<ul>
+<li>테스트를 함으로써 Test -&gt; Failure -&gt; Modify &amp; Fix -&gt; Test 까지의 일련의 과정을 Automate &amp; Simplify 할 수 있다!</li>
+</ul>
+<h2 id="Why-Test"><a href="#Why-Test" class="headerlink" title="Why Test?"></a>Why Test?</h2><ul>
+<li>Get an Error if you break code<ul>
+<li>일일이 까보지 않고, 즉시 모든 테스트 결과를 볼 수 있다!</li>
+</ul>
+</li>
+<li>Save time<ul>
+<li>매뉴얼대로 일일이 테스트 하지 않아도됨</li>
+</ul>
+</li>
+<li>Think about possible issues &amp; bugs<ul>
+<li>테스트를 작성하면서 우리가 뭘 테스트 하고 싶은지</li>
+<li>어떻게 올바른 테스트를 작성해야하는지</li>
+</ul>
+</li>
+<li>Integrate into build workflow</li>
+<li>Break up complex ependencies</li>
+<li>imporove your code</li>
+</ul>
+<h2 id="Different-Kinds-of-Tests"><a href="#Different-Kinds-of-Tests" class="headerlink" title="Different Kinds of Tests"></a>Different Kinds of Tests</h2><ul>
+<li><p>Fully Isolated(순수 함수) -&gt; Unit Tests</p>
+</li>
+<li><p>With Dependencies -&gt; Integration Tests</p>
+</li>
+<li><p>Full Flow (UI 조작이 필요한 경우 or 앱 전체 동작을 테스팅) -&gt; End-to-End(E2E) Tests</p>
+</li>
+</ul>
+<blockquote>
+<p>아래로 갈수록 복잡도는 높아진다.</p>
+</blockquote>
+<blockquote>
+<p>올라갈수록 Frequency(테스트 개수는 늘어난다)</p>
+</blockquote>
+<h2 id="Testing-Setup"><a href="#Testing-Setup" class="headerlink" title="Testing Setup"></a>Testing Setup</h2><p><img src="/images/javascript_test_capture2.png" alt=""></p>
+<hr>
+<p>예제 코드를 통해 어떻게 하는지 알아보자.</p>
+<h2 id="Unit-Tests"><a href="#Unit-Tests" class="headerlink" title="Unit Tests"></a>Unit Tests</h2><ul>
+<li>input parameter가 있고, return이 있는 순수함수</li>
+<li>실패하는 테스트를 짜면서 점점 케이스를 생각하고 늘려가자</li>
+</ul>
+<h2 id="Integration-Test"><a href="#Integration-Test" class="headerlink" title="Integration Test"></a>Integration Test</h2><ul>
+<li>다른 함수에 의존성이 있는 함수의 경우</li>
+<li>input param, return value가 없는 경우</li>
+<li>DOM 조작하는 경우</li>
+</ul>
+<blockquote>
+<p>일단 원본 source를 수정해야함 -&gt; test할 부분을 module화</p>
+</blockquote>
+<blockquote>
+<p>이제 이 모듈을 테스트!</p>
+</blockquote>
+<h2 id="e2e-Test"><a href="#e2e-Test" class="headerlink" title="e2e Test"></a>e2e Test</h2><ul>
+<li>영상 29분 부터!</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2018/10/16/Javascript-Testing-Introduction-Tutorial/" data-id="cjxleig0o00038udtot2cxu2o" class="article-share-link">Share</a>
+      
+        <a href="https://kihyun92.github.io/2018/10/16/Javascript-Testing-Introduction-Tutorial/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/13/TIL/" class="article-date">
@@ -135,7 +234,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2018/10/13/TIL/" data-id="cjxcmpws30008jcdtiqbr2xdo" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2018/10/13/TIL/" data-id="cjxleig0p00058udt07ofyurs" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2018/10/13/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -193,7 +292,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
     </div>
   </div>
 
@@ -204,6 +303,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/07/02/TIL/">TIL</a>
+          </li>
         
           <li>
             <a href="/2019/06/26/TIL/">TIL</a>
@@ -219,10 +322,6 @@
         
           <li>
             <a href="/2019/06/14/TIL/">TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2019/06/12/TIL/">TIL</a>
           </li>
         
       </ul>

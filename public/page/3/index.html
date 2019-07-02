@@ -69,6 +69,72 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jest-setup-and-teardown" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/07/jest-setup-and-teardown/" class="article-date">
+  <time datetime="2019-05-07T05:36:14.000Z" itemprop="datePublished">2019-05-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Jest/">Jest</a>►<a class="article-category-link" href="/categories/Jest/공식-문서/">공식 문서</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/07/jest-setup-and-teardown/">Jest - Setup and Teardown</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>해당 포스트의 내용은 Jest 공식 문서의 <a href="https://jestjs.io/docs/en/setup-teardown" target="_blank" rel="noopener">Setup and Teardown</a>을 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.</p>
+<hr>
+<h1 id="설정-및-해제"><a href="#설정-및-해제" class="headerlink" title="설정 및 해제"></a>설정 및 해제</h1><p>테스트를 작성하는 동안 테스트를 실행하기 전에 수행해야하는 설정 작업이 있으며 테스트를 실행 한 후에 해야 할 작업이 있습니다. Jest는 이것을 처리 할 도우미 함수를 제공합니다.</p>
+<h2 id="많은-테스트를-위한-반복-설정"><a href="#많은-테스트를-위한-반복-설정" class="headerlink" title="많은 테스트를 위한 반복 설정"></a>많은 테스트를 위한 반복 설정</h2><p>많은 테스트를 위해 반복적으로 해야하는 작업이 있으면 <code>beforeEach</code>와 <code>afterEach</code>를 사용할 수 있습니다.</p>
+<p>예를 들어 여러 테스트가 도시의 데이터베이스와 상호 작용한다고 가정 해 봅시다. 이러한 각 테스트 전에 호출되어야하는 <code>initializeCityDatabase()</code> 메서드와 각 테스트 후에 호출되어야하는 <code>clearCityDatabase()</code> 메서드가 있습니다. 다음과 같이 할 수 있습니다 :</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    initializeCityDatabase();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">afterEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    clearCityDatabase();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'city database has Vienna'</span>, () =&gt; &#123;</span><br><span class="line">    expect(isCity(<span class="string">'Vienna'</span>)).toBeTruthy();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'city database has San Juan'</span>, () =&gt; &#123;</span><br><span class="line">    expect(isCity(<span class="string">'San Juan'</span>)).toBeTruthy();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>beforeEach</code> 및 <code>afterEach</code>는 <a href="https://jestjs.io/docs/en/asynchronous" target="_blank" rel="noopener">테스트가 비동기 코드를 처리하는 것과 동일한 방식</a>으로 비동기 코드를 처리 할 수 ​​있습니다. <code>done&#39; 매개 변수를 사용하거나 프로미스를 반환 할 수 있습니다. 예를 들어,</code>initializeCityDatabase()`가 데이터베이스가 초기화 될 때 resolved 된 프로미스를 반환하면, 우리는 그 프로미스를 반환하려 합니다:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> initializeCityDatabase();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="일회성-설정"><a href="#일회성-설정" class="headerlink" title="일회성 설정"></a>일회성 설정</h2><p>경우에 따라 파일 시작 부분에서 한 번만 설정하면 됩니다. 설정이 비동기 일 때 특히 불편할 수 있으므로 인라인으로 설정할 수 없습니다. Jest는 이러한 상황을 처리하기 위해 <code>beforeAll</code>과 <code>afterAll</code>을 제공합니다.</p>
+<p>예를 들어, <code>initializeCityDatabase</code> 및 <code>clearCityDatabase</code>가 프로미스를 반환하고 도시 데이터베이스를 테스트 간에 다시 사용할 수있는 경우, 테스트 코드를 다음과 같이 변경할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">beforeAll(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> initializeCityDatabase();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">afterAll(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> clearCityDatabase();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'city database has Vienna'</span>, () =&gt; &#123;</span><br><span class="line">    expect(isCity(<span class="string">'Vienna'</span>)).toBeTruthy();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'city database has San Juan'</span>, () =&gt; &#123;</span><br><span class="line">    expect(isCity(<span class="string">'San Juan'</span>)).toBeTruthy();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Scoping"><a href="#Scoping" class="headerlink" title="Scoping"></a>Scoping</h2><p>기본적으로 <code>before</code> 및 <code>after</code> 블록은 파일의 모든 테스트에 적용됩니다. 또한 <code>describe</code> 블록을 사용하여 테스트를 그룹화 할 수도 있습니다. 그들이 <code>describe</code> 블록 안에 있을 때, <code>before</code> 및 <code>after</code> 블록은 해당 <code>describe</code> 블록 내의 테스트에만 적용됩니다.</p>
+<p>예를 들어, 우리가 도시 데이터베이스 뿐만 아니라 음식 데이터베이스를 가지고 있다고 가정 해 봅시다. 다른 테스트를 위해 다른 설정을 할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Applies to all tests in this file</span></span><br><span class="line">beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> initializeCityDatabase();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'city database has Vienna'</span>, () =&gt; &#123;</span><br><span class="line">    expect(isCity(<span class="string">'Vienna'</span>)).toBeTruthy();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'city database has San Juan'</span>, () =&gt; &#123;</span><br><span class="line">    expect(isCity(<span class="string">'San Juan'</span>)).toBeTruthy();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'matching cities to foods'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="comment">// Applies only to tests in this describe block</span></span><br><span class="line">    beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> initializeFoodDatabase();</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    test(<span class="string">'Vienna &lt;3 sausage'</span>, () =&gt; &#123;</span><br><span class="line">        expect(isValidCityFoodPair(<span class="string">'Vienna'</span>, <span class="string">'Wiener Schnitzel'</span>)).toBe(<span class="literal">true</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    test(<span class="string">'San Juan &lt;3 plantains'</span>, () =&gt; &#123;</span><br><span class="line">        expect(isValidCityFoodPair(<span class="string">'San Juan'</span>, <span class="string">'Mofongo'</span>)).toBe(<span class="literal">true</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>beforeEach</code> 최상위 레벨은 <code>describe</code> 블록 내에서 <code>beforeEach</code> 앞에 실행됩니다. 모든 훅의 실행 순서를 설명하는데 도움이 될 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">beforeAll(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'1 - beforeAll'</span>));</span><br><span class="line">afterAll(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'1 - afterAll'</span>));</span><br><span class="line">beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'1 - beforeEach'</span>));</span><br><span class="line">afterEach(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'1 - afterEach'</span>));</span><br><span class="line">test(<span class="string">''</span>, () =&gt; <span class="built_in">console</span>.log(<span class="string">'1 - test'</span>));</span><br><span class="line">describe(<span class="string">'Scoped / Nested block'</span>, () =&gt; &#123;</span><br><span class="line">    beforeAll(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'2 - beforeAll'</span>));</span><br><span class="line">    afterAll(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'2 - afterAll'</span>));</span><br><span class="line">    beforeEach(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'2 - beforeEach'</span>));</span><br><span class="line">    afterEach(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'2 - afterEach'</span>));</span><br><span class="line">    test(<span class="string">''</span>, () =&gt; <span class="built_in">console</span>.log(<span class="string">'2 - test'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1 - beforeAll</span></span><br><span class="line"><span class="comment">// 1 - beforeEach</span></span><br><span class="line"><span class="comment">// 1 - test</span></span><br><span class="line"><span class="comment">// 1 - afterEach</span></span><br><span class="line"><span class="comment">// 2 - beforeAll</span></span><br><span class="line"><span class="comment">// 1 - beforeEach</span></span><br><span class="line"><span class="comment">// 2 - beforeEach</span></span><br><span class="line"><span class="comment">// 2 - test</span></span><br><span class="line"><span class="comment">// 2 - afterEach</span></span><br><span class="line"><span class="comment">// 1 - afterEach</span></span><br><span class="line"><span class="comment">// 2 - afterAll</span></span><br><span class="line"><span class="comment">// 1 - afterAll</span></span><br></pre></td></tr></table></figure>
+<h2 id="describe-및-test-블록-실행-순서"><a href="#describe-및-test-블록-실행-순서" class="headerlink" title="describe 및 test 블록 실행 순서"></a>describe 및 test 블록 실행 순서</h2><p>Jest는 실제 테스트를 실행하기 전에 모든 테스트 핸들러를 테스트 파일에 실행합니다. 이것은 describe 블록 내부가 아닌 <code>before*</code> 및 <code>after*</code> 핸들러 내부에서 설정 및 해제를 수행해야하는 또 다른 이유입니다. describe 블록이 완료되면, 기본적으로 Jest는 수집 단계에서 모든 테스트를 순차적으로 실행하고, 각 테스트가 완료 될 때까지 기다렸다가 계속 진행하기 전에 정리합니다.</p>
+<p>다음과 같은 예시 테스트 파일 및 출력을 고려하세요:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">describe(<span class="string">'outer'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'describe outer-a'</span>);</span><br><span class="line"></span><br><span class="line">    describe(<span class="string">'describe inner 1'</span>, () =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'describe inner 1'</span>);</span><br><span class="line">        test(<span class="string">'test 1'</span>, () =&gt; &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'test for describe inner 1'</span>);</span><br><span class="line">            expect(<span class="literal">true</span>).toEqual(<span class="literal">true</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'describe outer-b'</span>);</span><br><span class="line"></span><br><span class="line">    test(<span class="string">'test 1'</span>, () =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'test for describe outer'</span>);</span><br><span class="line">        expect(<span class="literal">true</span>).toEqual(<span class="literal">true</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    describe(<span class="string">'describe inner 2'</span>, () =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'describe inner 2'</span>);</span><br><span class="line">        test(<span class="string">'test for describe inner 2'</span>, () =&gt; &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'test for describe inner 2'</span>);</span><br><span class="line">            expect(<span class="literal">false</span>).toEqual(<span class="literal">false</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'describe outer-c'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// describe outer-a</span></span><br><span class="line"><span class="comment">// describe inner 1</span></span><br><span class="line"><span class="comment">// describe outer-b</span></span><br><span class="line"><span class="comment">// describe inner 2</span></span><br><span class="line"><span class="comment">// describe outer-c</span></span><br><span class="line"><span class="comment">// test for describe inner 1</span></span><br><span class="line"><span class="comment">// test for describe outer</span></span><br><span class="line"><span class="comment">// test for describe inner 2</span></span><br></pre></td></tr></table></figure>
+<h2 id="일반적인-조언"><a href="#일반적인-조언" class="headerlink" title="일반적인 조언"></a>일반적인 조언</h2><p>테스트가 실패하면 가장 먼저 점검해야 할 사항 중 하나는 실행되는 유일한 테스트 일 때 테스트가 실패하는지 여부입니다. Jest에서는 단 하나의 테스트만 실행하는게 간단합니다. 단지 테스트 명령을 <code>test.only</code>로 변경해주면 됩니디.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test.only(<span class="string">'this will be the only test that runs'</span>, () =&gt; &#123;</span><br><span class="line">    expect(<span class="literal">true</span>).toBe(<span class="literal">false</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">'this test will not run'</span>, () =&gt; &#123;</span><br><span class="line">    expect(<span class="string">'A'</span>).toBe(<span class="string">'A'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>대규모 패키지의 일부로 실행될 때 종종 실패하지만 혼자 실행할 땐 실패하지 않는 테스트가 있을 때, 다른 테스트의 일부가 이 테스트에 간섭한다고 확신할 수 있습니다. <code>beforeEach</code>를 사용하여 공유 상태를 정리해서 이런 문제를 해결할 수 있습니다. 공유 상태가 수정되는지 여부가 확실하지 않은 경우에도 <code>beforeEach</code>를 사용하여 데이터를 기록 할 수도 있습니다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kihyun92.github.io/2019/05/07/jest-setup-and-teardown/" data-id="cjxleig2w005m8udtyvz8rut8" class="article-share-link">Share</a>
+      
+        <a href="https://kihyun92.github.io/2019/05/07/jest-setup-and-teardown/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jest/">Jest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jest-번역/">Jest 번역</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Setup-and-Teardown/">Setup and Teardown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unit-Test/">Unit Test</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/설정-및-해제/">설정 및 해제</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-TIL" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/07/TIL/" class="article-date">
@@ -101,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/07/TIL/" data-id="cjxcmpwt2002zjcdt5efpu87h" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/07/TIL/" data-id="cjxleig2c003s8udt78ewhf07" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/07/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -151,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/03/TIL/" data-id="cjxcmpwsz002mjcdt6m1k71wp" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/03/TIL/" data-id="cjxleig2a003m8udt5l188p3r" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/03/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -221,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/" data-id="cjxcmpwtk004mjcdt9k5hmyh2" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/" data-id="cjxleig2u005f8udt4y1rj7jb" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/05/03/jest-testing-asynchronous-code/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -289,7 +355,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/24/TIL/" data-id="cjxcmpwsx002gjcdtt29641w8" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/24/TIL/" data-id="cjxleig29003j8udta0lg24u1" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/24/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -335,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/23/TIL/" data-id="cjxcmpwsy002jjcdtevjfnbxv" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/23/TIL/" data-id="cjxleig28003h8udtajgth4zt" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/23/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -379,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/22/TIL/" data-id="cjxcmpwsw002djcdthhjqk44m" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/22/TIL/" data-id="cjxleig27003d8udt4h15mat9" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/22/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -427,7 +493,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/18/TIL/" data-id="cjxcmpwsw0029jcdtvt0zp4qs" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/18/TIL/" data-id="cjxleig26003a8udt41vz8qtr" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/18/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -472,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/16/TIL/" data-id="cjxcmpwsu0023jcdtgzyxc1yx" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/16/TIL/" data-id="cjxleig2400378udtz0lwgvd9" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/16/TIL/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -521,284 +587,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/15/Typescript-Quick-Start/" data-id="cjxcmpwtg0045jcdtdoea56oj" class="article-share-link">Share</a>
+      <a data-url="https://kihyun92.github.io/2019/04/15/Typescript-Quick-Start/" data-id="cjxleig2r00568udtj03duck0" class="article-share-link">Share</a>
       
         <a href="https://kihyun92.github.io/2019/04/15/Typescript-Quick-Start/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Typescript/">Typescript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-naver-tech-concert" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/12/naver-tech-concert/" class="article-date">
-  <time datetime="2019-04-12T01:55:37.000Z" itemprop="datePublished">2019-04-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/12/naver-tech-concert/">네이버 테크 콘서트</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="플랫폼-UI-개발-전략의-모든-것"><a href="#플랫폼-UI-개발-전략의-모든-것" class="headerlink" title="플랫폼 UI 개발 전략의 모든 것"></a>플랫폼 UI 개발 전략의 모든 것</h1><p><a href="https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019-ui" target="_blank" rel="noopener">첫번째 세션</a>으로 네이버에서 스마트에디터의 UI를 개발하신 이주용님께서 발표하셨습니다.</p>
-<h2 id="스마트-에디터-3-0-gt-스마트-에디터-원으로-변경하면서-느꼈던점에-대한-발표"><a href="#스마트-에디터-3-0-gt-스마트-에디터-원으로-변경하면서-느꼈던점에-대한-발표" class="headerlink" title="스마트 에디터 3.0 -&gt; 스마트 에디터 원으로 변경하면서 느꼈던점에 대한 발표"></a>스마트 에디터 3.0 -&gt; 스마트 에디터 원으로 변경하면서 느꼈던점에 대한 발표</h2><h3 id="1-기존-설계의-문제점"><a href="#1-기존-설계의-문제점" class="headerlink" title="1. 기존 설계의 문제점"></a>1. 기존 설계의 문제점</h3><ul>
-<li>커스텀 및 확장을 고려하지 않아, 서비스의 요구사항을ㄹ 수용하기 어려움</li>
-<li>플랫폼의 CSS와 서비스의 CSS 간섭이 발생하고 스타일의 우선순위 관리가 어려움</li>
-<li>에디터 UI의 요소간 관계를 파악하기 어려워 버그 및 사이드 이펙트 발생</li>
-</ul>
-<h3 id="2-새로운-설계-방향"><a href="#2-새로운-설계-방향" class="headerlink" title="2. 새로운 설계 방향"></a>2. 새로운 설계 방향</h3><ul>
-<li>UI 공통화는 디자인 중심이 아닌, 기능 중심으로!<ul>
-<li>구조를 먼저 파악해야함</li>
-</ul>
-</li>
-<li>조건 및 상태에 따라 다른 스타일 적용<ul>
-<li>CSS 설계는 동적으로</li>
-</ul>
-</li>
-<li>각기 다른 요구사항을 빠르고 쉽게 적용해야함<ul>
-<li>설정으로 분리하여 하나의 파일에서 모두 변경가능하도록</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-구현과-문제-해결"><a href="#3-구현과-문제-해결" class="headerlink" title="3. 구현과 문제 해결"></a>3. 구현과 문제 해결</h3><h4 id="CSS-Methodology"><a href="#CSS-Methodology" class="headerlink" title="CSS Methodology"></a>CSS Methodology</h4><ul>
-<li>Block, Element, Modifier (BEM)</li>
-<li>Scalable and Modular Architecture for CSS</li>
-<li>Object-Oriented CSS</li>
-</ul>
-<h4 id="CSS-Preprocessor"><a href="#CSS-Preprocessor" class="headerlink" title="CSS Preprocessor"></a>CSS Preprocessor</h4><ul>
-<li>CSS의 기능을 확장하여 선택자 상속, 변수, 조건문, 반복문, 함수 등 사용 가능</li>
-<li>sass</li>
-</ul>
-<h3 id="4-공통-요소의-분리"><a href="#4-공통-요소의-분리" class="headerlink" title="4. 공통 요소의 분리"></a>4. 공통 요소의 분리</h3><h4 id="플랫폼의-스펙-분석-전략"><a href="#플랫폼의-스펙-분석-전략" class="headerlink" title="플랫폼의 스펙 분석 전략"></a>플랫폼의 스펙 분석 전략</h4><ul>
-<li>디자인 보다는 기능(구조) 중심의 분석</li>
-<li>동일한 기능을 하는 요소는 동일한 HTML 구조를 가질 수 있을지 검토</li>
-<li>공통화 요소 중 일부 UI가 다른 경우는 전체 스펙으로 구현 검토</li>
-</ul>
-<h3 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h3><ol>
-<li>모듈화</li>
-</ol>
-<ul>
-<li>디자인보다 각 요소가 하는 기능에 집중하여 모듈화</li>
-<li>현재의 요구사항에 맞게 최소한의 기능으로 모듈화 (확장성은 배제)</li>
-<li>같은 기능의 요소는 동일한 HTML 구조를 사용</li>
-</ul>
-<ol start="2">
-<li>설정과 공통 코드</li>
-</ol>
-<ul>
-<li>간격, 색상, 서체, 폰트 사이즈 등 서비스 별로 변경이 필요한 것들은 설정으로 관리</li>
-<li>css pre-processor를 활용하여 반복적인 코드 줄이기</li>
-<li>연관된 UI나 수치는 공통적으로 묶어 관계를 명확히하기</li>
-</ul>
-<ol start="3">
-<li>플랫폼은 만능이 아니다</li>
-</ol>
-<ul>
-<li>모든 요구사항을 플랫폼의 공통 코드로 소화할 수 없음</li>
-<li>따라서 때론 스펙 협의나 커뮤니케이션이 설계보다 중요할 수 있음</li>
-<li>플랫폼의 공통코드는 <strong>불변</strong>이 아니며 지속적인 리펙토링이 필수</li>
-</ul>
-<hr>
-<h1 id="주니어-개발자의-성장에-대한-뻔하지만-뻔하지-않은-이야기"><a href="#주니어-개발자의-성장에-대한-뻔하지만-뻔하지-않은-이야기" class="headerlink" title="주니어 개발자의 성장에 대한 뻔하지만 뻔하지 않은 이야기"></a>주니어 개발자의 성장에 대한 뻔하지만 뻔하지 않은 이야기</h1><p><a href="https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019-140435675" target="_blank" rel="noopener">두번째 세션</a>으로 LINE Financial Plus의 한재엽님 께서 발표하셨습니다.</p>
-<h2 id="성장의-종류"><a href="#성장의-종류" class="headerlink" title="성장의 종류"></a>성장의 종류</h2><p><img src="https://user-images.githubusercontent.com/35797540/56034194-9f758200-5d61-11e9-995c-fe440c281d12.jpg" alt=""></p>
-<p>개발자의 성장 방향에는 크게 이 정도가 있을것 같음.</p>
-<h3 id="성장을-왜-해야하는지-생각해보기-Why"><a href="#성장을-왜-해야하는지-생각해보기-Why" class="headerlink" title="성장을 왜 해야하는지 생각해보기 (Why?)"></a>성장을 왜 해야하는지 생각해보기 (Why?)</h3><blockquote>
-<p>나의 선택과 집중이 어느 방향에 집중되어야 할지</p>
-</blockquote>
-<ol>
-<li>성장해야하는 이유부터 정리</li>
-<li>어느쪽으로 성장하고 싶은지 조금 더 구체화하기</li>
-</ol>
-<h3 id="성장을-어떻게-해야할까-How"><a href="#성장을-어떻게-해야할까-How" class="headerlink" title="성장을 어떻게 해야할까? (How?)"></a>성장을 어떻게 해야할까? (How?)</h3><p>해야할 것과 하고 싶은 것은 매우 많지만 우리의 하루는 24시간이다. 너무 짧다..</p>
-<p>따라서 하루에 8시간 이상을 보내는 회사에서 성장해보자</p>
-<h2 id="회사에서-성장하기"><a href="#회사에서-성장하기" class="headerlink" title="회사에서 성장하기"></a>회사에서 성장하기</h2><h3 id="업무를-소비하지-말자"><a href="#업무를-소비하지-말자" class="headerlink" title="업무를 소비하지 말자"></a>업무를 <strong>소비</strong>하지 말자</h3><ul>
-<li>이때 업무란?<ul>
-<li>Production 레벨에서 코드를 작성하는 일</li>
-<li>그리고 구현한 코드에 책임을 지는 일</li>
-</ul>
-</li>
-<li>삽질에 대해서 다시 생각해보기<ul>
-<li>버그를 눈 앞에서 치워버려야하는 것 이라고 생각하지 말기</li>
-<li>디버깅 (다양한 툴들, ex.크롬 개발자 도구, Charles, Fiddler, …)</li>
-<li>문제 원인 파악 -&gt; 학습 -&gt; 문제 해결 시도 -&gt; 문제 원인 파악 -&gt; (반복…)<ul>
-<li>최종적으로는 이 모든 경험들이 <strong>노하우</strong>가 된다. 이 노하우들이 쌓이면 전문성이 갖춰진다.</li>
-</ul>
-</li>
-<li>삽질을 통해 배우고, <em>정리</em>하자!</li>
-</ul>
-</li>
-</ul>
-<h3 id="질문을-‘잘’-하자"><a href="#질문을-‘잘’-하자" class="headerlink" title="질문을 ‘잘’ 하자"></a>질문을 ‘잘’ 하자</h3><blockquote>
-<p>바보같은 질문은 없어도 성의없는 질문은 있다.</p>
-</blockquote>
-<ul>
-<li>배울점이 많은 동료들에게 많이 배워보자</li>
-<li>하지만 동료의 시간을 낭비하면 안된다! -&gt; 질문을 잘! 해야한다.</li>
-</ul>
-<p>잘 질문 하려면?</p>
-<ol>
-<li>충분한 구글링을 선행</li>
-<li>질문을 정리하자<br>2-1. 현재 발생한 <strong>상황</strong> 정리<br>2-2. 내가 해본 <strong>시도</strong>들을 정리<br>2-3. 최종적으로 Yes/No로 답이 오도록 정리<br>2-4. 혹은 내 결론에 대한 의견을 답할 수 있도록 정리</li>
-</ol>
-<h3 id="문서화를-‘잘’-하자"><a href="#문서화를-‘잘’-하자" class="headerlink" title="문서화를 ‘잘’ 하자"></a>문서화를 ‘잘’ 하자</h3><p>트러블 슈팅 목록으로 나눠서 정리 (<a href="https://github.com/angular/angular/issues/new/choose" target="_blank" rel="noopener">오픈소스들의 이슈 템플릿</a>을 참조해보자!)</p>
-<ul>
-<li><strong>어쩌다</strong>가 버그가 발생했나?</li>
-<li><strong>원인</strong>은 무엇인가?</li>
-<li>어떤 <strong>시도</strong>들을 해보았나?</li>
-<li>그래서 최종적으로 어떻게 해결했나?</li>
-</ul>
-<h3 id="문서-쓸-시간이-없다면"><a href="#문서-쓸-시간이-없다면" class="headerlink" title="문서 쓸 시간이 없다면?"></a>문서 쓸 시간이 없다면?</h3><p>문서화를 개발 프로세스의 일부분으로 생각하고 개발 기간을 잡자!<br>그리고 잘 정리한 문서를 <strong>공유</strong> 하자!!</p>
-<h2 id="팀의-생산성을-높이기"><a href="#팀의-생산성을-높이기" class="headerlink" title="팀의 생산성을 높이기"></a>팀의 생산성을 높이기</h2><h3 id="개발-환경의-중요성"><a href="#개발-환경의-중요성" class="headerlink" title="개발 환경의 중요성"></a>개발 환경의 중요성</h3><ul>
-<li>개선하기</li>
-<li>환경을 알기</li>
-<li>자동화의 중요성</li>
-<li>관성에 젖지 않는 비판적인 사고하기</li>
-</ul>
-<h3 id="변화-무쌍한-스펙-변경에-맞서기"><a href="#변화-무쌍한-스펙-변경에-맞서기" class="headerlink" title="변화 무쌍한 스펙 변경에 맞서기"></a>변화 무쌍한 스펙 변경에 맞서기</h3><ul>
-<li>초기에 결정된 스펙은 무조건 변경된다고 생각하기</li>
-<li>어떻게 대응할지 생각하기</li>
-<li>변경될 수 있는 요소들을 어떻게 제어해야할지</li>
-</ul>
-<hr>
-<h1 id="일-만드는-개발자-VS-일-부풀리는-개발자"><a href="#일-만드는-개발자-VS-일-부풀리는-개발자" class="headerlink" title="일 만드는 개발자 VS 일 부풀리는 개발자"></a>일 만드는 개발자 VS 일 부풀리는 개발자</h1><p><a href="https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019-vs" target="_blank" rel="noopener">세번째 세션</a>으로 우아한 형제들의 김민태 프로그래머님의 발표입니다.</p>
-<h2 id="‘일’-에-대해-정의해보기"><a href="#‘일’-에-대해-정의해보기" class="headerlink" title="‘일’ 에 대해 정의해보기"></a>‘일’ 에 대해 정의해보기</h2><p>사람과 태도, 전문성, 에너지, 등등</p>
-<h2 id="출발점은-Requirement"><a href="#출발점은-Requirement" class="headerlink" title="출발점은 Requirement!"></a>출발점은 Requirement!</h2><h3 id="요구사항은-어디까지-수용해야하나"><a href="#요구사항은-어디까지-수용해야하나" class="headerlink" title="요구사항은 어디까지 수용해야하나?"></a>요구사항은 어디까지 수용해야하나?</h3><ul>
-<li>먼저 직업인과 직장인에 대해 생각해보자<blockquote>
-<p>“나는 주니어니까…” 라는 생각은 하지말자.</p>
-</blockquote>
-</li>
-<li>상사와 제품에 대해 생각해보자<blockquote>
-<p>제품이 모든것의 중심이 되어야 하지 않을까?</p>
-</blockquote>
-</li>
-<li>습관은 관성이 된다.</li>
-</ul>
-<p>요구사항을 분석하고, 계획하고, 실행하고, 측정하고, 보정하고, 다시 분석하고 이런 반복적인 과정에서 예외사항이 발생할때는 바로 사람 때문이 대부분이다.</p>
-<h3 id="커뮤니케이션이-중요하다"><a href="#커뮤니케이션이-중요하다" class="headerlink" title="커뮤니케이션이 중요하다."></a>커뮤니케이션이 중요하다.</h3><h3 id="동료를-위한-개발"><a href="#동료를-위한-개발" class="headerlink" title="동료를 위한 개발"></a>동료를 위한 개발</h3><h3 id="고객을-위한-개발"><a href="#고객을-위한-개발" class="headerlink" title="고객을 위한 개발"></a>고객을 위한 개발</h3><hr>
-<h1 id="빠르게-훑어보는-웹-개발-트렌드"><a href="#빠르게-훑어보는-웹-개발-트렌드" class="headerlink" title="빠르게 훑어보는 웹 개발 트렌드"></a>빠르게 훑어보는 웹 개발 트렌드</h1><p><a href="https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019" target="_blank" rel="noopener">네번째 강의</a>로 카카오뱅크의 한장현님이 발표하셨습니다.</p>
-<p>약간 좀 뻔한 내용,,<br><a href="https://github.com/kamranahmedse/developer-roadmap" target="_blank" rel="noopener">2019 Front-end Developer’s Roadmap</a>을 기반으로한 발표였다.</p>
-<h3 id="웹개발-트랜드"><a href="#웹개발-트랜드" class="headerlink" title="웹개발 트랜드"></a>웹개발 트랜드</h3><p>서버 중심 -&gt; 클라이언트 중심</p>
-<hr>
-<h1 id="데이터-상태-관리-그것을-알려주마"><a href="#데이터-상태-관리-그것을-알려주마" class="headerlink" title="데이터 상태 관리. 그것을 알려주마!"></a>데이터 상태 관리. 그것을 알려주마!</h1><p><a href="https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019-140432157" target="_blank" rel="noopener">다섯번째 강의</a>로 네이버 PWE의 최현철님이 발표하셨습니다.</p>
-<h2 id="FE에서-상태관리란-무엇일까"><a href="#FE에서-상태관리란-무엇일까" class="headerlink" title="FE에서 상태관리란 무엇일까?"></a>FE에서 상태관리란 무엇일까?</h2><h2 id="SPA에서-상태관리란-무엇일까"><a href="#SPA에서-상태관리란-무엇일까" class="headerlink" title="SPA에서 상태관리란 무엇일까?"></a>SPA에서 상태관리란 무엇일까?</h2><blockquote>
-<p>상태라는 눈에 보이지 않는 부분이 실시간 비동기적으로 변하기때문에 제어하기 힘들다.</p>
-</blockquote>
-<hr>
-<h1 id="오늘부터-나도-FE-성능-분석가"><a href="#오늘부터-나도-FE-성능-분석가" class="headerlink" title="오늘부터 나도 FE 성능 분석가"></a>오늘부터 나도 FE 성능 분석가</h1><p><a href="https://www.slideshare.net/NaverEngineering/naver-tech-concertfe2019-fe" target="_blank" rel="noopener">마지막 강의</a>로 네이버 아폴로 FE의 손찬욱님이 발표하셨습니다.<br>개인적으로는 이번 컨퍼런스에서 가장 유익한 강의였습니다.</p>
-<h2 id="성능-분석가의-관심사-Goal-은-무엇일까"><a href="#성능-분석가의-관심사-Goal-은-무엇일까" class="headerlink" title="성능 분석가의 관심사(Goal)은 무엇일까?"></a>성능 분석가의 관심사(Goal)은 무엇일까?</h2><blockquote>
-<p>유저 입력시에 얼마나 빠르게 반응할 수 있나?</p>
-</blockquote>
-<h3 id="LAI-Loading-and-Interation"><a href="#LAI-Loading-and-Interation" class="headerlink" title="LAI (Loading and Interation)"></a>LAI (Loading and Interation)</h3><h2 id="어떻게-성능을-올릴까-Plan"><a href="#어떻게-성능을-올릴까-Plan" class="headerlink" title="어떻게 성능을 올릴까? (Plan)"></a>어떻게 성능을 올릴까? (Plan)</h2><ol>
-<li>대상을 선정. <em>숲을 보기!</em><ul>
-<li>어떤게 중요한 포인트인지 파악하기</li>
-</ul>
-</li>
-<li>개선 프로세스<ul>
-<li>측정</li>
-<li>분석</li>
-<li>최적화</li>
-<li>측정 …(반복)</li>
-</ul>
-</li>
-<li>언제까지?<ul>
-<li>목표하는 초기 로딩 시간에 맞게</li>
-<li>구글의 경우 <a href="https://developers.google.com/web/fundamentals/performance/rail?hl=ko" target="_blank" rel="noopener">RAIL</a>, <a href="https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint" target="_blank" rel="noopener">FMP</a></li>
-</ul>
-</li>
-</ol>
-<h2 id="초기-로딩-속도-개선하기"><a href="#초기-로딩-속도-개선하기" class="headerlink" title="초기 로딩 속도 개선하기"></a>초기 로딩 속도 개선하기</h2><ul>
-<li>Waterfall 차트<ul>
-<li>높이 줄이기</li>
-<li>폭 줄이기</li>
-<li>간격 땡기기</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-높이-줄이기"><a href="#1-높이-줄이기" class="headerlink" title="1. 높이 줄이기"></a>1. 높이 줄이기</h3><pre><code>- Data URI -&gt; HTML에 Default 이미지 같은 이미지를 포함
-- Lazy
-- 이미지 (캐러셀의 경우 보여지는 곳만 먼저 로딩)
-</code></pre><h3 id="2-폭-줄이기"><a href="#2-폭-줄이기" class="headerlink" title="2. 폭 줄이기"></a>2. 폭 줄이기</h3><pre><code>- Initial connection
-    - HTTP 2.0으로 바꾸면 좋다(멀티 커넥션이 가능해짐)
-- TTFB (Time To First Byte)
-    - 서버나 비즈니스 로직이 느린걸 체크할 수 있음
-- Content download (네트워크 속도 등 여러 요인이 있지만)
-- [GZIP](https://ko.wikipedia.org/wiki/Gzip), [Minify](https://www.minifier.org/)(이걸 말한건지 정확하진 않음..), [Obfuscation](https://en.wikipedia.org/wiki/Obfuscation_(software))
-- 이미지 줄이기
-- Decode 비용 줄이기 (이미지 화면에 렌더링하는 비용)
-</code></pre><h3 id="3-간격-땡기기-gt-잘하기-위해선-브라우져-렌더링-과정을-잘-알아야함"><a href="#3-간격-땡기기-gt-잘하기-위해선-브라우져-렌더링-과정을-잘-알아야함" class="headerlink" title="3. 간격 땡기기 -&gt; 잘하기 위해선 브라우져 렌더링 과정을 잘 알아야함"></a>3. 간격 땡기기 -&gt; 잘하기 위해선 <a href="https://d2.naver.com/helloworld/59361" target="_blank" rel="noopener">브라우져 렌더링 과정</a>을 잘 알아야함</h3><pre><code>&lt;img width=&quot;649&quot; alt=&quot;브라우저 렌더링 과정 (출처:네이버D2)&quot; src=&quot;https://user-images.githubusercontent.com/35797540/56470210-a6497680-647e-11e9-9db6-229eddd3083b.png&quot;&gt;
-</code></pre><ol>
-<li>서버로부터 HTML 문자열을 Stream으로 받음</li>
-<li><code>&lt;head&gt;</code> 태그의 자원을 병렬로 받음</li>
-<li>2번에서 받은 자원을 모두 실행</li>
-<li><code>&lt;body&gt;</code> 태그부터 화면을 그리기 시작</li>
-</ol>
-<ul>
-<li>head 태그엔 css와 필수 JS만 넣기</li>
-<li>JS는 body 태그 마지막에 넣기<ul>
-<li>async, defer를 사용해서 원하는 위치에 넣어도 됨(but 지원하지 않는 브라우저가 존재함)</li>
-<li>async -&gt; 의존성이 없는 경우(GA)</li>
-<li>defer -&gt; DOM 제어와 관련이 있을때</li>
-</ul>
-</li>
-<li>preload<ul>
-<li>css 내에 폰트, 이미지를 미리 css와 함께 부름</li>
-</ul>
-</li>
-<li>HTTP2 Server Push<ul>
-<li>HTML, Javascript, CSS, Img 같이 받음</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-총체적으로-점검하기"><a href="#4-총체적으로-점검하기" class="headerlink" title="4. 총체적으로 점검하기"></a>4. 총체적으로 점검하기</h3><ul>
-<li>FP(Fisrt Paint) -&gt; head 태그 종료 후 이루어짐</li>
-<li>FMP(First Meaningful Paint) -&gt; <strong><em>hero element!</em></strong> -&gt; 이걸 어떤걸로 정할지가 중요함! (Lazy하게 처리하면 안되는 요소들)</li>
-<li>TTI(<a href="https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive" target="_blank" rel="noopener">Time To Interactive</a>)</li>
-<li>결국, 전체적으로 균형감 있게 줄여주는게 중요하다</li>
-</ul>
-<h2 id="Part-2"><a href="#Part-2" class="headerlink" title="Part 2."></a>Part 2.</h2><h3 id="Case-by-Case"><a href="#Case-by-Case" class="headerlink" title="Case by Case"></a>Case by Case</h3><ul>
-<li>브라우져 메인 스레드를 괴롭히지 않아야함!</li>
-</ul>
-<h3 id="Javascript가-DOM을-만지면-메인-스레드가-Rendering-Pipeline-과정을-거친다"><a href="#Javascript가-DOM을-만지면-메인-스레드가-Rendering-Pipeline-과정을-거친다" class="headerlink" title="Javascript가 DOM을 만지면 메인 스레드가 Rendering Pipeline 과정을 거친다"></a>Javascript가 DOM을 만지면 메인 스레드가 Rendering Pipeline 과정을 거친다</h3><ul>
-<li>Rendering Pipeline 과정</li>
-</ul>
-<ol>
-<li>Javascript가 건들면</li>
-<li>Style recalculation</li>
-<li>Layout</li>
-<li>Paint</li>
-<li>Composite (cpu가 아닌 gpu의 도움을 받음)<ul>
-<li>레이어를 겹쳐서 그리는 작업 (따라서 레이어를 어떻게 만드느냐가 중요함. 꼭 필요한 부분만 만들어야한다.)</li>
-</ul>
-</li>
-</ol>
-<p><a href="https://csstriggers.com/" target="_blank" rel="noopener">csstriggers.com 참조</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/2019/04/12/naver-tech-concert/" data-id="cjxcmpwu40084jcdtbzbit5n9" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/2019/04/12/naver-tech-concert/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FE-2019/">FE 2019</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frontend/">frontend</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/네이버-테크-콘서트/">네이버 테크 콘서트</a></li></ul>
 
     </footer>
   </div>
@@ -851,7 +645,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
     </div>
   </div>
 
@@ -862,6 +656,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/07/02/TIL/">TIL</a>
+          </li>
         
           <li>
             <a href="/2019/06/26/TIL/">TIL</a>
@@ -877,10 +675,6 @@
         
           <li>
             <a href="/2019/06/14/TIL/">TIL</a>
-          </li>
-        
-          <li>
-            <a href="/2019/06/12/TIL/">TIL</a>
           </li>
         
       </ul>

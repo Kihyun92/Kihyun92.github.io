@@ -84,3 +84,11 @@ deploy:
 
 # for Disqus
 disqus_shortname: kihyuns-blog
+
+# for cactus setting
+nav:
+  home: /
+  about: /about/
+  articles: /archives/
+  projects: http://github.com/probberechts
+  LINK_NAME: URL

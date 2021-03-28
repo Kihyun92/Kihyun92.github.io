@@ -1,14 +1,12 @@
 ---
-title: TIL 2018-10-12
+title: Hexo로 블로그 시작하기
 date: 2018-10-13 01:52:47
 tags:
     - til
     - hexo
 ---
 
-# Today I Learn!
-
-## 1. Hexo!
+# 1. Hexo!
 
 * 기존에 Jekyll로 작업하던 깃헙 블로그를 Hexo로 바꿨다!
 * 따라서 새로 배운 Hexo의 명령어들을 정리해보자

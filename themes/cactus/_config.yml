@@ -17,7 +17,8 @@ nav:
   home: /
   about: /about/
   articles: /archives/
-  projects: projects_url
+  # projects: projects_url
+  wiki: /wiki/
 
 
 # Links to your social media accounts.

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>견스</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Kihyun&#39;s Dev blog!">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Kihyun&#39;s Dev blog!">
 <meta property="og:type" content="website">
 <meta property="og:title" content="견스">
 <meta property="og:url" content="https://kihyun92.github.io/page/6/index.html">
@@ -16,776 +15,299 @@
 <meta property="og:locale">
 <meta property="article:author" content="Kihyun Kim">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="견스" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>견스</title>
+    <!-- styles -->
+    
 <link rel="stylesheet" href="/css/style.css">
 
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
 <meta name="generator" content="Hexo 5.3.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">견스</a>
-      </h1>
+<body class="max-width mx-auto px3 ltr">
+    
+    <div class="content index py4">
+        
+          <header id="header">
+  <a href="/">
+  
+    
+      <div id="logo" style="background-image: url(/images/logo.png);"></div>
+    
+  
+    <div id="title">
+      <h1>견스</h1>
+    </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+       
+        <li><a href="/">Home</a></li>
+       
+        <li><a href="/about/">About</a></li>
+       
+        <li><a href="/archives/">Writing</a></li>
+       
+        <li><a href="/projects_url">Projects</a></li>
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kihyun92.github.io"></form>
-      </div>
-    </div>
+    </ul>
   </div>
 </header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/TIL/" class="article-date">
-  <time datetime="2018-11-26T09:59:54.000Z" itemprop="datePublished">2018-11-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/til/">til</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
+        <section id="about">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/TIL/">TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="TODAY-I-LEARN"><a href="#TODAY-I-LEARN" class="headerlink" title="TODAY I LEARN!"></a>TODAY I LEARN!</h1><h3 id="hexo-deploy-error-해결"><a href="#hexo-deploy-error-해결" class="headerlink" title="hexo deploy error 해결!"></a>hexo deploy error 해결!</h3><p>새로운 개발 환경에서 블로깅을 하기 위해 기존에 만들었던 깃헙 블로그 repo를 pull 받으며 발생했던 문제들과 해결 방법에 대해 적어보자.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
-<p>pull 받고, deploy를 하는 과정에서 위와 같은 에러가 발생했다.</p>
-<p><a target="_blank" rel="noopener" href="https://simhyejin.github.io/2016/06/20/hexo-github-pages/">이 글</a>을 참조해서 해결했다!</p>
-<blockquote>
-<p>hexo-deployer-git을 설치 하지 않으면 deploy시 위와 같은 ERROR가 발생합니다.</p>
-</blockquote>
-<p>이게 핵심!</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="git-checkout-t"><a href="#git-checkout-t" class="headerlink" title="git checkout -t"></a>git checkout -t</h3><p><a target="_blank" rel="noopener" href="https://cjh5414.github.io/get-git-remote-branch/">git remote branch 가져오기</a></p>
-<p>remote에 존재하는 다른 branch를 가져오고 싶을 경우<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote -t origin/feature/something</span><br></pre></td></tr></table></figure><br>feature/something이라는 브랜치를 가져온다고 가정했다.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/TIL/" data-id="ckmsybb5u001icd9620s484ui" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/TIL/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/" rel="tag">til</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
+    <p>Kihyun’s Dev blog!</p>
 
   
-    <article id="post-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/TIL/" class="article-date">
-  <time datetime="2018-11-22T05:44:59.000Z" itemprop="datePublished">2018-11-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/til/">til</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+  
+    <p>
+      Find me on
+      
+      
+      
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/TIL/">TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="TODAY-I-LEARN"><a href="#TODAY-I-LEARN" class="headerlink" title="TODAY I LEARN!"></a>TODAY I LEARN!</h1><h2 id="JEST"><a href="#JEST" class="headerlink" title="JEST"></a>JEST</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">jest.mock(<span class="string">&#x27;../../../~~~.vue&#x27;</span>, <span class="function">() =&gt;</span> (&#123;&#125;);</span><br></pre></td></tr></table></figure>
-<p>요로케 implemenation을 해줘야함</p>
-<p><a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/mock-functions#mock-implementations">mock-implementation</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/TIL/" data-id="ckmsybb5t001ecd962atbh4tb" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/TIL/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/" rel="tag">til</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/TIL/" class="article-date">
-  <time datetime="2018-11-21T03:13:05.000Z" itemprop="datePublished">2018-11-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/til/">til</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          <a class="icon" target="_blank" rel="noopener" href="http://github.com/probberechts/cactus-dark" aria-label="github">
+            <i class="fab fa-github"></i><!--
+      ---></a><!--
+    ---><!--
+    --->, 
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/TIL/">TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="TODAY-I-LEARN"><a href="#TODAY-I-LEARN" class="headerlink" title="TODAY I LEARN!!"></a>TODAY I LEARN!!</h1><h2 id="git-commit-메시지-수정하기"><a href="#git-commit-메시지-수정하기" class="headerlink" title="git commit 메시지 수정하기"></a>git commit 메시지 수정하기</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit --amend -m <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/TIL/" data-id="ckmsybb5t001acd969lgkczgl" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/TIL/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/" rel="tag">til</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/TIL/" class="article-date">
-  <time datetime="2018-11-13T01:26:49.000Z" itemprop="datePublished">2018-11-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/til/">til</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/TIL/">TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="TODAY-I-LEARN"><a href="#TODAY-I-LEARN" class="headerlink" title="TODAY I LEARN!"></a>TODAY I LEARN!</h1><h2 id="웹-성능-측정-개선"><a href="#웹-성능-측정-개선" class="headerlink" title="웹 성능 측정 / 개선"></a>웹 성능 측정 / 개선</h2><p><a target="_blank" rel="noopener" href="https://slides.com/jbee/devfest_seoul_2018_performance_optimization_with_chrome_devtools?fbclid=IwAR3jzWBUAmZsp4FzH_knLCbnbT2L1wTd029f7Hf1XUxQEHRDksSReEOitJ8#/3">참고</a></p>
-<h3 id="측정"><a href="#측정" class="headerlink" title="측정"></a>측정</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://developers.google.com/web/fundamentals/performance/rail?hl=ko">RAIL</a> : 사용자 중심 성능 모델<ul>
-<li>Resopnse</li>
-<li>Animation</li>
-<li>Idle</li>
-<li>Load</li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/timeline-tool?hl=ko">타임라인 도구 활용법</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/GoogleChrome/lighthouse">Audits</a></li>
-</ul>
-<h3 id="개선"><a href="#개선" class="headerlink" title="개선"></a>개선</h3><ul>
-<li>로딩 과정<ul>
-<li><a target="_blank" rel="noopener" href="https://support.smartbear.com/alertsite/docs/monitors/metrics/web-page-load-time.html">참고</a></li>
-</ul>
-</li>
-<li>3R<ul>
-<li>Request 개수</li>
-<li>Resource 크기</li>
-<li>Rendering 시간<ul>
-<li><a target="_blank" rel="noopener" href="https://m.post.naver.com/viewer/postView.nhn?volumeNo=8431285&amp;memberNo=34176766">CRP 최적화</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>lazy loading<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/codepink/codepink.github.com/wiki/%EB%84%88%EB%8A%94-%EB%82%98%EB%A5%BC-%EB%B3%B8%EB%8B%A4:-%EC%A7%80%EC%97%B0-%EB%B0%A9%EB%B2%95,-%EB%A0%88%EC%9D%B4%EC%A7%80-%EB%A1%9C%EB%93%9C%EC%99%80-IntersectionObserver%EC%9D%98-%EB%8F%99%EC%9E%91">Intersection Observer</a></li>
-</ul>
-</li>
-<li>최적화 </li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/TIL/" data-id="ckmsybb5r0012cd967qpcdjy2" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/TIL/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/" rel="tag">til</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jest-using-matchers" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/jest-using-matchers/" class="article-date">
-  <time datetime="2018-11-10T05:07:41.000Z" itemprop="datePublished">2018-11-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Jest/">Jest</a>►<a class="article-category-link" href="/categories/Jest/%EA%B3%B5%EC%8B%9D-%EB%AC%B8%EC%84%9C/">공식 문서</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          <a class="icon" target="_blank" rel="noopener" href="/" aria-label="twitter">
+            <i class="fab fa-twitter"></i><!--
+      ---></a><!--
+    ---><!--
+    --->, 
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/jest-using-matchers/">Jest - Using Matchers</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <p>해당 포스트의 내용은 Jest 공식 문서의 <a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/using-matchers">Using Matchers</a>를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.</p>
-<hr>
-<h1 id="Matcher들-사용하"><a href="#Matcher들-사용하" class="headerlink" title="Matcher들 사용하"></a>Matcher들 사용하</h1><p>Jest에서 <code>matcher</code>를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다. 전체 목록은 <a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/expect"><code>expect</code> API doc</a>을 참조하세요.</p>
-<h2 id="일반적인-Matcher"><a href="#일반적인-Matcher" class="headerlink" title="일반적인 Matcher"></a>일반적인 Matcher</h2><p>값을 테스트하는 가장 심플한 방법은 완전히 같은지 확인하는 겁니다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;two plus two is four&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    expect(<span class="number">2</span> + <span class="number">2</span>).toBe(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>위의 코드에서 <code>expect(2 + 2)</code>는 “예상되는” 객체를 리턴합니다. 일반적으로 호출 대상을 제외하고는 이런 예상 객체(expectation objects)를 잘 사용하지 않습니다. 이 코드에선 <code>.toBe(4)</code>가 matcher 입니다. Jest가 실행되면, 모든 실패하는 matchers들을 거치게 되고, 아주 좋은 에러 메세지를 출력할 겁니다.</p>
-<p><code>toBe</code>는 <code>Object.is</code>를 사용하여 완전히 같은지 테스트합니다. 만약 객체의 값을 체크하고 싶다면 <code>toEqual</code>을 사용하면 됩니다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;object assignment&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> data = &#123;<span class="attr">one</span>: <span class="number">1</span>&#125;;</span><br><span class="line">    data[<span class="string">&#x27;two&#x27;</span>] = <span class="number">2</span>;</span><br><span class="line">    expect(data).toEqual(&#123;<span class="attr">one</span>: <span class="number">1</span>, <span class="attr">two</span>: <span class="number">2</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><code>toEqual</code>은 객체나 배열의 모든 필드를 재귀적으로 체크합니다.</p>
-<p>또한 matcher의 반대값도 테스트할 수 있습니다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;adding positive numbers is not zero&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> a = <span class="number">1</span>; a &lt; <span class="number">10</span>; a++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> b = <span class="number">1</span>; b &lt; <span class="number">10</span>; b++) &#123;</span><br><span class="line">            expect(a + b).not.toBe(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="Truthiness-진실성-부여-해석이-어렵네요…"><a href="#Truthiness-진실성-부여-해석이-어렵네요…" class="headerlink" title="Truthiness (진실성 부여? 해석이 어렵네요…)"></a>Truthiness (진실성 부여? 해석이 어렵네요…)</h2><p>테스트에서 때때로 <code>undefined</code>, <code>null</code>, <code>false</code>를 구분해야할 필요가 있지만, 때때로 이것들을 다르게 처리하고 싶지 않을 때가 있을 것입니다. Jest에는 당신이 원하는 것을 명시할 수 있게 해주는 헬퍼가 포함되어있습니다.</p>
-<ul>
-<li><code>toBeNull</code>은 오직 <code>null</code>에만 매치됩니다.</li>
-<li><code>toBeUndefined</code>는 오직 <code>undefined</code>에만 매치됩니다.</li>
-<li><code>toBeDefined</code>는 <code>toBeUndefined</code>의 반대가 됩니다.</li>
-<li><code>toBeTruthy</code>는 <code>if</code>문이 true로 처리하는 모든 것과 일치합니다.</li>
-<li><code>toBeFalsy</code>는 <code>if</code>문이 false로 처리하는 모든 것과 일치합니다.</li>
-</ul>
-<p>예제:</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;null&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> n = <span class="literal">null</span>;</span><br><span class="line">    expect(n).toBeNull();</span><br><span class="line">    expect(n).toBeDefined();</span><br><span class="line">    expect(n).not.toBeUndefined();</span><br><span class="line">    expect(n).not.toBeTruthy();</span><br><span class="line">    expect(n).toBeFalsy();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;zero&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> z = <span class="number">0</span>;</span><br><span class="line">    expect(z).not.toBeNull();</span><br><span class="line">    expect(z).toBeDefined();</span><br><span class="line">    expect(z).not.toBeUndefined();</span><br><span class="line">    expect(z).not.toBeTruthy();</span><br><span class="line">    expect(z).toBeFalsy();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>당신의 코드에서 수행하고자 하는 작업과 가장 일치하는 matcher를 사용해야 합니다.</p>
-<h2 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h2><p>숫자를 비교하는 대부분의 방법에는 마찬가지로 matcher를 쓸 수 있다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;two plus two&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> value = <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">    expect(value).toBeGreaterThan(<span class="number">3</span>);</span><br><span class="line">    expect(value).toBeGreaterThanOrEqual(<span class="number">3.5</span>);</span><br><span class="line">    expect(value).toBeLessThan(<span class="number">5</span>);</span><br><span class="line">    expect(value).toBeLessThanOrEqual(<span class="number">4.5</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// toBe and toEqual are equivalent for numbers</span></span><br><span class="line">    expect(value).toBe(<span class="number">4</span>);</span><br><span class="line">    expect(value).toEqual(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>매우 작은 반올림 에러가 발생하는걸 원하지 않는다면, 부동 소수점의 동일성을 체크할 경우에는 <code>toEqual</code>대신 <code>toBeClose</code>를 사용하세요.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;adding floating point numbers&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> value = <span class="number">0.1</span> + <span class="number">0.2</span>;</span><br><span class="line">    <span class="comment">//expect(value).toBe(0.3);           This won&#x27;t work because of rounding error</span></span><br><span class="line">    expect(value).toBeCloseTo(<span class="number">0.3</span>); <span class="comment">// This works.</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p><code>toMatch</code>를 사용하여 정규표현식에 대해서 문자열 검사를 할 수 있습니다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;there is no I in team&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    expect(<span class="string">&#x27;team&#x27;</span>).not.toMatch(<span class="regexp">/I/</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;but there is a &quot;stop&quot; in Christoph&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    expect(<span class="string">&#x27;Christoph&#x27;</span>).toMatch(<span class="regexp">/stop/</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="배열과-반복문"><a href="#배열과-반복문" class="headerlink" title="배열과 반복문"></a>배열과 반복문</h2><p><code>toContain</code>을 사용하여 배열이나 반복문에 특정 항목이 포함되어 있는지 확인할 수 있습니다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> shoppingList = [<span class="string">&#x27;diapers&#x27;</span>, <span class="string">&#x27;kleenex&#x27;</span>, <span class="string">&#x27;trash bags&#x27;</span>, <span class="string">&#x27;paper towels&#x27;</span>, <span class="string">&#x27;beer&#x27;</span>];</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;the shopping list has beer on it&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    expect(shoppingList).toContain(<span class="string">&#x27;beer&#x27;</span>);</span><br><span class="line">    expect(<span class="keyword">new</span> <span class="built_in">Set</span>(shoppingList)).toContain(<span class="string">&#x27;beer&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="Exceptions"><a href="#Exceptions" class="headerlink" title="Exceptions"></a>Exceptions</h2><p><code>toThrow</code>를 사용하여 특정 함수가 호출 되었을 때 에러를 던지도록 테스트 할 수 있습니다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compileAndroidCode</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> ConfigError(<span class="string">&#x27;you are using the wrong JDK&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;compiling android goes as expected&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    expect(compileAndroidCode).toThrow();</span><br><span class="line">    expect(compileAndroidCode).toThrow(ConfigError);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// You can also use the exact error message or a regexp</span></span><br><span class="line">    expect(compileAndroidCode).toThrow(<span class="string">&#x27;you are using the wrong JDK&#x27;</span>);</span><br><span class="line">    expect(compileAndroidCode).toThrow(<span class="regexp">/JDK/</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="그리고…"><a href="#그리고…" class="headerlink" title="그리고…"></a>그리고…</h2><p>이것은 그저 맛보기 정도입니다. 완전한 matcher들의 리스트를 확인하려면 <a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/expect">레퍼런스 문서</a>를 확인하세요.</p>
-<p>사용 가능한 matcher들에 대해 알게 되었으니, 그 다음으로 <a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/asynchronous">Jest로 비동기 코드 테스트</a>를 하는 방법을 보는게 좋습니다!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/jest-using-matchers/" data-id="ckmsybb6x0058cd960b9hhkgk" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/jest-using-matchers/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jest/" rel="tag">Jest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jest-%EB%B2%88%EC%97%AD/" rel="tag">Jest 번역</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Using-Matchers/" rel="tag">Using Matchers</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jest-getting-started" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/jest-getting-started/" class="article-date">
-  <time datetime="2018-11-09T01:51:02.000Z" itemprop="datePublished">2018-11-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Jest/">Jest</a>►<a class="article-category-link" href="/categories/Jest/%EA%B3%B5%EC%8B%9D-%EB%AC%B8%EC%84%9C/">공식 문서</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/jest-getting-started/">Jest - Getting Started</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>해당 포스트의 내용은 Jest 공식 문서의 <a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/getting-started">Getting Started</a>를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.</p>
-<hr>
-<h1 id="시작하기"><a href="#시작하기" class="headerlink" title="시작하기"></a>시작하기</h1><p><a target="_blank" rel="noopener" href="https://yarnpkg.com/en/package/jest"><code>yarn</code></a>으로 jest 설치하기 :<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn add --dev jest</span><br></pre></td></tr></table></figure><br><a target="_blank" rel="noopener" href="https://www.npmjs.com/"><code>npm</code></a>으로 설치 :<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save-dev jest</span><br></pre></td></tr></table></figure><br>이제 두 수의 합을 더해서 리턴하는 함수를 만들어서 테스트를 시작해봅시다. 먼저, <code>sum.js</code> 파일을 생성합니다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = sum;</span><br></pre></td></tr></table></figure>
-<p>그 다음, <code>sum.test.js</code>파일을 생성합니다. 이 파일에서 실제 테스트가 진행됩니다.</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = <span class="built_in">require</span>(<span class="string">&#x27;./sum&#x27;</span>);</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;adds 1 + 2 to equal 3&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    expect(sum(<span class="number">1</span>, <span class="number">2</span>)).toBe(<span class="number">3</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>다음으로 <code>package.json</code>에 다음 코드를 추가합니다.<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;test&quot;</span>: <span class="string">&quot;jest&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>마지막으로 <code>yarn test</code> 혹은 <code>npm run test</code>를 해주시면 콘솔에 아래와 같은 메시지가 찍히는 것을 볼 수 있습니다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">PASS  ./sum.test.js</span><br><span class="line">✓ adds 1 + 2 to equal 3 (5ms)</span><br></pre></td></tr></table></figure>
-<p><strong>이것으로 당신은 Jest를 사용한 첫 테스트를 성공적으로 작성했습니다!</strong></p>
-<p>이번 테스트에선 <code>expect</code>와 <code>toBe</code>를 사용하여 두 값이 완전히 똑같다는 것을 테스트 했습니다. Jest로 테스트할 수 있는 다른 것들을 배우고 싶으시면, <a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/using-matchers">Using Matchers</a>를 보세요.</p>
-<h2 id="커맨드라인으로-실행하기"><a href="#커맨드라인으로-실행하기" class="headerlink" title="커맨드라인으로 실행하기"></a>커맨드라인으로 실행하기</h2><p>CLI를 통해 다양하고, 유용한 옵션들을 사용하여 Jest를 실행할 수 있습니다.</p>
-<p>my-test와 일치하는 파일에서 Jest를 실행하고, config.json을 구성 파일로 사용하고 실행 후 native OS 알림을 표시하는 방법은 다음과 같습니다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jest my-test --notify --config=config.json</span><br></pre></td></tr></table></figure><br>커맨드 라인을 통해 jest를 실행하는 것에 대해 더 알고 싶다면, <a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/cli">Jest CLI Options</a> 페이지를 보십시오.</p>
-<h1 id="추가-구성"><a href="#추가-구성" class="headerlink" title="추가 구성"></a>추가 구성</h1><h2 id="기본-구성-파일-생성"><a href="#기본-구성-파일-생성" class="headerlink" title="기본 구성 파일 생성"></a>기본 구성 파일 생성</h2><p>프로젝트에 따라 Jest는 몇 가지 질문을 하고 각 옵션에 대한 간단한 설명과 함께 기본 구성 파일을 만듭니다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jest --init</span><br></pre></td></tr></table></figure></p>
-<h2 id="Babel-사용하기"><a href="#Babel-사용하기" class="headerlink" title="Babel 사용하기"></a>Babel 사용하기</h2><p><a target="_blank" rel="noopener" href="https://babeljs.io/">Babel</a>을 사용하려면 <code>babel-jest</code> 및 <code>regenerator-runtime</code> 패키지를 설치하십시오.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn add --dev babel-jest babel-core regenerator-runtime</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>참고: Babel 버전 7을 사용하고 있다면 다음 명령으로 <code>babel-jest</code>, <code>babel-core@^7.0.0-bridge.0</code> 및 <code>@ babel/core</code>를 설치해야합니다.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yarn add --dev babel-jest babel-core@^7.0.0-bridge.0 @babel/core regenerator-runtime</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>node_module을 트랜스파일하려면 <code>babel.config.js</code>를 사용해야합니다. 자세한 내용은 <a target="_blank" rel="noopener" href="https://babeljs.io/docs/en/next/config-files">https://babeljs.io/docs/en/next/config-files</a>를 참조하십시오.<br /><br />Jest 레포지토리에서 예제를 볼 수 있습니다.<br /><a target="_blank" rel="noopener" href="https://github.com/facebook/jest/tree/master/examples/babel-7">https://github.com/facebook/jest/tree/master/examples/babel-7</a></p>
-</blockquote>
-<p><em>참고: npm 3 또는 4 또는 Yarn을 사용하는 경우 <code>regenerator-runtime</code>을 설치하지 않아도됩니다.</em></p>
-<p>프로젝트의 루트 폴더에 <code>.babelrc</code> 파일을 추가하는 것을 잊지 마십시오. 예를 들어, <code>babel-preset-env</code> 및 <code>babel-preset-react</code> presets과 함께 ES6 및 <a target="_blank" rel="noopener" href="https://reactjs.org/">React.js</a>를 사용하는 경우 :</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;presets&quot;</span>: [<span class="string">&quot;env&quot;</span>, <span class="string">&quot;react&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>이제 모든 ES6 기능과 React specific syntax를 사용하도록 설정되었습니다.</p>
-<blockquote>
-<p>참고: Babel의 <code>env</code> 옵션을 사용하여 더 복잡한 Babel 구성을 사용하는 경우, Jest는 자동으로 <code>NODE_ENV</code>를 <code>테스트</code>로 정의합니다. <code>NODE_ENV</code>가 설정되어 있지 않으면 Babel과 같은 <code>개발</code> 섹션을 사용하지 않습니다.</p>
-</blockquote>
-<blockquote>
-<p>참고: <code>&#123; &quot;modules&quot;: false&#125;</code> 옵션을 사용하여 ES6 모듈의 transpilation이 해제 된 경우, 테스트 환경에서 이 기능을 활성화해야 합니다.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;presets&quot;</span>: [[<span class="string">&quot;env&quot;</span>, &#123;<span class="string">&quot;modules&quot;</span>: <span class="literal">false</span>&#125;], <span class="string">&quot;react&quot;</span>],</span><br><span class="line">    <span class="string">&quot;env&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;test&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;presets&quot;</span>: [[<span class="string">&quot;env&quot;</span>], <span class="string">&quot;react&quot;</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>참고: <code>babel-jest</code>는 Jest를 설치할 때 자동으로 설치되며 프로젝트에 babel 구성이 있으면 파일을 자동으로 변환합니다. 이 문제를 방지하려면 명시적으로 <code>transform</code> 구성 옵션을 재설정 할 수 있습니다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// package.json</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;jest&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;transform&quot;</span>: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="웹팩-사용하기"><a href="#웹팩-사용하기" class="headerlink" title="웹팩 사용하기"></a>웹팩 사용하기</h2><p>Jest는 assets, 스타일 및 컴파일을 관리하기 위해 <a target="_blank" rel="noopener" href="https://webpack.github.io/">webpack</a>을 사용하는 프로젝트에서 사용할 수 있습니다. webpack은 다른 도구에 비해 몇 가지 독특한 도전 과제를 제시합니다. 시작하려면 <a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/webpack">webpack 안내서</a>를 참조하십시오.</p>
-<h2 id="타입스크립트-사용하기"><a href="#타입스크립트-사용하기" class="headerlink" title="타입스크립트 사용하기"></a>타입스크립트 사용하기</h2><p>테스트에서 TypeScript를 사용하려면 <a target="_blank" rel="noopener" href="https://github.com/kulshekhar/ts-jest">ts-jest</a>를 사용할 수 있습니다.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/jest-getting-started/" data-id="ckmsybb6u0050cd96h8sf4ste" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/jest-getting-started/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Getting-Started/" rel="tag">Getting Started</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jest/" rel="tag">Jest</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jest-%EB%B2%88%EC%97%AD/" rel="tag">Jest 번역</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/TIL/" class="article-date">
-  <time datetime="2018-11-09T01:38:00.000Z" itemprop="datePublished">2018-11-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/til/">til</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          <a class="icon" target="_blank" rel="noopener" href="/" aria-label="facebook">
+            <i class="fab fa-facebook"></i><!--
+      ---></a><!--
+    ---><!--
+    --->, 
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/TIL/">TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="TODAY-I-LEARN"><a href="#TODAY-I-LEARN" class="headerlink" title="TODAY I LEARN!"></a>TODAY I LEARN!</h1><h2 id="JEST"><a href="#JEST" class="headerlink" title="JEST"></a>JEST</h2><p>자바스크립트 테스트 라이브러리 중 하나인 <a target="_blank" rel="noopener" href="https://jestjs.io/en/">제스트</a>에 대해서 공부해보자. &amp; 도큐먼트 번역해서 정리해보자</p>
-<hr>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/TIL/" data-id="ckmsybb5r0016cd96hkbsb4w7" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/TIL/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/" rel="tag">til</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/TIL/" class="article-date">
-  <time datetime="2018-11-05T02:42:35.000Z" itemprop="datePublished">2018-11-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/til/">til</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/TIL/">TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="TODAY-I-LEARN"><a href="#TODAY-I-LEARN" class="headerlink" title="TODAY I LEARN!"></a>TODAY I LEARN!</h1><h2 id="NNTO-쿠키-캐싱-SEO"><a href="#NNTO-쿠키-캐싱-SEO" class="headerlink" title="NNTO, 쿠키, 캐싱, SEO"></a>NNTO, 쿠키, 캐싱, SEO</h2><hr>
-<h2 id="Javascript-에서-This의-의미"><a href="#Javascript-에서-This의-의미" class="headerlink" title="Javascript 에서 This의 의미"></a>Javascript 에서 This의 의미</h2><p><a target="_blank" rel="noopener" href="http://webframeworks.kr/tutorials/translate/explanation-of-this-in-javascript-1/">참고</a></p>
-<p>자바스크립트에서 this는 함수의 현재 실행 문맥이다</p>
-<hr>
-<h2 id="Service-worker"><a href="#Service-worker" class="headerlink" title="Service worker"></a>Service worker</h2><ul>
-<li>https 에서만 가능</li>
-<li>UI thread와 다른 스레드를 사용</li>
-<li>대용량 처리나, 캐싱이 필요한 작업에 사용</li>
-<li>캐싱이 되기때문에 오프라인 체크를 하고 캐싱 데이터 사용할 수 있음</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://developers.google.com/web/fundamentals/primers/service-workers/?hl=ko">서비스워커</a></p>
-<p><a target="_blank" rel="noopener" href="https://medium.com/@Dongmin_Jang/frontend-service-worker-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%9B%8C%EC%BB%A4%EA%B0%80-%EB%AC%B4%EC%97%87-2dab5d60f611">참고</a></p>
-<hr>
-<h2 id="안정성-성능"><a href="#안정성-성능" class="headerlink" title="안정성 + 성능"></a>안정성 + 성능</h2><ul>
-<li>테스트 기법과 네트워크 기본기를 다지자</li>
-<li>나만의 보일러플레이트</li>
-</ul>
-<hr>
-<h2 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton"></a>Singleton</h2><p><a target="_blank" rel="noopener" href="https://ko.wikipedia.org/wiki/%EC%8B%B1%EA%B8%80%ED%84%B4_%ED%8C%A8%ED%84%B4">싱글톤 패턴</a></p>
-<p><a target="_blank" rel="noopener" href="http://asfirstalways.tistory.com/335">참조</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/TIL/" data-id="ckmsybb5q000zcd962drv5v2h" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/TIL/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/" rel="tag">til</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/TIL/" class="article-date">
-  <time datetime="2018-11-02T02:28:11.000Z" itemprop="datePublished">2018-11-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/til/">til</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          <a class="icon" target="_blank" rel="noopener" href="/" aria-label="linkedin">
+            <i class="fab fa-linkedin"></i><!--
+      ---></a><!--
+    ---><!--
+    ---> and 
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/TIL/">TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="TODAY-I-LEARN"><a href="#TODAY-I-LEARN" class="headerlink" title="TODAY I LEARN!"></a>TODAY I LEARN!</h1><h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack!"></a>Webpack!</h2><p><a target="_blank" rel="noopener" href="https://webpack.js.org/">Webpack</a></p>
-<p><a target="_blank" rel="noopener" href="http://blog.jeonghwan.net/js/2017/05/15/webpack.html">웹팩의 기본 개념</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/TIL/" data-id="ckmsybb5o000wcd963lv4b6pu" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/TIL/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/" rel="tag">til</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/TIL/" class="article-date">
-  <time datetime="2018-10-30T02:01:45.000Z" itemprop="datePublished">2018-10-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/til/">til</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
+          <a class="icon" target="_blank" rel="noopener" href="mailto:name@email.com" aria-label="mail">
+            <i class="fas fa-envelope"></i><!--
+      ---></a>
+        <!--
+    --->.
+        
+      
+    </p>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/TIL/">TIL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="TODAY-I-LEARN"><a href="#TODAY-I-LEARN" class="headerlink" title="TODAY I LEARN!"></a>TODAY I LEARN!</h1><p>뭐하지?<br>리펙토링?</p>
-<p>무슨 공부하지?</p>
-<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><p><a target="_blank" rel="noopener" href="https://joshua1988.github.io/web-development/javascript/promise-for-beginners/">캡틴판교님의 글을 참고했다.</a></p>
-<hr>
-<h2 id="이벤트-캡쳐-버블링"><a href="#이벤트-캡쳐-버블링" class="headerlink" title="이벤트 캡쳐, 버블링"></a>이벤트 캡쳐, 버블링</h2><p><a target="_blank" rel="noopener" href="https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/">참고</a></p>
-<h2 id="웹-소켓"><a href="#웹-소켓" class="headerlink" title="웹 소켓"></a>웹 소켓</h2><p><a target="_blank" rel="noopener" href="https://engineering.huiseoul.com/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%9E%91%EB%8F%99%ED%95%98%EB%8A%94%EA%B0%80-%EC%9B%B9%EC%86%8C%EC%BC%93-%EB%B0%8F-http-2-sse-1ccde9f9dc51">참고 - 한국어</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kihyun92.github.io/TIL/" data-id="ckmsybb5n000tcd96fu2x7xsk" class="article-share-link">Share</a>
-      
-        <a href="https://kihyun92.github.io/TIL/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/til/" rel="tag">til</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
-  </nav>
-
 </section>
+
+<section id="writing">
+  <span class="h1"><a href="/archives/">Writing</a></span>
+  
+  <ul class="post-list">
+    
+    
+      
+    
+    
+      <li class="post-item">
         
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Jest/">Jest</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Jest/%EA%B3%B5%EC%8B%9D-%EB%AC%B8%EC%84%9C/">공식 문서</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/RxJS/">RxJS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL/">TIL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/til/">til</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%95%EC%9D%98-%EC%A0%95%EB%A6%AC/">강의 정리</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EA%B0%95%EC%9D%98-%EC%A0%95%EB%A6%AC/Smart-Work/">Smart Work</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%B1%85-%EC%A0%95%EB%A6%AC/">책 정리</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%B1%85-%EC%A0%95%EB%A6%AC/Typescript/">Typescript</a></li></ul></li></ul>
+    <div class="meta">
+      
+        
+          <time datetime="2020-04-18T06:49:08.690Z" itemprop="datePublished">2020-04-18</time>
+        
+      
     </div>
-  </div>
 
 
-  
+        <span>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CR/" rel="tag">CR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRLF/" rel="tag">CRLF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FE-2019/" rel="tag">FE 2019</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GatsbyJS/" rel="tag">GatsbyJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Getting-Started/" rel="tag">Getting Started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-2/" rel="tag">HTTP/2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest/" rel="tag">Jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jest-%EB%B2%88%EC%97%AD/" rel="tag">Jest 번역</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LF/" rel="tag">LF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mock-Function/" rel="tag">Mock Function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJ/" rel="tag">RxJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJS/" rel="tag">RxJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Setup-and-Teardown/" rel="tag">Setup and Teardown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Smart-Work/" rel="tag">Smart Work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/" rel="tag">TDD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL/" rel="tag">TIL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test-Asynchronous-Code/" rel="tag">Test Asynchronous Code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typescript/" rel="tag">Typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unit-Test/" rel="tag">Unit Test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Using-Matchers/" rel="tag">Using Matchers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/" rel="tag">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/" rel="tag">cache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/for-in/" rel="tag">for-in</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/for-of/" rel="tag">for-of</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/frontend/" rel="tag">frontend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-stash/" rel="tag">git stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-flow/" rel="tag">git-flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reset/" rel="tag">reset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stash/" rel="tag">stash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/til/" rel="tag">til</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-style-binding/" rel="tag">vue style binding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%84%A4%EC%9D%B4%EB%B2%84-%ED%85%8C%ED%81%AC-%EC%BD%98%EC%84%9C%ED%8A%B8/" rel="tag">네이버 테크 콘서트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/" rel="tag">브라우저</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%85%8C%EC%8A%A4%ED%8A%B8/" rel="tag">비동기 테스트</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%84%A4%EC%A0%95-%EB%B0%8F-%ED%95%B4%EC%A0%9C/" rel="tag">설정 및 해제</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%9B%8C%ED%81%AC/" rel="tag">스마트워크</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%9D%BC%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D%EC%9D%84-%ED%98%81%EC%8B%A0%ED%95%9C-%EA%B8%B0%EC%97%85%EB%93%A4%EC%9D%98-%EB%B9%84%EB%B0%80/" rel="tag">일하는 방식을 혁신한 기업들의 비밀</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/" rel="tag">정규표현식</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%9A%8C%EA%B3%A0/" rel="tag">회고</a></li></ul>
+        <a class="" href="/useEffect/">useEffect</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2020-04-18T05:33:52.397Z" itemprop="datePublished">2020-04-18</time>
+        
+      
     </div>
-  </div>
 
 
-  
+        <span>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/CR/" style="font-size: 10px;">CR</a> <a href="/tags/CRLF/" style="font-size: 10px;">CRLF</a> <a href="/tags/FE-2019/" style="font-size: 10px;">FE 2019</a> <a href="/tags/GatsbyJS/" style="font-size: 10px;">GatsbyJS</a> <a href="/tags/Getting-Started/" style="font-size: 10px;">Getting Started</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/HTTP-2/" style="font-size: 10px;">HTTP/2</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Jest/" style="font-size: 16.67px;">Jest</a> <a href="/tags/Jest-%EB%B2%88%EC%97%AD/" style="font-size: 16.67px;">Jest 번역</a> <a href="/tags/LF/" style="font-size: 10px;">LF</a> <a href="/tags/Mock-Function/" style="font-size: 10px;">Mock Function</a> <a href="/tags/RxJ/" style="font-size: 10px;">RxJ</a> <a href="/tags/RxJS/" style="font-size: 13.33px;">RxJS</a> <a href="/tags/Setup-and-Teardown/" style="font-size: 10px;">Setup and Teardown</a> <a href="/tags/Smart-Work/" style="font-size: 10px;">Smart Work</a> <a href="/tags/TDD/" style="font-size: 10px;">TDD</a> <a href="/tags/TIL/" style="font-size: 10px;">TIL</a> <a href="/tags/Test-Asynchronous-Code/" style="font-size: 10px;">Test Asynchronous Code</a> <a href="/tags/Typescript/" style="font-size: 13.33px;">Typescript</a> <a href="/tags/Unit-Test/" style="font-size: 13.33px;">Unit Test</a> <a href="/tags/Using-Matchers/" style="font-size: 10px;">Using Matchers</a> <a href="/tags/VIM/" style="font-size: 10px;">VIM</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/for-in/" style="font-size: 10px;">for-in</a> <a href="/tags/for-of/" style="font-size: 10px;">for-of</a> <a href="/tags/frontend/" style="font-size: 10px;">frontend</a> <a href="/tags/git/" style="font-size: 16.67px;">git</a> <a href="/tags/git-stash/" style="font-size: 10px;">git stash</a> <a href="/tags/git-flow/" style="font-size: 13.33px;">git-flow</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/reset/" style="font-size: 10px;">reset</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/til/" style="font-size: 20px;">til</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/vue-style-binding/" style="font-size: 10px;">vue style binding</a> <a href="/tags/%EB%84%A4%EC%9D%B4%EB%B2%84-%ED%85%8C%ED%81%AC-%EC%BD%98%EC%84%9C%ED%8A%B8/" style="font-size: 10px;">네이버 테크 콘서트</a> <a href="/tags/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/" style="font-size: 10px;">브라우저</a> <a href="/tags/%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%85%8C%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">비동기 테스트</a> <a href="/tags/%EC%84%A4%EC%A0%95-%EB%B0%8F-%ED%95%B4%EC%A0%9C/" style="font-size: 10px;">설정 및 해제</a> <a href="/tags/%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%9B%8C%ED%81%AC/" style="font-size: 10px;">스마트워크</a> <a href="/tags/%EC%9D%BC%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D%EC%9D%84-%ED%98%81%EC%8B%A0%ED%95%9C-%EA%B8%B0%EC%97%85%EB%93%A4%EC%9D%98-%EB%B9%84%EB%B0%80/" style="font-size: 10px;">일하는 방식을 혁신한 기업들의 비밀</a> <a href="/tags/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/" style="font-size: 10px;">정규표현식</a> <a href="/tags/%ED%9A%8C%EA%B3%A0/" style="font-size: 10px;">회고</a>
+        <a class="" href="/React/">React</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2020-04-18T02:58:04.576Z" itemprop="datePublished">2020-04-18</time>
+        
+      
     </div>
-  </div>
 
-  
+
+        <span>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+        <a class="" href="/wiki/">wiki</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2019-07-25T04:53:45.000Z" itemprop="datePublished">2019-07-25</time>
+        
+      
     </div>
-  </div>
 
 
-  
+        <span>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
+        <a class="" href="/TIL/">TIL</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2019-07-04T05:13:28.000Z" itemprop="datePublished">2019-07-04</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/TIL/">TIL</a>
+    
+
+
+</span>
+      </li>
+    
+  </ul>
+  
+</section>
+
+
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2021
+    Kihyun Kim
+  </div>
+  <div class="footer-right">
+    <nav>
       <ul>
-        
-          <li>
-            <a href="/useEffect/">useEffect</a>
-          </li>
-        
-          <li>
-            <a href="/React/">React</a>
-          </li>
-        
-          <li>
-            <a href="/wiki/">wiki</a>
-          </li>
-        
-          <li>
-            <a href="/TIL/">TIL</a>
-          </li>
-        
-          <li>
-            <a href="/TIL/">TIL</a>
-          </li>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
         
       </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2021 Kihyun Kim<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
+    </nav>
   </div>
 </footer>
+
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-<script>
-  var disqus_shortname = 'kihyuns-blog';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
+    <!-- styles -->
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
 
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
 
 
 
 
-<script src="/js/script.js"></script>
+<!-- clipboard -->
 
 
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
 
 
-  </div>
 </body>
 </html>

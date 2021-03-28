@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 견스
+title: Kihyun's Dev blog
 subtitle: Work & Life Harmony
-description: Kihyun's Dev blog!
-keywords:
+description: Work & Life Harmony!
+keywords: 
 author: Kihyun Kim
 language:
 timezone:
@@ -84,11 +84,3 @@ deploy:
 
 # for Disqus
 disqus_shortname: kihyuns-blog
-
-# for cactus setting
-nav:
-  home: /
-  about: /about/
-  articles: /archives/
-  projects: http://github.com/probberechts
-  LINK_NAME: URL

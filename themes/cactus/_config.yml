@@ -17,8 +17,9 @@ nav:
   home: /
   about: /about/
   articles: /archives/
-  daily: /daily-report/
-  wiki: /wiki/
+  # projects: projects_url
+  Daily Report: /daily-report/
+  Wiki: /wiki/
 
 
 # Links to your social media accounts.
@@ -26,7 +27,7 @@ nav:
 # (see https://fontawesome.com/icons?d=gallery&s=brands);
 # only 'mail' is an exception.
 social_links:
-  github: https://github.com/Kihyun92
+  github: http://github.com/Kihyun92
   # twitter: /
   # facebook: /
   linkedin: https://www.linkedin.com/in/ki-hyun-kim-46683b163/
@@ -43,7 +44,7 @@ tags_overview: false
 #   - sort_updated: sort posts by last modification date instead of creation date.
 posts_overview:
   show_all_posts: false
-  post_count: 5
+  post_count: 10
   sort_updated: false
 
 # Customize the archive view.
@@ -138,10 +139,14 @@ open_graph:
 # Plugins
 ##############################################################################
 
+# Enable MathJax support for Latex
+mathjax:
+  enabled: false
+  
 # Fill in your Disqus Comments Shortname to enable Disqus comments.
 disqus:
-  enabled: false
-  shortname: cactus-1
+  enabled: true
+  shortname: kihyuns-blog
 
 # Fill in your Google Analytics tracking ID to enable Google Analytics.
 google_analytics:

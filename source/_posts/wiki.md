@@ -6,7 +6,7 @@ title: wiki
 * [Javascript](/Javascript)
 * [React](/React)
 * [Typescript](/Typescript)
-* [CSS](/Css)
+* [CSS](/style-css)
 * [Test](/Test)
 * [Webpack](/Webpack)
 * [CodeSoom](/CodeSoom)

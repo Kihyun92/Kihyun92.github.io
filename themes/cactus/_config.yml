@@ -17,7 +17,7 @@ nav:
   home: /
   about: /about/
   articles: /archives/
-  # projects: projects_url
+  daily: /daily-report/
   wiki: /wiki/
 
 

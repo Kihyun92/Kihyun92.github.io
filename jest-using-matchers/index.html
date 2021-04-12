@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="해당 포스트의 내용은 Jest 공식 문서의 Using Matchers를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.  Matcher들 사용하Jest에서 matcher를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jest - Using Matchers">
+<meta property="og:url" content="https://kihyun92.github.io/jest-using-matchers/index.html">
+<meta property="og:site_name" content="Kihyun&#39;s Dev blog">
+<meta property="og:description" content="해당 포스트의 내용은 Jest 공식 문서의 Using Matchers를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.  Matcher들 사용하Jest에서 matcher를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다.">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-11-10T05:07:41.000Z">
+<meta property="article:modified_time" content="2021-04-10T07:56:03.150Z">
+<meta property="article:author" content="Kihyun Kim">
+<meta property="article:tag" content="Jest">
+<meta property="article:tag" content="Jest 번역">
+<meta property="article:tag" content="Using Matchers">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Jest - Using Matchers</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/daily-report/">Daily Report</a></li>
+         
+          <li><a href="/wiki/">Wiki</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/TIL/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/jest-getting-started/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kihyun92.github.io/jest-using-matchers/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kihyun92.github.io/jest-using-matchers/&text=Jest - Using Matchers"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kihyun92.github.io/jest-using-matchers/&title=Jest - Using Matchers"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kihyun92.github.io/jest-using-matchers/&is_video=false&description=Jest - Using Matchers"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Jest - Using Matchers&body=Check out this article: https://kihyun92.github.io/jest-using-matchers/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kihyun92.github.io/jest-using-matchers/&title=Jest - Using Matchers"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kihyun92.github.io/jest-using-matchers/&title=Jest - Using Matchers"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://kihyun92.github.io/jest-using-matchers/&title=Jest - Using Matchers"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://kihyun92.github.io/jest-using-matchers/&title=Jest - Using Matchers"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://kihyun92.github.io/jest-using-matchers/&name=Jest - Using Matchers&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://kihyun92.github.io/jest-using-matchers/&t=Jest - Using Matchers"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Matcher%EB%93%A4-%EC%82%AC%EC%9A%A9%ED%95%98"><span class="toc-number">1.</span> <span class="toc-text">Matcher들 사용하</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%9D%BC%EB%B0%98%EC%A0%81%EC%9D%B8-Matcher"><span class="toc-number">1.1.</span> <span class="toc-text">일반적인 Matcher</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Truthiness-%EC%A7%84%EC%8B%A4%EC%84%B1-%EB%B6%80%EC%97%AC-%ED%95%B4%EC%84%9D%EC%9D%B4-%EC%96%B4%EB%A0%B5%EB%84%A4%EC%9A%94%E2%80%A6"><span class="toc-number">1.2.</span> <span class="toc-text">Truthiness (진실성 부여? 해석이 어렵네요…)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Numbers"><span class="toc-number">1.3.</span> <span class="toc-text">Numbers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String"><span class="toc-number">1.4.</span> <span class="toc-text">String</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EB%B0%B0%EC%97%B4%EA%B3%BC-%EB%B0%98%EB%B3%B5%EB%AC%B8"><span class="toc-number">1.5.</span> <span class="toc-text">배열과 반복문</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Exceptions"><span class="toc-number">1.6.</span> <span class="toc-text">Exceptions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EA%B7%B8%EB%A6%AC%EA%B3%A0%E2%80%A6"><span class="toc-number">1.7.</span> <span class="toc-text">그리고…</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Jest - Using Matchers
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Kihyun Kim</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-11-10T05:07:41.000Z" itemprop="datePublished">2018-11-10</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Jest/">Jest</a> › <a class="category-link" href="/categories/Jest/%EA%B3%B5%EC%8B%9D-%EB%AC%B8%EC%84%9C/">공식 문서</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Jest/" rel="tag">Jest</a>, <a class="tag-link-link" href="/tags/Jest-%EB%B2%88%EC%97%AD/" rel="tag">Jest 번역</a>, <a class="tag-link-link" href="/tags/Using-Matchers/" rel="tag">Using Matchers</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>해당 포스트의 내용은 Jest 공식 문서의 <a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/using-matchers">Using Matchers</a>를 개인 공부를 위해 번역한 것 입니다. 오역이 있을 수 있으니, 정정해야할 내용은 댓글로 알려 주시면 감사하겠습니다.</p>
+<hr>
+<h1 id="Matcher들-사용하"><a href="#Matcher들-사용하" class="headerlink" title="Matcher들 사용하"></a>Matcher들 사용하</h1><p>Jest에서 <code>matcher</code>를 사용하여 다양한 방법으로 값을 테스트 할 수 있습니다. 이 문서에서는 일반적으로 사용되는 matcher들을 소개합니다. 전체 목록은 <a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/expect"><code>expect</code> API doc</a>을 참조하세요.</p>
+<h2 id="일반적인-Matcher"><a href="#일반적인-Matcher" class="headerlink" title="일반적인 Matcher"></a>일반적인 Matcher</h2><p>값을 테스트하는 가장 심플한 방법은 완전히 같은지 확인하는 겁니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;two plus two is four&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    expect(<span class="number">2</span> + <span class="number">2</span>).toBe(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>위의 코드에서 <code>expect(2 + 2)</code>는 “예상되는” 객체를 리턴합니다. 일반적으로 호출 대상을 제외하고는 이런 예상 객체(expectation objects)를 잘 사용하지 않습니다. 이 코드에선 <code>.toBe(4)</code>가 matcher 입니다. Jest가 실행되면, 모든 실패하는 matchers들을 거치게 되고, 아주 좋은 에러 메세지를 출력할 겁니다.</p>
+<p><code>toBe</code>는 <code>Object.is</code>를 사용하여 완전히 같은지 테스트합니다. 만약 객체의 값을 체크하고 싶다면 <code>toEqual</code>을 사용하면 됩니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;object assignment&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> data = &#123;<span class="attr">one</span>: <span class="number">1</span>&#125;;</span><br><span class="line">    data[<span class="string">&#x27;two&#x27;</span>] = <span class="number">2</span>;</span><br><span class="line">    expect(data).toEqual(&#123;<span class="attr">one</span>: <span class="number">1</span>, <span class="attr">two</span>: <span class="number">2</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>toEqual</code>은 객체나 배열의 모든 필드를 재귀적으로 체크합니다.</p>
+<p>또한 matcher의 반대값도 테스트할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;adding positive numbers is not zero&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> a = <span class="number">1</span>; a &lt; <span class="number">10</span>; a++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> b = <span class="number">1</span>; b &lt; <span class="number">10</span>; b++) &#123;</span><br><span class="line">            expect(a + b).not.toBe(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Truthiness-진실성-부여-해석이-어렵네요…"><a href="#Truthiness-진실성-부여-해석이-어렵네요…" class="headerlink" title="Truthiness (진실성 부여? 해석이 어렵네요…)"></a>Truthiness (진실성 부여? 해석이 어렵네요…)</h2><p>테스트에서 때때로 <code>undefined</code>, <code>null</code>, <code>false</code>를 구분해야할 필요가 있지만, 때때로 이것들을 다르게 처리하고 싶지 않을 때가 있을 것입니다. Jest에는 당신이 원하는 것을 명시할 수 있게 해주는 헬퍼가 포함되어있습니다.</p>
+<ul>
+<li><code>toBeNull</code>은 오직 <code>null</code>에만 매치됩니다.</li>
+<li><code>toBeUndefined</code>는 오직 <code>undefined</code>에만 매치됩니다.</li>
+<li><code>toBeDefined</code>는 <code>toBeUndefined</code>의 반대가 됩니다.</li>
+<li><code>toBeTruthy</code>는 <code>if</code>문이 true로 처리하는 모든 것과 일치합니다.</li>
+<li><code>toBeFalsy</code>는 <code>if</code>문이 false로 처리하는 모든 것과 일치합니다.</li>
+</ul>
+<p>예제:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;null&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> n = <span class="literal">null</span>;</span><br><span class="line">    expect(n).toBeNull();</span><br><span class="line">    expect(n).toBeDefined();</span><br><span class="line">    expect(n).not.toBeUndefined();</span><br><span class="line">    expect(n).not.toBeTruthy();</span><br><span class="line">    expect(n).toBeFalsy();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;zero&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> z = <span class="number">0</span>;</span><br><span class="line">    expect(z).not.toBeNull();</span><br><span class="line">    expect(z).toBeDefined();</span><br><span class="line">    expect(z).not.toBeUndefined();</span><br><span class="line">    expect(z).not.toBeTruthy();</span><br><span class="line">    expect(z).toBeFalsy();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>당신의 코드에서 수행하고자 하는 작업과 가장 일치하는 matcher를 사용해야 합니다.</p>
+<h2 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h2><p>숫자를 비교하는 대부분의 방법에는 마찬가지로 matcher를 쓸 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;two plus two&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> value = <span class="number">2</span> + <span class="number">2</span>;</span><br><span class="line">    expect(value).toBeGreaterThan(<span class="number">3</span>);</span><br><span class="line">    expect(value).toBeGreaterThanOrEqual(<span class="number">3.5</span>);</span><br><span class="line">    expect(value).toBeLessThan(<span class="number">5</span>);</span><br><span class="line">    expect(value).toBeLessThanOrEqual(<span class="number">4.5</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// toBe and toEqual are equivalent for numbers</span></span><br><span class="line">    expect(value).toBe(<span class="number">4</span>);</span><br><span class="line">    expect(value).toEqual(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>매우 작은 반올림 에러가 발생하는걸 원하지 않는다면, 부동 소수점의 동일성을 체크할 경우에는 <code>toEqual</code>대신 <code>toBeClose</code>를 사용하세요.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;adding floating point numbers&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> value = <span class="number">0.1</span> + <span class="number">0.2</span>;</span><br><span class="line">    <span class="comment">//expect(value).toBe(0.3);           This won&#x27;t work because of rounding error</span></span><br><span class="line">    expect(value).toBeCloseTo(<span class="number">0.3</span>); <span class="comment">// This works.</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p><code>toMatch</code>를 사용하여 정규표현식에 대해서 문자열 검사를 할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">test(<span class="string">&#x27;there is no I in team&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    expect(<span class="string">&#x27;team&#x27;</span>).not.toMatch(<span class="regexp">/I/</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;but there is a &quot;stop&quot; in Christoph&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    expect(<span class="string">&#x27;Christoph&#x27;</span>).toMatch(<span class="regexp">/stop/</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="배열과-반복문"><a href="#배열과-반복문" class="headerlink" title="배열과 반복문"></a>배열과 반복문</h2><p><code>toContain</code>을 사용하여 배열이나 반복문에 특정 항목이 포함되어 있는지 확인할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> shoppingList = [<span class="string">&#x27;diapers&#x27;</span>, <span class="string">&#x27;kleenex&#x27;</span>, <span class="string">&#x27;trash bags&#x27;</span>, <span class="string">&#x27;paper towels&#x27;</span>, <span class="string">&#x27;beer&#x27;</span>];</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;the shopping list has beer on it&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    expect(shoppingList).toContain(<span class="string">&#x27;beer&#x27;</span>);</span><br><span class="line">    expect(<span class="keyword">new</span> <span class="built_in">Set</span>(shoppingList)).toContain(<span class="string">&#x27;beer&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Exceptions"><a href="#Exceptions" class="headerlink" title="Exceptions"></a>Exceptions</h2><p><code>toThrow</code>를 사용하여 특정 함수가 호출 되었을 때 에러를 던지도록 테스트 할 수 있습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compileAndroidCode</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> ConfigError(<span class="string">&#x27;you are using the wrong JDK&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test(<span class="string">&#x27;compiling android goes as expected&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    expect(compileAndroidCode).toThrow();</span><br><span class="line">    expect(compileAndroidCode).toThrow(ConfigError);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// You can also use the exact error message or a regexp</span></span><br><span class="line">    expect(compileAndroidCode).toThrow(<span class="string">&#x27;you are using the wrong JDK&#x27;</span>);</span><br><span class="line">    expect(compileAndroidCode).toThrow(<span class="regexp">/JDK/</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="그리고…"><a href="#그리고…" class="headerlink" title="그리고…"></a>그리고…</h2><p>이것은 그저 맛보기 정도입니다. 완전한 matcher들의 리스트를 확인하려면 <a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/expect">레퍼런스 문서</a>를 확인하세요.</p>
+<p>사용 가능한 matcher들에 대해 알게 되었으니, 그 다음으로 <a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/asynchronous">Jest로 비동기 코드 테스트</a>를 하는 방법을 보는게 좋습니다!</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/daily-report/">Daily Report</a></li>
+         
+          <li><a href="/wiki/">Wiki</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Matcher%EB%93%A4-%EC%82%AC%EC%9A%A9%ED%95%98"><span class="toc-number">1.</span> <span class="toc-text">Matcher들 사용하</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%9D%BC%EB%B0%98%EC%A0%81%EC%9D%B8-Matcher"><span class="toc-number">1.1.</span> <span class="toc-text">일반적인 Matcher</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Truthiness-%EC%A7%84%EC%8B%A4%EC%84%B1-%EB%B6%80%EC%97%AC-%ED%95%B4%EC%84%9D%EC%9D%B4-%EC%96%B4%EB%A0%B5%EB%84%A4%EC%9A%94%E2%80%A6"><span class="toc-number">1.2.</span> <span class="toc-text">Truthiness (진실성 부여? 해석이 어렵네요…)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Numbers"><span class="toc-number">1.3.</span> <span class="toc-text">Numbers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String"><span class="toc-number">1.4.</span> <span class="toc-text">String</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EB%B0%B0%EC%97%B4%EA%B3%BC-%EB%B0%98%EB%B3%B5%EB%AC%B8"><span class="toc-number">1.5.</span> <span class="toc-text">배열과 반복문</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Exceptions"><span class="toc-number">1.6.</span> <span class="toc-text">Exceptions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EA%B7%B8%EB%A6%AC%EA%B3%A0%E2%80%A6"><span class="toc-number">1.7.</span> <span class="toc-text">그리고…</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kihyun92.github.io/jest-using-matchers/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kihyun92.github.io/jest-using-matchers/&text=Jest - Using Matchers"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kihyun92.github.io/jest-using-matchers/&title=Jest - Using Matchers"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kihyun92.github.io/jest-using-matchers/&is_video=false&description=Jest - Using Matchers"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Jest - Using Matchers&body=Check out this article: https://kihyun92.github.io/jest-using-matchers/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kihyun92.github.io/jest-using-matchers/&title=Jest - Using Matchers"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kihyun92.github.io/jest-using-matchers/&title=Jest - Using Matchers"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://kihyun92.github.io/jest-using-matchers/&title=Jest - Using Matchers"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://kihyun92.github.io/jest-using-matchers/&title=Jest - Using Matchers"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://kihyun92.github.io/jest-using-matchers/&name=Jest - Using Matchers&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://kihyun92.github.io/jest-using-matchers/&t=Jest - Using Matchers"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2021
+    Kihyun Kim
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/daily-report/">Daily Report</a></li>
+         
+          <li><a href="/wiki/">Wiki</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'kihyuns-blog';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>

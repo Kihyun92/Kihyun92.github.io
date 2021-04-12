@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="dfas현재 이 테스트가 실제로 무엇을 하는지 더 자세히 설명해주면 더 좋을 것 같아요.테스트를 작성하실 때 Given, When, Then에 맞춰서 코드를 작성해보세요. 이러한 형식에 맞춰서 테스트를 작성하는 연습을 하면 좋은 테스트를 작성하는데 많은 도움이 됩니다. describe(&#39;render&#39;, () &#x3D;&gt; &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Week3-1">
+<meta property="og:url" content="https://kihyun92.github.io/Week3-1/index.html">
+<meta property="og:site_name" content="Kihyun&#39;s Dev blog">
+<meta property="og:description" content="dfas현재 이 테스트가 실제로 무엇을 하는지 더 자세히 설명해주면 더 좋을 것 같아요.테스트를 작성하실 때 Given, When, Then에 맞춰서 코드를 작성해보세요. 이러한 형식에 맞춰서 테스트를 작성하는 연습을 하면 좋은 테스트를 작성하는데 많은 도움이 됩니다. describe(&#39;render&#39;, () &#x3D;&gt; &amp;#123;">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-04-12T10:23:14.335Z">
+<meta property="article:modified_time" content="2021-04-12T10:23:14.335Z">
+<meta property="article:author" content="Kihyun Kim">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Week3-1</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/daily-report/">Daily Report</a></li>
+         
+          <li><a href="/wiki/">Wiki</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/Week2-2/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/useState/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kihyun92.github.io/Week3-1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kihyun92.github.io/Week3-1/&text=Week3-1"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kihyun92.github.io/Week3-1/&title=Week3-1"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kihyun92.github.io/Week3-1/&is_video=false&description=Week3-1"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Week3-1&body=Check out this article: https://kihyun92.github.io/Week3-1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kihyun92.github.io/Week3-1/&title=Week3-1"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kihyun92.github.io/Week3-1/&title=Week3-1"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://kihyun92.github.io/Week3-1/&title=Week3-1"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://kihyun92.github.io/Week3-1/&title=Week3-1"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://kihyun92.github.io/Week3-1/&name=Week3-1&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://kihyun92.github.io/Week3-1/&t=Week3-1"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#dfas"><span class="toc-number">1.</span> <span class="toc-text">dfas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ff"><span class="toc-number">2.</span> <span class="toc-text">ff</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%88%98%ED%98%95%EB%8B%98"><span class="toc-number">3.</span> <span class="toc-text">수형님</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clearAllMocks"><span class="toc-number">4.</span> <span class="toc-text">clearAllMocks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#assert-%EB%AC%B8%EC%9C%BC%EB%A1%9C-%EC%9C%A0%EB%8F%84"><span class="toc-number">5.</span> <span class="toc-text">assert 문으로 유도</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Week3-1
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Kihyun Kim</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-04-12T10:23:14.335Z" itemprop="datePublished">2021-04-12</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="dfas"><a href="#dfas" class="headerlink" title="dfas"></a>dfas</h3><p>현재 이 테스트가 실제로 무엇을 하는지 더 자세히 설명해주면 더 좋을 것 같아요.<br>테스트를 작성하실 때 <code>Given, When, Then</code>에 맞춰서 코드를 작성해보세요. 이러한 형식에 맞춰서 테스트를 작성하는 연습을 하면 좋은 테스트를 작성하는데 많은 도움이 됩니다.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">describe(&#39;render&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">  context(&#39;tasks가 없을 떄&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">    &#x2F;&#x2F; Given</span><br><span class="line">    const tasks &#x3D; [];</span><br><span class="line"></span><br><span class="line">    it(&#39;빈 메세지를 표시합니다.&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">      &#x2F;&#x2F; When</span><br><span class="line">      const &#123; container &#125; &#x3D; render(&lt;SomeComponent &#x2F;&gt;);</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; Then</span><br><span class="line">      expect(container).toHaveTextContent(&#39;투두가 없습니다.&#39;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  context(&#39;tasks가 있을 때&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">    &#x2F;&#x2F; Given</span><br><span class="line">    const tasks &#x3D; [&#123; id: 1, task: &#39;밥먹기&#39; &#125;];</span><br><span class="line"></span><br><span class="line">    it(&#39;tasks 목록을 출력한다&#39;, () &#x3D;&gt; &#123;</span><br><span class="line">      ...</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>그래서 차례대로 읽어보면 <code>render는 tasks가 없을 때 빈 메시지를 출력한다.</code>, <code>render는 tasks가 있을 때 tasks목록을 출력한다.</code>로 읽을 수 있습니다. 그래서 자연스러운 문장이 됩니다. 영어로 작성해도 마찬가지에요. 그래서 <code>context</code> 안에는 <code>with, without, when</code>만 사용하도록 권장합니다.</p>
+<p>See also</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://ko.javascript.info/testing-mocha">https://ko.javascript.info/testing-mocha</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.betterspecs.org/#contexts">https://www.betterspecs.org/#contexts</a></li>
+</ul>
+<h3 id="ff"><a href="#ff" class="headerlink" title="ff"></a>ff</h3><p>실제로 코드를 테스트하는 곳은 it함수 안에 있어야 합니다.</p>
+<h3 id="수형님"><a href="#수형님" class="headerlink" title="수형님"></a>수형님</h3><p>테스트에서 생각할 부분은 ‘내가 얼마나 안심할 수 있는가’ 라고 생각해요. 이 과정에선 어느 정도 중복이 발생할 수 있습니다.<br>예를 들어, Page 컴포넌트에서 Title 렌더링을 테스트한다면 그 하위에 실제 렌더링을 담당하는 Header 컴포넌트에서도 Title 렌더링을 테스트해야겠죠. 다만 Page에서는 Page 자체가 올바르게 렌더링 됐다는 걸 알 수 있는 수준에서 Title을 테스트한 것이고, Header에서는 더 많은 걸 테스트할 수도 있습니다. 물론 Page에 또 다른 컴포넌트가 있다면 그 컴포넌트가 가진 요소에 대해 테스트가 추가될 수 있습니다.</p>
+<p>각 컴포넌트마다 가지고 있는 관심사의 수준이 다르기 때문에 하위 컴포넌트의 구현상세를 과도하게 테스트하게 될 수 있습니다. 이 경우 상위에서 너무 많은 걸 알고 있다는 신호고 이는 설계적으로 문제가 될 수 있습니다.</p>
+<p>그러나 이 부분에 대해서 지금 너무 깊게 고민하지 않으셨으면 해요. 경험치가 누적되지 않으면 사실 판단하기 어렵습니다. 그래서 훈련할 땐 극단적으로 테스트를 작성하는 걸 권합니다. 그래야 적정 수준의 테스트가 무엇인지 알 수 있게 됩니다. 지금은 떠오르는 불안들은 잠시 넣어두시고, 테스트 커버리지 100프로에 대한 집착만 남겨둬 보셔요🙂</p>
+<p>App 같은 경우는 이걸 App이 다 해야되나?? 라는 생각이 드실텐데 그래서 E2E 테스트가 있는 겁니다만 지금 정도 수준의 앱에선 고민 하지 않으셔도 됩니다ㅎㅎ</p>
+<h3 id="clearAllMocks"><a href="#clearAllMocks" class="headerlink" title="clearAllMocks"></a>clearAllMocks</h3><p>다른 테스트에 영향을 받을 것 같습니다. 각 테스트는 독립적으로 실행되어야해요.</p>
+<p><code>beforeEach</code>를 이용해서 mocking 함수들을 초기화 시켜주면 각 테스트가 의도치 않게 동작하는 것을 막을 수 있습니다.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">beforeEach(() &#x3D;&gt; &#123;</span><br><span class="line">  jest.clearAllMocks();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://jestjs.io/docs/en/jest-object#jestclearallmocks">https://jestjs.io/docs/en/jest-object#jestclearallmocks</a></li>
+</ul>
+<p>###</p>
+<p><App />에서 무엇을 할 수 있는지 테스트를 잘 작성해주신 것 같아요.<br>무엇을 할 수 있는지도 중요하지만 무엇을 했을 때 어떤 변화가 일어나는지 더 집중해보면 좋을 것 같아요. 추가하면 어떤 변화가 일어나나요?</p>
+<p>### </p>
+<p>with <-> without</p>
+<p>when log in <-> when log out</p>
+<p>처럼 같은 맥락에서 별개의 사례일 때 context를 사용합니다.</p>
+<p>지금은 3개의 context 모두 맥락이 같지 않은데 모두 context로 나눠져 있죠.</p>
+<p>context 사용법은 아래 문서와 아샬님의 문서를 참고해주세요.</p>
+<p><a target="_blank" rel="noopener" href="https://www.betterspecs.org/">https://www.betterspecs.org/</a><br><a target="_blank" rel="noopener" href="https://github.com/ahastudio/til/blob/main/blog/2018/12-08-given-when-then.md">https://github.com/ahastudio/til/blob/main/blog/2018/12-08-given-when-then.md</a></p>
+<p>###</p>
+<p>현재 Input 테스트에서 중복은 없는지 고민해보세요.</p>
+<p>어떻게 하면 깔끔하게 Input의 역할을 드러낼 수 있을지 고민하고</p>
+<p>사용 설명서로서 테스트 코드를 바라보시면 좋습니다.</p>
+<p>테스트를 일종의 사용설명서라고 생각해보시면 좋을 것 같아요. 해당 컴포넌트를 사용하는 사람에게 예제로 테스트를 제공하는거죠. 무엇을 보여주고 싶으신가요?</p>
+<p>다만 테스트들이 작업자 본인만 알 수 있는 테스트로 이루어져있는 것 같아요. 테스트 코드를 동료들이 읽게 될 일종의 사용 설명서로 생각하고 작성해보시면 좋습니다. 우리가 만들어둔 컴포넌트를 사용할 동료들에게 제공되는 일종의 예제가 되는거죠.<br>무엇을, 어떻게 보여주는게 좋을지 한번 고민해보시고 적용해보세요 :)</p>
+<h3 id="assert-문으로-유도"><a href="#assert-문으로-유도" class="headerlink" title="assert 문으로 유도"></a>assert 문으로 유도</h3><p>getBy*는 해당 요소를 찾지 못하면 에러가 발생해서 충분히 테스트 가능하지만, assert 문으로 작성한다면 의도를 더 분명히 할 수 있을 것 같아요~</p>
+<p>expect(getByText(‘할 일이 없어요!’)).not.toBeNull();</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/daily-report/">Daily Report</a></li>
+         
+          <li><a href="/wiki/">Wiki</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#dfas"><span class="toc-number">1.</span> <span class="toc-text">dfas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ff"><span class="toc-number">2.</span> <span class="toc-text">ff</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EC%88%98%ED%98%95%EB%8B%98"><span class="toc-number">3.</span> <span class="toc-text">수형님</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clearAllMocks"><span class="toc-number">4.</span> <span class="toc-text">clearAllMocks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#assert-%EB%AC%B8%EC%9C%BC%EB%A1%9C-%EC%9C%A0%EB%8F%84"><span class="toc-number">5.</span> <span class="toc-text">assert 문으로 유도</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kihyun92.github.io/Week3-1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kihyun92.github.io/Week3-1/&text=Week3-1"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kihyun92.github.io/Week3-1/&title=Week3-1"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kihyun92.github.io/Week3-1/&is_video=false&description=Week3-1"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Week3-1&body=Check out this article: https://kihyun92.github.io/Week3-1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kihyun92.github.io/Week3-1/&title=Week3-1"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kihyun92.github.io/Week3-1/&title=Week3-1"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://kihyun92.github.io/Week3-1/&title=Week3-1"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://kihyun92.github.io/Week3-1/&title=Week3-1"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://kihyun92.github.io/Week3-1/&name=Week3-1&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://kihyun92.github.io/Week3-1/&t=Week3-1"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2021
+    Kihyun Kim
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/daily-report/">Daily Report</a></li>
+         
+          <li><a href="/wiki/">Wiki</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'kihyuns-blog';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>

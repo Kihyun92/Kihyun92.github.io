@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="RxJS Quick Start, 책 정리RxJS를 시작하기 전에 구현  자체에만 초점을 맞추는게 아니라, 유지보수도 생각해야함 결과물(프레임워크)를 잘 사용하는 것보다 그 기술의 결과물이 어떤 고민의 산물인지 아는 것이 중요함.  1.1 웹 환경의 변화 Ajax 이전에는 서버 데이터를 받기위해 매번 브라우저 페이지를 새로 요청해야했었는데, Ajax 도입으로">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RxJS Quick Start, 책 정리">
+<meta property="og:url" content="https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/index.html">
+<meta property="og:site_name" content="Kihyun&#39;s Dev blog">
+<meta property="og:description" content="RxJS Quick Start, 책 정리RxJS를 시작하기 전에 구현  자체에만 초점을 맞추는게 아니라, 유지보수도 생각해야함 결과물(프레임워크)를 잘 사용하는 것보다 그 기술의 결과물이 어떤 고민의 산물인지 아는 것이 중요함.  1.1 웹 환경의 변화 Ajax 이전에는 서버 데이터를 받기위해 매번 브라우저 페이지를 새로 요청해야했었는데, Ajax 도입으로">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-03-07T16:52:47.000Z">
+<meta property="article:modified_time" content="2021-04-10T07:56:03.145Z">
+<meta property="article:author" content="Kihyun Kim">
+<meta property="article:tag" content="RxJ">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>RxJS Quick Start, 책 정리</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/daily-report/">Daily Report</a></li>
+         
+          <li><a href="/wiki/">Wiki</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/TIL/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/RxJS-%EC%A0%95%EB%A6%AC3/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&text=RxJS Quick Start, 책 정리"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&title=RxJS Quick Start, 책 정리"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&is_video=false&description=RxJS Quick Start, 책 정리"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RxJS Quick Start, 책 정리&body=Check out this article: https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&title=RxJS Quick Start, 책 정리"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&title=RxJS Quick Start, 책 정리"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&title=RxJS Quick Start, 책 정리"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&title=RxJS Quick Start, 책 정리"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&name=RxJS Quick Start, 책 정리&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&t=RxJS Quick Start, 책 정리"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RxJS-Quick-Start-%EC%B1%85-%EC%A0%95%EB%A6%AC"><span class="toc-number">1.</span> <span class="toc-text">RxJS Quick Start, 책 정리</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RxJS%EB%A5%BC-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90"><span class="toc-number">1.1.</span> <span class="toc-text">RxJS를 시작하기 전에</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%EC%9B%B9-%ED%99%98%EA%B2%BD%EC%9D%98-%EB%B3%80%ED%99%94"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 웹 환경의 변화</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%EC%9B%B9-%EA%B0%9C%EB%B0%9C-%EB%B3%B5%EC%9E%A1%EB%8F%84-%EC%A6%9D%EA%B0%80"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 웹 개발 복잡도 증가</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EC%9D%80-%EC%83%81%ED%83%9C-%EB%A8%B8%EC%8B%A0%EC%9D%B4%EB%8B%A4"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 웹 애플리케이션은 상태 머신이다.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%98%A4%EB%A5%98%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.4 웹 애플리케이션 오류가 발생하는 경우</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-RxJS%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EA%B3%BC-%EB%AC%B4%EC%8A%A8-%EA%B4%80%EB%A0%A8%EC%9D%B4-%EC%9E%88%EB%82%98"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.5 RxJS는 무엇인가? 그리고 웹 애플리케이션과 무슨 관련이 있나?</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        RxJS Quick Start, 책 정리
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Kihyun Kim</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-03-07T16:52:47.000Z" itemprop="datePublished">2019-03-08</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/RxJS/">RxJS</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/RxJ/" rel="tag">RxJ</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="RxJS-Quick-Start-책-정리"><a href="#RxJS-Quick-Start-책-정리" class="headerlink" title="RxJS Quick Start, 책 정리"></a>RxJS Quick Start, 책 정리</h1><h2 id="RxJS를-시작하기-전에"><a href="#RxJS를-시작하기-전에" class="headerlink" title="RxJS를 시작하기 전에"></a>RxJS를 시작하기 전에</h2><ul>
+<li>구현  자체에만 초점을 맞추는게 아니라, 유지보수도 생각해야함</li>
+<li>결과물(프레임워크)를 잘 사용하는 것보다 그 기술의 결과물이 어떤 고민의 산물인지 아는 것이 중요함.</li>
+</ul>
+<h3 id="1-1-웹-환경의-변화"><a href="#1-1-웹-환경의-변화" class="headerlink" title="1.1 웹 환경의 변화"></a>1.1 웹 환경의 변화</h3><ul>
+<li>Ajax<ul>
+<li>이전에는 서버 데이터를 받기위해 매번 브라우저 페이지를 새로 요청해야했었는데,<ul>
+<li>Ajax 도입으로 새로운 페이지 요청없이 데이터를 가져올 수 있게 되고, 화면에 바로 반영할 수 있게 됨</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SPA</li>
+<li>Web Storage, Web Worker -&gt; 브라우저에서 지원</li>
+</ul>
+<h3 id="1-2-웹-개발-복잡도-증가"><a href="#1-2-웹-개발-복잡도-증가" class="headerlink" title="1.2 웹 개발 복잡도 증가"></a>1.2 웹 개발 복잡도 증가</h3><ul>
+<li>다양한 기능들이 하나의 페이지에 존재하게 됨<ul>
+<li>서로 영향을 주고, 복잡하게 얽힘</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-웹-애플리케이션은-상태-머신이다"><a href="#1-3-웹-애플리케이션은-상태-머신이다" class="headerlink" title="1.3 웹 애플리케이션은 상태 머신이다."></a>1.3 웹 애플리케이션은 상태 머신이다.</h3><ul>
+<li>input과 기존 state와 logic에 따른 state 변경이 이루어짐</li>
+<li>웹 애플리케이션은 이러한 기능들의 집합임 -&gt; 웹애플리케이션도 하나의 큰 상태머신이다.</li>
+</ul>
+<h3 id="1-4-웹-애플리케이션-오류가-발생하는-경우"><a href="#1-4-웹-애플리케이션-오류가-발생하는-경우" class="headerlink" title="1.4 웹 애플리케이션 오류가 발생하는 경우"></a>1.4 웹 애플리케이션 오류가 발생하는 경우</h3><ul>
+<li>프로그램 오류 : 유저의 입력에 따라 프로그램이 예상하는 결과를 얻지 못하는 것</li>
+<li>웹애플리케이션을 하나의 state machine으로 본다면, 이를 구성하는 크고 작은 단위인 클래스 또는 컴포넌트의 상태 변화에 따라 웹 애플리케이션의 상태가 결정됨<ul>
+<li>각 구성 요소의 상태를 어떻게 관리하느냐가 중요</li>
+</ul>
+</li>
+<li>프로그램에서 오류가 나타나는 경우<ul>
+<li>입력된 값이나 타입을 잘못 전달한 경우</li>
+<li>입력된 값이 명확하지 않은 경우</li>
+<li>입력된 값을 준비되지 않은 상태에서 전달할 경우</li>
+<li>의존 관계에 있는 구성요소들의 상태 변화를 함께 전달하지 않아서 발생한 경우</li>
+<li>구성요소 간의 호출 순서에 의존도가 있는 경우에 호출 순서가 틀린 경우</li>
+<li>조건문에 의한 로직처리를 잘못한 경우</li>
+<li>로직의 연산을 잘못한 경우</li>
+<li>등등</li>
+</ul>
+</li>
+<li>하지만 웹 애플리케이션은 크게 세가지 요소에서 오류가 발생할 수 있음<ol>
+<li>입력 오류<ul>
+<li>입력값의 결과가 외부로부터 전달받는 경우</li>
+</ul>
+</li>
+<li>상태 오류<ul>
+<li>상태 변화를 정확하게 전달하지 못한 경우<ul>
+<li>컴포넌트 간에 의존도가 있는 경우</li>
+<li>호출 순서에 의존도가 있는 경우</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>로직 오류</li>
+</ol>
+</li>
+</ul>
+<h3 id="1-5-RxJS는-무엇인가-그리고-웹-애플리케이션과-무슨-관련이-있나"><a href="#1-5-RxJS는-무엇인가-그리고-웹-애플리케이션과-무슨-관련이-있나" class="headerlink" title="1.5 RxJS는 무엇인가? 그리고 웹 애플리케이션과 무슨 관련이 있나?"></a>1.5 RxJS는 무엇인가? 그리고 웹 애플리케이션과 무슨 관련이 있나?</h3><ul>
+<li>RxJS(ReactiveX for Javascript): Microsoft가 만든 라이브러리</li>
+<li>입력오류, 상태오류, 로직 오류로 발생하는 문제를 효과적으로 처리하기 위한 고민의 산출물<ul>
+<li>오류가 발생하지 않는 애플리케이션을 만들기 위해 일관된 방식으로 안전하게 데이터 흐름을 처리하도록 도와주는 라이브러리</li>
+</ul>
+</li>
+<li>상태 전파를 위한 리엑티브 프로그래밍 + 로직 오류를 방지하기 위한 함수형 프로그래밍</li>
+</ul>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/daily-report/">Daily Report</a></li>
+         
+          <li><a href="/wiki/">Wiki</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RxJS-Quick-Start-%EC%B1%85-%EC%A0%95%EB%A6%AC"><span class="toc-number">1.</span> <span class="toc-text">RxJS Quick Start, 책 정리</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RxJS%EB%A5%BC-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90"><span class="toc-number">1.1.</span> <span class="toc-text">RxJS를 시작하기 전에</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%EC%9B%B9-%ED%99%98%EA%B2%BD%EC%9D%98-%EB%B3%80%ED%99%94"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 웹 환경의 변화</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%EC%9B%B9-%EA%B0%9C%EB%B0%9C-%EB%B3%B5%EC%9E%A1%EB%8F%84-%EC%A6%9D%EA%B0%80"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 웹 개발 복잡도 증가</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EC%9D%80-%EC%83%81%ED%83%9C-%EB%A8%B8%EC%8B%A0%EC%9D%B4%EB%8B%A4"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 웹 애플리케이션은 상태 머신이다.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%98%A4%EB%A5%98%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.4 웹 애플리케이션 오류가 발생하는 경우</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-RxJS%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EA%B3%BC-%EB%AC%B4%EC%8A%A8-%EA%B4%80%EB%A0%A8%EC%9D%B4-%EC%9E%88%EB%82%98"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.5 RxJS는 무엇인가? 그리고 웹 애플리케이션과 무슨 관련이 있나?</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&text=RxJS Quick Start, 책 정리"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&title=RxJS Quick Start, 책 정리"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&is_video=false&description=RxJS Quick Start, 책 정리"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=RxJS Quick Start, 책 정리&body=Check out this article: https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&title=RxJS Quick Start, 책 정리"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&title=RxJS Quick Start, 책 정리"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&title=RxJS Quick Start, 책 정리"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&title=RxJS Quick Start, 책 정리"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&name=RxJS Quick Start, 책 정리&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://kihyun92.github.io/RxJS-%EC%A0%95%EB%A6%AC1/&t=RxJS Quick Start, 책 정리"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2021
+    Kihyun Kim
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/daily-report/">Daily Report</a></li>
+         
+          <li><a href="/wiki/">Wiki</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'kihyuns-blog';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>

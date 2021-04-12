@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="JavascriptObject Literal lookupsswitch문과 같은 조건문 대신에 사용하면 좋은 패턴이다!참조 function getDrink (type) &amp;#123;  var drinks &#x3D; &amp;#123;    &amp;#x27;coke&amp;#x27;: &amp;#x27;Coke&amp;#x27;,    &amp;#x27;pepsi&amp;#x27;: &amp;#x27;Pepsi&amp;#x27;,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript">
+<meta property="og:url" content="https://kihyun92.github.io/Javascript/index.html">
+<meta property="og:site_name" content="Kihyun&#39;s Dev blog">
+<meta property="og:description" content="JavascriptObject Literal lookupsswitch문과 같은 조건문 대신에 사용하면 좋은 패턴이다!참조 function getDrink (type) &amp;#123;  var drinks &#x3D; &amp;#123;    &amp;#x27;coke&amp;#x27;: &amp;#x27;Coke&amp;#x27;,    &amp;#x27;pepsi&amp;#x27;: &amp;#x27;Pepsi&amp;#x27;,">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-04-12T10:19:00.716Z">
+<meta property="article:modified_time" content="2021-04-12T10:19:00.716Z">
+<meta property="article:author" content="Kihyun Kim">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Javascript</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/wiki/">wiki</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/wiki/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/Router/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kihyun92.github.io/Javascript/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kihyun92.github.io/Javascript/&text=Javascript"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kihyun92.github.io/Javascript/&title=Javascript"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kihyun92.github.io/Javascript/&is_video=false&description=Javascript"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Javascript&body=Check out this article: https://kihyun92.github.io/Javascript/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kihyun92.github.io/Javascript/&title=Javascript"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kihyun92.github.io/Javascript/&title=Javascript"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://kihyun92.github.io/Javascript/&title=Javascript"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://kihyun92.github.io/Javascript/&title=Javascript"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://kihyun92.github.io/Javascript/&name=Javascript&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://kihyun92.github.io/Javascript/&t=Javascript"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript"><span class="toc-number">1.</span> <span class="toc-text">Javascript</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-Literal-lookups"><span class="toc-number">1.1.</span> <span class="toc-text">Object Literal lookups</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#default-case-%EC%97%86%EC%9D%B4-%EC%82%AC%EC%9A%A9%ED%95%A0-%EA%B2%BD%EC%9A%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">default case 없이 사용할 경우</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%95%A8%EC%88%98%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%9C-%EA%B2%BD%EC%9A%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">함수로 사용한 경우</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#basic-solution"><span class="toc-number">1.1.3.</span> <span class="toc-text">basic solution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript-%EC%B0%B8%EA%B3%A0"><span class="toc-number">1.1.4.</span> <span class="toc-text">Typescript 참고</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#handler-%EB%84%A4%EC%9D%B4%EB%B0%8D"><span class="toc-number">1.2.</span> <span class="toc-text">handler 네이밍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RORO-%ED%8C%A8%ED%84%B4"><span class="toc-number">1.3.</span> <span class="toc-text">RORO 패턴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Date"><span class="toc-number">1.4.</span> <span class="toc-text">Date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%A0%95%EA%B7%9C%EC%8B%9D-%EC%A0%81%EC%9A%A9"><span class="toc-number">1.5.</span> <span class="toc-text">정규식 적용</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EA%B0%9D%EC%B2%B4%EC%9D%98-key-%EA%B0%92%EC%97%90-%EC%9B%90%ED%95%98%EB%8A%94-%EB%B3%80%EC%88%98%EA%B0%92%EC%9D%84-%ED%95%A0%EB%8B%B9%ED%95%98%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EA%B2%BD%EC%9A%B0"><span class="toc-number">1.6.</span> <span class="toc-text">객체의 key 값에 원하는 변수값을 할당하고 싶은 경우</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#snakeToCamel"><span class="toc-number">1.7.</span> <span class="toc-text">snakeToCamel</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Javascript
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Kihyun Kim</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-04-12T10:19:00.716Z" itemprop="datePublished">2021-04-12</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><h2 id="Object-Literal-lookups"><a href="#Object-Literal-lookups" class="headerlink" title="Object Literal lookups"></a>Object Literal lookups</h2><p>switch문과 같은 조건문 대신에 사용하면 좋은 패턴이다!<br><a target="_blank" rel="noopener" href="https://ultimatecourses.com/blog/deprecating-the-switch-statement-for-object-literals">참조</a></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDrink</span> (<span class="params">type</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> drinks = &#123;</span><br><span class="line">    <span class="string">&#x27;coke&#x27;</span>: <span class="string">&#x27;Coke&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;pepsi&#x27;</span>: <span class="string">&#x27;Pepsi&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;lemonade&#x27;</span>: <span class="string">&#x27;Lemonade&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>: <span class="string">&#x27;Default item&#x27;</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;The drink I chose was &#x27;</span> + (drinks[type] || drinks[<span class="string">&#x27;default&#x27;</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> drink = getDrink(<span class="string">&#x27;coke&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="default-case-없이-사용할-경우"><a href="#default-case-없이-사용할-경우" class="headerlink" title="default case 없이 사용할 경우"></a>default case 없이 사용할 경우</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDrink</span> (<span class="params">type</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;The drink I chose was &#x27;</span> + &#123;</span><br><span class="line">    <span class="string">&#x27;coke&#x27;</span>: <span class="string">&#x27;Coke&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;pepsi&#x27;</span>: <span class="string">&#x27;Pepsi&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;lemonade&#x27;</span>: <span class="string">&#x27;Lemonade&#x27;</span></span><br><span class="line">  &#125;[type];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="함수로-사용한-경우"><a href="#함수로-사용한-경우" class="headerlink" title="함수로 사용한 경우"></a>함수로 사용한 경우</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> type = <span class="string">&#x27;coke&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> drinks = &#123;</span><br><span class="line">  <span class="string">&#x27;coke&#x27;</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Coke&#x27;</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&#x27;pepsi&#x27;</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Pepsi&#x27;</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&#x27;lemonade&#x27;</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Lemonade&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">drinks[type]();</span><br></pre></td></tr></table></figure>
+<h3 id="basic-solution"><a href="#basic-solution" class="headerlink" title="basic solution"></a>basic solution</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDrink</span> (<span class="params">type</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> drink;</span><br><span class="line">  <span class="keyword">var</span> drinks = &#123;</span><br><span class="line">    <span class="string">&#x27;coke&#x27;</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      drink = <span class="string">&#x27;Coke&#x27;</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;pepsi&#x27;</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      drink = <span class="string">&#x27;Pepsi&#x27;</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;lemonade&#x27;</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      drink = <span class="string">&#x27;Lemonade&#x27;</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      drink = <span class="string">&#x27;Default item&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// invoke it</span></span><br><span class="line">  (drinks[type] || drinks[<span class="string">&#x27;default&#x27;</span>])();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// return a String with chosen drink</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;The drink I chose was &#x27;</span> + drink;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> drink = getDrink(<span class="string">&#x27;coke&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Typescript-참고"><a href="#Typescript-참고" class="headerlink" title="Typescript 참고"></a>Typescript 참고</h3><p><a target="_blank" rel="noopener" href="https://github.com/microsoft/TypeScript/issues/35859">https://github.com/microsoft/TypeScript/issues/35859</a></p>
+<h2 id="handler-네이밍"><a href="#handler-네이밍" class="headerlink" title="handler 네이밍"></a>handler 네이밍</h2><p>참고하자.</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://jaketrent.com/post/naming-event-handlers-react/">https://jaketrent.com/post/naming-event-handlers-react/</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers">https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers</a></li>
+</ul>
+<h2 id="RORO-패턴"><a href="#RORO-패턴" class="headerlink" title="RORO 패턴"></a>RORO 패턴</h2><p><a target="_blank" rel="noopener" href="https://www.freecodecamp.org/news/elegant-patterns-in-modern-javascript-roro-be01e7669cbd/">참고</a></p>
+<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><ul>
+<li><p>ISO?</p>
+<ul>
+<li>ISO 8601은 날짜와 시간의 표기에 관한 국제 표준 규격이다.</li>
+<li>YYYY-DDD (확장 형식) 또는 YYYYDDD (기본 형식)으로 표기한다.</li>
+<li>시간의 표기에는 쌍점을 쓴 hh:mm:ss (확장 형식) 또는 hhmmss (기본 형식)을 사용한다.</li>
+<li>날짜와 시간을 함께 표기할 때에는, 날짜와 시간 사이에 T를 넣어 표기한다.</li>
+<li>시간대를 표기할 때에는 Z또는 +/- 기호를 사용한다.<ul>
+<li>UTC 시간대에서는 시각 뒤에 Z를 붙인다.</li>
+<li><code>예) 1981-02-22T09:00Z 또는 19810222T0900Z : UTC 시간대에서의 1981년 2월 22일 오전 9시</code></li>
+<li>UTC 외의 시간대에서는 시각 뒤에 +- hh:mm, +- hhmm, +- hh 를 덧붙여 쓴다.</li>
+<li><code>예) 1981-02-22T09:00:00+09:00 : UTC+9 시간대에서의 1981년 2월 22일 오전 9시</code></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString</a></li>
+</ul>
+</li>
+<li><p>UTC?</p>
+<ul>
+<li>실제로 국제 전기 통신 연합은 통일된 약자를 원했지만,<br>영어권의 사람들과 프랑스어권의 사람들은 각각 자신의 언어로 된 약자를 사용하길 원했다.<br>영어권은 CUT(Coordinated Universal Time)을, 프랑스어권은 TUC(Temps Universel Coordonne)를 제안했으며,<br>결국 두 언어 모두 C, T, U로 구성되어 있는 것에 착안해 UTC로 약어를 결정하기로 했다.</li>
+</ul>
+</li>
+</ul>
+<p>뭐가 다른거지</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://ohgyun.com/416">https://ohgyun.com/416</a></li>
+</ul>
+<h2 id="정규식-적용"><a href="#정규식-적용" class="headerlink" title="정규식 적용"></a>정규식 적용</h2><p><code>정규식.test(텍스트);</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> emailMatchRegex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(</span><br><span class="line">  <span class="string">&#x27;^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]&#123;2,3&#125;$&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;i&#x27;</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> isEmailForamt = <span class="function">(<span class="params">text: string</span>) =&gt;</span> emailMatchRegex.test(text);</span><br></pre></td></tr></table></figure>
+<h2 id="객체의-key-값에-원하는-변수값을-할당하고-싶은-경우"><a href="#객체의-key-값에-원하는-변수값을-할당하고-싶은-경우" class="headerlink" title="객체의 key 값에 원하는 변수값을 할당하고 싶은 경우"></a>객체의 key 값에 원하는 변수값을 할당하고 싶은 경우</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">WeverseAdminRoles.map(<span class="function"><span class="params">role</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.assign(rolesObj, &#123;[role]: roles.includes(role)&#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>-&gt; [] 괄호를 사용하면 가능하다!</p>
+<h2 id="snakeToCamel"><a href="#snakeToCamel" class="headerlink" title="snakeToCamel"></a>snakeToCamel</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> snakeToCamel = <span class="function">(<span class="params">str: string</span>) =&gt;</span> str.toLowerCase().replace(<span class="regexp">/[-_]([a-z])/g</span>, <span class="function">(<span class="params">_, group</span>) =&gt;</span> group.toUpperCase());</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/wiki/">wiki</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript"><span class="toc-number">1.</span> <span class="toc-text">Javascript</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-Literal-lookups"><span class="toc-number">1.1.</span> <span class="toc-text">Object Literal lookups</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#default-case-%EC%97%86%EC%9D%B4-%EC%82%AC%EC%9A%A9%ED%95%A0-%EA%B2%BD%EC%9A%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">default case 없이 사용할 경우</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%95%A8%EC%88%98%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%9C-%EA%B2%BD%EC%9A%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">함수로 사용한 경우</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#basic-solution"><span class="toc-number">1.1.3.</span> <span class="toc-text">basic solution</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript-%EC%B0%B8%EA%B3%A0"><span class="toc-number">1.1.4.</span> <span class="toc-text">Typescript 참고</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#handler-%EB%84%A4%EC%9D%B4%EB%B0%8D"><span class="toc-number">1.2.</span> <span class="toc-text">handler 네이밍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RORO-%ED%8C%A8%ED%84%B4"><span class="toc-number">1.3.</span> <span class="toc-text">RORO 패턴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Date"><span class="toc-number">1.4.</span> <span class="toc-text">Date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%A0%95%EA%B7%9C%EC%8B%9D-%EC%A0%81%EC%9A%A9"><span class="toc-number">1.5.</span> <span class="toc-text">정규식 적용</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EA%B0%9D%EC%B2%B4%EC%9D%98-key-%EA%B0%92%EC%97%90-%EC%9B%90%ED%95%98%EB%8A%94-%EB%B3%80%EC%88%98%EA%B0%92%EC%9D%84-%ED%95%A0%EB%8B%B9%ED%95%98%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EA%B2%BD%EC%9A%B0"><span class="toc-number">1.6.</span> <span class="toc-text">객체의 key 값에 원하는 변수값을 할당하고 싶은 경우</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#snakeToCamel"><span class="toc-number">1.7.</span> <span class="toc-text">snakeToCamel</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kihyun92.github.io/Javascript/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kihyun92.github.io/Javascript/&text=Javascript"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kihyun92.github.io/Javascript/&title=Javascript"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kihyun92.github.io/Javascript/&is_video=false&description=Javascript"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Javascript&body=Check out this article: https://kihyun92.github.io/Javascript/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kihyun92.github.io/Javascript/&title=Javascript"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kihyun92.github.io/Javascript/&title=Javascript"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://kihyun92.github.io/Javascript/&title=Javascript"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://kihyun92.github.io/Javascript/&title=Javascript"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://kihyun92.github.io/Javascript/&name=Javascript&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://kihyun92.github.io/Javascript/&t=Javascript"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2021
+    Kihyun Kim
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/wiki/">wiki</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

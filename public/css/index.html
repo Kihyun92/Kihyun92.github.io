@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="CSScss → disabled일때 스타일 처리하는 법&amp;:disabled &amp;#123;    cursor: not-allowed;    color: $&amp;#123;Color.white&amp;#125;;    border: 1px solid $&amp;#123;Color.white&amp;#125;;    opacity: 0.4;  &amp;#125; input → props를 디">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Css">
+<meta property="og:url" content="https://kihyun92.github.io/Css/index.html">
+<meta property="og:site_name" content="Kihyun&#39;s Dev blog">
+<meta property="og:description" content="CSScss → disabled일때 스타일 처리하는 법&amp;:disabled &amp;#123;    cursor: not-allowed;    color: $&amp;#123;Color.white&amp;#125;;    border: 1px solid $&amp;#123;Color.white&amp;#125;;    opacity: 0.4;  &amp;#125; input → props를 디">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-04-12T10:19:00.715Z">
+<meta property="article:modified_time" content="2021-04-12T10:19:00.716Z">
+<meta property="article:author" content="Kihyun Kim">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Css</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/wiki/">wiki</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/CodeSoom/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/Development/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kihyun92.github.io/Css/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kihyun92.github.io/Css/&text=Css"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kihyun92.github.io/Css/&title=Css"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kihyun92.github.io/Css/&is_video=false&description=Css"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Css&body=Check out this article: https://kihyun92.github.io/Css/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kihyun92.github.io/Css/&title=Css"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kihyun92.github.io/Css/&title=Css"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://kihyun92.github.io/Css/&title=Css"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://kihyun92.github.io/Css/&title=Css"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://kihyun92.github.io/Css/&name=Css&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://kihyun92.github.io/Css/&t=Css"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS"><span class="toc-number">1.</span> <span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#css-%E2%86%92-disabled%EC%9D%BC%EB%95%8C-%EC%8A%A4%ED%83%80%EC%9D%BC-%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B2%95"><span class="toc-number">1.1.</span> <span class="toc-text">css → disabled일때 스타일 처리하는 법</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#input-%E2%86%92-props%EB%A5%BC-%EB%94%94%EC%8A%A4%ED%8A%B8%EB%9F%AD%EC%B3%90%EB%A7%81%ED%95%B4%EC%84%9C-%EB%84%98%EA%B8%B8%EB%95%8C-styled-component-%E2%86%92-white-list-%EC%A0%95%EC%B1%85%EC%9D%B4%EC%96%B4%EC%84%9C-%EC%95%84%EB%A7%88-%EB%AC%B8%EC%A0%9C-%EC%97%86%EC%9D%84%EB%93%AF-%ED%95%84%EC%9A%94%ED%95%9C%EA%B2%83%EB%A7%8C-%EC%95%8C%EC%95%84%EC%84%9C-%EB%93%B1%EB%A1%9D"><span class="toc-number">1.2.</span> <span class="toc-text">input → props를 디스트럭쳐링해서 넘길때, styled-component → white list 정책이어서 아마 문제 없을듯(필요한것만 알아서 등록)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flexbox"><span class="toc-number">1.3.</span> <span class="toc-text">flexbox</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#justify-content-gt-%EC%A4%91%EC%8B%AC%EC%B6%95-main-axis-%EC%97%90%EC%84%9C-%EC%95%84%EC%9D%B4%ED%85%9C%EC%9D%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%B0%B0%EC%B9%98%ED%95%A0%EC%A7%80"><span class="toc-number">1.3.1.</span> <span class="toc-text">justify-content -&gt; 중심축(main axis)에서 아이템을 어떻게 배치할지</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-items-gt-%EB%B0%98%EB%8C%80%EC%B6%95-cross-axis-%EC%97%90%EC%84%9C-%EC%95%84%EC%9D%B4%ED%85%9C%EC%9D%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%B0%B0%EC%B9%98%ED%95%A0%EC%A7%80"><span class="toc-number">1.3.2.</span> <span class="toc-text">align-items -&gt; 반대축(cross axis)에서 아이템을 어떻게 배치할지</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-content-gt-%EB%B0%98%EB%8C%80%EC%B6%95%EC%97%90%EC%84%9C-%EC%95%84%EC%9D%B4%ED%85%9C%EC%9D%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%B0%B0%EC%B9%98%ED%95%A0%EC%A7%80-justify-content%EC%99%80-%EB%B0%98%EB%8C%80"><span class="toc-number">1.3.3.</span> <span class="toc-text">align-content -&gt; 반대축에서 아이템을 어떻게 배치할지(justify-content와 반대)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-grow"><span class="toc-number">1.3.4.</span> <span class="toc-text">flex-grow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-shrink"><span class="toc-number">1.3.5.</span> <span class="toc-text">flex-shrink</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-basis-default-auto"><span class="toc-number">1.3.6.</span> <span class="toc-text">flex-basis (default: auto)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-self"><span class="toc-number">1.3.7.</span> <span class="toc-text">align-self</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-box-%EB%82%B4%EC%97%90%EC%84%9C-%ED%8A%B9%EC%A0%95-%EC%9E%90%EC%8B%9D-%EC%9A%94%EC%86%8C%EB%A7%8C-%EC%99%BC%EC%AA%BD-%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%97%90-%EB%91%90%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EA%B2%BD%EC%9A%B0-gt-margin-left-auto-margin-right-auto"><span class="toc-number">1.4.</span> <span class="toc-text">flex box 내에서 특정 자식 요소만 왼쪽&#x2F;오른쪽에 두고 싶은 경우 -&gt; margin-left: auto &#x2F; margin-right: auto</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vh"><span class="toc-number">1.5.</span> <span class="toc-text">vh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#item-center-%EC%A0%95%EB%A0%AC"><span class="toc-number">1.6.</span> <span class="toc-text">item center 정렬</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pseudo-class"><span class="toc-number">1.7.</span> <span class="toc-text">pseudo-class</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nth-child"><span class="toc-number">1.7.1.</span> <span class="toc-text">:nth-child</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nth-last-child"><span class="toc-number">1.7.2.</span> <span class="toc-text">nth-last-child</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content-visibility"><span class="toc-number">1.8.</span> <span class="toc-text">content-visibility</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-Containment"><span class="toc-number">1.8.1.</span> <span class="toc-text">CSS Containment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%97%B0%EC%86%8D-%EA%B3%B5%EB%B0%B1-%EC%A0%9C%EA%B1%B0"><span class="toc-number">1.9.</span> <span class="toc-text">연속 공백 제거</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#styled-component-anti-pattern"><span class="toc-number">1.10.</span> <span class="toc-text">styled-component anti-pattern</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#amp-amp-%EC%9D%B4%EB%9E%80"><span class="toc-number">1.11.</span> <span class="toc-text">&amp;&amp; 이란?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#display-box%EC%9D%BC%EB%95%8C-%EC%9A%B0%EC%B8%A1%EC%A0%95%EB%A0%AC-gt-float-right"><span class="toc-number">1.12.</span> <span class="toc-text">display: box일때, 우측정렬 -&gt; float: right!</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-%EC%84%A0%EC%96%B8%EC%8B%9C-%EC%A0%95%EB%A6%AC-%EC%88%9C%EC%84%9C-gt-%EB%B0%95%EC%8A%A4-%EB%AA%A8%EB%8D%B8-%EC%A4%91%EC%8B%AC"><span class="toc-number">1.13.</span> <span class="toc-text">CSS 선언시 정리 순서 -&gt; 박스 모델 중심</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#box-%EC%95%88%EC%97%90%EC%84%9C-%EC%9A%B0%EC%B8%A1-%EB%B2%84%ED%8A%BC-%EA%B3%A0%EC%A0%95%EC%97%90-%EB%82%98%EB%A8%B8%EC%A7%80%EB%8A%94-%EC%9D%B8%ED%92%8B%EA%B3%BC-%EA%B0%99%EC%9D%80-%EB%B8%94%EB%9D%BD%EC%9C%BC%EB%A1%9C-%EC%B1%84%EC%9A%B0%EA%B3%A0-%EC%8B%B6%EC%9D%80%EA%B2%BD%EC%9A%B0"><span class="toc-number">1.14.</span> <span class="toc-text">box 안에서 우측 버튼 고정에 나머지는 인풋과 같은 블락으로 채우고 싶은경우</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#overscroll-behavior"><span class="toc-number">1.15.</span> <span class="toc-text">overscroll-behavior</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#px-em-rem-%EC%B0%A8%EC%9D%B4"><span class="toc-number">1.16.</span> <span class="toc-text">px, em, rem 차이</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rem"><span class="toc-number">1.16.1.</span> <span class="toc-text">rem</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Css
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Kihyun Kim</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-04-12T10:19:00.715Z" itemprop="datePublished">2021-04-12</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="css-→-disabled일때-스타일-처리하는-법"><a href="#css-→-disabled일때-스타일-처리하는-법" class="headerlink" title="css → disabled일때 스타일 처리하는 법"></a>css → disabled일때 스타일 처리하는 법</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&amp;<span class="selector-pseudo">:disabled</span> &#123;</span><br><span class="line">    <span class="attribute">cursor</span>: not-allowed;</span><br><span class="line">    <span class="attribute">color</span>: $&#123;Color.white&#125;;</span><br><span class="line">    border: 1px solid $&#123;Color.white&#125;;</span><br><span class="line">    <span class="selector-tag">opacity</span>: 0.4;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="input-→-props를-디스트럭쳐링해서-넘길때-styled-component-→-white-list-정책이어서-아마-문제-없을듯-필요한것만-알아서-등록"><a href="#input-→-props를-디스트럭쳐링해서-넘길때-styled-component-→-white-list-정책이어서-아마-문제-없을듯-필요한것만-알아서-등록" class="headerlink" title="input → props를 디스트럭쳐링해서 넘길때, styled-component → white list 정책이어서 아마 문제 없을듯(필요한것만 알아서 등록)"></a>input → props를 디스트럭쳐링해서 넘길때, styled-component → white list 정책이어서 아마 문제 없을듯(필요한것만 알아서 등록)</h2><hr>
+<h2 id="flexbox"><a href="#flexbox" class="headerlink" title="flexbox"></a>flexbox</h2><ul>
+<li>컨테이너를 꾸며주는 속성값들이 있고, 아이템들을 꾸며주는 속성값들이 있다</li>
+<li>아이템들의 배치 방향에 따라 중심 축이 결정된다.</li>
+<li><code>display: flex;</code></li>
+<li><code>flex-direction: row;</code>  -&gt; 방향을 정해줘야함. default는 row</li>
+<li><code>flex-wrap: nowrap;</code> -&gt; default는 nowrap. 화면이 좁아질 경우 어떻게 표시할지</li>
+<li><code>flex-flow: column wrap</code> -&gt; 한번에 표현</li>
+</ul>
+<h3 id="justify-content-gt-중심축-main-axis-에서-아이템을-어떻게-배치할지"><a href="#justify-content-gt-중심축-main-axis-에서-아이템을-어떻게-배치할지" class="headerlink" title="justify-content -&gt; 중심축(main axis)에서 아이템을 어떻게 배치할지"></a>justify-content -&gt; <strong>중심축(main axis)</strong>에서 아이템을 어떻게 배치할지</h3><ul>
+<li>flex-start, center, flex-end</li>
+<li>space-around -&gt; 박스를 둘러싸서 스페이스를 넣어줌. 맨 앞뒤는 일정하지만, 겹치는 부분은 각각 적용되어 좀더 두껍</li>
+<li>space-evenly -&gt; space-around와 비슷하지만 겹치는 부분까지 맨앞뒤와 동일하게 일정하다.</li>
+<li>space-between -&gt; 맨 앞뒤는 공간 없고, 사이만 공간을 줌</li>
+</ul>
+<h3 id="align-items-gt-반대축-cross-axis-에서-아이템을-어떻게-배치할지"><a href="#align-items-gt-반대축-cross-axis-에서-아이템을-어떻게-배치할지" class="headerlink" title="align-items -&gt; 반대축(cross axis)에서 아이템을 어떻게 배치할지"></a>align-items -&gt; <strong>반대축(cross axis)</strong>에서 아이템을 어떻게 배치할지</h3><ul>
+<li>baseline -&gt; text를 기준으로 동일하게 정렬하고 싶을때</li>
+</ul>
+<h3 id="align-content-gt-반대축에서-아이템을-어떻게-배치할지-justify-content와-반대"><a href="#align-content-gt-반대축에서-아이템을-어떻게-배치할지-justify-content와-반대" class="headerlink" title="align-content -&gt; 반대축에서 아이템을 어떻게 배치할지(justify-content와 반대)"></a>align-content -&gt; <strong>반대축</strong>에서 아이템을 어떻게 배치할지(justify-content와 반대)</h3><h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><ul>
+<li>아이템이 점점 켜졌을때, 어떻게 노출할지</li>
+<li>content를 채우도록 할지 -&gt; ex) 모든 아이템들을 <code>flex-grow: 1</code>로 하면 각 아이템들의 할당영역이 같게됨</li>
+</ul>
+<h3 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h3><ul>
+<li>반대로 아이템이 점점 줄어들때 어떻게 노출할지</li>
+</ul>
+<h3 id="flex-basis-default-auto"><a href="#flex-basis-default-auto" class="headerlink" title="flex-basis (default: auto)"></a>flex-basis (default: auto)</h3><ul>
+<li>공간을 얼마나 차지할지 좀 더 세부적으로 조절할 수 있게 해줌</li>
+<li>ex) item1은 60%, item2는 30%, item3은 10% 차지하게 할 수도 있음</li>
+</ul>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><ul>
+<li>아이템 별로 아이템을 정렬할 수 있음</li>
+</ul>
+<h2 id="flex-box-내에서-특정-자식-요소만-왼쪽-오른쪽에-두고-싶은-경우-gt-margin-left-auto-margin-right-auto"><a href="#flex-box-내에서-특정-자식-요소만-왼쪽-오른쪽에-두고-싶은-경우-gt-margin-left-auto-margin-right-auto" class="headerlink" title="flex box 내에서 특정 자식 요소만 왼쪽/오른쪽에 두고 싶은 경우 -&gt; margin-left: auto / margin-right: auto"></a>flex box 내에서 특정 자식 요소만 왼쪽/오른쪽에 두고 싶은 경우 -&gt; margin-left: auto / margin-right: auto</h2><p>정리 굳 사이트</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://d2.naver.com/helloworld/8540176">https://d2.naver.com/helloworld/8540176</a></li>
+</ul>
+<hr>
+<h2 id="vh"><a href="#vh" class="headerlink" title="vh"></a>vh</h2><ul>
+<li>view height -&gt; <code>height: 100vh</code> 로 할 경우, 부모의 height와 상관없이 view port를 100% 사용하겠다 라는 의미</li>
+</ul>
+<h2 id="item-center-정렬"><a href="#item-center-정렬" class="headerlink" title="item center 정렬"></a>item center 정렬</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.Aligner</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="pseudo-class"><a href="#pseudo-class" class="headerlink" title="pseudo-class"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/ko/docs/Web/CSS/:nth-child">pseudo-class</a></h2><p>선택자에 추가하는 키워드</p>
+<h3 id="nth-child"><a href="#nth-child" class="headerlink" title=":nth-child"></a>:nth-child</h3><p>형제 엘리먼트(group of siblings) 간의 순서에 따라 요소를 선택함</p>
+<ul>
+<li>odd, even</li>
+<li>함수형으로 표기 가능</li>
+</ul>
+<h3 id="nth-last-child"><a href="#nth-last-child" class="headerlink" title="nth-last-child"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/ko/docs/Web/CSS/:nth-last-child">nth-last-child</a></h3><p>끝부터 계산하여 형제 그룹간의 위치에 따라 엘리먼트 선택</p>
+<h2 id="content-visibility"><a href="#content-visibility" class="headerlink" title="content-visibility"></a><a target="_blank" rel="noopener" href="https://wit.nts-corp.com/2020/09/11/6223">content-visibility</a></h2><p>Chrome 85에 새롭게 추가, 렌더링 성능 향상에 도움</p>
+<ul>
+<li>화면 밖 콘텐츠의 렌더링을 생략함으로써 초기 로드 시간을 개선</li>
+<li>UserAgent가 layout, painting을 포함한 요소의 렌더링 작업을 필요로할 때까지 생략할 수 있도록 합니다.</li>
+<li>콘텐츠의 대부분이 화면 밖에 있을 때, content-visibility을 활용해서 렌더링을 생략하게 되면 사용자의 초기 로드 시간이 훨씬 빨라집니다. 또한, 화면 내 콘텐츠와 더 빠르게 상호작용할 수 있습니다.</li>
+</ul>
+<h3 id="CSS-Containment"><a href="#CSS-Containment" class="headerlink" title="CSS Containment"></a>CSS Containment</h3><p>CSS Containment의 핵심이자 목적은 페이지 전체에서 DOM subtree의 분리를 제공하여 렌더링 성능을 향상시키는 것 입니다.</p>
+<h2 id="연속-공백-제거"><a href="#연속-공백-제거" class="headerlink" title="연속 공백 제거"></a>연속 공백 제거</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">pre-wrap</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="styled-component-anti-pattern"><a href="#styled-component-anti-pattern" class="headerlink" title="styled-component anti-pattern"></a>styled-component anti-pattern</h2><p>[!!!주의] SC props에 boolean 등 정해져있는 값이 아닌 string, number 등 임의의 값이 넘어가게되면 runtime에 class 를 매번 생성해서 효율이 확 떨어짐. 절대적으로 피해야할 anti-pattern 입니당.</p>
+<p>변하는 값을 넘기면 런타임때 클래스를 생성하는 방식이라 계속 다른 클래스가 생성되버림</p>
+<h2 id="amp-amp-이란"><a href="#amp-amp-이란" class="headerlink" title="&amp;&amp; 이란?"></a>&amp;&amp; 이란?</h2><h2 id="display-box일때-우측정렬-gt-float-right"><a href="#display-box일때-우측정렬-gt-float-right" class="headerlink" title="display: box일때, 우측정렬 -&gt; float: right!"></a>display: box일때, 우측정렬 -&gt; float: right!</h2><h2 id="CSS-선언시-정리-순서-gt-박스-모델-중심"><a href="#CSS-선언시-정리-순서-gt-박스-모델-중심" class="headerlink" title="CSS 선언시 정리 순서 -&gt; 박스 모델 중심"></a>CSS 선언시 정리 순서 -&gt; 박스 모델 중심</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/%EC%83%81%EC%9E%90_%EB%AA%A8%EB%8D%B8">참고</a></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">fontSize</span><br><span class="line">fontWeight</span><br><span class="line">position</span><br><span class="line">top</span><br><span class="line">left</span><br><span class="line">...</span><br><span class="line">display</span><br><span class="line">margin</span><br><span class="line">padding</span><br><span class="line">width</span><br><span class="line">height</span><br><span class="line">border</span><br><span class="line">...</span><br><span class="line">background</span><br><span class="line">color</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>관련된 애들끼리 모아놓은 걸 보실 수 있습니다. 읽기가 좋죠.<br>boxmodel 이외의  background, color와 같이 꾸며주는 애들은 좀 뒤로</p>
+<h2 id="box-안에서-우측-버튼-고정에-나머지는-인풋과-같은-블락으로-채우고-싶은경우"><a href="#box-안에서-우측-버튼-고정에-나머지는-인풋과-같은-블락으로-채우고-싶은경우" class="headerlink" title="box 안에서 우측 버튼 고정에 나머지는 인풋과 같은 블락으로 채우고 싶은경우"></a>box 안에서 우측 버튼 고정에 나머지는 인풋과 같은 블락으로 채우고 싶은경우</h2><p>부모 클래스에서 <code>display: flex;</code> 해주고 브라우저 크기에 따라 줄어들게 할 자식에서 <code>flex: auto</code><br>이때 <code>width: 100%</code> 를 주면 의도치않게 동작</p>
+<h2 id="overscroll-behavior"><a href="#overscroll-behavior" class="headerlink" title="overscroll-behavior"></a>overscroll-behavior</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior">https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior</a></li>
+</ul>
+<p>스크롤링이 끝났을때 브라우저에게 어떤 처리를 할지 설정해줌.</p>
+<p>ex) 알림에서 스크롤 끝까지 갔을때 뒤쪽 브라우저 스크롤되지 않도록 처리할때 사용<br><code>overscroll-behavior: contain;</code></p>
+<h2 id="px-em-rem-차이"><a href="#px-em-rem-차이" class="headerlink" title="px, em, rem 차이"></a>px, em, rem 차이</h2><p><a target="_blank" rel="noopener" href="https://medium.com/watcha/watcha-%EA%B0%9C%EB%B0%9C-%EC%A7%80%EC%8B%9D-px-em-rem-f569c6e76e66">참고 문서</a></p>
+<ul>
+<li>px로 font-size를 지정할 경우 미디어 쿼리나 자바스크립트를 사용하지 않는 이상 변경하기 매우 어려움. 반응형 웹 작업에서는 효율적이지 못함</li>
+<li>em은 font-size 기준으로 곱해서 계산한다</li>
+<li>font-size는 부모의 값을 상속하는 속성이기 때문에 em 을 사용할때 원하지 않는 결과가 나올 수 있음. 필요한 곳에만 사용하길</li>
+</ul>
+<h3 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h3><p>em과 마찬가지로 font-size에 비례하는 속성.<br>em과의 차이는 오직 html 태그의 글자 크기만 참조함.<br>계산하기 쉽게 글자 크기를 10픽셀로 맞추고 시작하는 경우가 많음.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/wiki/">wiki</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS"><span class="toc-number">1.</span> <span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#css-%E2%86%92-disabled%EC%9D%BC%EB%95%8C-%EC%8A%A4%ED%83%80%EC%9D%BC-%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B2%95"><span class="toc-number">1.1.</span> <span class="toc-text">css → disabled일때 스타일 처리하는 법</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#input-%E2%86%92-props%EB%A5%BC-%EB%94%94%EC%8A%A4%ED%8A%B8%EB%9F%AD%EC%B3%90%EB%A7%81%ED%95%B4%EC%84%9C-%EB%84%98%EA%B8%B8%EB%95%8C-styled-component-%E2%86%92-white-list-%EC%A0%95%EC%B1%85%EC%9D%B4%EC%96%B4%EC%84%9C-%EC%95%84%EB%A7%88-%EB%AC%B8%EC%A0%9C-%EC%97%86%EC%9D%84%EB%93%AF-%ED%95%84%EC%9A%94%ED%95%9C%EA%B2%83%EB%A7%8C-%EC%95%8C%EC%95%84%EC%84%9C-%EB%93%B1%EB%A1%9D"><span class="toc-number">1.2.</span> <span class="toc-text">input → props를 디스트럭쳐링해서 넘길때, styled-component → white list 정책이어서 아마 문제 없을듯(필요한것만 알아서 등록)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flexbox"><span class="toc-number">1.3.</span> <span class="toc-text">flexbox</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#justify-content-gt-%EC%A4%91%EC%8B%AC%EC%B6%95-main-axis-%EC%97%90%EC%84%9C-%EC%95%84%EC%9D%B4%ED%85%9C%EC%9D%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%B0%B0%EC%B9%98%ED%95%A0%EC%A7%80"><span class="toc-number">1.3.1.</span> <span class="toc-text">justify-content -&gt; 중심축(main axis)에서 아이템을 어떻게 배치할지</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-items-gt-%EB%B0%98%EB%8C%80%EC%B6%95-cross-axis-%EC%97%90%EC%84%9C-%EC%95%84%EC%9D%B4%ED%85%9C%EC%9D%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%B0%B0%EC%B9%98%ED%95%A0%EC%A7%80"><span class="toc-number">1.3.2.</span> <span class="toc-text">align-items -&gt; 반대축(cross axis)에서 아이템을 어떻게 배치할지</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-content-gt-%EB%B0%98%EB%8C%80%EC%B6%95%EC%97%90%EC%84%9C-%EC%95%84%EC%9D%B4%ED%85%9C%EC%9D%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%B0%B0%EC%B9%98%ED%95%A0%EC%A7%80-justify-content%EC%99%80-%EB%B0%98%EB%8C%80"><span class="toc-number">1.3.3.</span> <span class="toc-text">align-content -&gt; 반대축에서 아이템을 어떻게 배치할지(justify-content와 반대)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-grow"><span class="toc-number">1.3.4.</span> <span class="toc-text">flex-grow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-shrink"><span class="toc-number">1.3.5.</span> <span class="toc-text">flex-shrink</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-basis-default-auto"><span class="toc-number">1.3.6.</span> <span class="toc-text">flex-basis (default: auto)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-self"><span class="toc-number">1.3.7.</span> <span class="toc-text">align-self</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-box-%EB%82%B4%EC%97%90%EC%84%9C-%ED%8A%B9%EC%A0%95-%EC%9E%90%EC%8B%9D-%EC%9A%94%EC%86%8C%EB%A7%8C-%EC%99%BC%EC%AA%BD-%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%97%90-%EB%91%90%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EA%B2%BD%EC%9A%B0-gt-margin-left-auto-margin-right-auto"><span class="toc-number">1.4.</span> <span class="toc-text">flex box 내에서 특정 자식 요소만 왼쪽&#x2F;오른쪽에 두고 싶은 경우 -&gt; margin-left: auto &#x2F; margin-right: auto</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vh"><span class="toc-number">1.5.</span> <span class="toc-text">vh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#item-center-%EC%A0%95%EB%A0%AC"><span class="toc-number">1.6.</span> <span class="toc-text">item center 정렬</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pseudo-class"><span class="toc-number">1.7.</span> <span class="toc-text">pseudo-class</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nth-child"><span class="toc-number">1.7.1.</span> <span class="toc-text">:nth-child</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nth-last-child"><span class="toc-number">1.7.2.</span> <span class="toc-text">nth-last-child</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content-visibility"><span class="toc-number">1.8.</span> <span class="toc-text">content-visibility</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-Containment"><span class="toc-number">1.8.1.</span> <span class="toc-text">CSS Containment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%97%B0%EC%86%8D-%EA%B3%B5%EB%B0%B1-%EC%A0%9C%EA%B1%B0"><span class="toc-number">1.9.</span> <span class="toc-text">연속 공백 제거</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#styled-component-anti-pattern"><span class="toc-number">1.10.</span> <span class="toc-text">styled-component anti-pattern</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#amp-amp-%EC%9D%B4%EB%9E%80"><span class="toc-number">1.11.</span> <span class="toc-text">&amp;&amp; 이란?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#display-box%EC%9D%BC%EB%95%8C-%EC%9A%B0%EC%B8%A1%EC%A0%95%EB%A0%AC-gt-float-right"><span class="toc-number">1.12.</span> <span class="toc-text">display: box일때, 우측정렬 -&gt; float: right!</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-%EC%84%A0%EC%96%B8%EC%8B%9C-%EC%A0%95%EB%A6%AC-%EC%88%9C%EC%84%9C-gt-%EB%B0%95%EC%8A%A4-%EB%AA%A8%EB%8D%B8-%EC%A4%91%EC%8B%AC"><span class="toc-number">1.13.</span> <span class="toc-text">CSS 선언시 정리 순서 -&gt; 박스 모델 중심</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#box-%EC%95%88%EC%97%90%EC%84%9C-%EC%9A%B0%EC%B8%A1-%EB%B2%84%ED%8A%BC-%EA%B3%A0%EC%A0%95%EC%97%90-%EB%82%98%EB%A8%B8%EC%A7%80%EB%8A%94-%EC%9D%B8%ED%92%8B%EA%B3%BC-%EA%B0%99%EC%9D%80-%EB%B8%94%EB%9D%BD%EC%9C%BC%EB%A1%9C-%EC%B1%84%EC%9A%B0%EA%B3%A0-%EC%8B%B6%EC%9D%80%EA%B2%BD%EC%9A%B0"><span class="toc-number">1.14.</span> <span class="toc-text">box 안에서 우측 버튼 고정에 나머지는 인풋과 같은 블락으로 채우고 싶은경우</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#overscroll-behavior"><span class="toc-number">1.15.</span> <span class="toc-text">overscroll-behavior</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#px-em-rem-%EC%B0%A8%EC%9D%B4"><span class="toc-number">1.16.</span> <span class="toc-text">px, em, rem 차이</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rem"><span class="toc-number">1.16.1.</span> <span class="toc-text">rem</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://kihyun92.github.io/Css/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://kihyun92.github.io/Css/&text=Css"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://kihyun92.github.io/Css/&title=Css"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kihyun92.github.io/Css/&is_video=false&description=Css"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Css&body=Check out this article: https://kihyun92.github.io/Css/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://kihyun92.github.io/Css/&title=Css"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://kihyun92.github.io/Css/&title=Css"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://kihyun92.github.io/Css/&title=Css"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://kihyun92.github.io/Css/&title=Css"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://kihyun92.github.io/Css/&name=Css&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://kihyun92.github.io/Css/&t=Css"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2021
+    Kihyun Kim
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/wiki/">wiki</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

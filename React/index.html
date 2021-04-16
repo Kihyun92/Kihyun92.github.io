@@ -14,7 +14,7 @@
 <meta property="og:description" content="React왜 함수형 컴포넌트인가?참고 클래스형 컴포넌트와 함수형 컴포넌트의 차이기존엔 라이프사이클 컨트롤 유무였지만, 함수형 컴포넌트에서도 hook(16.8 버전 이후)을 이용하면 된다. 또한 클래스형 컴포넌트에는 props를 재사용 하기 때문에 의도와 다르게 동작하는 문제점이 있다. 그외에도 가독성이 좋으며 테스트가 편하다. hooks useState u">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-12T10:23:14.335Z">
-<meta property="article:modified_time" content="2021-04-12T10:23:14.335Z">
+<meta property="article:modified_time" content="2021-04-15T05:55:58.229Z">
 <meta property="article:author" content="Kihyun Kim">
 <meta name="twitter:card" content="summary">
     
@@ -76,7 +76,7 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post " href="/daily-report/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post " href="/Javascript/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" aria-label="Next post " href="/Redux/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -170,6 +170,7 @@
 <h2 id="useMemo"><a href="#useMemo" class="headerlink" title="useMemo"></a>useMemo</h2><ul>
 <li>상태나 디펜더시에 따라 변하는 인스턴스</li>
 <li>과한 연산으로 인한 메모이제이션을 기대하는 결과</li>
+<li>memo에 영향이 있을 수 있는 mutable한 값(객체, 배열, 함수, 컴포넌트)라던지, expensive한 계산에만 쓰는게 좋음</li>
 </ul>
 <hr>
 <h2 id="Event-handler-convention"><a href="#Event-handler-convention" class="headerlink" title="Event handler convention"></a>Event handler convention</h2><p><a target="_blank" rel="noopener" href="https://medium.com/javascript-in-plain-english/handy-naming-conventions-for-event-handler-functions-props-in-react-fc1cbb791364">https://medium.com/javascript-in-plain-english/handy-naming-conventions-for-event-handler-functions-props-in-react-fc1cbb791364</a></p>

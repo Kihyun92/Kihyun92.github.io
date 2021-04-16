@@ -43,3 +43,7 @@ module.exports = {};
 See also
 
 - https://jestjs.io/docs/en/configuration#modulenamemapper-objectstring-string--arraystring
+
+## jest mock 관련 문서
+
+- https://dev.to/dylanju/jest-mocks-18l9

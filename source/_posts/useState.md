@@ -15,3 +15,46 @@ const [count, setCount] = useState(() =>
   Number.parseInt(window.localStorage.getItem(cacheKey)),
 )
 ```
+
+렌더링에 영향을 미칠만한 상태가 아닐땐 ref를 사용하기!!
+
+```typescript
+import React, { createContext, useContext, useRef } from 'react';
+
+interface BodyScrollLockContext {
+  lockScroll: () => void;
+  unlockScroll: () => void;
+}
+
+const BodyScrollLockContext = createContext<BodyScrollLockContext>({} as BodyScrollLockContext);
+
+const BodyScrollLockProvider: React.FC = props => {
+  const modalCountRef = useRef<number>(0);
+
+  const lockScroll = () => {
+    modalCountRef.current++;
+    if (modalCountRef.current > 0) {
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const unlockScroll = () => {
+    modalCountRef.current--;
+    if (modalCountRef.current === 0) {
+      document.body.style.overflow = '';
+    }
+  };
+
+  const bodyScrollLockContext: BodyScrollLockContext = {
+    lockScroll,
+    unlockScroll
+  };
+
+  return <BodyScrollLockContext.Provider value={bodyScrollLockContext} {...props} />;
+};
+
+const useBodyScrollLockContext = () => useContext(BodyScrollLockContext);
+
+export { BodyScrollLockProvider, useBodyScrollLockContext };
+
+```

@@ -14,7 +14,7 @@
 <meta property="og:description" content="ReactReact의 탄생 배경과 핵심 개념업무를 진행하면서 항상 고민할것  컴포넌트를 얼마나 작은 단위로 쪼갤 것인지, 어떻게 재사용 가능한 컴포넌트를 만들 것인지 state는 가상 DOM 내에 여러 곳에 존재할 수 있는데, 이를 어디에 위치시킬지 state가 변경되었을 때, 어떤 부분이 re-rendering 되어야 하는지  React 가 렌더링을 수행">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-12T10:23:14.335Z">
-<meta property="article:modified_time" content="2021-04-21T16:22:48.681Z">
+<meta property="article:modified_time" content="2021-04-21T16:29:23.598Z">
 <meta property="article:author" content="Kihyun Kim">
 <meta name="twitter:card" content="summary">
     
@@ -76,10 +76,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="Previous post " href="/Redux/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Previous post " href="/Javascript/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" aria-label="Next post " href="/Router/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Next post " href="/Redux/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -107,7 +107,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React"><span class="toc-number">1.</span> <span class="toc-text">React</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#React%EC%9D%98-%ED%83%84%EC%83%9D-%EB%B0%B0%EA%B2%BD%EA%B3%BC-%ED%95%B5%EC%8B%AC-%EA%B0%9C%EB%85%90"><span class="toc-number">1.1.</span> <span class="toc-text">React의 탄생 배경과 핵심 개념</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-%EA%B0%80-%EB%A0%8C%EB%8D%94%EB%A7%81%EC%9D%84-%EC%88%98%ED%96%89%ED%95%98%EB%8A%94-%EC%8B%9C%EC%A0%90"><span class="toc-number">1.2.</span> <span class="toc-text">React 가 렌더링을 수행하는 시점</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%99%9C-%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%B8%EA%B0%80"><span class="toc-number">1.3.</span> <span class="toc-text">왜 함수형 컴포넌트인가?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%81%B4%EB%9E%98%EC%8A%A4%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80-%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4"><span class="toc-number">1.3.1.</span> <span class="toc-text">클래스형 컴포넌트와 함수형 컴포넌트의 차이</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hooks"><span class="toc-number">1.3.2.</span> <span class="toc-text">hooks</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-FC%EB%A5%BC-%EC%99%9C-%EC%8D%A8%EC%95%BC%ED%95%98%EB%8A%94%EA%B0%80%EC%97%90-%EB%8C%80%ED%95%9C-%EC%A0%95%EB%A6%AC"><span class="toc-number">1.4.</span> <span class="toc-text">React.FC를 왜 써야하는가에 대한 정리</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useRef"><span class="toc-number">1.5.</span> <span class="toc-text">useRef</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useMemo"><span class="toc-number">1.6.</span> <span class="toc-text">useMemo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-handler-convention"><span class="toc-number">1.7.</span> <span class="toc-text">Event handler convention</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useLayoutEffect"><span class="toc-number">1.8.</span> <span class="toc-text">useLayoutEffect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modal-%EA%B5%AC%ED%98%84%ED%95%A0%EB%95%8C"><span class="toc-number">1.9.</span> <span class="toc-text">Modal 구현할때</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React"><span class="toc-number">1.</span> <span class="toc-text">React</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#React%EC%9D%98-%ED%83%84%EC%83%9D-%EB%B0%B0%EA%B2%BD%EA%B3%BC-%ED%95%B5%EC%8B%AC-%EA%B0%9C%EB%85%90"><span class="toc-number">1.1.</span> <span class="toc-text">React의 탄생 배경과 핵심 개념</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-%EA%B0%80-%EB%A0%8C%EB%8D%94%EB%A7%81%EC%9D%84-%EC%88%98%ED%96%89%ED%95%98%EB%8A%94-%EC%8B%9C%EC%A0%90"><span class="toc-number">1.2.</span> <span class="toc-text">React 가 렌더링을 수행하는 시점</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hooks-%EC%A0%95%EB%A6%AC"><span class="toc-number">1.3.</span> <span class="toc-text">hooks 정리</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%99%9C-%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%B8%EA%B0%80"><span class="toc-number">1.4.</span> <span class="toc-text">왜 함수형 컴포넌트인가?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%ED%81%B4%EB%9E%98%EC%8A%A4%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80-%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4"><span class="toc-number">1.5.</span> <span class="toc-text">클래스형 컴포넌트와 함수형 컴포넌트의 차이</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-FC%EB%A5%BC-%EC%99%9C-%EC%8D%A8%EC%95%BC%ED%95%98%EB%8A%94%EA%B0%80%EC%97%90-%EB%8C%80%ED%95%9C-%EC%A0%95%EB%A6%AC"><span class="toc-number">1.6.</span> <span class="toc-text">React.FC를 왜 써야하는가에 대한 정리</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-handler-convention"><span class="toc-number">1.7.</span> <span class="toc-text">Event handler convention</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useLayoutEffect"><span class="toc-number">1.8.</span> <span class="toc-text">useLayoutEffect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modal-%EA%B5%AC%ED%98%84%ED%95%A0%EB%95%8C"><span class="toc-number">1.9.</span> <span class="toc-text">Modal 구현할때</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -161,35 +161,23 @@
 <li><a target="_blank" rel="noopener" href="https://reactjs.org/docs/react-component.html#forceupdate">forceUpdate()</a>를 싱행한 경우</li>
 <li><code>부모 컴포넌트가 렌더링 된 경우</code></li>
 </ol>
-<h2 id="왜-함수형-컴포넌트인가"><a href="#왜-함수형-컴포넌트인가" class="headerlink" title="왜 함수형 컴포넌트인가?"></a>왜 함수형 컴포넌트인가?</h2><p><a target="_blank" rel="noopener" href="https://boxfoxs.tistory.com/395">참고</a></p>
-<h3 id="클래스형-컴포넌트와-함수형-컴포넌트의-차이"><a href="#클래스형-컴포넌트와-함수형-컴포넌트의-차이" class="headerlink" title="클래스형 컴포넌트와 함수형 컴포넌트의 차이"></a>클래스형 컴포넌트와 함수형 컴포넌트의 차이</h3><p>기존엔 라이프사이클 컨트롤 유무였지만, 함수형 컴포넌트에서도 hook(16.8 버전 이후)을 이용하면 된다.</p>
-<p>또한 클래스형 컴포넌트에는 props를 재사용 하기 때문에 의도와 다르게 동작하는 문제점이 있다.</p>
-<p>그외에도 가독성이 좋으며 테스트가 편하다.</p>
-<h3 id="hooks"><a href="#hooks" class="headerlink" title="hooks"></a>hooks</h3><ul>
+<h2 id="hooks-정리"><a href="#hooks-정리" class="headerlink" title="hooks 정리"></a>hooks 정리</h2><ul>
 <li><a href="/useState">useState</a></li>
 <li><a href="/useEffect">useEffect</a></li>
 <li><a href="/useCallback">useCallback</a></li>
+<li><a href="/useRef">useRef</a></li>
+<li><a href="/useMemo">useMemo</a></li>
 </ul>
-<hr>
+<h2 id="왜-함수형-컴포넌트인가"><a href="#왜-함수형-컴포넌트인가" class="headerlink" title="왜 함수형 컴포넌트인가?"></a>왜 함수형 컴포넌트인가?</h2><p><a target="_blank" rel="noopener" href="https://boxfoxs.tistory.com/395">참고</a></p>
+<h2 id="클래스형-컴포넌트와-함수형-컴포넌트의-차이"><a href="#클래스형-컴포넌트와-함수형-컴포넌트의-차이" class="headerlink" title="클래스형 컴포넌트와 함수형 컴포넌트의 차이"></a>클래스형 컴포넌트와 함수형 컴포넌트의 차이</h2><p>기존엔 라이프사이클 컨트롤 유무였지만, 함수형 컴포넌트에서도 hook(16.8 버전 이후)을 이용하면 된다.</p>
+<p>또한 클래스형 컴포넌트에는 props를 재사용 하기 때문에 의도와 다르게 동작하는 문제점이 있다.</p>
+<p>그외에도 가독성이 좋으며 테스트가 편하다.</p>
 <h2 id="React-FC를-왜-써야하는가에-대한-정리"><a href="#React-FC를-왜-써야하는가에-대한-정리" class="headerlink" title="React.FC를 왜 써야하는가에 대한 정리"></a>React.FC를 왜 써야하는가에 대한 정리</h2><p>벨로퍼트님이 잘 정리해주셨다. <a target="_blank" rel="noopener" href="https://velog.io/@velopert/create-typescript-react-component">참고</a></p>
 <p>그외에 함수형 컴포넌트 사용시 화살표 함수로 선언할지 아니면 function 키워드를 사용할지에 대해서도 정리되어있다.</p>
 <ul>
 <li>React.FC를 사용하면 defaultProps를 사용해도 에러가 발생함.</li>
 </ul>
-<hr>
-<h2 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h2><p><code>useRef</code>는 <code>.current</code> 프로퍼티로 전달된 인자(initialValue)로 초기화된 변경 가능한 <code>ref 객체</code>를 반환합니다. 반환된 객체는 컴포넌트의 전 생애주기를 통해 유지될 것입니다.</p>
-<blockquote>
-<p>주로 태그를 직접 다룰 경우 사용, 간단하지 않은 구조의경우(반복 등) id대신 사용</p>
-</blockquote>
-<hr>
-<h2 id="useMemo"><a href="#useMemo" class="headerlink" title="useMemo"></a>useMemo</h2><ul>
-<li>상태나 디펜더시에 따라 변하는 인스턴스</li>
-<li>과한 연산으로 인한 메모이제이션을 기대하는 결과</li>
-<li>memo에 영향이 있을 수 있는 mutable한 값(객체, 배열, 함수, 컴포넌트)라던지, expensive한 계산에만 쓰는게 좋음</li>
-</ul>
-<hr>
 <h2 id="Event-handler-convention"><a href="#Event-handler-convention" class="headerlink" title="Event handler convention"></a>Event handler convention</h2><p><a target="_blank" rel="noopener" href="https://medium.com/javascript-in-plain-english/handy-naming-conventions-for-event-handler-functions-props-in-react-fc1cbb791364">https://medium.com/javascript-in-plain-english/handy-naming-conventions-for-event-handler-functions-props-in-react-fc1cbb791364</a></p>
-<hr>
 <h2 id="useLayoutEffect"><a href="#useLayoutEffect" class="headerlink" title="useLayoutEffect"></a>useLayoutEffect</h2><p>DOM 관련된 effect를 컨트롤 할때는 사용하는걸 권장. DOM이 완전히 그려진 다음에 실행하는 effect.<br><a target="_blank" rel="noopener" href="https://ko.reactjs.org/docs/hooks-reference.html#uselayouteffect">참고</a></p>
 <figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line">useLayoutEffect(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (postBodyRef.current &amp;&amp; (postBodyRef.current.scrollHeight - <span class="number">1</span> &gt; postBodyRef.current.offsetHeight)) &#123; <span class="comment">// IE fix</span></span><br><span class="line">      setIsFolded(<span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, [body]);</span><br></pre></td></tr></table></figure>
 <h2 id="Modal-구현할때"><a href="#Modal-구현할때" class="headerlink" title="Modal 구현할때"></a>Modal 구현할때</h2><p><a target="_blank" rel="noopener" href="https://ko.reactjs.org/docs/portals.html">Portal</a> 이용하면 좋다!</p>
@@ -229,7 +217,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React"><span class="toc-number">1.</span> <span class="toc-text">React</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#React%EC%9D%98-%ED%83%84%EC%83%9D-%EB%B0%B0%EA%B2%BD%EA%B3%BC-%ED%95%B5%EC%8B%AC-%EA%B0%9C%EB%85%90"><span class="toc-number">1.1.</span> <span class="toc-text">React의 탄생 배경과 핵심 개념</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-%EA%B0%80-%EB%A0%8C%EB%8D%94%EB%A7%81%EC%9D%84-%EC%88%98%ED%96%89%ED%95%98%EB%8A%94-%EC%8B%9C%EC%A0%90"><span class="toc-number">1.2.</span> <span class="toc-text">React 가 렌더링을 수행하는 시점</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%99%9C-%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%B8%EA%B0%80"><span class="toc-number">1.3.</span> <span class="toc-text">왜 함수형 컴포넌트인가?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%ED%81%B4%EB%9E%98%EC%8A%A4%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80-%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4"><span class="toc-number">1.3.1.</span> <span class="toc-text">클래스형 컴포넌트와 함수형 컴포넌트의 차이</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hooks"><span class="toc-number">1.3.2.</span> <span class="toc-text">hooks</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-FC%EB%A5%BC-%EC%99%9C-%EC%8D%A8%EC%95%BC%ED%95%98%EB%8A%94%EA%B0%80%EC%97%90-%EB%8C%80%ED%95%9C-%EC%A0%95%EB%A6%AC"><span class="toc-number">1.4.</span> <span class="toc-text">React.FC를 왜 써야하는가에 대한 정리</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useRef"><span class="toc-number">1.5.</span> <span class="toc-text">useRef</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useMemo"><span class="toc-number">1.6.</span> <span class="toc-text">useMemo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-handler-convention"><span class="toc-number">1.7.</span> <span class="toc-text">Event handler convention</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useLayoutEffect"><span class="toc-number">1.8.</span> <span class="toc-text">useLayoutEffect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modal-%EA%B5%AC%ED%98%84%ED%95%A0%EB%95%8C"><span class="toc-number">1.9.</span> <span class="toc-text">Modal 구현할때</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React"><span class="toc-number">1.</span> <span class="toc-text">React</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#React%EC%9D%98-%ED%83%84%EC%83%9D-%EB%B0%B0%EA%B2%BD%EA%B3%BC-%ED%95%B5%EC%8B%AC-%EA%B0%9C%EB%85%90"><span class="toc-number">1.1.</span> <span class="toc-text">React의 탄생 배경과 핵심 개념</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-%EA%B0%80-%EB%A0%8C%EB%8D%94%EB%A7%81%EC%9D%84-%EC%88%98%ED%96%89%ED%95%98%EB%8A%94-%EC%8B%9C%EC%A0%90"><span class="toc-number">1.2.</span> <span class="toc-text">React 가 렌더링을 수행하는 시점</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hooks-%EC%A0%95%EB%A6%AC"><span class="toc-number">1.3.</span> <span class="toc-text">hooks 정리</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%99%9C-%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%B8%EA%B0%80"><span class="toc-number">1.4.</span> <span class="toc-text">왜 함수형 컴포넌트인가?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%ED%81%B4%EB%9E%98%EC%8A%A4%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80-%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4"><span class="toc-number">1.5.</span> <span class="toc-text">클래스형 컴포넌트와 함수형 컴포넌트의 차이</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-FC%EB%A5%BC-%EC%99%9C-%EC%8D%A8%EC%95%BC%ED%95%98%EB%8A%94%EA%B0%80%EC%97%90-%EB%8C%80%ED%95%9C-%EC%A0%95%EB%A6%AC"><span class="toc-number">1.6.</span> <span class="toc-text">React.FC를 왜 써야하는가에 대한 정리</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-handler-convention"><span class="toc-number">1.7.</span> <span class="toc-text">Event handler convention</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useLayoutEffect"><span class="toc-number">1.8.</span> <span class="toc-text">useLayoutEffect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modal-%EA%B5%AC%ED%98%84%ED%95%A0%EB%95%8C"><span class="toc-number">1.9.</span> <span class="toc-text">Modal 구현할때</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

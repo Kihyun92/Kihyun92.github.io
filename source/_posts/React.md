@@ -18,9 +18,9 @@ title: React
 
 ### hooks
 
-- [useState](useState)
-- [useEffect](useEffect)
-- [useCallback](useCallback)
+- [useState](/useState)
+- [useEffect](/useEffect)
+- [useCallback](/useCallback)
 
 ---
 

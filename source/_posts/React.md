@@ -4,6 +4,22 @@ title: React
 
 # React
 
+## [React의 탄생 배경과 핵심 개념](https://soldonii.tistory.com/100)
+
+업무를 진행하면서 항상 고민할것
+
+- 컴포넌트를 얼마나 작은 단위로 쪼갤 것인지, 어떻게 재사용 가능한 컴포넌트를 만들 것인지
+- state는 가상 DOM 내에 여러 곳에 존재할 수 있는데, 이를 어디에 위치시킬지
+- state가 변경되었을 때, 어떤 부분이 re-rendering 되어야 하는지
+
+## React 가 렌더링을 수행하는 시점
+
+1. Props가 변경된 경우 → 원시값이 아닌 객체나 배열, `함수`의 경우, `얕은 비교`를 진행하기 때문에 매 랜더시 쓸데없는 얕은 평가를 진행함 → 불필요한 렌더링이 이루어질 수 있음
+    - children 또한 props이므로 ReactElement의 경우에도 비교 대상이다.
+2. State가 변경된 경우
+3. [forceUpdate()](https://reactjs.org/docs/react-component.html#forceupdate)를 싱행한 경우
+4. `부모 컴포넌트가 렌더링 된 경우`
+
 ## 왜 함수형 컴포넌트인가?
 
 [참고](https://boxfoxs.tistory.com/395)

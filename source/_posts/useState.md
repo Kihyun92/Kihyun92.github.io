@@ -16,7 +16,11 @@ const [count, setCount] = useState(() =>
 )
 ```
 
-렌더링에 영향을 미칠만한 상태가 아닐땐 ref를 사용하기!!
+## 렌더링에 영향을 미칠만한 상태가 아닐땐 ref를 사용하는게 좋다
+
+> 상황
+> - 모달이 중첩된 경우, 모달을 닫을때 body의 overflow를 풀어버려서 뒤쪽 스크롤 되는 현상
+> - 열린 모달 수를 관리하는 컨텍스트 생성하여 개수에 따라 overflow hidden 처리함
 
 ```typescript
 import React, { createContext, useContext, useRef } from 'react';
@@ -29,7 +33,7 @@ interface BodyScrollLockContext {
 const BodyScrollLockContext = createContext<BodyScrollLockContext>({} as BodyScrollLockContext);
 
 const BodyScrollLockProvider: React.FC = props => {
-  const modalCountRef = useRef<number>(0);
+  const modalCountRef = useRef<number>(0);  // useState를 사용할 수 있지만, 렌더링에 영향을 미칠만한 상태가 아니기 때문에 ref를 사용했다
 
   const lockScroll = () => {
     modalCountRef.current++;

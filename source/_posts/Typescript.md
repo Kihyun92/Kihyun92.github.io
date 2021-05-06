@@ -20,6 +20,28 @@ Union 타입 배열을 맵핑할때 발생한 문제가 있다. Union type의 �
 
 `Type`의 모든 property를 optional type으로 가진다. 주어진 type의 모든 하위 type을 나타내는 type을 반환합니다.
 
+## infer
+
+https://typescript-kr.github.io/pages/advanced-types.html
+
+`조건부 타입의 타입 추론 (Type inference in conditional types)`
+
+상속 관계일때 제네릭 타입을 추정해서 가져올 수 있음
+
+``` typescript
+type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;
+```
+
+```typescript
+type GetPromiseType<T extends Promise<unknown>> = T extends Promise<infer V> ? V : never;
+
+type A = GetPromiseType<Promise<string>>; // string;
+type B = GetPromiseType<Promise<number>>; // number;
+type C = GetPromiseType<Error>; // error
+```
+
+---
+
 ## issues
 
 ### A computed property name must be of type 'string', 'number', 'symbol', or 'any'

@@ -18,7 +18,7 @@ const [count, setCount] = useState(() =>
 
 ## 렌더링에 영향을 미칠만한 상태가 아닐땐 ref를 사용하는게 좋다
 
-> 상황
+> 예시 상황
 > - 모달이 중첩된 경우, 모달을 닫을때 body의 overflow를 풀어버려서 뒤쪽 스크롤 되는 현상
 > - 열린 모달 수를 관리하는 컨텍스트 생성하여 개수에 따라 overflow hidden 처리함
 

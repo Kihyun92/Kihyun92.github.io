@@ -150,3 +150,7 @@ const isEmailForamt = (text: string) => emailMatchRegex.test(text);
 ``` javascript
 export const snakeToCamel = (str: string) => str.toLowerCase().replace(/[-_]([a-z])/g, (_, group) => group.toUpperCase());
 ```
+
+## 스토리지 제어
+
+비동기가 아닌 동기처리라서 I/O 읽기되는 만큼 모든 렌더링이 지연되기 때문에 스토리지는 이펙트에서 접근해야함.

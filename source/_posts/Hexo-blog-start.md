@@ -2,7 +2,7 @@
 title: Hexo로 블로그 시작하기
 date: 2018-10-13 01:52:47
 tags:
-    - til
+    - TIL
     - hexo
 ---
 

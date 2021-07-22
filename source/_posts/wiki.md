@@ -2,6 +2,7 @@
 title: wiki
 ---
 
+* [DailyReport](/daily-report)
 * [Development](/Development)
 * [Javascript](/Javascript)
 * [React](/React)

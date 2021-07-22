@@ -21,3 +21,7 @@ title: useCallback
 
 1. memoization이 필요할 정도로 많은 연산을 하는가?
 2. props 형태로 넘겨서 렌더링 할 때 마다 레퍼런스가 같아야 하는가?
+
+## Dependency
+
+의존성에 넘겨준 값이 변할때만 메모이제이션이 변경된다

@@ -154,3 +154,36 @@ export const snakeToCamel = (str: string) => str.toLowerCase().replace(/[-_]([a-
 ## 스토리지 제어
 
 비동기가 아닌 동기처리라서 I/O 읽기되는 만큼 모든 렌더링이 지연되기 때문에 스토리지는 이펙트에서 접근해야함.
+
+## Event
+
+`event.preventDefault()`: 이벤트를 취소할 수 있는 경우, 이벤트의 전파를 막지 않고 그 이벤트를 취소
+
+`event.stopPropagation()`: 이벤트 캡쳐링과 버블링에 있어 현재 이벤트 이후의 전파를 막음
+
+### 마우스 우클릭에 대한 이벤트
+
+`MouseEvent`
+
+`event.which`는 deprecated 됨 => event.button을 사용 (0 = left, 1 = center, 2 = right)
+
+참고: https://stackoverflow.com/questions/2405771/is-right-click-a-javascript-event
+
+### contextmenu
+
+브라우저에서 마우스 우클릭시 노출되는 메뉴에 대한 이벤트
+
+리액트에서 아래와 같이 해당 페이지에서 우클릭을 막을 수 있다.
+
+``` typescript
+  useEffect(() => {
+    document.addEventListener('contextmenu', handleBlockRightClick);
+    
+    return (() => document.removeEventListener('contextmenu', handleBlockRightClick));
+  }, []);
+
+  const handleBlockRightClick = useCallback((event: MouseEvent) => {
+    event.preventDefault();
+    return false;
+  }, []);
+```

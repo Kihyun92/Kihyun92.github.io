@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>견스</title>
+    <description>견스 블로그
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 06 Nov 2022 23:46:59 +0900</pubDate>
+    <lastBuildDate>Sun, 06 Nov 2022 23:46:59 +0900</lastBuildDate>
+    <generator>Jekyll v4.1.1</generator>
+
+
+    
+      <item>
+        <title>MathJax로 LaTeX 사용하기</title>
+        <description></description>
+        <pubDate>Mon, 04 Nov 2019 22:13:47 +0900</pubDate>
+        <link>http://localhost:4000/wiki/mathjax-latex/</link>
+        <guid isPermaLink="true">http://localhost:4000/wiki/mathjax-latex/</guid>
+        
+        <category>latex</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>HOW TO</title>
+        <description></description>
+        <pubDate>Sun, 04 Feb 2018 15:57:05 +0900</pubDate>
+        <link>http://localhost:4000/wiki/how-to/</link>
+        <guid isPermaLink="true">http://localhost:4000/wiki/how-to/</guid>
+        
+        <category>how-to</category>
+        
+        
+      </item>
+    
+
+    
+
+
+  </channel>
+</rss>

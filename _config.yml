@@ -1,0 +1,63 @@
+# Site settings
+title: 견스
+url: "https://kihyun92.github.io"
+baseurl: ""
+description: >
+    견스 블로그
+
+# My information
+email: kihyun92@gmail.com
+author: 김기현
+profile: 견스
+twitter_username: okkihyun1
+github_username: kihyun92
+comment-support: utterances
+
+# Build settings
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
+
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+paginate: 10
+paginator_path: "/blog"
+paginate_path: "/blog/page:num/"
+
+# Collections
+collections:
+    wiki:
+        output: true
+        permalink: /:collection/:path/
+
+# Comment Service
+disqus:
+  id: kihyun92
+  shortname: kihyuns-blog
+utterances:
+  repo: kihyun92/kihyun92.github.io
+  issue-term: url
+  label: Comment
+  branch: master
+
+# google_analytics:
+#   ua: UA-110224147-1
+
+# google_adsense:
+#   client: ca-pub-3675948545737694
+
+blame: "https://github.com/kihyun92/kihyun92.github.io/blame/master/_wiki"
+edit: "https://github.com/kihyun92/kihyun92.github.io/edit/master/_wiki"
+issue: "https://github.com/kihyun92/kihyun92.github.io/issues/new"
+
+timezone: "Asia/Seoul"
+
+# https://kramdown.gettalong.org/rdoc/Kramdown/Options.html - smart_quotes
+kramdown:
+    smart_quotes: ["apos", "apos", "quot", "quot"]

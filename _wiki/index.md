@@ -9,7 +9,8 @@ regenerate: true
 
 ## wiki items
 
-* [[mathjax-latex]]
+* [[react/when-react-render]]
+* [[typescript/type-interface-differences]]
 
 ---
 
@@ -27,4 +28,3 @@ regenerate: true
 {% endfor %}
     </ul>
 </div>
-

@@ -1,0 +1,8 @@
+I"><ul id="markdown-toc">
+  <li><a href="#typescript-의-type과-interface를-정리해보자" id="markdown-toc-typescript-의-type과-interface를-정리해보자">Typescript 의 type과 interface를 정리해보자</a></li>
+</ul>
+
+<h1 id="typescript-의-type과-interface를-정리해보자">Typescript 의 type과 interface를 정리해보자</h1>
+
+<p>타입스크립트에서는 <code class="language-plaintext highlighter-rouge">type</code>과 <code class="language-plaintext highlighter-rouge">interface</code>로 타입을 명시해 줄 수 있다. 각각을 언제</p>
+:ET

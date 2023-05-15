@@ -12,4 +12,3 @@ latex   : false
 ---
 * TOC
 {:toc}
-

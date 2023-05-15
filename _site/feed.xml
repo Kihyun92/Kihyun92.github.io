@@ -6,10 +6,66 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 06 Nov 2022 23:46:59 +0900</pubDate>
-    <lastBuildDate>Sun, 06 Nov 2022 23:46:59 +0900</lastBuildDate>
+    <pubDate>Mon, 15 May 2023 14:40:19 +0900</pubDate>
+    <lastBuildDate>Mon, 15 May 2023 14:40:19 +0900</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
 
+
+    
+      <item>
+        <title>type과 interface 정리</title>
+        <description></description>
+        <pubDate>Mon, 15 May 2023 14:00:00 +0900</pubDate>
+        <link>http://localhost:4000/wiki/typescript/type-interface-differences/</link>
+        <guid isPermaLink="true">http://localhost:4000/wiki/typescript/type-interface-differences/</guid>
+        
+        <category>typescript, type, interface</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>Typescript</title>
+        <description></description>
+        <pubDate>Mon, 15 May 2023 14:00:00 +0900</pubDate>
+        <link>http://localhost:4000/wiki/typescript/</link>
+        <guid isPermaLink="true">http://localhost:4000/wiki/typescript/</guid>
+        
+        <category>typescript</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>React가 렌더링을 수행하는 시점</title>
+        <description></description>
+        <pubDate>Mon, 08 May 2023 17:43:00 +0900</pubDate>
+        <link>http://localhost:4000/wiki/react/when-react-render/</link>
+        <guid isPermaLink="true">http://localhost:4000/wiki/react/when-react-render/</guid>
+        
+        <category>react</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>React</title>
+        <description></description>
+        <pubDate>Mon, 08 May 2023 17:43:00 +0900</pubDate>
+        <link>http://localhost:4000/wiki/react/</link>
+        <guid isPermaLink="true">http://localhost:4000/wiki/react/</guid>
+        
+        <category>react</category>
+        
+        
+      </item>
+    
 
     
       <item>

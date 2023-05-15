@@ -56,7 +56,75 @@
     <url>
         <loc>http://localhost:4000/wiki/index/</loc>
         
-            <lastmod>2022-11-06T23:46:59+09:00</lastmod>
+            <lastmod>2023-05-15T14:40:19+09:00</lastmod>
+        
+
+        
+            <changefreq>daily</changefreq>
+        
+
+        
+            <priority>0.5</priority>
+        
+    </url>
+    
+
+    
+    <url>
+        <loc>http://localhost:4000/wiki/react/</loc>
+        
+            <lastmod>2023-05-08T17:43:00+09:00</lastmod>
+        
+
+        
+            <changefreq>daily</changefreq>
+        
+
+        
+            <priority>0.5</priority>
+        
+    </url>
+    
+
+    
+    <url>
+        <loc>http://localhost:4000/wiki/react/when-react-render/</loc>
+        
+            <lastmod>2023-05-08T17:43:00+09:00</lastmod>
+        
+
+        
+            <changefreq>daily</changefreq>
+        
+
+        
+            <priority>0.5</priority>
+        
+    </url>
+    
+
+    
+    <url>
+        <loc>http://localhost:4000/wiki/typescript/</loc>
+        
+            <lastmod>2023-05-15T14:00:00+09:00</lastmod>
+        
+
+        
+            <changefreq>daily</changefreq>
+        
+
+        
+            <priority>0.5</priority>
+        
+    </url>
+    
+
+    
+    <url>
+        <loc>http://localhost:4000/wiki/typescript/type-interface-differences/</loc>
+        
+            <lastmod>2023-05-15T14:00:00+09:00</lastmod>
         
 
         

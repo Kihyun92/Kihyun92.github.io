@@ -6,11 +6,11 @@ description: >
     견스 블로그
 
 # My information
-email: kihyun92@gmail.com
+email: okkihyun1@gmail.com
 author: 김기현
-profile: 견스
+profile: true
 twitter_username: okkihyun1
-github_username: kihyun92
+github_username: Kihyun92
 comment-support: utterances
 
 # Build settings

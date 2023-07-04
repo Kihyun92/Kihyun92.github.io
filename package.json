@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo no test found",
-    "start": "jekyll serve"
+    "start": "jekyll s --watch"
   },
   "repository": {
     "type": "git",

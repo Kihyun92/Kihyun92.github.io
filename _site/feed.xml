@@ -4,22 +4,22 @@
     <title>견스</title>
     <description>견스 블로그
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Jul 2023 11:05:33 +0900</pubDate>
-    <lastBuildDate>Wed, 05 Jul 2023 11:05:33 +0900</lastBuildDate>
+    <link>https://kihyun92.github.io/</link>
+    <atom:link href="https://kihyun92.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 20 Mar 2024 21:14:22 +0900</pubDate>
+    <lastBuildDate>Wed, 20 Mar 2024 21:14:22 +0900</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
 
 
     
       <item>
-        <title>type과 interface 정리</title>
+        <title>OAuth2 IN ACTION 서평</title>
         <description></description>
-        <pubDate>Mon, 15 May 2023 14:00:00 +0900</pubDate>
-        <link>http://localhost:4000/wiki/typescript/type-interface-differences/</link>
-        <guid isPermaLink="true">http://localhost:4000/wiki/typescript/type-interface-differences/</guid>
+        <pubDate>Wed, 20 Mar 2024 21:30:00 +0900</pubDate>
+        <link>https://kihyun92.github.io/wiki/%EC%84%9C%ED%8F%89/OAUTH2-IN-ACTION-%EC%84%9C%ED%8F%89/</link>
+        <guid isPermaLink="true">https://kihyun92.github.io/wiki/%EC%84%9C%ED%8F%89/OAUTH2-IN-ACTION-%EC%84%9C%ED%8F%89/</guid>
         
-        <category>typescript, type, interface</category>
+        <category>서평, OAuth2, 네트워크, 인증</category>
         
         
       </item>
@@ -27,13 +27,69 @@
 
     
       <item>
-        <title>Typescript</title>
+        <title>HTTP2 IN ACTION 서평</title>
+        <description></description>
+        <pubDate>Wed, 24 Jan 2024 21:50:00 +0900</pubDate>
+        <link>https://kihyun92.github.io/wiki/%EC%84%9C%ED%8F%89/HTTP2-IN-ACTION-%EC%84%9C%ED%8F%89/</link>
+        <guid isPermaLink="true">https://kihyun92.github.io/wiki/%EC%84%9C%ED%8F%89/HTTP2-IN-ACTION-%EC%84%9C%ED%8F%89/</guid>
+        
+        <category>서평, HTTP, HTTP2, 네트워크</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>엔터프라이즈 애플리케이션 아키텍처 패턴</title>
+        <description></description>
+        <pubDate>Thu, 07 Dec 2023 21:18:00 +0900</pubDate>
+        <link>https://kihyun92.github.io/wiki/%EC%84%9C%ED%8F%89/%EC%97%94%ED%84%B0%ED%94%84%EB%9D%BC%EC%9D%B4%EC%A6%88-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%ED%8C%A8%ED%84%B4-%EC%84%9C%ED%8F%89/</link>
+        <guid isPermaLink="true">https://kihyun92.github.io/wiki/%EC%84%9C%ED%8F%89/%EC%97%94%ED%84%B0%ED%94%84%EB%9D%BC%EC%9D%B4%EC%A6%88-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%ED%8C%A8%ED%84%B4-%EC%84%9C%ED%8F%89/</guid>
+        
+        <category>서평, 아키텍처, 패턴, 객체지향</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>로버트 세지윅, 캐빈 웨인 - 알고리즘 서평</title>
+        <description></description>
+        <pubDate>Thu, 14 Sep 2023 21:43:00 +0900</pubDate>
+        <link>https://kihyun92.github.io/wiki/%EC%84%9C%ED%8F%89/%EB%A1%9C%EB%B2%84%ED%8A%B8-%EC%84%B8%EC%A7%80%EC%9C%85-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%84%9C%ED%8F%89/</link>
+        <guid isPermaLink="true">https://kihyun92.github.io/wiki/%EC%84%9C%ED%8F%89/%EB%A1%9C%EB%B2%84%ED%8A%B8-%EC%84%B8%EC%A7%80%EC%9C%85-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%84%9C%ED%8F%89/</guid>
+        
+        <category>서평, 알고리즘, 자료구조</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>핵심 코틀린 프로그래밍</title>
+        <description></description>
+        <pubDate>Tue, 18 Jul 2023 17:50:00 +0900</pubDate>
+        <link>https://kihyun92.github.io/wiki/kotlin/%ED%95%B5%EC%8B%AC_%EC%BD%94%ED%8B%80%EB%A6%B0_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
+        <guid isPermaLink="true">https://kihyun92.github.io/wiki/kotlin/%ED%95%B5%EC%8B%AC_%EC%BD%94%ED%8B%80%EB%A6%B0_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
+        
+        <category>kotlin</category>
+        
+        
+      </item>
+    
+
+    
+      <item>
+        <title>type과 interface 정리</title>
         <description></description>
         <pubDate>Mon, 15 May 2023 14:00:00 +0900</pubDate>
-        <link>http://localhost:4000/wiki/typescript/</link>
-        <guid isPermaLink="true">http://localhost:4000/wiki/typescript/</guid>
+        <link>https://kihyun92.github.io/wiki/typescript/type-interface-differences/</link>
+        <guid isPermaLink="true">https://kihyun92.github.io/wiki/typescript/type-interface-differences/</guid>
         
-        <category>typescript</category>
+        <category>typescript, type, interface</category>
         
         
       </item>
@@ -44,52 +100,10 @@
         <title>React가 렌더링을 수행하는 시점</title>
         <description></description>
         <pubDate>Mon, 08 May 2023 17:43:00 +0900</pubDate>
-        <link>http://localhost:4000/wiki/react/when-react-render/</link>
-        <guid isPermaLink="true">http://localhost:4000/wiki/react/when-react-render/</guid>
+        <link>https://kihyun92.github.io/wiki/react/when-react-render/</link>
+        <guid isPermaLink="true">https://kihyun92.github.io/wiki/react/when-react-render/</guid>
         
         <category>react</category>
-        
-        
-      </item>
-    
-
-    
-      <item>
-        <title>React</title>
-        <description></description>
-        <pubDate>Mon, 08 May 2023 17:43:00 +0900</pubDate>
-        <link>http://localhost:4000/wiki/react/</link>
-        <guid isPermaLink="true">http://localhost:4000/wiki/react/</guid>
-        
-        <category>react</category>
-        
-        
-      </item>
-    
-
-    
-      <item>
-        <title>MathJax로 LaTeX 사용하기</title>
-        <description></description>
-        <pubDate>Mon, 04 Nov 2019 22:13:47 +0900</pubDate>
-        <link>http://localhost:4000/wiki/mathjax-latex/</link>
-        <guid isPermaLink="true">http://localhost:4000/wiki/mathjax-latex/</guid>
-        
-        <category>latex</category>
-        
-        
-      </item>
-    
-
-    
-      <item>
-        <title>HOW TO</title>
-        <description></description>
-        <pubDate>Sun, 04 Feb 2018 15:57:05 +0900</pubDate>
-        <link>http://localhost:4000/wiki/how-to/</link>
-        <guid isPermaLink="true">http://localhost:4000/wiki/how-to/</guid>
-        
-        <category>how-to</category>
         
         
       </item>

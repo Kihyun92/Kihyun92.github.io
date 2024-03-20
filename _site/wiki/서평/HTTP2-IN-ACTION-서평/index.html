@@ -4,24 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>React - 견스</title>
+    <title>HTTP2 IN ACTION 서평 - 견스</title>
 
     <meta name="description" content="">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/wiki/react/">
-    <link rel="alternate" type="application/rss+xml" title="견스" href="http://localhost:4000/feed.xml" />
+    <link rel="canonical" href="https://kihyun92.github.io/wiki/%EC%84%9C%ED%8F%89/HTTP2-IN-ACTION-%EC%84%9C%ED%8F%89/">
+    <link rel="alternate" type="application/rss+xml" title="견스" href="https://kihyun92.github.io/feed.xml" />
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="React">
+    <meta property="og:title" content="HTTP2 IN ACTION 서평">
     <meta property="og:description" content="">
-    <meta property="og:image" content="http://localhost:4000/resource/johngrib.png">
-    <meta property="og:url" content="http://localhost:4000/wiki/react/">
+    <meta property="og:image" content="https://kihyun92.github.io/resource/johngrib.png">
+    <meta property="og:url" content="https://kihyun92.github.io/wiki/%EC%84%9C%ED%8F%89/HTTP2-IN-ACTION-%EC%84%9C%ED%8F%89/">
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@okkihyun1" />
-    <meta name="twitter:url" content="http://localhost:4000/wiki/react/" />
-    <meta name="twitter:title" content="React" />
+    <meta name="twitter:url" content="https://kihyun92.github.io/wiki/%EC%84%9C%ED%8F%89/HTTP2-IN-ACTION-%EC%84%9C%ED%8F%89/" />
+    <meta name="twitter:title" content="HTTP2 IN ACTION 서평" />
     <meta name="twitter:description" content="" />
 
     <link rel="apple-touch-icon" sizes="57x57"        href="/resource/icon/apple-icon-57x57.png">
@@ -91,18 +91,20 @@
 </div>
             <div class="post">
                 
-<input type="hidden" id="thisName" value="react"/>
+<input type="hidden" id="thisName" value="%EC%84%9C%ED%8F%89/HTTP2-IN-ACTION-서평"/>
 <div class="post">
     <header class="post-header">
-        <h1 class="page-title">React</h1>
+        <h1 class="page-title">
+            <a href="/wiki/%EC%84%9C%ED%8F%89/HTTP2-IN-ACTION-%EC%84%9C%ED%8F%89/"> HTTP2 IN ACTION 서평 </a>
+        </h1>
     
         <div class="history-button">
-            <p><a href="https://github.com/kihyun92/kihyun92.github.io/blame/master/_wiki/react.md" target="_blank">created: 2023.05.08</a></p>
-            <p><a href="https://github.com/kihyun92/kihyun92.github.io/blame/master/_wiki/react.md" target="_blank">updated: 2023.05.08</a></p>
+            <p><a href="https://github.com/kihyun92/kihyun92.github.io/blame/master/_wiki/%EC%84%9C%ED%8F%89/HTTP2-IN-ACTION-서평.md" target="_blank">created: 2024.01.24</a></p>
+            <p><a href="https://github.com/kihyun92/kihyun92.github.io/blame/master/_wiki/%EC%84%9C%ED%8F%89/HTTP2-IN-ACTION-서평.md" target="_blank">updated: 2024.01.24</a></p>
             <p>
-                <a href="https://github.com/kihyun92/kihyun92.github.io/edit/master/_wiki/react.md">편집하기</a>
+                <a href="https://github.com/kihyun92/kihyun92.github.io/edit/master/_wiki/%EC%84%9C%ED%8F%89/HTTP2-IN-ACTION-서평.md">편집하기</a>
                 /
-                <a href="https://github.com/kihyun92/kihyun92.github.io/issues/new?title=React&body=의견을%20남겨주세요">의견 남기기</a>
+                <a href="https://github.com/kihyun92/kihyun92.github.io/issues/new?title=HTTP2+IN+ACTION+%EC%84%9C%ED%8F%89&body=의견을%20남겨주세요">의견 남기기</a>
             </p>
         </div>
 
@@ -111,7 +113,7 @@
 
 
     <div class="post-tag">
-    react
+    서평, HTTP, HTTP2, 네트워크
 </div>
 
 
@@ -119,9 +121,37 @@
 
     </header>
     <article class="post-content">
-        
-        <div id="document-list"></div>
+        <ul id="markdown-toc">
+  <li><a href="#http2-in-action배리-폴라드-서평" id="markdown-toc-http2-in-action배리-폴라드-서평">HTTP2 IN ACTION(배리 폴라드) 서평</a></li>
+</ul>
+
+<h2 id="http2-in-action배리-폴라드-서평">HTTP2 IN ACTION(배리 폴라드) 서평</h2>
+
+<p><img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791161754475.jpg" alt="HTTP2 IN ACTION" /></p>
+
+<p>초기 HTTP 부터 QUIC, HTTP3까지 전반적으로 HTTP가 발전돼가는 흐름을 알 수 있는 책이다. HTTP2에 대해서 설명하기 위해 기존 방식(HTTP 0.9~) 문제점들에 대해 자세히 다루기 때문에 HTTP의 전반적인 개념들을 정리하기 좋았다.
+특히 HTTP2에 대해 깊게 다루기 때문에 HTTP2에 대한 기초 개념부터 스트림의 우선순위, 흐름제어, 헤더 압축과 같은 고급 개념들에 대해서 어떻게 구현됐고, 실제로 어떻게 동작하는지 알 수 있다. 이를 통해 독자에게 HTTP2의 목적과 한계를 명확히 알 수 있게 한다.
+기존 방식들의 한계(TCP 등)와 이어지는 QUIC에 대한 설명 등으로 HTTP3에 대해서 어떤 방향으로 발전할지 엿볼 수 있었다.</p>
+
+<p>이 책을 읽으며 현재 네트워크 통신 방식의 한계(TCP, 거리로 인한 한계 등)에 대해 알 수 있었고, 고민해 볼 수 있었다. 특히 HTTP 관련 스팩들이 확정되지 않고 계속 진화하고 있어서 그런지 "특정 기술, 방식이 좋을 수도 있다"와 같은 모호하게 결론나는 경우들이 많아서 실제 내 서비스에는 도입하면 어떨지 같은 고민을 해볼 수 있었다.</p>
+
+<p>최대한 기존 사용 유저들의 성능도 생각하면서 발전해야하는 네트워크 기술의 특수성을 느꼈고, HTTP2에 대해 공부해보니 왜 HTTP2가 많이 도입되지 않은지, HTTP 1.1이 오래 살아남는지에 대해서 알게된 느낌이었다.</p>
+
+<hr />
+
+<p>코드숨에서 7주간(2023.12.13 ~ 2024.01.24) 스터디에 참여했다. 이번 스터디는 먼저 문제를 풀어보고, 책을 읽고, 다시 문제를 풀어보며 학습했다. 시험이 학습에 어떤 도움이 되는지 조금이나마 느낄 수 있었던 것 같다.</p>
+
+<p>함께 성장하고 싶다면 코드숨 스터디를 추천한다.</p>
+
+<blockquote>
+  <ul>
+    <li><a href="https://www.codesoom.com/">코드숨 링크</a></li>
+    <li><a href="https://product.kyobobook.co.kr/detail/S000001804952">도서 링크</a></li>
+  </ul>
+</blockquote>
+
     </article>
+
 
     
     <div class="post-comments">
@@ -136,6 +166,7 @@
         </script>
     
     </div>
+
 
 
 </div>
@@ -205,12 +236,14 @@
 
 <script src="/js/axios.min.js"></script>
 <script async src="/js/parent.js"></script>
-<script async src="/js/category.js"></script>
+<script async src="/js/toc-highlight.js"></script>
 
             </div>
         </div>
         <footer class="footer">
     <div>
+
+        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
     </div>
 
